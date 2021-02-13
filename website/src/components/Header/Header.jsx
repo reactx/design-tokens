@@ -1,13 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as styles from './Header.module.scss';
 
 const Header = ({ siteTitle }) => (
-  <header className={styles.wrapper}>
-    <div className={styles.inner}>
+  <header className="wrapper">
+    <div className="inner">
       <h1 style={{ margin: 0 }}>
-        <Link to="/" className={styles.link}>
+        <Link to="/" className="link">
           {siteTitle}
         </Link>
       </h1>

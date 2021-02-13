@@ -1,9 +1,31 @@
 # Material Design Colors from https://material.io/guidelines/style/color.html#color-color-palette
 props:
-  - name: color-black
-    value: '#000000'
+  - name: color-blue
+    value: '#0067B8'
   - name: color-primary
-    value: 'rebeccapurple'
+    value: '#0067B8'
+  - name: color-indigo
+    value: '#6610f2'
+  - name: color-purple
+    value: '#6f42c1'
+  - name: color-red
+    value: '#bb3937'
+  - name: color-orange
+    value: '#fcb200'
+  - name: color-yellow
+    value: '#f8da2d'
+  - name: color-green
+    value: '#368d2e'
+  - name: color-teal
+    value: '#20c997'
+  - name: color-cyan
+    value: '#17a2b8'
+  - name: color-white
+    value: '#F9FAFB'
+  - name: color-gray
+    value: '#9CA3AF'
+  - name: color-black
+  value: '#1F2937'
 global:
   type: color
   category: background-color

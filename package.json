@@ -45,5 +45,8 @@
   "workspaces": [
     "packages/*",
     "website"
-  ]
+  ],
+  "dependencies": {
+    "npm-check-interactive": "^1.0.0"
+  }
 }
