@@ -15,5 +15,6 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
     '@whitespace/storybook-addon-html',
+    "storybook-addon-pseudo-states"
   ],
 };

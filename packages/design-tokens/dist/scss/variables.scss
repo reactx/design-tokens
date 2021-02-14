@@ -75,7 +75,6 @@ $displays:inline block contents flex grid inline-block inline-flex inline-grid i
 $overflow:hidden auto scroll visible overlay unset;
 $sizes:100 75 50 25;
 
-
 $spacing-none: 0;
 $spacing-extra-tight: 4px;
 $spacing-tight: 8px;
@@ -112,24 +111,8 @@ $size-default: 16px;
   --nirvana-danger: #{$red};
   --nirvana-light: #{$white};
   --nirvana-dark: #{$black};
-  --nirvana-secondary: var(--nirvana-gray-light);
 
   --nirvana-language-direction: #{$direction};
-  --nirvana-language-text-align: #{$alignItem};
   --nirvana-normal-shadow: 0px 0px 9.2px rgb(0 0 0 / 11%), 0px 12.8px 28.8px rgb(0 0 0 / 13%);
 
-  --nirvana-background-linear-gradient-shadow: linear-gradient(to var(--nirvana-language-text-align), var(--nirvana-black-backdrop-1) 0, transparent 5px, transparent 100%), linear-gradient(to right, var(--nirvana-black-backdrop-1) 0, transparent 2px, transparent 100%);
-  //light
-  --nirvana-backdrop-color: rgba(250, 250, 250, 0.8);
-  --nirvana-foreground: #111827;
-  --nirvana-backdrop-9: #FEFEFE;
-  --nirvana-backdrop-7: #F9FAFB;
-  --nirvana-backdrop-5: #F6F6F6;
-  --nirvana-backdrop-3: #EAEAEA;
-  --nirvana-backdrop-1: #CACACA;
-  --nirvana-black-backdrop-1: #E5E7EB;
-  --nirvana-black-backdrop-3: #D1D5DB;
-  --nirvana-black-backdrop-5: #6B7280;
-  --nirvana-black-backdrop-7: #374151;
-  --nirvana-black-backdrop-9: #111827;
 }

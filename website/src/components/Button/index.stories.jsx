@@ -7,6 +7,7 @@ export default {
 };
 
 export const Primary = () => <Button color="primary">Button Text</Button>;
+// Primary.args = { pseudo: { hover: true } };
 export const Success = () => <Button color="success">Button Text</Button>;
 export const Warning = () => <Button color="warning">Button Text</Button>;
 export const Danger = () => <Button color="danger">Button Text</Button>;
