@@ -1,6 +1,7 @@
 @import '~@dtcg/design-tokens/dist';
 
 .nirvana-btn {
+  box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, .13), 0px 0px 2.9px rgba(0, 0, 0, .11);
   background: var(--nirvana-dark-backdrop-1);
   color: var(--nirvana-foreground);
   border-radius: $standard-radius;
@@ -20,10 +21,6 @@
     cursor: not-allowed !important;
     opacity: 0.5;
     filter: grayscale(1);
-
-    &:hover {
-      background-color: unset !important;
-    }
   }
 
   @include colors(btn, 'background');

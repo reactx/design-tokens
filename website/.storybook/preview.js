@@ -42,6 +42,7 @@ window.___navigate = (pathname) => {
 };
 
 export const parameters = {
+  actions: { argTypesRegex: '^on.*' },
   html: {
     prettier: {
       tabWidth: 2,
@@ -51,22 +52,22 @@ export const parameters = {
   },
 };
 
-export const globalTypes = {
-  theme: {
-    name: 'Theme',
-    description: 'Global theme for components',
-    defaultValue: 'light',
-    toolbar: {
-      icon: 'circlehollow',
-      // array of plain string values or MenuItem shape (see below)
-      items: ['light', 'dark'],
-    },
-  },
-};
+// export const globalTypes = {
+//   theme: {
+//     name: 'Theme',
+//     description: 'Global theme for components',
+//     defaultValue: 'light',
+//     toolbar: {
+//       icon: 'circlehollow',
+//       // array of plain string values or MenuItem shape (see below)
+//       items: ['light', 'dark'],
+//     },
+//   },
+// };
 
-const withThemeProvider = (Story, context) => {
-  return (
-    <div className={"nirvana-full-screen " + context.globals.theme + "Theme"}><Story {...context} /></div>
-  )
-}
-export const decorators = [withThemeProvider];
+// const withThemeProvider = (Story, context) => {
+//   return (
+//     <div className={"nirvana-full-screen " + context.globals.theme + "Theme"}><Story {...context} /></div>
+//   )
+// }
+// export const decorators = [withThemeProvider];

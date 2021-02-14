@@ -28,10 +28,17 @@ const Button = React.forwardRef((props) => (
 
 Button.propTypes = {
   id: PropTypes.string,
+  type: PropTypes.oneOf(['button', 'reset', 'submit']),
+  color: PropTypes.oneOf([
+    'primary',
+    'danger',
+    'warning',
+    'light',
+    'success',
+    'dark',
+    'info',
+  ]),
   children: PropTypes.node.isRequired,
-  type: 'button' | 'reset' | 'submit',
-  color:
-    'primary' | 'danger' | 'warning' | 'light' | 'success' | 'dark' | 'info',
   title: PropTypes.string,
   'aria-label': PropTypes.string,
   disabled: PropTypes.bool,

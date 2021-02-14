@@ -28,9 +28,16 @@ const Alert = React.forwardRef((props) => (
 
 Alert.propTypes = {
   id: PropTypes.string,
+  color: PropTypes.oneOf([
+    'primary',
+    'danger',
+    'warning',
+    'light',
+    'success',
+    'dark',
+    'info',
+  ]),
   children: PropTypes.node.isRequired,
-  color:
-    'primary' | 'danger' | 'warning' | 'light' | 'success' | 'dark' | 'info',
   title: PropTypes.string,
   'aria-label': PropTypes.string,
   disabled: PropTypes.bool,

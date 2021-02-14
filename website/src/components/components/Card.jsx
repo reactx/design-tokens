@@ -36,11 +36,18 @@ const Card = React.forwardRef((props) => (
 
 Card.propTypes = {
   id: PropTypes.string,
+  color: PropTypes.oneOf([
+    'primary',
+    'danger',
+    'warning',
+    'light',
+    'success',
+    'dark',
+    'info',
+  ]),
   children: PropTypes.node.isRequired,
   header: PropTypes.node,
   footer: PropTypes.node,
-  color:
-    'primary' | 'danger' | 'warning' | 'light' | 'success' | 'dark' | 'info',
   title: PropTypes.string,
   'aria-label': PropTypes.string,
   disabled: PropTypes.bool,
@@ -49,6 +56,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
+  color: 'light',
   title: 'Card Text',
   disabled: false,
   'aria-label': 'Card',
