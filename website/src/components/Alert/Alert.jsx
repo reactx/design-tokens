@@ -1,35 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/button.scss';
+import '../../sass/alert.scss';
 
-const ButtonComponent = (props) => {
+const AlertComponent = (props) => {
   const parentProps = { ...props };
   delete parentProps.className;
   delete parentProps.children;
   delete parentProps.color;
 
   return (
-    <button
+    <div
       {...parentProps}
       className={
-        'nirvana-btn ' +
+        'nirvana-alert ' +
         (props.className || '') +
-        (props.color ? ' nirvana-btn-' + props.color : '')
+        (props.color ? ' nirvana-alert-' + props.color : '')
       }
     >
       {props.children}
-    </button>
+    </div>
   );
 };
 
-const Button = React.forwardRef((props) => (
-  <ButtonComponent {...props}></ButtonComponent>
+const Alert = React.forwardRef((props) => (
+  <AlertComponent {...props}></AlertComponent>
 ));
 
-Button.propTypes = {
+Alert.propTypes = {
   id: PropTypes.string,
   children: PropTypes.node.isRequired,
-  type: 'button' | 'reset' | 'submit',
   color:
     'primary' | 'danger' | 'warning' | 'light' | 'success' | 'dark' | 'info',
   title: PropTypes.string,
@@ -39,12 +38,11 @@ Button.propTypes = {
   onClick: PropTypes.func,
 };
 
-Button.defaultProps = {
-  type: 'button',
+Alert.defaultProps = {
   color: 'primary',
-  title: 'Button Text',
+  title: 'Alert Text',
   disabled: false,
-  'aria-label': 'button',
+  'aria-label': 'Alert',
 };
 
-export { Button };
+export { Alert };

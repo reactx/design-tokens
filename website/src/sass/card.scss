@@ -1,0 +1,61 @@
+@import '~@dtcg/design-tokens/dist';
+
+.nirvana-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: var(--nirvana-backdrop-9);
+  background-clip: border-box;
+  border-radius: $standard-radius;
+  border: $standard-border;
+  margin: $standard-margin 0;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    padding: $standard-padding;
+    border-top-left-radius: $standard-radius;
+    border-top-right-radius: $standard-radius;
+    background-color: var(--nirvana-backdrop-7);
+    border-bottom: $standard-border-size solid var(--nirvana-backdrop-5);
+  }
+
+  &-body {
+    flex: 1 1 auto;
+    padding: $standard-padding;
+  }
+
+  &-footer {
+    padding: $standard-padding;
+    background-color: var(--nirvana-backdrop-7);
+    border-bottom-left-radius: $standard-radius;
+    border-bottom-right-radius: $standard-radius;
+    border-top: $standard-border-size solid var(--nirvana-backdrop-5);
+  }
+
+  &-image {
+    @include flex-position-center;
+    width: 100%;
+    height: 75%;
+    background: var(--nirvana-backdrop-3);
+    border-top-right-radius: $standard-radius;
+    border-top-left-radius: $standard-radius;
+
+    svg {
+      font-size: $h1-font-size;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    i {
+      font-size: 48px;
+      color: var(--nirvana-primary);
+    }
+  }
+
+  @include colors(card, 'background');
+}

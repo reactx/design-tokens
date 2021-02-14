@@ -96,3 +96,40 @@ consolas,
 monospace;
 $size-small: 13px;
 $size-default: 16px;
+
+:root {
+  @include darkAndLightColor('primary', $primary);
+  @include darkAndLightColor('gray', $gray);
+  @include darkAndLightColor('blue', $blue);
+  @include darkAndLightColor('green', $green);
+  @include darkAndLightColor('red', $red);
+  @include darkAndLightColor('yellow', $yellow);
+
+  --nirvana-black:#{$black};
+  --nirvana-success: #{$green};
+  --nirvana-info: #{$cyan};
+  --nirvana-warning: #{$orange};
+  --nirvana-danger: #{$red};
+  --nirvana-light: #{$white};
+  --nirvana-dark: #{$black};
+  --nirvana-secondary: var(--nirvana-gray-light);
+
+  --nirvana-language-direction: #{$direction};
+  --nirvana-language-text-align: #{$alignItem};
+  --nirvana-normal-shadow: 0px 0px 9.2px rgb(0 0 0 / 11%), 0px 12.8px 28.8px rgb(0 0 0 / 13%);
+
+  --nirvana-background-linear-gradient-shadow: linear-gradient(to var(--nirvana-language-text-align), var(--nirvana-black-backdrop-1) 0, transparent 5px, transparent 100%), linear-gradient(to right, var(--nirvana-black-backdrop-1) 0, transparent 2px, transparent 100%);
+  //light
+  --nirvana-backdrop-color: rgba(250, 250, 250, 0.8);
+  --nirvana-foreground: #111827;
+  --nirvana-backdrop-9: #FEFEFE;
+  --nirvana-backdrop-7: #F9FAFB;
+  --nirvana-backdrop-5: #F6F6F6;
+  --nirvana-backdrop-3: #EAEAEA;
+  --nirvana-backdrop-1: #CACACA;
+  --nirvana-black-backdrop-1: #E5E7EB;
+  --nirvana-black-backdrop-3: #D1D5DB;
+  --nirvana-black-backdrop-5: #6B7280;
+  --nirvana-black-backdrop-7: #374151;
+  --nirvana-black-backdrop-9: #111827;
+}

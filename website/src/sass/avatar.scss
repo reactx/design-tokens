@@ -1,0 +1,37 @@
+@import '~@dtcg/design-tokens/dist';
+
+.nirvana-avatar {
+  border: $standard-border-size solid transparent;
+  border-radius: $round-radius;
+  height: 28px;
+  width: 28px;
+  padding: $half-size-padding;
+  overflow: hidden;
+  box-shadow: var(--nirvana-normal-shadow);
+  background: var(--nirvana-gray-lightest);
+  transition: $standard-animation;
+
+  path {
+    color: var(--nirvana-gray-dark);
+  }
+
+  &:hover {
+    border-color: var(--nirvana-primary);
+
+    path {
+      color: var(--nirvana-primary);
+    }
+  }
+
+  &.nirvana-avatar-large {
+    height: 64px;
+    width: 64px;
+  }
+
+  &.nirvana-avatar-extra-large {
+    height: 128px;
+    width: 128px;
+  }
+
+  @include colors(avatar, 'background')
+}
