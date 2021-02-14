@@ -6,4 +6,4 @@ export default {
   component: Alert,
 };
 
-export const Default = (args) => <Alert {...args}>Alert Text</Alert>;
+export const Basic = (args) => <Alert {...args}>Alert Text</Alert>;

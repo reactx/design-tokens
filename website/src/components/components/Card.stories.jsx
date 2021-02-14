@@ -6,4 +6,4 @@ export default {
   component: Card,
 };
 
-export const Default = (args) => <Card {...args}>Card Text</Card>;
+export const Basic = (args) => <Card {...args}>Card Text</Card>;
