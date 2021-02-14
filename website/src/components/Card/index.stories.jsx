@@ -15,9 +15,33 @@ export const Primary = () => (
     Card Text
   </Card>
 );
-export const Success = () => <Card color="success">Card Text</Card>;
-export const Warning = () => <Card color="warning">Card Text</Card>;
-export const Danger = () => <Card color="danger">Card Text</Card>;
-export const Info = () => <Card color="info">Card Text</Card>;
-export const Dark = () => <Card color="dark">Card Text</Card>;
-export const Light = () => <Card color="light">Card Text</Card>;
+export const Success = () => (
+  <Card header={<>Header</>} footer={<>Footer</>} color="success">
+    Card Text
+  </Card>
+);
+export const Warning = () => (
+  <Card header={<>Header</>} footer={<>Footer</>} color="warning">
+    Card Text
+  </Card>
+);
+export const Danger = () => (
+  <Card header={<>Header</>} footer={<>Footer</>} color="danger">
+    Card Text
+  </Card>
+);
+export const Info = () => (
+  <Card header={<>Header</>} footer={<>Footer</>} color="info">
+    Card Text
+  </Card>
+);
+export const Dark = () => (
+  <Card header={<>Header</>} footer={<>Footer</>} color="dark">
+    Card Text
+  </Card>
+);
+export const Light = () => (
+  <Card header={<>Header</>} footer={<>Footer</>} color="light">
+    Card Text
+  </Card>
+);

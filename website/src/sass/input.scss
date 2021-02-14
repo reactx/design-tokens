@@ -32,7 +32,7 @@
   padding: $standard-padding;
   border-radius: $standard-radius;
   border: $standard-border;
-  border-color: var(--nirvana-black-backdrop-3);
+  border-color: var(--nirvana-dark-backdrop-3);
   background-color: var(--nirvana-backdrop-9);
   color: var(--nirvana-foreground);
   outline: none;
@@ -65,8 +65,8 @@
     background-color: var(--nirvana-backdrop-9);
 
     &:focus {
-      border: none!important;
-      border-color: unset!important;
+      border: none !important;
+      border-color: unset !important;
     }
   }
 }

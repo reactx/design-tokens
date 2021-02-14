@@ -37,7 +37,7 @@
     }
 
     .nirvana-tab-header-item {
-      border: 1px solid var(--nirvana-black-backdrop-1);
+      border: 1px solid var(--nirvana-dark-backdrop-1);
       transition: $standard-animation;
       @include flex-position-center;
       padding: 0 $standard-padding;
@@ -51,7 +51,7 @@
       height: 25px;
 
       &:hover {
-        background-color: var(--nirvana-black-backdrop-1);
+        background-color: var(--nirvana-dark-backdrop-1);
 
         .nirvana-tab-header-close-btn {
           opacity: 1;
@@ -59,7 +59,7 @@
       }
 
       &.nirvana-active-tab {
-        background-color: var(--nirvana-black-backdrop-1);
+        background-color: var(--nirvana-dark-backdrop-1);
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
 

@@ -1,7 +1,7 @@
 @import '~@dtcg/design-tokens/dist';
 
 .nirvana-toolbar {
-  border-bottom: 1px solid var(--nirvana-black-backdrop-1);
+  border-bottom: 1px solid var(--nirvana-dark-backdrop-1);
   box-sizing: border-box;
   flex-direction: row;
   align-items: center;
@@ -19,7 +19,7 @@
     flex: 1 1;
 
     &:hover {
-      background-color: var(--nirvana-black-backdrop-1);
+      background-color: var(--nirvana-dark-backdrop-1);
       cursor: pointer;
     }
 

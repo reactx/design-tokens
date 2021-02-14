@@ -55,13 +55,13 @@
     }
 
     &-selected {
-      background-color: var(--nirvana-black-backdrop-3);
+      background-color: var(--nirvana-dark-backdrop-3);
       padding: $half-size-padding $double-size-padding;
     }
 
     &-selected:hover,
     &-option:hover {
-      background: var(--nirvana-black-backdrop-3);
+      background: var(--nirvana-dark-backdrop-3);
     }
 
     .nirvana-selectbox-dropdown {

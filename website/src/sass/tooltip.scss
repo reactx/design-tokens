@@ -1,10 +1,10 @@
 @import '~@dtcg/design-tokens/dist';
 
 .nirvana-tooltip {
-  background: var(--nirvana-black-backdrop-9);
+  background: var(--nirvana-dark-backdrop-9);
   animation: fadeInTooltip 0.3s ease-in;
   color: var(--nirvana-backdrop-9);
-  border-radius: $small-radius;
+  border-radius: $standard-radius;
   padding: $standard-padding;
   font-size: $font-size-sm;
   text-align: right;

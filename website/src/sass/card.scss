@@ -16,10 +16,10 @@
     display: flex;
     align-items: center;
     padding: $standard-padding;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
     border-top-left-radius: $standard-radius;
     border-top-right-radius: $standard-radius;
-    background-color: var(--nirvana-backdrop-7);
-    border-bottom: $standard-border-size solid var(--nirvana-backdrop-5);
   }
 
   &-body {
@@ -29,10 +29,10 @@
 
   &-footer {
     padding: $standard-padding;
-    background-color: var(--nirvana-backdrop-7);
+    background-color: rgba(0, 0, 0, .03);
+    border-top: 1px solid rgba(0, 0, 0, .125);
     border-bottom-left-radius: $standard-radius;
     border-bottom-right-radius: $standard-radius;
-    border-top: $standard-border-size solid var(--nirvana-backdrop-5);
   }
 
   &-image {

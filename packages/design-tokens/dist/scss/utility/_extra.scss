@@ -86,9 +86,9 @@
 
 /* end Display */
 .nirvana-silent-text {
-  background-color: var(--nirvana-black-backdrop-5);
+  background-color: var(--nirvana-dark-backdrop-5);
   color: transparent;
-  text-shadow: 0px 2px 2px var(--nirvana-black-backdrop-1);
+  text-shadow: 0px 2px 2px var(--nirvana-dark-backdrop-1);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
@@ -102,7 +102,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: var(--nirvana-black-backdrop-5);
+  color: var(--nirvana-dark-backdrop-5);
 }
 
 /* Overflow */

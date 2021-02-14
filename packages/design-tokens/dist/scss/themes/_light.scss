@@ -1,16 +1,16 @@
 .lightTheme {
-    :root & {
-        --nirvana-backdrop-color: rgba(250, 250, 250, 0.8);
-        --nirvana-foreground: #111827;
-        --nirvana-backdrop-9: #FEFEFE;
-        --nirvana-backdrop-7: #F9FAFB;
-        --nirvana-backdrop-5: #F6F6F6;
-        --nirvana-backdrop-3: #EAEAEA;
-        --nirvana-backdrop-1: #CACACA;
-        --nirvana-black-backdrop-1: #E5E7EB;
-        --nirvana-black-backdrop-3: #D1D5DB;
-        --nirvana-black-backdrop-5: #6B7280;
-        --nirvana-black-backdrop-7: #374151;
-        --nirvana-black-backdrop-9: #111827;
-    }
+  :root & {
+    --nirvana-backdrop-color: rgba(250, 250, 250, 0.8);
+    --nirvana-foreground: #111827;
+    --nirvana-backdrop-9: #FEFEFE;
+    --nirvana-backdrop-7: #F9FAFB;
+    --nirvana-backdrop-5: #F6F6F6;
+    --nirvana-backdrop-3: #EAEAEA;
+    --nirvana-backdrop-1: #CACACA;
+    --nirvana-dark-backdrop-1: #E5E7EB;
+    --nirvana-dark-backdrop-3: #D1D5DB;
+    --nirvana-dark-backdrop-5: #6B7280;
+    --nirvana-dark-backdrop-7: #374151;
+    --nirvana-dark-backdrop-9: #111827;
+  }
 }

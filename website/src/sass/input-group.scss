@@ -1,14 +1,14 @@
 .nirvana-form-row {
   display: flex;
-  border: 1px solid var(--nirvana-black-backdrop-3);
-  border-radius: $small-radius;
+  border: 1px solid var(--nirvana-dark-backdrop-3);
+  border-radius: $standard-radius;
 
   .nirvana-select,
   .nirvana-btn,
   .nirvana-input {
     border-radius: 0;
     border: 0;
-    border-left: 1px solid var(--nirvana-black-backdrop-3);
+    border-left: 1px solid var(--nirvana-dark-backdrop-3);
   }
 
   .nirvana-select {
