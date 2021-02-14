@@ -1,0 +1,121 @@
+@import '~@dtcg/design-tokens/dist';
+
+.nirvana-modal-container {
+  position: relative;
+}
+
+.nirvana-modal {
+  &-wrapper {
+    direction: rtl;
+    text-align: right;
+    box-shadow: var(--nirvana-normal-shadow);
+    padding: $standard-padding;
+    @include rtlOrLtr(right, left, 25px, 25px);
+    width: auto;
+    border-radius: $standard-radius;
+    background-color: var(--nirvana-backdrop-7);
+    display: flex;
+    flex-flow: column;
+
+    &.nirvana-left-modal {
+      height: 100vh;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-radius: 0;
+    }
+
+    &.nirvana-full-modal {
+      backdrop-filter: unset !important;
+      background-color: var(--nirvana-backdrop-7);
+      min-width: 500px !important;
+      max-width: 70% !important;
+      max-height: 80% !important;
+      right: unset;
+      left: unset;
+      top: unset;
+      bottom: unset;
+    }
+  }
+
+  &-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: capitalize;
+    flex: 1 1;
+    font-weight: bolder;
+  }
+
+  &-header {
+    display: flex;
+    flex: 0 1 auto;
+    padding: $standard-padding;
+    border-bottom: $standard-border;
+    height: 30px;
+    line-height: 25px;
+    vertical-align: middle;
+    margin-bottom: $standard-margin;
+
+    &-icon {
+      margin: 0 5px;
+      color: var(--nirvana-primary);
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 70px;
+    padding: $standard-padding;
+  }
+
+  &-footer {
+    border-top: 1px solid var(--nirvana-dark-backdrop-1);
+    padding: $standard-padding $double-size-padding;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom-right-radius: $standard-radius;
+    border-bottom-left-radius: $standard-radius;
+  }
+
+  &-backdrop {
+    @include flex-position-center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    animation-duration: $standard-animation-duration !important;
+    backdrop-filter: $backdrop;
+    background-color: var(--nirvana-backdrop-color);
+  }
+}
+
+.nirvana-close-btn {
+  background-color: var(--nirvana-danger);
+  border-radius: $round-radius;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    color: var(--nirvana-danger);
+    transition: $standard-animation;
+    font-size: $font-size-sm;
+  }
+
+  &:hover i {
+    color: var(--nirvana-light);
+  }
+}

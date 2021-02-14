@@ -1,0 +1,107 @@
+/*
+add color to class
+
+usage:
+    @include colors(border,'border-color');
+ */
+$colors:primary danger secondary success info warning light dark;
+
+@mixin colors($propertyClass, $property) {
+  @each $color in $colors {
+    &.nirvana-#{$propertyClass}-#{$color} {
+      color: var(--nirvana-light);
+
+      @if($color==light) {
+        color: var(--nirvana-dark);
+      }
+
+      #{$property}: var(--nirvana-#{$color}) !important;
+    }
+  }
+}
+
+/*
+dark and light
+
+usage:
+    @include darkAndLightColor('red', $nirvana-red);
+*/
+$lightList:light lighter lightest;
+$darkList:dark darker darkest;
+
+@mixin darkAndLightColor($colorName, $property) {
+  $var: 0;
+  --nirvana-#{$colorName}: #{$property};
+
+  @each $item in $lightList {
+    $var: $var + 10;
+    --nirvana-#{$colorName}-#{$item}: #{lighten($property,$var)};
+  }
+
+  $var:0;
+
+  @each $item in $darkList {
+    $var: $var + 10;
+    --nirvana-#{$colorName}-#{$item}: #{darken($property,$var)};
+  }
+}
+
+/*
+Add Prefix
+
+usage:
+    selector{
+    @include prefix(filter, grayscale(50%), moz webkit);
+    }
+*/
+@mixin prefix($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value;
+}
+
+/*
+Add Color Opacity
+
+usage:
+    selector{
+    @include colorOpacity(color, opacity);
+    }
+*/
+@function colorOpacity($color, $opacity) {
+  @return change-color($color, $alpha:$opacity);
+}
+
+/*
+add color to class
+
+usage:
+    @include OpacityColorList(border,'border-color');
+ */
+@mixin OpacityColorList($propertyClass, $property) {
+  @for $i from 1 through 9 {
+    --nirvana-#{$propertyClass}-#{$i}: #{colorOpacity($property,$i/10)};
+  }
+}
+
+/*
+add rtl ltr Support
+
+usage:
+    selector{
+    @include rtlOrLtr(border-right, border-left, 10px,5px);
+    }
+*/
+@mixin rtlOrLtr($rtlProperty, $ltrProperty, $rtl-value, $ltr-value) {
+  .nirvana-ltr & {
+    #{$ltrProperty}:#{$ltr-value};
+
+  }
+
+  .nirvana-rtl & {
+    #{$rtlProperty}:#{$rtl-value};
+  }
+
+}

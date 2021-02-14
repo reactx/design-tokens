@@ -10,9 +10,14 @@ module.exports = {
   ],
   stories: ['../src/**/*.stories.(jsx|mdx)'],
   addons: [
+    '@storybook/addon-essentials',
     '@storybook/addon-docs/register',
     '@storybook/addon-actions',
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
+    '@whitespace/storybook-addon-html',
+    '@storybook/addon-toolbars',
+    "storybook-addon-pseudo-states",
+    '@storybook/addon-controls',
   ],
 };

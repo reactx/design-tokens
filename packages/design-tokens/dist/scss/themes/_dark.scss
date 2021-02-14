@@ -1,0 +1,20 @@
+.darkTheme {
+  :root & {
+    --nirvana-backdrop-color: rgba(40, 40, 40, 0.8);
+    --nirvana-foreground: #E5E7EB;
+    --nirvana-backdrop-1: #E5E7EB;
+    --nirvana-backdrop-3: #D1D5DB;
+    --nirvana-backdrop-5: #6B7280;
+    --nirvana-backdrop-7: #374151;
+    --nirvana-backdrop-9: #111827;
+    --nirvana-dark-backdrop-9: #F3F4F6;
+    --nirvana-dark-backdrop-7: #E5E7EB;
+    --nirvana-dark-backdrop-5: #9CA3AF;
+    --nirvana-dark-backdrop-3: #4B5563;
+    --nirvana-dark-backdrop-1: #1F2937;
+  }
+
+  html & {
+    color: var(--nirvana-foreground);
+  }
+}
