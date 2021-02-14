@@ -1,0 +1,26 @@
+@import '~@dtcg/design-tokens/dist';
+
+.nirvana-panel {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  &-sidebar {
+    padding: $standard-padding;
+    padding-top: 2.3rem;
+    flex: 0 0 250px;
+    max-width: 250px;
+    border-radius: 0;
+  }
+
+  &-content {
+    flex: 1 1 auto;
+    padding: $standard-padding;
+    padding-top: 2.3rem;
+
+    .nirvana-body {
+      height: 100%;
+      padding-bottom: 50px;
+    }
+  }
+}

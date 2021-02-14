@@ -19,9 +19,13 @@ const CardComponent = (props) => {
         (props.color ? ' nirvana-card-' + props.color : '')
       }
     >
-      <div className="nirvana-card-header">{props.header}</div>
+      {props.header && (
+        <div className="nirvana-card-header">{props.header}</div>
+      )}
       <div className="nirvana-card-body">{props.children}</div>
-      <div className="nirvana-card-footer">{props.footer}</div>
+      {props.footer && (
+        <div className="nirvana-card-footer">{props.footer}</div>
+      )}
     </div>
   );
 };

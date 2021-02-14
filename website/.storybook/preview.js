@@ -1,6 +1,8 @@
+import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons';
 
 import '../src/global.scss';
 
@@ -43,9 +45,29 @@ window.___navigate = (pathname) => {
 export const parameters = {
   html: {
     prettier: {
-      tabWidth: 4,
-      useTabs: false,
+      tabWidth: 2,
+      useTabs: true,
       htmlWhitespaceSensitivity: 'strict',
     },
   },
 };
+
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'circlehollow',
+      // array of plain string values or MenuItem shape (see below)
+      items: ['light', 'dark'],
+    },
+  },
+};
+
+const withThemeProvider = (Story, context) => {
+  return (
+    <div className={"nirvana-full-screen " + context.globals.theme + "Theme"}><Story {...context} /></div>
+  )
+}
+export const decorators = [withThemeProvider];
