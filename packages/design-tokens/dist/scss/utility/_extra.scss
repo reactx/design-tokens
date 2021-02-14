@@ -1,0 +1,115 @@
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.nirvana-collapse {
+  display: none !important;
+}
+
+.nirvana-curve {
+  border-radius: $standard-radius !important;
+}
+
+.nirvana-rounded {
+  border-radius: $round-radius !important;
+}
+
+.nirvana-back-blur {
+  backdrop-filter: $backdrop;
+  background-color: var(--nirvana-backdrop-color) !important;
+}
+
+.nirvana-medium-back-blur {
+  background-color: var(--nirvana-backdrop-7) !important;
+}
+
+.nirvana-light-back-blur {
+  background-color: var(--nirvana-backdrop-3) !important;
+}
+
+/* Nirvana Background and Color */
+// Nirvana-bg-*
+@include colors(bg, 'background');
+// Nirvana-color-*
+@include colors(color, 'color');
+
+/* Nirvana Align and Justify */
+@each $align in $aligns {
+  .nirvana-align-#{$align} {
+    display: flex;
+    align-items: $align !important;
+  }
+}
+
+.nirvana-justify-start {
+  display: flex;
+  justify-content: flex-start !important;
+}
+
+.nirvana-justify-center {
+  display: flex;
+  justify-content: center !important;
+}
+
+.nirvana-justify-end {
+  display: flex;
+  justify-content: flex-end !important;
+}
+
+.nirvana-relative-position {
+  position: relative;
+}
+
+/* Height and width */
+@each $size in $sizes {
+  .nirvana-h-#{$size} {
+    height: $size#{'%'} !important;
+  }
+
+  .nirvana-w-#{$size} {
+    width: $size#{'%'} !important;
+  }
+}
+
+/* Display */
+@each $item in $displays {
+  .nirvana-display-#{$item} {
+    display: #{$item} !important;
+  }
+}
+
+/* end Display */
+.nirvana-silent-text {
+  background-color: var(--nirvana-black-backdrop-5);
+  color: transparent;
+  text-shadow: 0px 2px 2px var(--nirvana-black-backdrop-1);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+.nirvana-message {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--nirvana-black-backdrop-5);
+}
+
+/* Overflow */
+@each $item in $overflow {
+  .nirvana-overflow-x-#{$item} {
+    overflow: #{$item} !important;
+  }
+}
+
+/* End Overflow */

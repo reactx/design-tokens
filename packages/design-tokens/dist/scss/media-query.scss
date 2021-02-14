@@ -1,0 +1,7 @@
+@media (max-width: $mobile-break-point) {
+  &.nirvana-dms-container .Pane {
+    &.Pane1 {
+      max-width: unset!important;
+        }
+  }
+}

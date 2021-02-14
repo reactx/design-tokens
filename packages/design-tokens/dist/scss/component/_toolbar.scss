@@ -1,0 +1,29 @@
+.nirvana-toolbar {
+    border-bottom: 1px solid var(--nirvana-black-backdrop-1);
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 auto;
+    display: flex;
+    height: 32px;
+    padding: 0px;
+
+    &-item {
+        justify-content: center;
+        align-items: center;
+        max-width: 120px;
+        display: flex;
+        height: 100%;
+        flex: 1 1;
+
+        &:hover {
+            background-color: var(--nirvana-black-backdrop-1);
+            cursor: pointer;
+        }
+
+        &.nirvana-active {
+            background-color: var(--nirvana-primary) !important;
+            color: white;
+        }
+    }
+}

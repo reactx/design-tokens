@@ -1,0 +1,20 @@
+.nirvana-header {
+    height: 33px;
+    display: flex;
+    padding: $standard-padding $standard-padding;
+    background-color: var(--nirvana-backdrop-9);
+    box-shadow: 0 4px 8px -1px rgba(0, 0, 0, .1);
+
+    .nirvana-logo {
+        color: var(--nirvana-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nirvana-btn-group {
+        .nirvana-btn {
+            padding: $standard-padding $standard-padding*2;
+        }
+    }
+}

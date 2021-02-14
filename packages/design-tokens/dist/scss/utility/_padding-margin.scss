@@ -1,0 +1,67 @@
+@each $pm in $paddingMargin {
+  @each $pmItem in $pm {
+    @for $i from 0 through 5 {
+      .nirvana-#{$pmItem}-#{$i} {
+        $varPOrM:#{map-get($mp, str-slice($pmItem,0,1))};
+
+        .nirvana-ltr & {
+          $varDirLtr:#{map-get($pdDirectionLtr, str-slice($pmItem,2,-1))};
+          #{$varPOrM}#{$varDirLtr}: $i#{'em'} !important;
+        }
+
+        .nirvana-rtl & {
+          $varDir:#{map-get($pdDirection, str-slice($pmItem,2,-1))};
+          #{$varPOrM}#{$varDir}: $i#{'em'} !important;
+        }
+      }
+    }
+  }
+}
+
+.nirvana-p-sm {
+  padding: $standard-padding !important;
+}
+
+.nirvana-px-xs {
+  padding: 0px $half-size-padding !important;
+}
+
+.nirvana-px-sm {
+  padding: 0px $standard-padding !important;
+}
+
+.nirvana-px-1 {
+  padding: 0px $standard-padding*2 !important;
+}
+
+.nirvana-px-2 {
+  padding: 0px $standard-padding*4 !important;
+}
+
+.nirvana-pl-sm {
+  padding-left: $standard-padding !important;
+}
+
+.nirvana-pr-sm {
+  padding-right: $standard-padding !important;
+}
+
+.nirvana-py-1 {
+  padding: $standard-padding 0px !important;
+}
+
+.nirvana-m-auto {
+  margin: 0px auto !important;
+}
+
+.nirvana-mx-1 {
+  margin: 0px $standard-margin !important;
+}
+
+.nirvana-m-0 {
+  margin: 0 !important;
+}
+
+.nirvana-p-0 {
+  padding: 0 !important;
+}

@@ -1,0 +1,15 @@
+.nirvana-alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: $standard-border-size solid transparent;
+    border-radius: .25rem;
+    display: block;
+    opacity: 0.75;
+  
+    &:hover {
+      opacity: 1;
+    }
+  
+    @include colors(alert, 'background');
+  }

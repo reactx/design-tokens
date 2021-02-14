@@ -1,0 +1,102 @@
+.nirvana-selectbox-wrapper {
+  position: relative;
+  max-height: 50vh;
+  direction: rtl;
+  text-align: right;
+
+  .nirvana-selectbox {
+    border-width: $standard-border-size;
+    border-radius: $standard-radius;
+    position: relative;
+    line-height: 1.5em;
+    cursor: pointer;
+    width: 100%;
+    border: 0;
+
+    .nirvana-selectbox-name {
+      i {
+        margin: 0 5px;
+      }
+
+      svg {
+        vertical-align: middle;
+        height: 14px;
+      }
+    }
+
+    &-value {
+      display: none
+    }
+
+    &:after {
+      border-bottom: 1px solid var(--nirvana-dark);
+      border-right: 1px solid var(--nirvana-dark);
+      @include rtlOrLtr(left, right, 1em, 1em);
+      transform: rotate(45deg) rotateX(0deg);
+      transition: $standard-animation;
+      display: inline-block;
+      position: absolute;
+      height: 0.4rem;
+      width: 0.4rem;
+      top: 0.9rem;
+      content: '';
+    }
+
+    &._active {
+      // box-shadow: var(--nirvana-normal-shadow);
+
+      &:after {
+        transform: rotate(-45deg) rotateX(180deg);
+      }
+    }
+
+    &-option {
+      padding: $half-size-padding $standard-padding;
+    }
+
+    &-selected {
+      background-color: var(--nirvana-black-backdrop-3);
+      padding: $half-size-padding $double-size-padding;
+    }
+
+    &-selected:hover,
+    &-option:hover {
+      background: var(--nirvana-black-backdrop-3);
+    }
+
+    .nirvana-selectbox-dropdown {
+      background-color: var(--nirvana-backdrop-color) !important;
+      box-shadow: var(--nirvana-normal-shadow);
+      border-radius: $standard-radius;
+      backdrop-filter: $backdrop;
+      width: max-content;
+      position: fixed;
+      max-height: 50vh;
+      min-width: 150px;
+      overflow: auto;
+      height: auto;
+      border: none;
+      // right: 0;
+    }
+
+    &.nirvana-fix-icon {
+      box-shadow: none !important;
+
+      .nirvana-selectbox-selected-fix-icon {
+        margin: 0 auto;
+        height: 26px;
+        width: 34px;
+      }
+
+      .nirvana-selectbox-dropdown {
+        box-shadow: var(--nirvana-normal-shadow);
+        position: fixed;
+        min-width: 120px;
+      }
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+}

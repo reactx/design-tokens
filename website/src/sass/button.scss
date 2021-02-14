@@ -1,0 +1,43 @@
+@import '~@dtcg/design-tokens/dist';
+
+.nirvana-btn {
+  background: var(--nirvana-black-backdrop-1);
+  border: $standard-border;
+  padding: $standard-padding;
+  border-radius: $standard-radius;
+  outline: none;
+  cursor: pointer;
+  color: var(--nirvana-foreground);
+  white-space: nowrap;
+  width: fit-content;
+  margin-left: 2px;
+  position: relative;
+  @include flex-position-center;
+
+  min-width: 28px;
+  line-height: 100%;
+
+  svg {
+    color: inherit;
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+    filter: grayscale(1);
+
+    &:hover {
+      background-color: unset !important;
+    }
+  }
+
+  @include colors(btn, 'background');
+
+  &:hover:enabled {
+    background-color: var(--nirvana-black-backdrop-3);
+  }
+
+  &.nirvana-btn-warning {
+    color: var(--nirvana-black);
+  }
+}

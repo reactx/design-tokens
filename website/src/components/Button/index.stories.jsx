@@ -6,9 +6,10 @@ export default {
   component: Button,
 };
 
-export const Default = () => <Button color="">Default</Button>;
-export const Primary = () => <Button color="primary">Primary</Button>;
-export const Success = () => <Button color="success">Success</Button>;
-export const Warning = () => <Button color="warning">Warning</Button>;
-export const Danger = () => <Button color="danger">Danger</Button>;
-export const Info = () => <Button color="info">Info</Button>;
+export const Primary = () => <Button color="primary">Button Text</Button>;
+export const Success = () => <Button color="success">Button Text</Button>;
+export const Warning = () => <Button color="warning">Button Text</Button>;
+export const Danger = () => <Button color="danger">Button Text</Button>;
+export const Info = () => <Button color="info">Button Text</Button>;
+export const Dark = () => <Button color="dark">Button Text</Button>;
+export const Light = () => <Button color="light">Button Text</Button>;

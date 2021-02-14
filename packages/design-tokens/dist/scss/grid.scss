@@ -1,0 +1,112 @@
+/* Nirvana Row */
+.nirvana-outer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.nirvana-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nirvana-row-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nirvana-row,
+.nirvana-form-row {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: 100%;
+  padding: 3px 0;
+
+  .nirvana-row-label {
+    flex: 0 1 60px;
+    min-width: 60px;
+    font-size: $font-size-sm;
+    vertical-align: middle;
+    line-height: 2em;
+    text-transform: capitalize;
+  }
+
+  .nirvana-row-title {
+    flex: 0 1 auto;
+    font-size: $font-size-lg;
+    @include flex-position-center;
+    min-height: 1.9em;
+  }
+
+  .nirvana-row-icon {
+    display: flex;
+    flex: 0 1 auto;
+    min-width: 20px;
+  }
+
+  .nirvana-row-item {
+    @include flex-position-center;
+    flex: 1;
+    height: 100%;
+  }
+}
+
+.nirvana-row-items {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
+}
+
+.nirvana-items-wrapper {
+  display: flex;
+
+  .nirvana-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: $font-size-sm;
+    padding-right: 10px;
+    height: 100%;
+  }
+}
+
+.nirvana-wrapper {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  .nirvana-head {
+    display: flex;
+    flex: 0 1 auto;
+    padding: 0 $standard-padding;
+  }
+
+  .nirvana-body {
+    display: flex;
+    flex: 1 1 auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.nirvana-row-item-4 {
+  display: flex;
+  flex: 1 1 33.33%;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.nirvana-row-item-8 {
+  display: flex;
+  flex: 1 1 66.66%;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}

@@ -1,0 +1,98 @@
+$blue: #0067B8;
+$primary: #0067B8;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$red: #bb3937;
+$orange: #fcb200;
+$yellow: #f8da2d;
+$green: #368d2e;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #F9FAFB;
+$gray: #9CA3AF;
+$black:#1F2937;
+
+// Break Points
+$tablet-break-point:1024px;
+$mobile-break-point:768px;
+
+// Direction
+$direction: ltr;
+$alignItem: left;
+
+// Font size
+$font-size-base: 13px !default;
+$font-size-lg: $font-size-base * 1.15 !default;
+$font-size-sm: $font-size-base * 0.85 !default;
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+// Border
+$standard-border-size:1px !default;
+$standard-border:$standard-border-size solid var(--nirvana-black-backdrop-1);
+
+// Radius
+$small-radius:3px !default;
+$standard-radius:4px !default;
+$double-size-radius:$standard-radius * 2 !default;
+$half-radius:$standard-radius / 2 !default;
+$round-radius:50%;
+
+// Height
+$aggrid-header-height-size: 40px !default;
+
+// Margin
+$standard-margin:5px !default;
+$double-size-margin:$standard-margin * 2;
+$half-size-margin:$standard-margin / 2;
+
+// Padding
+$standard-padding:5px !default;
+$double-size-padding:$standard-padding * 2;
+$half-size-padding:$standard-padding / 2;
+
+// Other
+$nirvana-main-dashboard-content:60px 10px 10px 10px;
+$standard-text-indent:5px !default;
+$standard-animation-duration:0.15s;
+$standard-animation: all $standard-animation-duration ease-in;
+$standard-icon-size:32px;
+$large-icon-size:48px;
+$backdrop: saturate(180%) blur(20px);
+$bottom-shadow: 0 0 3px 1px var(--nirvana-black-backdrop-3);
+
+/* Utility */
+$paddingMargin: ([p pt pl pr pb], [m mt ml mb mr]);
+$mp:(p:'padding', m:'margin');
+$pdDirection: (t: '-top', l: '-left', r: '-right', b: '-bottom');
+$pdDirectionLtr: (t: '-top', l: '-right', r: '-left', b: '-bottom');
+$aligns: flex-start center flex-end;
+$displays:inline block contents flex grid inline-block inline-flex inline-grid inline-table list-item run-in table table-cell table-row none initial inherit;
+$overflow:hidden auto scroll visible overlay unset;
+$sizes:100 75 50 25;
+
+
+$spacing-none: 0;
+$spacing-extra-tight: 4px;
+$spacing-tight: 8px;
+$spacing-base-tight: 12px;
+$spacing-base: 16px;
+$spacing-loose: 20px;
+$spacing-extra-loose: 32px;
+$font-stack-base: -apple-system,
+blinkmacsystemfont,
+'San Francisco',
+roboto,
+'Segoe UI',
+'Helvetica Neue',
+sans-serif;
+$font-stack-monospace: monaco,
+consolas,
+'Lucida Console',
+monospace;
+$size-small: 13px;
+$size-default: 16px;
