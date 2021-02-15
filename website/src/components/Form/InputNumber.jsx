@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/input-text.scss';
+import '../../sass/input-number.scss';
 import { cleanProps } from '../../utils';
 
-const InputTextComponent = (props) => {
+const InputNumberComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -24,22 +24,13 @@ const InputTextComponent = (props) => {
   );
 };
 
-const InputText = React.forwardRef((props) => (
-  <InputTextComponent {...props}></InputTextComponent>
+const InputNumber = React.forwardRef((props) => (
+  <InputNumberComponent {...props}></InputNumberComponent>
 ));
 
-InputText.propTypes = {
+InputNumber.propTypes = {
   id: PropTypes.string,
-  type: PropTypes.oneOf([
-    'text',
-    'email',
-    'password',
-    'tel',
-    'url',
-    'search',
-    'color',
-    'hidden',
-  ]),
+  type: PropTypes.oneOf(['number', 'range']),
   radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve']),
   size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
   shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
@@ -59,12 +50,12 @@ InputText.propTypes = {
   onChange: PropTypes.func,
 };
 
-InputText.defaultProps = {
-  type: 'text',
+InputNumber.defaultProps = {
+  type: 'number',
   radius: 'normal',
   size: 'medium',
   shadow: 'none',
-  title: 'InputText Text',
+  title: 'InputNumber Number',
   validationStates: 'none',
   disabled: false,
   readOnly: false,
@@ -73,4 +64,4 @@ InputText.defaultProps = {
   loading: false,
 };
 
-export { InputText };
+export { InputNumber };
