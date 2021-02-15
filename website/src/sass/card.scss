@@ -1,41 +1,41 @@
 @import '~@dtcg/design-tokens/dist';
 
 .nirvana-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: var(--nirvana-backdrop-9);
-  background-clip: border-box;
+  background-color: var(--nirvana-backdrop-7);
   border-radius: $standard-radius;
+  background-clip: border-box;
   margin: $standard-margin 0;
+  flex-direction: column;
+  word-wrap: break-word;
+  position: relative;
   overflow: hidden;
+  display: flex;
+  min-width: 0;
 
   &-header {
-    display: flex;
-    align-items: center;
-    padding: $standard-padding;
-    background-color: rgba(0, 0, 0, .03);
     border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    background-color: rgba(0, 0, 0, .03);
+    padding: $standard-padding;
+    align-items: center;
+    display: flex;
   }
 
   &-body {
-    flex: 1 1 auto;
     padding: $standard-padding;
+    flex: 1 1 auto;
   }
 
   &-footer {
-    padding: $standard-padding;
-    background-color: rgba(0, 0, 0, .03);
     border-top: 1px solid rgba(0, 0, 0, 0.09);
+    background-color: rgba(0, 0, 0, .03);
+    padding: $standard-padding;
   }
 
   &-image {
+    background: var(--nirvana-backdrop-3);
     @include flex-position-center;
     width: 100%;
     height: 75%;
-    background: var(--nirvana-backdrop-3);
 
     svg {
       font-size: $h1-font-size;
@@ -46,8 +46,8 @@
     }
 
     i {
-      font-size: 48px;
       color: var(--nirvana-primary);
+      font-size: 48px;
     }
   }
 
@@ -56,5 +56,4 @@
   }
 
   @include colors(card, 'background');
-  @include colors(color, 'color');
 }
