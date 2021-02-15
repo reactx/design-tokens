@@ -3,6 +3,37 @@ import PropTypes from 'prop-types';
 import '../../sass/card.scss';
 import { cleanProps } from '../../utils';
 
+const COLOR = {
+  PRIMARY: 'primary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info',
+  DARK: 'dark',
+  LIGHT: 'light',
+};
+
+const RADIUS = {
+  NONE: 'none',
+  SMALL: 'small',
+  NORMAL: 'normal',
+  CURVE: 'curve',
+};
+
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  EXTRA: 'extra',
+};
+
+const SHADOW = {
+  NONE: 'none',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+
 const CardComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -20,9 +51,9 @@ const CardComponent = (props) => {
           : props.color
           ? ' nirvana-card-' + props.color
           : '') +
-        (props.size !== 'medium' ? ' size-' + props.size : '') +
-        (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
+        (props.size !== SIZE.MEDIUM ? ' card-size-' + props.size : '') +
+        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
+        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
     >
       {props.header && (
@@ -42,18 +73,10 @@ const Card = React.forwardRef((props) => (
 
 Card.propTypes = {
   id: PropTypes.string,
-  color: PropTypes.oneOf([
-    'primary',
-    'danger',
-    'warning',
-    'light',
-    'success',
-    'dark',
-    'info',
-  ]),
-  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve']),
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
-  shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  color: PropTypes.oneOf(Object.values(COLOR)),
+  radius: PropTypes.oneOf(Object.values(RADIUS)),
+  size: PropTypes.oneOf(Object.values(SIZE)),
+  shadow: PropTypes.oneOf(Object.values(SHADOW)),
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
   header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   footer: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
@@ -65,11 +88,11 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  color: 'light',
   title: 'Card Text',
-  radius: 'normal',
-  size: 'medium',
-  shadow: 'none',
+  color: COLOR.LIGHT,
+  radius: RADIUS.NORMAL,
+  size: SIZE.MEDIUM,
+  shadow: SHADOW.NONE,
   outline: false,
   disabled: false,
   children: 'Card Body Text',

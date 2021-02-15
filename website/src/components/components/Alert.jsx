@@ -3,6 +3,37 @@ import PropTypes from 'prop-types';
 import '../../sass/alert.scss';
 import { cleanProps } from '../../utils';
 
+const COLOR = {
+  PRIMARY: 'primary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info',
+  DARK: 'dark',
+  LIGHT: 'light',
+};
+
+const RADIUS = {
+  NONE: 'none',
+  SMALL: 'small',
+  NORMAL: 'normal',
+  CURVE: 'curve',
+};
+
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  EXTRA: 'extra',
+};
+
+const SHADOW = {
+  NONE: 'none',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+
 const AlertComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -20,9 +51,9 @@ const AlertComponent = (props) => {
           : props.color
           ? ' nirvana-alert-' + props.color
           : '') +
-        (props.size !== 'medium' ? ' size-' + props.size : '') +
-        (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
+        (props.size !== SIZE.MEDIUM ? ' alert-size-' + props.size : '') +
+        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
+        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
     >
       {props.children}
@@ -36,18 +67,10 @@ const Alert = React.forwardRef((props) => (
 
 Alert.propTypes = {
   id: PropTypes.string,
-  color: PropTypes.oneOf([
-    'primary',
-    'danger',
-    'warning',
-    'light',
-    'success',
-    'dark',
-    'info',
-  ]),
-  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve']),
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
-  shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  color: PropTypes.oneOf(Object.values(COLOR)),
+  radius: PropTypes.oneOf(Object.values(RADIUS)),
+  size: PropTypes.oneOf(Object.values(SIZE)),
+  shadow: PropTypes.oneOf(Object.values(SHADOW)),
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
   title: PropTypes.string,
   outline: PropTypes.bool,
@@ -57,11 +80,11 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
-  color: 'primary',
   title: 'Alert Text',
-  radius: 'normal',
-  size: 'medium',
-  shadow: 'none',
+  color: COLOR.PRIMARY,
+  radius: RADIUS.NORMAL,
+  size: SIZE.MEDIUM,
+  shadow: SHADOW.NONE,
   outline: false,
   disabled: false,
   children: 'Alert Message',

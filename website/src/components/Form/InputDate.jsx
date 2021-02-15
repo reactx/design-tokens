@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/input-text.scss';
+import '../../sass/input-date.scss';
 import { cleanProps } from '../../utils';
 
-const InputTextComponent = (props) => {
+const InputDateComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -24,22 +24,13 @@ const InputTextComponent = (props) => {
   );
 };
 
-const InputText = React.forwardRef((props) => (
-  <InputTextComponent {...props}></InputTextComponent>
+const InputDate = React.forwardRef((props) => (
+  <InputDateComponent {...props} />
 ));
 
-InputText.propTypes = {
+InputDate.propTypes = {
   id: PropTypes.string,
-  type: PropTypes.oneOf([
-    'text',
-    'email',
-    'password',
-    'tel',
-    'url',
-    'search',
-    'color',
-    'hidden',
-  ]),
+  type: PropTypes.oneOf(['date', 'datetime-local', 'time', 'month', 'week']),
   radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve']),
   size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
   shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
@@ -59,12 +50,12 @@ InputText.propTypes = {
   onChange: PropTypes.func,
 };
 
-InputText.defaultProps = {
-  type: 'text',
+InputDate.defaultProps = {
+  type: 'date',
   radius: 'normal',
   size: 'medium',
   shadow: 'none',
-  title: 'InputText Text',
+  title: 'InputDate Date',
   validationStates: 'none',
   disabled: false,
   readOnly: false,
@@ -73,4 +64,4 @@ InputText.defaultProps = {
   loading: false,
 };
 
-export { InputText };
+export { InputDate };

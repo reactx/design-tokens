@@ -3,6 +3,44 @@ import PropTypes from 'prop-types';
 import '../../sass/button.scss';
 import { cleanProps } from '../../utils';
 
+const COLOR = {
+  PRIMARY: 'primary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info',
+  DARK: 'dark',
+  LIGHT: 'light',
+};
+
+const RADIUS = {
+  NONE: 'none',
+  SMALL: 'small',
+  NORMAL: 'normal',
+  CURVE: 'curve',
+  ROUNDED: 'rounded',
+};
+
+const TYPE = {
+  BUTTON: 'button',
+  RESET: 'reset',
+  SUBMIT: 'submit',
+};
+
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  EXTRA: 'extra',
+};
+
+const SHADOW = {
+  NONE: 'none',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+
 const ButtonComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -20,9 +58,9 @@ const ButtonComponent = (props) => {
           : props.color
           ? ' nirvana-btn-' + props.color
           : '') +
-        (props.size !== 'medium' ? ' size-' + props.size : '') +
-        (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
+        (props.size !== SIZE.MEDIUM ? ' btn-size-' + props.size : '') +
+        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
+        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
     >
       {props.children}
@@ -36,19 +74,11 @@ const Button = React.forwardRef((props) => (
 
 Button.propTypes = {
   id: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'reset', 'submit']),
-  color: PropTypes.oneOf([
-    'primary',
-    'danger',
-    'warning',
-    'light',
-    'success',
-    'dark',
-    'info',
-  ]),
-  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve', 'rounded']),
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
-  shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  type: PropTypes.oneOf(Object.values(TYPE)),
+  color: PropTypes.oneOf(Object.values(COLOR)),
+  radius: PropTypes.oneOf(Object.values(RADIUS)),
+  size: PropTypes.oneOf(Object.values(SIZE)),
+  shadow: PropTypes.oneOf(Object.values(SHADOW)),
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
   title: PropTypes.string,
   outline: PropTypes.bool,
@@ -59,11 +89,11 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  type: 'button',
-  color: 'primary',
-  radius: 'normal',
-  size: 'medium',
-  shadow: 'none',
+  type: TYPE.BUTTON,
+  color: COLOR.PRIMARY,
+  radius: RADIUS.NORMAL,
+  size: SIZE.MEDIUM,
+  shadow: SHADOW.NONE,
   children: 'Button Text',
   title: 'Button Text',
   outline: false,
