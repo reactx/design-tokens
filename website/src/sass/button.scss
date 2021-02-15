@@ -1,7 +1,7 @@
 @import '~@dtcg/design-tokens/dist';
 
 .nirvana-btn {
-  background: var(--nirvana-dark-backdrop-1);
+  background: var(--nirvana-backdrop-7);
   color: var(--nirvana-foreground);
   border-radius: $standard-radius;
   @include flex-position-center;
@@ -18,9 +18,8 @@
   outline: none;
 
   &.border-1 {
-    border: 1px solid
+    border: 1px solid;
   }
 
   @include colors(btn, 'background');
-  @include colors(color, 'color');
 }
