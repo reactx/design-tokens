@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../sass/card.scss';
+import { cleanProps } from '../../utils';
 
 const CardComponent = (props) => {
   const parentProps = { ...props };
-  delete parentProps.className;
-  delete parentProps.children;
-  delete parentProps.header;
-  delete parentProps.footer;
-  delete parentProps.color;
+  cleanProps(parentProps);
 
   return (
     <div
@@ -16,7 +13,10 @@ const CardComponent = (props) => {
       className={
         'nirvana-card ' +
         (props.className || '') +
-        (props.color ? ' nirvana-card-' + props.color : '')
+        (props.color ? ' nirvana-card-' + props.color : '') +
+        (props.size !== 'medium' ? ' size-' + props.size : '') +
+        (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
+        (props.shadow !== 'medium' ? ' shadow-' + props.shadow : '')
       }
     >
       {props.header && (
@@ -45,6 +45,9 @@ Card.propTypes = {
     'dark',
     'info',
   ]),
+  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve', 'rounded']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
+  shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   children: PropTypes.node.isRequired,
   header: PropTypes.node,
   footer: PropTypes.node,
@@ -58,6 +61,9 @@ Card.propTypes = {
 Card.defaultProps = {
   color: 'light',
   title: 'Card Text',
+  radius: 'normal',
+  size: 'medium',
+  shadow: 'medium',
   disabled: false,
   'aria-label': 'Card',
 };

@@ -1,0 +1,19 @@
+.radius-none {
+  border-radius: 0 !important;
+}
+
+.radius-small {
+  border-radius: $half-radius !important;
+}
+
+.radius-normal {
+  border-radius: $standard-radius !important;
+}
+
+.radius-curve {
+  border-radius: $double-size-radius !important;
+}
+
+.radius-rounded {
+  border-radius: $round-radius !important;
+}

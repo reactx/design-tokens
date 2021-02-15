@@ -6,5 +6,5 @@ export default {
   component: Button,
 };
 
-export const Basic = (args) => <Button {...args}>Button Text</Button>;
+export const Basic = (args) => <Button {...args} />;
 // Basic.args = { pseudo: { hover: true } };
