@@ -13,10 +13,16 @@ const CardComponent = (props) => {
       className={
         'nirvana-card ' +
         (props.className || '') +
-        (props.color ? ' nirvana-card-' + props.color : '') +
+        (props.outline
+          ? props.color
+            ? ' border-1 nirvana-color-' + props.color
+            : ''
+          : props.color
+          ? ' nirvana-card-' + props.color
+          : '') +
         (props.size !== 'medium' ? ' size-' + props.size : '') +
         (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'medium' ? ' shadow-' + props.shadow : '')
+        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
       }
     >
       {props.header && (
@@ -45,14 +51,14 @@ Card.propTypes = {
     'dark',
     'info',
   ]),
-  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve', 'rounded']),
+  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve']),
   size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
   shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  children: PropTypes.node.isRequired,
-  header: PropTypes.node,
-  footer: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
+  header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  footer: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   title: PropTypes.string,
-  'aria-label': PropTypes.string,
+  outline: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
@@ -63,9 +69,10 @@ Card.defaultProps = {
   title: 'Card Text',
   radius: 'normal',
   size: 'medium',
-  shadow: 'medium',
+  shadow: 'none',
+  outline: false,
   disabled: false,
-  'aria-label': 'Card',
+  children: 'Card Body Text',
 };
 
 export { Card };

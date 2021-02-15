@@ -2,5 +2,12 @@
 "utility/border",
 "utility/radius",
 "utility/font",
-"utility/_pagination",
+"utility/pagination",
+"utility/shadow",
 "utility/extra";
+
+[disabled] {
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+  filter: grayscale(1) !important;
+}

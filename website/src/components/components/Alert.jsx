@@ -13,10 +13,16 @@ const AlertComponent = (props) => {
       className={
         'nirvana-alert ' +
         (props.className || '') +
-        (props.color ? ' nirvana-alert-' + props.color : '') +
+        (props.outline
+          ? props.color
+            ? ' border-1 nirvana-color-' + props.color
+            : ''
+          : props.color
+          ? ' nirvana-alert-' + props.color
+          : '') +
         (props.size !== 'medium' ? ' size-' + props.size : '') +
         (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'medium' ? ' shadow-' + props.shadow : '')
+        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
       }
     >
       {props.children}
@@ -39,12 +45,12 @@ Alert.propTypes = {
     'dark',
     'info',
   ]),
-  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve', 'rounded']),
+  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve']),
   size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
   shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
   title: PropTypes.string,
-  'aria-label': PropTypes.string,
+  outline: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
@@ -55,9 +61,10 @@ Alert.defaultProps = {
   title: 'Alert Text',
   radius: 'normal',
   size: 'medium',
-  shadow: 'medium',
+  shadow: 'none',
+  outline: false,
   disabled: false,
-  'aria-label': 'Alert',
+  children: 'Alert Message',
 };
 
 export { Alert };

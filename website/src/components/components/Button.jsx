@@ -13,10 +13,16 @@ const ButtonComponent = (props) => {
       className={
         'nirvana-btn ' +
         (props.className || '') +
-        (props.color ? ' nirvana-btn-' + props.color : '') +
+        (props.outline
+          ? props.color
+            ? ' border-1 nirvana-color-' + props.color
+            : ''
+          : props.color
+          ? ' nirvana-btn-' + props.color
+          : '') +
         (props.size !== 'medium' ? ' size-' + props.size : '') +
         (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'medium' ? ' shadow-' + props.shadow : '')
+        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
       }
     >
       {props.children}
@@ -45,7 +51,7 @@ Button.propTypes = {
   shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
   title: PropTypes.string,
-  'aria-label': PropTypes.string,
+  outline: PropTypes.bool,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   className: PropTypes.string,
@@ -57,12 +63,12 @@ Button.defaultProps = {
   color: 'primary',
   radius: 'normal',
   size: 'medium',
-  shadow: 'medium',
+  shadow: 'none',
   children: 'Button Text',
   title: 'Button Text',
+  outline: false,
   disabled: false,
   loading: false,
-  'aria-label': 'button',
 };
 
 export { Button };
