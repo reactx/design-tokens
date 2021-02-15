@@ -12,5 +12,7 @@ export const cleanProps = (props) => {
   delete props.shadow;
   delete props.color;
   delete props.size;
+  delete props.iconSize;
+  delete props.icon;
 };
 
