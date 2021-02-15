@@ -6,6 +6,7 @@ export const cleanProps = (props) => {
   });
   delete props.className;
   delete props.children;
+  delete props.outline;
   delete props.radius;
   delete props.shadow;
   delete props.color;
