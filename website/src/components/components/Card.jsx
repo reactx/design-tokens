@@ -13,7 +13,13 @@ const CardComponent = (props) => {
       className={
         'nirvana-card ' +
         (props.className || '') +
-        (props.color ? ' nirvana-card-' + props.color : '') +
+        (props.outline
+          ? props.color
+            ? ' border-1 nirvana-color-' + props.color
+            : ''
+          : props.color
+          ? ' nirvana-card-' + props.color
+          : '') +
         (props.size !== 'medium' ? ' size-' + props.size : '') +
         (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
         (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
@@ -52,6 +58,7 @@ Card.propTypes = {
   header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   footer: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   title: PropTypes.string,
+  outline: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
@@ -63,6 +70,7 @@ Card.defaultProps = {
   radius: 'normal',
   size: 'medium',
   shadow: 'none',
+  outline: false,
   disabled: false,
   children: 'Card Body Text',
 };

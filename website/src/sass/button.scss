@@ -7,6 +7,7 @@
   @include flex-position-center;
   padding: $standard-padding;
   border: $standard-border;
+  display: inline-flex;
   white-space: nowrap;
   position: relative;
   width: fit-content;

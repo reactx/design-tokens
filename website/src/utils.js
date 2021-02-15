@@ -4,6 +4,7 @@ export const cleanProps = (props) => {
       delete props[key];
     }
   });
+  delete props.validationStates;
   delete props.className;
   delete props.children;
   delete props.outline;

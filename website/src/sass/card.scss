@@ -51,5 +51,10 @@
     }
   }
 
+  &.border-1 {
+    border: 1px solid
+  }
+
   @include colors(card, 'background');
+  @include colors(color, 'color');
 }
