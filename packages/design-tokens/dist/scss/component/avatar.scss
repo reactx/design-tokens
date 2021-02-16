@@ -1,13 +1,21 @@
 .nirvana-avatar {
   border: $standard-border-size solid transparent;
   border-radius: $round-radius;
-  height: 28px;
-  width: 28px;
-  padding: $half-size-padding;
+  padding: 0;
   overflow: hidden;
   box-shadow: var(--nirvana-normal-shadow);
   background: var(--nirvana-gray-lightest);
   transition: $standard-animation;
+  height: 48px;
+  width: 48px;
+  display: inline-flex;
+  font-size: $h3-font-size;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 
   path {
     color: var(--nirvana-gray-dark);
@@ -21,14 +29,42 @@
     }
   }
 
-  &.nirvana-avatar-large {
-    height: 64px;
-    width: 64px;
+  &.avatar-size-tiny {
+    height: 24px;
+    width: 24px;
+    font-size: $font-size-base;
   }
 
-  &.nirvana-avatar-extra-large {
+  &.avatar-size-small {
+    height: 32px;
+    width: 32px;
+    font-size: $h5-font-size;
+  }
+
+  &.avatar-size-medium {
+    height: 48px;
+    width: 48px;
+    font-size: $h3-font-size;
+  }
+
+  &.avatar-size-large {
+    height: 64px;
+    width: 64px;
+    font-size: $h2-font-size;
+  }
+
+  &.avatar-size-extra {
     height: 128px;
     width: 128px;
+    font-size: $h1-font-size*2;
+  }
+
+  .nirvana-avatar-letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
   }
 
   @include colors(avatar, 'background')

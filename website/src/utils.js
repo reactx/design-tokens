@@ -9,6 +9,7 @@ export const cleanProps = (props) => {
   delete props.className;
   delete props.iconSize;
   delete props.children;
+  delete props.username;
   delete props.padding;
   delete props.outline;
   delete props.radius;
@@ -16,5 +17,6 @@ export const cleanProps = (props) => {
   delete props.color;
   delete props.size;
   delete props.icon;
+  delete props.src;
 };
 
