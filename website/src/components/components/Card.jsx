@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/card.scss';
 import { cleanProps } from '../../utils';
 
 const COLOR = {
@@ -96,6 +95,8 @@ Card.defaultProps = {
   outline: false,
   disabled: false,
   children: 'Card Body Text',
+  header: 'Header Text',
+  footer: 'Footer Text',
 };
 
 export { Card };

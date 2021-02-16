@@ -4,29 +4,81 @@ import { Button } from './Button';
 export default {
   title: 'Components/Button',
   component: Button,
+  argTypes: {
+    id: {
+      control: 'text',
+      table: {
+        category: 'Attribute',
+      },
+    },
+    type: {
+      control: 'inline-radio',
+      table: {
+        category: 'Attribute',
+      },
+    },
+    children: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    title: {
+      control: 'text',
+      table: {
+        category: 'Attribute',
+      },
+    },
+    disabled: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    loading: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    className: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    color: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    radius: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    size: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    shadow: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    outline: {
+      table: {
+        category: 'Style',
+      },
+    },
+    onClick: {
+      table: {
+        category: 'Action',
+      },
+    },
+  },
 };
 
 export const Basic = (args) => <Button {...args} />;
 // Basic.args = { pseudo: { hover: true } };
-export const AllColor = () => (
-  <>
-    <Button color="primary" />
-    <Button color="success" />
-    <Button color="danger" />
-    <Button color="warning" />
-    <Button color="info" />
-    <Button color="dark" />
-    <Button color="light" />
-  </>
-);
-export const AllColorOutline = () => (
-  <>
-    <Button color="primary" outline={true} />
-    <Button color="success" outline={true} />
-    <Button color="danger" outline={true} />
-    <Button color="warning" outline={true} />
-    <Button color="info" outline={true} />
-    <Button color="dark" outline={true} />
-    <Button color="light" outline={true} />
-  </>
-);

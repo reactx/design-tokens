@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/file-input.scss';
 import { cleanProps } from '../../utils';
 
 export const SHADOW = {
@@ -73,7 +72,6 @@ FileInput.propTypes = {
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
   format: PropTypes.oneOf(Object.values(FORMAT)),
-  value: PropTypes.string,
   title: PropTypes.string,
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/input-text.scss';
 import { cleanProps } from '../../utils';
 
 const InputTextComponent = (props) => {

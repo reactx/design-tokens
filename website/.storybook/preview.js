@@ -2,7 +2,6 @@ import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
-
 import '../src/global.scss';
 
 addParameters({

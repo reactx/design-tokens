@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/alert.scss';
 import { cleanProps } from '../../utils';
 
 const COLOR = {
