@@ -1,0 +1,32 @@
+.nirvana-input {
+  cursor: pointer;
+  height: 2.2em;
+  padding: $standard-padding;
+  border-radius: $standard-radius;
+  border: $standard-border;
+  border-color: var(--nirvana-dark-backdrop-3);
+  background-color: var(--nirvana-backdrop-9);
+  color: var(--nirvana-foreground);
+  transition: $standard-animation;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  min-width: 0;
+
+  &:focus {
+    border: $standard-border !important;
+    border-color: var(--nirvana-primary) !important;
+  }
+
+  input[type="color"] & {
+    height: 30px;
+  }
+
+  &.nirvana-input-valid {
+    border: 1px solid $green;
+  }
+
+  &.nirvana-input-invalid {
+    border: 1px solid $red;
+  }
+}

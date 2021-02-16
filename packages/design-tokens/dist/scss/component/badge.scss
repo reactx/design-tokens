@@ -1,15 +1,14 @@
 .nirvana-badge {
-  padding: 0px $standard-padding;
+  padding: $standard-padding;
   font-size: $font-size-sm;
   line-height: 1;
   white-space: nowrap;
   border-radius: $double-size-radius;
-  position: absolute;
-  bottom: -2px;
+  transition: $standard-animation;
   min-height: 1.1em;
   min-width: 1.1em;
   white-space: nowrap;
-  right: -2px;
   @include flex-position-center;
+  display: inline-flex;
   @include colors(badge, 'background');
 }

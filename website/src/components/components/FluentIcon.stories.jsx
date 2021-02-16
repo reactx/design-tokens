@@ -66,7 +66,7 @@ export const All = (args) => (
   <>
     <div>There are {icons.length} icons</div>
     {icons.map((key) => (
-      <FluentIcon {...args} icon={key} key={key} aria-hidden />
+      <FluentIcon {...args} icon={key} key={key} title={key} />
     ))}
   </>
 );

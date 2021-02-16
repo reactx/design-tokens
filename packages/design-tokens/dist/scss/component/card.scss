@@ -1,5 +1,6 @@
 .nirvana-card {
   background-color: var(--nirvana-backdrop-7);
+  transition: $standard-animation;
   border-radius: $standard-radius;
   background-clip: border-box;
   margin: $standard-margin 0;

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card } from './Card';
+import { Avatar } from './Avatar';
 
 export default {
-  title: 'Components/Card',
-  component: Card,
+  title: 'Components/Avatar',
+  component: Avatar,
   argTypes: {
     id: {
       control: 'text',
@@ -11,17 +11,12 @@ export default {
         category: 'Attribute',
       },
     },
-    children: {
+    username: {
       table: {
         category: 'Attribute',
       },
     },
-    header: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    footer: {
+    src: {
       table: {
         category: 'Attribute',
       },
@@ -42,13 +37,13 @@ export default {
         category: 'Attribute',
       },
     },
-    color: {
+    radius: {
       control: 'inline-radio',
       table: {
         category: 'Style',
       },
     },
-    radius: {
+    size: {
       control: 'inline-radio',
       table: {
         category: 'Style',
@@ -56,11 +51,6 @@ export default {
     },
     shadow: {
       control: 'inline-radio',
-      table: {
-        category: 'Style',
-      },
-    },
-    outline: {
       table: {
         category: 'Style',
       },
@@ -73,4 +63,4 @@ export default {
   },
 };
 
-export const Basic = (args) => <Card {...args} />;
+export const Basic = (args) => <Avatar {...args} />;

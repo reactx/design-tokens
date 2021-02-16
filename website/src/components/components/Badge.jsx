@@ -2,6 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
+const RADIUS = {
+  NONE: 'none',
+  SMALL: 'small',
+  NORMAL: 'normal',
+  CURVE: 'curve',
+  ROUNDED: 'rounded',
+};
+
+const SIZE = {
+  TINY: 'tiny',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  EXTRA: 'extra',
+};
+
+const SHADOW = {
+  NONE: 'none',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+
 const COLOR = {
   PRIMARY: 'primary',
   SUCCESS: 'success',
@@ -12,21 +35,7 @@ const COLOR = {
   LIGHT: 'light',
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const CardComponent = (props) => {
+const BadgeComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -34,60 +43,48 @@ const CardComponent = (props) => {
     <div
       {...parentProps}
       className={
-        'nirvana-card ' +
+        'nirvana-badge ' +
         (props.className || '') +
         (props.outline
           ? props.color
             ? ' border-1 nirvana-color-' + props.color
             : ''
           : props.color
-          ? ' nirvana-card-' + props.color
+          ? ' nirvana-badge-' + props.color
           : '') +
-        (props.size !== SIZE.MEDIUM ? ' card-size-' + props.size : '') +
+        (props.size !== SIZE.MEDIUM ? ' badge-size-' + props.size : '') +
         (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
         (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
     >
-      {props.header && (
-        <div className="nirvana-card-header">{props.header}</div>
-      )}
-      <div className="nirvana-card-body">{props.children}</div>
-      {props.footer && (
-        <div className="nirvana-card-footer">{props.footer}</div>
-      )}
+      {props.children}
     </div>
   );
 };
 
-const Card = React.forwardRef((props) => (
-  <CardComponent {...props}></CardComponent>
+const Badge = React.forwardRef((props) => (
+  <BadgeComponent {...props}></BadgeComponent>
 ));
 
-Card.propTypes = {
+Badge.propTypes = {
   id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
   radius: PropTypes.oneOf(Object.values(RADIUS)),
+  size: PropTypes.oneOf(Object.values(SIZE)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
+  color: PropTypes.oneOf(Object.values(COLOR)),
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  footer: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   title: PropTypes.string,
-  outline: PropTypes.bool,
-  disabled: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
-Card.defaultProps = {
-  title: 'Card Text',
-  color: COLOR.LIGHT,
+Badge.defaultProps = {
+  title: 'Badge',
   radius: RADIUS.NORMAL,
+  color: COLOR.LIGHT,
+  size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
-  outline: false,
-  disabled: false,
-  children: 'Card Body Text',
-  header: 'Header Text',
-  footer: 'Footer Text',
+  children: 'Nirvana',
 };
 
-export { Card };
+export { Badge };

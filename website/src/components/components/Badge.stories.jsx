@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card } from './Card';
+import { Badge } from './Badge';
 
 export default {
-  title: 'Components/Card',
-  component: Card,
+  title: 'Components/Badge',
+  component: Badge,
   argTypes: {
     id: {
       control: 'text',
@@ -16,23 +16,8 @@ export default {
         category: 'Attribute',
       },
     },
-    header: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    footer: {
-      table: {
-        category: 'Attribute',
-      },
-    },
     title: {
       control: 'text',
-      table: {
-        category: 'Attribute',
-      },
-    },
-    disabled: {
       table: {
         category: 'Attribute',
       },
@@ -54,13 +39,14 @@ export default {
         category: 'Style',
       },
     },
-    shadow: {
+    size: {
       control: 'inline-radio',
       table: {
         category: 'Style',
       },
     },
-    outline: {
+    shadow: {
+      control: 'inline-radio',
       table: {
         category: 'Style',
       },
@@ -73,4 +59,4 @@ export default {
   },
 };
 
-export const Basic = (args) => <Card {...args} />;
+export const Basic = (args) => <Badge {...args} />;
