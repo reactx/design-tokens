@@ -34,6 +34,13 @@ const SIZE = {
   EXTRA: 'extra',
 };
 
+const LOADING_SIZE = {
+  small: 'tiny',
+  medium: 'small',
+  large: 'medium',
+  extra: 'large',
+};
+
 const SHADOW = {
   NONE: 'none',
   SMALL: 'small',
@@ -65,7 +72,11 @@ const ButtonComponent = (props) => {
     >
       {props.children}
       {props.loading && (
-        <Loading enabled={props.loading} color={props.color} size="tiny" />
+        <Loading
+          enabled={props.loading}
+          color={props.color}
+          size={LOADING_SIZE[props.size]}
+        />
       )}
     </button>
   );
