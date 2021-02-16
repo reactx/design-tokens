@@ -5,16 +5,45 @@ import { FluentIcon } from './FluentIcon';
 export default {
   title: 'Components/Fluent Icon',
   component: FluentIcon,
+  argTypes: {
+    id: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    title: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    icon: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    color: {
+      control: 'color',
+      table: {
+        category: 'Style',
+      },
+    },
+    iconSize: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+  },
 };
 
 export const Basic = (args) => <FluentIcon {...args} />;
 Basic.args = { icon: '12PointStar' };
 
-export const All = () => (
+export const All = (args) => (
   <>
-    There are {icons.length} icons
+    <div>There are {icons.length} icons</div>
     {icons.map((key) => (
-      <FluentIcon icon={key} key={key} aria-hidden />
+      <FluentIcon {...args} icon={key} key={key} aria-hidden />
     ))}
   </>
 );

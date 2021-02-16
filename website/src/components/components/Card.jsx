@@ -96,6 +96,8 @@ Card.defaultProps = {
   outline: false,
   disabled: false,
   children: 'Card Body Text',
+  header: 'Header Text',
+  footer: 'Footer Text',
 };
 
 export { Card };

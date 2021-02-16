@@ -12,6 +12,7 @@ const SIZE = {
 
 const FluentIconComponent = (props) => {
   const parentProps = { ...props };
+  parentProps.style = { color: props.color };
   cleanProps(parentProps);
 
   return (
@@ -39,7 +40,7 @@ FluentIcon.propTypes = {
   id: PropTypes.string,
   icon: PropTypes.string,
   title: PropTypes.string,
-  color: PropTypes.color,
+  color: PropTypes.string,
   iconSize: PropTypes.oneOf(Object.values(SIZE)),
 };
 

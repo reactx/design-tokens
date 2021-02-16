@@ -73,7 +73,6 @@ FileInput.propTypes = {
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
   format: PropTypes.oneOf(Object.values(FORMAT)),
-  value: PropTypes.string,
   title: PropTypes.string,
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,

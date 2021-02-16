@@ -4,28 +4,69 @@ import { Alert } from './Alert';
 export default {
   title: 'Components/Alert',
   component: Alert,
+  argTypes: {
+    id: {
+      control: 'text',
+      table: {
+        category: 'Attribute',
+      },
+    },
+    children: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    title: {
+      control: 'text',
+      table: {
+        category: 'Attribute',
+      },
+    },
+    disabled: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    className: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    color: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    radius: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    size: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    shadow: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    outline: {
+      table: {
+        category: 'Style',
+      },
+    },
+    onClick: {
+      table: {
+        category: 'Action',
+      },
+    },
+  },
 };
 
 export const Basic = (args) => <Alert {...args} />;
-export const AllColor = () => (
-  <>
-    <Alert color="primary" />
-    <Alert color="success" />
-    <Alert color="danger" />
-    <Alert color="warning" />
-    <Alert color="info" />
-    <Alert color="dark" />
-    <Alert color="light" />
-  </>
-);
-export const AllColorOutline = () => (
-  <>
-    <Alert color="primary" outline={true} />
-    <Alert color="success" outline={true} />
-    <Alert color="danger" outline={true} />
-    <Alert color="warning" outline={true} />
-    <Alert color="info" outline={true} />
-    <Alert color="dark" outline={true} />
-    <Alert color="light" outline={true} />
-  </>
-);

@@ -1,3 +1,5 @@
+@import '~@dtcg/design-tokens/dist';
+
 @font-face {
   font-family: 'FabricMDL2Icons';
   src: url('../fonts/fabric-icons.woff') format('woff');
@@ -19,6 +21,23 @@
   font-weight: normal;
   speak: none;
   margin: 0 3px;
+  font-size: $h4-font-size;
+}
+
+.icon-size-extra {
+  font-size: $h1-font-size;
+}
+
+.icon-size-large {
+  font-size: $h2-font-size;
+}
+
+.icon-size-medium {
+  font-size: $h4-font-size;
+}
+
+.icon-size-small {
+  font-size: $h6-font-size;
 }
 
 .nf-icon-12PointStar:before {
