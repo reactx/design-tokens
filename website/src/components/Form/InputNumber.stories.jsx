@@ -52,11 +52,6 @@ export default {
         category: 'Attribute',
       },
     },
-    loading: {
-      table: {
-        category: 'Attribute',
-      },
-    },
     className: {
       table: {
         category: 'Attribute',

@@ -77,7 +77,6 @@ FileInput.propTypes = {
   multiple: PropTypes.bool,
   required: PropTypes.bool,
   autoFocus: PropTypes.bool,
-  loading: PropTypes.bool,
   className: PropTypes.string,
   onChange: PropTypes.func,
 };
@@ -93,7 +92,6 @@ FileInput.defaultProps = {
   multiple: false,
   required: false,
   autoFocus: false,
-  loading: false,
 };
 
 export { FileInput };

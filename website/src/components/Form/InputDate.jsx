@@ -41,7 +41,6 @@ InputDate.propTypes = {
   readOnly: PropTypes.bool,
   required: PropTypes.bool,
   autoFocus: PropTypes.bool,
-  loading: PropTypes.bool,
   className: PropTypes.string,
   pattern: PropTypes.string,
   minLength: PropTypes.number,
@@ -60,7 +59,6 @@ InputDate.defaultProps = {
   readOnly: false,
   required: false,
   autoFocus: false,
-  loading: false,
 };
 
 export { InputDate };

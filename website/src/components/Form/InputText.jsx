@@ -50,7 +50,6 @@ InputText.propTypes = {
   readOnly: PropTypes.bool,
   required: PropTypes.bool,
   autoFocus: PropTypes.bool,
-  loading: PropTypes.bool,
   className: PropTypes.string,
   pattern: PropTypes.string,
   minLength: PropTypes.number,
@@ -69,7 +68,6 @@ InputText.defaultProps = {
   readOnly: false,
   required: false,
   autoFocus: false,
-  loading: false,
 };
 
 export { InputText };
