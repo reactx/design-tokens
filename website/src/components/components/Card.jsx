@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/card.scss';
 import { cleanProps } from '../../utils';
 
 const COLOR = {

@@ -1,18 +1,16 @@
-@import '~@dtcg/design-tokens/dist';
-
 @font-face {
   font-family: 'FabricMDL2Icons';
-  src: url('../fonts/fabric-icons.woff') format('woff');
+  src: url('./fonts/fabric-icons.woff') format('woff');
 }
 
-.nirvana-fluent-icon-warper {
+.nirvana-icon-warper {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.nirvana-fluent-icon {
+.nirvana-icon {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -22,6 +20,10 @@
   speak: none;
   margin: 0 3px;
   font-size: $h4-font-size;
+}
+
+.icon-size-extra-large {
+  font-size: $h1-font-size*2;
 }
 
 .icon-size-extra {

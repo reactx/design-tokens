@@ -21,6 +21,11 @@ export default {
         category: 'Attribute',
       },
     },
+    className: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     color: {
       control: 'color',
       table: {
@@ -28,6 +33,24 @@ export default {
       },
     },
     iconSize: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    radius: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    shadow: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    shadowOnHover: {
       control: 'inline-radio',
       table: {
         category: 'Style',

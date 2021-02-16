@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../sass/file-input.scss';
 import { cleanProps } from '../../utils';
 
 export const SHADOW = {
