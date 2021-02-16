@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
+import { Loading } from './Loading';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -63,6 +64,9 @@ const ButtonComponent = (props) => {
       }
     >
       {props.children}
+      {props.loading && (
+        <Loading enabled={props.loading} color={props.color} size="tiny" />
+      )}
     </button>
   );
 };

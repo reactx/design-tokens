@@ -5,10 +5,10 @@
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
   background: var(--nirvana-backdrop-color);
+  align-items: center;
   justify-content: center;
-  backdrop-filter: saturate(180%) blur(2px);
+  // backdrop-filter: saturate(180%) blur(2px);
   opacity: 0;
   z-index: -1;
 
@@ -27,18 +27,18 @@
   }
 
   &-loader {
-    margin-left: -50px;
-    margin-top: -50px;
+    width: 64px;
+    height: 64px;
 
     .nirvana-loading-circle {
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 64px;
+      height: 64px;
       opacity: 0;
       transform: rotate(225deg);
       animation-iteration-count: infinite;
       animation-name: orbit;
-      animation-duration: 4s;
+      animation-duration: 5.5s;
 
       &:after {
         content: '';
@@ -63,6 +63,108 @@
 
       &:nth-child(5) {
         animation-delay: 960ms;
+      }
+    }
+  }
+
+  &-primary {
+    .nirvana-loading-circle:after {
+      background-color: var(--nirvana-primary);
+    }
+  }
+
+  &-danger {
+    .nirvana-loading-circle:after {
+      background-color: var(--nirvana-danger);
+    }
+  }
+
+  &-dark {
+    .nirvana-loading-circle:after {
+      background-color: var(--nirvana-dark);
+    }
+  }
+
+  &-info {
+    .nirvana-loading-circle:after {
+      background-color: var(--nirvana-info);
+    }
+  }
+
+  &-light {
+    .nirvana-loading-circle:after {
+      background-color: var(--nirvana-light);
+    }
+  }
+
+  &-success {
+    .nirvana-loading-circle:after {
+      background-color: var(--nirvana-success);
+    }
+  }
+
+  &-warning {
+    .nirvana-loading-circle:after {
+      background-color: var(--nirvana-warning);
+    }
+  }
+
+  .loading-size-large {
+    width: 48px;
+    height: 48px;
+
+    .nirvana-loading-circle {
+      width: 48px;
+      height: 48px;
+
+      &:after {
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+
+  .loading-size-medium {
+    width: 32px;
+    height: 32px;
+
+    .nirvana-loading-circle {
+      width: 32px;
+      height: 32px;
+
+      &:after {
+        width: 5px;
+        height: 5px;
+      }
+    }
+  }
+
+  .loading-size-small {
+    width: 24px;
+    height: 24px;
+
+    .nirvana-loading-circle {
+      width: 24px;
+      height: 24px;
+
+      &:after {
+        width: 3px;
+        height: 3px;
+      }
+    }
+  }
+
+  .loading-size-tiny {
+    width: 16px;
+    height: 16px;
+
+    .nirvana-loading-circle {
+      width: 16px;
+      height: 16px;
+
+      &:after {
+        width: 2px;
+        height: 2px;
       }
     }
   }

@@ -43,7 +43,6 @@ const CardComponent = (props) => {
           : props.color
           ? ' nirvana-card-' + props.color
           : '') +
-        (props.size !== SIZE.MEDIUM ? ' card-size-' + props.size : '') +
         (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
         (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
