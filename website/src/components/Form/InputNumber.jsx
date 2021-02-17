@@ -2,6 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
+const SHADOW = {
+  NONE: 'none',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+
+const VALIDATION = {
+  NONE: 'none',
+  VALID: 'valid',
+  INVALID: 'invalid',
+};
+
+const RADIUS = {
+  NONE: 'none',
+  SMALL: 'small',
+  NORMAL: 'normal',
+  CURVE: 'curve',
+  PILL: 'pill',
+};
+
+const SIZE = {
+  TINY: 'tiny',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  EXTRA: 'extra',
+};
+
+const TYPE = {
+  NUMBER: 'number',
+  RANGE: 'range',
+};
+
 const InputNumberComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -12,28 +46,28 @@ const InputNumberComponent = (props) => {
       className={
         'nirvana-input ' +
         (props.className || '') +
-        (props.size !== 'medium' ? ' input-size-' + props.size : '') +
-        (props.validationStates !== 'none'
+        (props.size !== SIZE.MEDIUM ? ' input-size-' + props.size : '') +
+        (props.validationStates !== VALIDATION.NONE
           ? ' nirvana-input-' + props.validationStates
           : '') +
-        (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
+        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
+        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
     />
   );
 };
 
 const InputNumber = React.forwardRef((props) => (
-  <InputNumberComponent {...props}></InputNumberComponent>
+  <InputNumberComponent {...props} />
 ));
 
 InputNumber.propTypes = {
   id: PropTypes.string,
-  type: PropTypes.oneOf(['number', 'range']),
-  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve']),
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
-  shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  validationStates: PropTypes.oneOf(['none', 'valid', 'invalid']),
+  type: PropTypes.oneOf(Object.values(TYPE)),
+  radius: PropTypes.oneOf(Object.values(RADIUS)),
+  size: PropTypes.oneOf(Object.values(SIZE)),
+  shadow: PropTypes.oneOf(Object.values(SHADOW)),
+  validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
   value: PropTypes.string,
   title: PropTypes.string,
   placeholder: PropTypes.string,
@@ -49,12 +83,12 @@ InputNumber.propTypes = {
 };
 
 InputNumber.defaultProps = {
-  type: 'number',
-  radius: 'normal',
-  size: 'medium',
-  shadow: 'none',
+  type: TYPE.NUMBER,
+  radius: RADIUS.NORMAL,
+  size: SIZE.MEDIUM,
+  shadow: SHADOW.NONE,
+  validationStates: VALIDATION.NONE,
   title: 'InputNumber Number',
-  validationStates: 'none',
   disabled: false,
   readOnly: false,
   required: false,

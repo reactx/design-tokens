@@ -19,6 +19,7 @@ const RADIUS = {
   NORMAL: 'normal',
   CURVE: 'curve',
   ROUNDED: 'rounded',
+  PILL: 'pill',
 };
 
 const TYPE = {

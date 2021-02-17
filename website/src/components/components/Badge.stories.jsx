@@ -39,12 +39,6 @@ export default {
         category: 'Style',
       },
     },
-    size: {
-      control: 'inline-radio',
-      table: {
-        category: 'Style',
-      },
-    },
     shadow: {
       control: 'inline-radio',
       table: {

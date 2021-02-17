@@ -8,14 +8,7 @@ const RADIUS = {
   NORMAL: 'normal',
   CURVE: 'curve',
   ROUNDED: 'rounded',
-};
-
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
+  PILL: 'pill',
 };
 
 const SHADOW = {
@@ -52,7 +45,6 @@ const BadgeComponent = (props) => {
           : props.color
           ? ' nirvana-badge-' + props.color
           : '') +
-        (props.size !== SIZE.MEDIUM ? ' badge-size-' + props.size : '') +
         (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
         (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
@@ -69,7 +61,6 @@ const Badge = React.forwardRef((props) => (
 Badge.propTypes = {
   id: PropTypes.string,
   radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   color: PropTypes.oneOf(Object.values(COLOR)),
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
@@ -82,7 +73,6 @@ Badge.defaultProps = {
   title: 'Badge',
   radius: RADIUS.NORMAL,
   color: COLOR.LIGHT,
-  size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
   children: 'Nirvana',
 };

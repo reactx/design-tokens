@@ -19,13 +19,6 @@ const RADIUS = {
   CURVE: 'curve',
 };
 
-const SIZE = {
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
 const SHADOW = {
   NONE: 'none',
   SMALL: 'small',
@@ -50,7 +43,6 @@ const AlertComponent = (props) => {
           : props.color
           ? ' nirvana-alert-' + props.color
           : '') +
-        (props.size !== SIZE.MEDIUM ? ' alert-size-' + props.size : '') +
         (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
         (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
@@ -68,7 +60,6 @@ Alert.propTypes = {
   id: PropTypes.string,
   color: PropTypes.oneOf(Object.values(COLOR)),
   radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
   title: PropTypes.string,
@@ -82,7 +73,6 @@ Alert.defaultProps = {
   title: 'Alert Text',
   color: COLOR.PRIMARY,
   radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
   outline: false,
   disabled: false,

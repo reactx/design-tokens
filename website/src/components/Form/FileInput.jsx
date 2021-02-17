@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
-export const SHADOW = {
+const SHADOW = {
   NONE: 'none',
   SMALL: 'small',
   MEDIUM: 'medium',
@@ -20,7 +20,7 @@ const RADIUS = {
   SMALL: 'small',
   NORMAL: 'normal',
   CURVE: 'curve',
-  ROUNDED: 'rounded',
+  PILL: 'pill',
 };
 
 const SIZE = {

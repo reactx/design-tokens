@@ -21,14 +21,6 @@
     color: var(--nirvana-gray-dark);
   }
 
-  &:hover {
-    border-color: var(--nirvana-primary);
-
-    path {
-      color: var(--nirvana-primary);
-    }
-  }
-
   &.avatar-size-tiny {
     height: 24px;
     width: 24px;
@@ -65,6 +57,10 @@
     align-items: center;
     height: 100%;
     width: 100%;
+  }
+
+  &.border-1 {
+    border: 1px solid;
   }
 
   @include colors(avatar, 'background')
