@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps } from '../../utils';
+import { cleanProps, generateClass } from '../../utils';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -39,33 +39,13 @@ const AvatarComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <div
-      {...parentProps}
-      className={
-        'nirvana-avatar ' +
-        (props.className || '') +
-        (props.outline
-          ? props.color
-            ? ' border-1 nirvana-color-' + props.color
-            : ''
-          : props.color
-          ? ' nirvana-avatar-' + props.color
-          : '') +
-        (props.size !== SIZE.MEDIUM ? ' avatar-size-' + props.size : '') +
-        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
-        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
-      }
-    >
+    <div {...parentProps} className={generateClass(props, 'avatar')}>
       {props.src ? (
-        <>
-          <img src={props.src} alt={props.username} />
-        </>
+        <img src={props.src} alt={props.username} />
       ) : (
-        <>
-          <span className="nirvana-avatar-letter">
-            {props.username.substring(0, 1).toUpperCase()}
-          </span>
-        </>
+        <span className="nirvana-avatar-letter">
+          {props.username.substring(0, 1).toUpperCase()}
+        </span>
       )}
     </div>
   );
@@ -99,6 +79,7 @@ Avatar.defaultProps = {
   outline: false,
   disabled: false,
   username: 'Nirvana',
+  className: '',
 };
 
 export { Avatar };

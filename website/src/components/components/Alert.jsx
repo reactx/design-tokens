@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps } from '../../utils';
+import { cleanProps, generateClass } from '../../utils';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -32,30 +32,13 @@ const AlertComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <div
-      {...parentProps}
-      className={
-        'nirvana-alert ' +
-        (props.className || '') +
-        (props.outline
-          ? props.color
-            ? ' border-1 nirvana-color-' + props.color
-            : ''
-          : props.color
-          ? ' nirvana-alert-' + props.color
-          : '') +
-        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
-        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
-      }
-    >
+    <div {...parentProps} className={generateClass(props, 'alert')}>
       {props.children}
     </div>
   );
 };
 
-const Alert = React.forwardRef((props) => (
-  <AlertComponent {...props}></AlertComponent>
-));
+const Alert = React.forwardRef((props) => <AlertComponent {...props} />);
 
 Alert.propTypes = {
   id: PropTypes.string,
@@ -78,6 +61,7 @@ Alert.defaultProps = {
   outline: false,
   disabled: false,
   children: 'Alert Message',
+  className: '',
 };
 
 export { Alert };

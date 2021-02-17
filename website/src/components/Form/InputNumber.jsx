@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps } from '../../utils';
+import { cleanProps, generateClass } from '../../utils';
 
 const SHADOW = {
   NONE: 'none',
@@ -40,21 +40,7 @@ const InputNumberComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
-  return (
-    <input
-      {...parentProps}
-      className={
-        'nirvana-input ' +
-        (props.className || '') +
-        (props.size !== SIZE.MEDIUM ? ' input-size-' + props.size : '') +
-        (props.validationStates !== VALIDATION.NONE
-          ? ' nirvana-input-' + props.validationStates
-          : '') +
-        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
-        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
-      }
-    />
-  );
+  return <input {...parentProps} className={generateClass(props, 'input')} />;
 };
 
 const InputNumber = React.forwardRef((props) => (
@@ -93,6 +79,7 @@ InputNumber.defaultProps = {
   readOnly: false,
   required: false,
   autoFocus: false,
+  className: '',
 };
 
 export { InputNumber };

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps } from '../../utils';
+import { cleanProps, generateClass } from '../../utils';
 import { Loading } from './Loading';
 
 const COLOR = {
@@ -54,23 +54,7 @@ const ButtonComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <button
-      {...parentProps}
-      className={
-        'nirvana-btn ' +
-        (props.className || '') +
-        (props.outline
-          ? props.color
-            ? ' border-1 nirvana-color-' + props.color
-            : ''
-          : props.color
-          ? ' nirvana-btn-' + props.color
-          : '') +
-        (props.size !== SIZE.MEDIUM ? ' btn-size-' + props.size : '') +
-        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
-        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
-      }
-    >
+    <button {...parentProps} className={generateClass(props, 'btn')}>
       {props.children}
       {props.loading && (
         <Loading
@@ -83,9 +67,7 @@ const ButtonComponent = (props) => {
   );
 };
 
-const Button = React.forwardRef((props) => (
-  <ButtonComponent {...props}></ButtonComponent>
-));
+const Button = React.forwardRef((props) => <ButtonComponent {...props} />);
 
 Button.propTypes = {
   id: PropTypes.string,
@@ -114,6 +96,7 @@ Button.defaultProps = {
   outline: false,
   disabled: false,
   loading: false,
+  className: '',
 };
 
 export { Button };

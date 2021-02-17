@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps } from '../../utils';
+import { cleanProps, generateClass } from '../../utils';
 
 const SHADOW = {
   NONE: 'none',
@@ -38,16 +38,7 @@ const TextAreaComponent = (props) => {
   return (
     <textarea
       {...parentProps}
-      className={
-        'nirvana-input ' +
-        (props.className || '') +
-        (props.size !== SIZE.MEDIUM ? ' input-size-' + props.size : '') +
-        (props.validationStates !== VALIDATION.NONE
-          ? ' nirvana-input-' + props.validationStates
-          : '') +
-        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
-        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
-      }
+      className={generateClass(props, 'input')}
     ></textarea>
   );
 };
@@ -81,6 +72,7 @@ TextArea.defaultProps = {
   readOnly: false,
   required: false,
   autoFocus: false,
+  className: '',
 };
 
 export { TextArea };
