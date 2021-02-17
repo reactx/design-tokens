@@ -1,39 +1,72 @@
 .nirvana-modal-container {
+  @include flex-position-center;
   position: relative;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .nirvana-modal {
   &-wrapper {
-    direction: rtl;
-    text-align: right;
+    background-color: var(--nirvana-backdrop-7);
+    @include rtlOrLtr(right, left, 25px, 25px);
     box-shadow: var(--nirvana-normal-shadow);
     padding: $standard-padding;
-    @include rtlOrLtr(right, left, 25px, 25px);
-    width: auto;
-    border-radius: $standard-radius;
-    background-color: var(--nirvana-backdrop-7);
-    display: flex;
+    box-shadow: $medium-shadow;
+    text-align: right;
     flex-flow: column;
+    overflow: hidden;
+    min-width: 20vw;
+    direction: rtl;
+    display: none;
+    width: auto;
 
-    &.nirvana-left-modal {
-      height: 100vh;
-      top: 0;
-      left: 0;
-      right: 0;
-      border-radius: 0;
+    &-active {
+      display: flex;
     }
 
-    &.nirvana-full-modal {
-      backdrop-filter: unset !important;
+    &.modal-left {
+      animation-timing-function: ease-in-out;
+      border-right: $standard-border;
+      animation-name: fadeInRight;
+      animation-duration: 0.2s;
+      position: absolute;
+      border-radius: 0;
+      height: 100vh;
+      left: 0;
+      top: 0;
+    }
+
+    &.modal-right {
+      animation-timing-function: ease-in-out;
+      border-left: $standard-border;
+      animation-name: fadeInLeft;
+      animation-duration: 0.2s;
+      position: absolute;
+      border-radius: 0;
+      height: 100vh;
+      right: 0;
+      top: 0;
+    }
+
+    &.modal-full {
       background-color: var(--nirvana-backdrop-7);
-      min-width: 500px !important;
-      max-width: 70% !important;
-      max-height: 80% !important;
+      animation-timing-function: ease-in-out;
+      animation-name: fadeInDown;
+      animation-duration: 0.2s;
+      border: $standard-border;
+      min-width: 50vw;
+      max-height: 80%;
+      max-width: 70%;
+      bottom: unset;
       right: unset;
       left: unset;
       top: unset;
-      bottom: unset;
     }
+
+    @include colors(modal, 'background');
   }
 
   &-title {
@@ -42,13 +75,12 @@
     align-items: center;
     text-transform: capitalize;
     flex: 1 1;
-    font-weight: bolder;
   }
 
   &-header {
     display: flex;
     flex: 0 1 auto;
-    padding: $standard-padding;
+    padding: $standard-padding $double-size-padding;
     border-bottom: $standard-border;
     height: 30px;
     line-height: 25px;
@@ -68,7 +100,8 @@
     flex: 1 1 auto;
     overflow-y: auto;
     min-height: 70px;
-    padding: $standard-padding;
+    padding: $standard-padding $double-size-padding;
+    margin: 0 $standard-margin;
   }
 
   &-footer {
@@ -77,17 +110,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-bottom-right-radius: $standard-radius;
-    border-bottom-left-radius: $standard-radius;
   }
 
   &-backdrop {
-    @include flex-position-center;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
     animation-duration: $standard-animation-duration !important;
     backdrop-filter: $backdrop;
     background-color: var(--nirvana-backdrop-color);
@@ -107,13 +132,13 @@
   justify-content: center;
   align-items: center;
 
-  i {
+  svg {
     color: var(--nirvana-danger);
     transition: $standard-animation;
     font-size: $font-size-sm;
   }
 
-  &:hover i {
+  &:hover svg {
     color: var(--nirvana-light);
   }
 }
