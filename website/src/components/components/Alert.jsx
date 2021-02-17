@@ -17,6 +17,7 @@ const RADIUS = {
   SMALL: 'small',
   NORMAL: 'normal',
   CURVE: 'curve',
+  PILL: 'pill',
 };
 
 const SHADOW = {
