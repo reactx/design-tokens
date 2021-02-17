@@ -37,6 +37,12 @@ export default {
         category: 'Attribute',
       },
     },
+    color: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
     radius: {
       control: 'inline-radio',
       table: {
@@ -51,6 +57,11 @@ export default {
     },
     shadow: {
       control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    outline: {
       table: {
         category: 'Style',
       },

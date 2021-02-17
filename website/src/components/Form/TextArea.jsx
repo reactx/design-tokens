@@ -31,20 +31,12 @@ const SIZE = {
   EXTRA: 'extra',
 };
 
-const TYPE = {
-  DATE: 'date',
-  DATE_TIME: 'datetime-local',
-  TIME: 'time',
-  MONTH: 'month',
-  WEEK: 'week',
-};
-
-const InputDateComponent = (props) => {
+const TextAreaComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   return (
-    <input
+    <textarea
       {...parentProps}
       className={
         'nirvana-input ' +
@@ -56,17 +48,14 @@ const InputDateComponent = (props) => {
         (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
         (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
-    />
+    ></textarea>
   );
 };
 
-const InputDate = React.forwardRef((props) => (
-  <InputDateComponent {...props} />
-));
+const TextArea = React.forwardRef((props) => <TextAreaComponent {...props} />);
 
-InputDate.propTypes = {
+TextArea.propTypes = {
   id: PropTypes.string,
-  type: PropTypes.oneOf(Object.values(TYPE)),
   radius: PropTypes.oneOf(Object.values(RADIUS)),
   size: PropTypes.oneOf(Object.values(SIZE)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
@@ -79,23 +68,19 @@ InputDate.propTypes = {
   required: PropTypes.bool,
   autoFocus: PropTypes.bool,
   className: PropTypes.string,
-  pattern: PropTypes.string,
-  minLength: PropTypes.number,
-  maxLength: PropTypes.number,
   onChange: PropTypes.func,
 };
 
-InputDate.defaultProps = {
-  type: TYPE.DATE,
+TextArea.defaultProps = {
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
-  title: 'InputDate Date',
   validationStates: VALIDATION.NONE,
+  title: 'TextArea Text',
   disabled: false,
   readOnly: false,
   required: false,
   autoFocus: false,
 };
 
-export { InputDate };
+export { TextArea };

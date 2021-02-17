@@ -1,9 +1,9 @@
 import React from 'react';
-import { Alert } from './Alert';
+import { TextArea } from './TextArea';
 
 export default {
-  title: 'Components/Alert',
-  component: Alert,
+  title: 'Form/TextArea',
+  component: TextArea,
   argTypes: {
     id: {
       control: 'text',
@@ -11,13 +11,17 @@ export default {
         category: 'Attribute',
       },
     },
-    children: {
+    value: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    placeholder: {
       table: {
         category: 'Attribute',
       },
     },
     title: {
-      control: 'text',
       table: {
         category: 'Attribute',
       },
@@ -27,18 +31,33 @@ export default {
         category: 'Attribute',
       },
     },
+    readOnly: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    required: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    autoFocus: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     className: {
       table: {
         category: 'Attribute',
       },
     },
-    color: {
+    radius: {
       control: 'inline-radio',
       table: {
         category: 'Style',
       },
     },
-    radius: {
+    size: {
       control: 'inline-radio',
       table: {
         category: 'Style',
@@ -50,12 +69,13 @@ export default {
         category: 'Style',
       },
     },
-    outline: {
+    validationStates: {
+      control: 'inline-radio',
       table: {
-        category: 'Style',
+        category: 'Validation',
       },
     },
-    onClick: {
+    onChange: {
       table: {
         category: 'Action',
       },
@@ -63,4 +83,4 @@ export default {
   },
 };
 
-export const Basic = (args) => <Alert {...args} />;
+export const Basic = (args) => <TextArea {...args} />;

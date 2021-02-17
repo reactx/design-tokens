@@ -10,17 +10,13 @@ const SIZE = {
   EXTRA_LARGE: 'extra-large',
 };
 
-const STYLE = {
-  NONE: 'none',
-  CARD: 'card',
-};
-
 const RADIUS = {
   NONE: 'none',
   SMALL: 'small',
   NORMAL: 'normal',
   CURVE: 'curve',
   ROUNDED: 'rounded',
+  PILL: 'pill',
 };
 
 const SHADOW = {

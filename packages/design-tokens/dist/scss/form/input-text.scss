@@ -1,25 +1,47 @@
 .nirvana-input {
   cursor: pointer;
-  height: 2.2em;
-  padding: $standard-padding;
+  padding: 0 $half-size-padding;
   border-radius: $standard-radius;
   border: $standard-border;
   border-color: var(--nirvana-dark-backdrop-3);
   background-color: var(--nirvana-backdrop-9);
   color: var(--nirvana-foreground);
   transition: $standard-animation;
+  font-size: $font-size-base;
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   outline: none;
   cursor: pointer;
+  display: block;
   width: 100%;
   min-width: 0;
+  min-height: 2em;
 
   &:focus {
     border: $standard-border !important;
     border-color: var(--nirvana-primary) !important;
   }
 
-  input[type="color"] & {
+  &[type="color"] {
     height: 30px;
+  }
+
+  &[type="file"] {
+    padding: 0 !important;
+    min-height: 2em;
+  }
+
+  &::file-selector-button {
+    min-height: 2em;
+    height: 100%;
+    background-color: $gray-200;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-radius: 0;
   }
 
   &.nirvana-input-valid {
@@ -29,4 +51,28 @@
   &.nirvana-input-invalid {
     border: 1px solid $red;
   }
+
+  &.input-size-tiny {
+    padding: 0 ($half-size-padding*0.75);
+    font-size: $font-size-sm*0.75;
+  }
+
+  &.input-size-small {
+    padding: 0 ($half-size-padding*0.9);
+    font-size: $font-size-sm*0.9;
+  }
+
+  &.input-size-large {
+    padding: $half-size-padding $standard-padding;
+    font-size: $h4-font-size;
+  }
+
+  &.input-size-extra {
+    padding: $half-size-padding $standard-padding;
+    font-size: $h2-font-size;
+  }
+}
+
+textarea.nirvana-input {
+  min-height: 5em;
 }

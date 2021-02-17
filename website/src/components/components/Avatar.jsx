@@ -2,6 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
+const COLOR = {
+  PRIMARY: 'primary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info',
+  DARK: 'dark',
+  LIGHT: 'light',
+};
+
 const RADIUS = {
   NONE: 'none',
   SMALL: 'small',
@@ -34,6 +44,13 @@ const AvatarComponent = (props) => {
       className={
         'nirvana-avatar ' +
         (props.className || '') +
+        (props.outline
+          ? props.color
+            ? ' border-1 nirvana-color-' + props.color
+            : ''
+          : props.color
+          ? ' nirvana-avatar-' + props.color
+          : '') +
         (props.size !== SIZE.MEDIUM ? ' avatar-size-' + props.size : '') +
         (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
         (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
@@ -63,6 +80,8 @@ Avatar.propTypes = {
   radius: PropTypes.oneOf(Object.values(RADIUS)),
   size: PropTypes.oneOf(Object.values(SIZE)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
+  color: PropTypes.oneOf(Object.values(COLOR)),
+  outline: PropTypes.bool,
   username: PropTypes.string,
   src: PropTypes.string,
   title: PropTypes.string,
@@ -73,9 +92,11 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
   title: 'Avatar',
+  color: COLOR.LIGHT,
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
+  outline: false,
   disabled: false,
   username: 'Nirvana',
 };

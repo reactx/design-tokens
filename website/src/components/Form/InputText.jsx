@@ -2,6 +2,46 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
+const SHADOW = {
+  NONE: 'none',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+
+const VALIDATION = {
+  NONE: 'none',
+  VALID: 'valid',
+  INVALID: 'invalid',
+};
+
+const RADIUS = {
+  NONE: 'none',
+  SMALL: 'small',
+  NORMAL: 'normal',
+  CURVE: 'curve',
+  PILL: 'pill',
+};
+
+const SIZE = {
+  TINY: 'tiny',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  EXTRA: 'extra',
+};
+
+const TYPE = {
+  TEXT: 'text',
+  EMAIL: 'email',
+  PASSWORD: 'password',
+  TEL: 'tel',
+  URL: 'url',
+  SEARCH: 'search',
+  COLOR: 'color',
+  HIDDEN: 'hidden',
+};
+
 const InputTextComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -12,37 +52,28 @@ const InputTextComponent = (props) => {
       className={
         'nirvana-input ' +
         (props.className || '') +
-        (props.size !== 'medium' ? ' input-size-' + props.size : '') +
-        (props.validationStates !== 'none'
+        (props.size !== SIZE.MEDIUM ? ' input-size-' + props.size : '') +
+        (props.validationStates !== VALIDATION.NONE
           ? ' nirvana-input-' + props.validationStates
           : '') +
-        (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
+        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
+        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
       }
     />
   );
 };
 
 const InputText = React.forwardRef((props) => (
-  <InputTextComponent {...props}></InputTextComponent>
+  <InputTextComponent {...props} />
 ));
 
 InputText.propTypes = {
   id: PropTypes.string,
-  type: PropTypes.oneOf([
-    'text',
-    'email',
-    'password',
-    'tel',
-    'url',
-    'search',
-    'color',
-    'hidden',
-  ]),
-  radius: PropTypes.oneOf(['none', 'small', 'normal', 'curve']),
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'extra']),
-  shadow: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  validationStates: PropTypes.oneOf(['none', 'valid', 'invalid']),
+  type: PropTypes.oneOf(Object.values(TYPE)),
+  radius: PropTypes.oneOf(Object.values(RADIUS)),
+  size: PropTypes.oneOf(Object.values(SIZE)),
+  shadow: PropTypes.oneOf(Object.values(SHADOW)),
+  validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
   value: PropTypes.string,
   title: PropTypes.string,
   placeholder: PropTypes.string,
@@ -58,12 +89,12 @@ InputText.propTypes = {
 };
 
 InputText.defaultProps = {
-  type: 'text',
-  radius: 'normal',
-  size: 'medium',
-  shadow: 'none',
+  type: TYPE.TEXT,
+  radius: RADIUS.NORMAL,
+  size: SIZE.MEDIUM,
+  shadow: SHADOW.NONE,
+  validationStates: VALIDATION.NONE,
   title: 'InputText Text',
-  validationStates: 'none',
   disabled: false,
   readOnly: false,
   required: false,
