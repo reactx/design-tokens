@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps } from '../../utils';
+import { cleanProps, generateClass } from '../../utils';
 
 const RADIUS = {
   NONE: 'none',
@@ -33,30 +33,13 @@ const BadgeComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <div
-      {...parentProps}
-      className={
-        'nirvana-badge ' +
-        (props.className || '') +
-        (props.outline
-          ? props.color
-            ? ' border-1 nirvana-color-' + props.color
-            : ''
-          : props.color
-          ? ' nirvana-badge-' + props.color
-          : '') +
-        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
-        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
-      }
-    >
+    <div {...parentProps} className={generateClass(props, 'badge')}>
       {props.children}
     </div>
   );
 };
 
-const Badge = React.forwardRef((props) => (
-  <BadgeComponent {...props}></BadgeComponent>
-));
+const Badge = React.forwardRef((props) => <BadgeComponent {...props} />);
 
 Badge.propTypes = {
   id: PropTypes.string,
@@ -64,6 +47,7 @@ Badge.propTypes = {
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   color: PropTypes.oneOf(Object.values(COLOR)),
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
+  outline: PropTypes.bool,
   title: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
@@ -74,7 +58,9 @@ Badge.defaultProps = {
   radius: RADIUS.NORMAL,
   color: COLOR.LIGHT,
   shadow: SHADOW.NONE,
+  outline: false,
   children: 'Nirvana',
+  className: '',
 };
 
 export { Badge };

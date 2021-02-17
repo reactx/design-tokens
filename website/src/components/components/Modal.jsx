@@ -109,9 +109,7 @@ const ModalComponent = (props) => {
   );
 };
 
-const Modal = React.forwardRef((props) => (
-  <ModalComponent {...props}></ModalComponent>
-));
+const Modal = React.forwardRef((props) => <ModalComponent {...props} />);
 
 Modal.propTypes = {
   id: PropTypes.string,

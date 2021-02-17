@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps } from '../../utils';
+import { cleanProps, generateClass } from '../../utils';
 
 const SHADOW = {
   NONE: 'none',
@@ -48,22 +48,13 @@ const FileInputComponent = (props) => {
     <input
       {...parentProps}
       type="file"
-      className={
-        'nirvana-input ' +
-        (props.className || '') +
-        (props.size !== 'medium' ? ' input-size-' + props.size : '') +
-        (props.validationStates !== 'none'
-          ? ' nirvana-input-' + props.validationStates
-          : '') +
-        (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
-        (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
-      }
+      className={generateClass(props, 'input')}
     />
   );
 };
 
 const FileInput = React.forwardRef((props) => (
-  <FileInputComponent {...props}></FileInputComponent>
+  <FileInputComponent {...props} />
 ));
 FileInput.propTypes = {
   id: PropTypes.string,
@@ -92,6 +83,7 @@ FileInput.defaultProps = {
   multiple: false,
   required: false,
   autoFocus: false,
+  className: '',
 };
 
 export { FileInput };

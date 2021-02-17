@@ -10,5 +10,10 @@
   white-space: nowrap;
   @include flex-position-center;
   display: inline-flex;
+
+  &.border-1 {
+    border: 1px solid;
+  }
+
   @include colors(badge, 'background');
 }

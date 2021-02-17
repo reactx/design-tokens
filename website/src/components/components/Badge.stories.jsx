@@ -33,6 +33,11 @@ export default {
         category: 'Style',
       },
     },
+    outline: {
+      table: {
+        category: 'Style',
+      },
+    },
     radius: {
       control: 'inline-radio',
       table: {

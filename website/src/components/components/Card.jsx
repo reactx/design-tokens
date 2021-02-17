@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps } from '../../utils';
+import { cleanProps, generateClass } from '../../utils';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -31,22 +31,7 @@ const CardComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <div
-      {...parentProps}
-      className={
-        'nirvana-card ' +
-        (props.className || '') +
-        (props.outline
-          ? props.color
-            ? ' border-1 nirvana-color-' + props.color
-            : ''
-          : props.color
-          ? ' nirvana-card-' + props.color
-          : '') +
-        (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
-        (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
-      }
-    >
+    <div {...parentProps} className={generateClass(props, 'card')}>
       {props.header && (
         <div className="nirvana-card-header">{props.header}</div>
       )}
@@ -58,9 +43,7 @@ const CardComponent = (props) => {
   );
 };
 
-const Card = React.forwardRef((props) => (
-  <CardComponent {...props}></CardComponent>
-));
+const Card = React.forwardRef((props) => <CardComponent {...props} />);
 
 Card.propTypes = {
   id: PropTypes.string,
@@ -87,6 +70,7 @@ Card.defaultProps = {
   children: 'Card Body Text',
   header: 'Header Text',
   footer: 'Footer Text',
+  className: '',
 };
 
 export { Card };
