@@ -24,23 +24,27 @@
 }
 
 .icon-size-extra-large {
-  font-size: $h1-font-size*2;
-}
-
-.icon-size-extra {
-  font-size: $h1-font-size;
-}
-
-.icon-size-large {
   font-size: $h2-font-size;
 }
 
-.icon-size-medium {
+.icon-size-extra {
+  font-size: $h3-font-size;
+}
+
+.icon-size-large {
   font-size: $h4-font-size;
+}
+
+.icon-size-medium {
+  font-size: $h5-font-size;
 }
 
 .icon-size-small {
   font-size: $h6-font-size;
+}
+
+.icon-size-tiny {
+  font-size: $h6-font-size * 0.75;
 }
 
 .nf-icon-12PointStar:before {
