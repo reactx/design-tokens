@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
 const SIZE = {
+  TINY: 'tiny',
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',

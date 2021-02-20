@@ -18,6 +18,7 @@ const delList = [
   'size',
   'icon',
   'src',
+  'items',
 ];
 
 const COLOR = {
