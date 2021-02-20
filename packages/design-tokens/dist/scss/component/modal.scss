@@ -22,6 +22,7 @@
     direction: rtl;
     display: none;
     width: auto;
+    border-radius: $standard-radius;
 
     &-active {
       display: flex;

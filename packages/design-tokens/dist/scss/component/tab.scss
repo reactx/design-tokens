@@ -1,4 +1,4 @@
-.nirvana-tab-component {
+.nirvana-tab {
   height: 100%;
   flex-flow: column;
   flex: 1 1 auto;
@@ -109,32 +109,5 @@
     flex: 1 1 auto;
     overflow: hidden;
     padding: 0;
-  }
-
-  &.nirvana-tab-component-vertical {
-    flex-flow: row;
-
-    .nirvana-tabs {
-      flex-flow: column;
-
-      .nirvana-tab-header-item {
-        border-left: 2px solid transparent;
-        margin-top: $half-size-margin;
-        border-bottom: none;
-
-        &.nirvana-active-tab {
-          border-left: 2px solid var(--nirvana-primary);
-          border-bottom-left-radius: 0px;
-          border-top-left-radius: 0px;
-          border-bottom: none;
-        }
-      }
-    }
-  }
-}
-
-.nirvana-split-pane-horizontal {
-  .nirvana-parent-tab-component {
-    height: calc(100% - 32px);
   }
 }
