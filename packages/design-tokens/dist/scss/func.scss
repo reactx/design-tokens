@@ -20,6 +20,20 @@ $colors:primary danger secondary success info warning light dark;
   }
 }
 
+@mixin colorsLight($propertyClass, $property) {
+  @each $color in $colors {
+    &.nirvana-#{$propertyClass}-#{$color} {
+      color: var(--nirvana-light);
+
+      @if($color==light) {
+        color: var(--nirvana-dark);
+      }
+
+      #{$property}: var(--nirvana-#{$color}-light) !important;
+    }
+  }
+}
+
 /*
 dark and light
 

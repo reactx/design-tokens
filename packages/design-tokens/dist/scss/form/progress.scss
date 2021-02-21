@@ -1,0 +1,141 @@
+.nirvana-progress {
+  width: 100%;
+  height: 25px;
+  overflow: hidden;
+  border-radius: $standard-radius;
+  position: relative;
+
+  &::after {
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: var(--nirvana-primary);
+    background-size: 40px 100%, 100% 100%, 100% 100% !important;
+
+
+    &.line {
+      background-image:
+        -webkit-linear-gradient(-45deg,
+          transparent 33%, rgba(0, 0, 0, .1) 33%,
+          rgba(0, 0, 0, .1) 66%, transparent 66%),
+        -webkit-linear-gradient(top,
+          rgba(255, 255, 255, .25),
+          rgba(0, 0, 0, .25)) !important;
+    }
+
+    &.animation {
+      animation: animate-stripes 5s linear infinite;
+    }
+  }
+
+  .progress-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0px 0 3px var(--nirvana-light);
+  }
+
+  &.nirvana-progress-primary {
+    .progress-bar {
+      background: var(--nirvana-primary);
+    }
+  }
+
+  &.nirvana-progress-info {
+    .progress-bar {
+      background: var(--nirvana-info);
+    }
+  }
+
+  &.nirvana-progress-success {
+    .progress-bar {
+      background: var(--nirvana-success);
+    }
+  }
+
+  &.nirvana-progress-warning {
+    .progress-bar {
+      background: var(--nirvana-warning);
+    }
+  }
+
+  &.nirvana-progress-dark {
+    .progress-bar {
+      background: var(--nirvana-dark);
+    }
+  }
+
+  &.nirvana-progress-light {
+    .progress-bar {
+      background: $gray-300;
+    }
+  }
+
+  &.nirvana-progress-danger {
+    .progress-bar {
+      background: var(--nirvana-danger);
+    }
+  }
+
+  &.progress-size-tiny {
+    height: 10px;
+    font-size: $font-size-sm;
+
+    .progress-bar {
+      background-size: 20px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+
+  &.progress-size-small {
+    height: 15px;
+    font-size: $font-size-sm;
+
+    .progress-bar {
+      background-size: 30px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+
+  &.progress-size-medium {
+    height: 25px;
+
+    .progress-bar {
+      background-size: 40px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+
+  &.progress-size-large {
+    height: 40px;
+    font-size: $h4-font-size;
+
+    .progress-bar {
+      background-size: 80px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+
+  &.progress-size-extra {
+    height: 60px;
+    font-size: $h2-font-size;
+
+    .progress-bar {
+      background-size: 120px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+}
+
+@keyframes animate-stripes {
+  100% {
+    background-position: 240px 0px;
+  }
+}

@@ -54,5 +54,5 @@
     border: 1px solid
   }
 
-  @include colors(card, 'background');
+  @include colorsLight(card, 'background');
 }

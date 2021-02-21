@@ -9,9 +9,13 @@ const delList = [
   'backdrop',
   'padding',
   'outline',
+  'theme',
   'radius',
   'shadow',
   'label',
+  'tabList',
+  'line',
+  'animation',
   'footer',
   'color',
   'header',
@@ -104,6 +108,10 @@ export const generateClass = (prop, baseName) => {
   //VALIDATION
   if (prop.validationStates && prop.validationStates !== 'none') {
     classList.push('nirvana-input-' + prop.validationStates);
+  }
+  //THEME
+  if (prop.theme) {
+    classList.push(prop.theme);
   }
 
   return classList.join(' ');

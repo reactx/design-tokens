@@ -16,5 +16,5 @@
     border: 1px solid
   }
 
-  @include colors(alert, 'background');
+  @include colorsLight(alert, 'background');
 }
