@@ -14,6 +14,8 @@ const delList = [
   'shadow',
   'label',
   'tabList',
+  'line',
+  'animation',
   'footer',
   'color',
   'header',

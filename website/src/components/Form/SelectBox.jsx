@@ -88,9 +88,17 @@ const SelectBoxComponent = (props) => {
       <div className="selectbox-item">
         <span className="selectbox-arrow">
           {isOpen ? (
-            <FluentIcon icon="ChevronFold10" iconSize={props.size} />
+            <FluentIcon
+              icon="ChevronFold10"
+              iconSize={props.size}
+              className="nirvana-p-0"
+            />
           ) : (
-            <FluentIcon icon="ChevronUnfold10" iconSize={props.size} />
+            <FluentIcon
+              icon="ChevronUnfold10"
+              iconSize={props.size}
+              className="nirvana-p-0"
+            />
           )}
         </span>
         <span className="selectbox-value">{selectItem.value}</span>
