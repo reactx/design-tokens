@@ -107,6 +107,13 @@ $size-default: 16px;
 
 :root {
   @include darkAndLightColor('primary', $primary);
+  @include darkAndLightColor('success', $green);
+  @include darkAndLightColor('info', $teal);
+  @include darkAndLightColor('warning', $yellow);
+  @include darkAndLightColor('danger', $red);
+  @include darkAndLightColor('light', $white);
+  @include darkAndLightColor('dark', $black);
+
   @include darkAndLightColor('gray', $gray-400);
   @include darkAndLightColor('blue', $blue);
   @include darkAndLightColor('green', $green);

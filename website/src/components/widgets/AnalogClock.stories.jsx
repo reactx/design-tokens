@@ -2,7 +2,7 @@ import React from 'react';
 import { AnalogClock } from './AnalogClock';
 
 export default {
-  title: 'Widgets/AnalogClock',
+  title: 'Widgets/Analog Clock',
   component: AnalogClock,
   argTypes: {
     id: {
