@@ -8,18 +8,6 @@
   clear: both;
 }
 
-.nirvana-collapse {
-  display: none !important;
-}
-
-.nirvana-curve {
-  border-radius: $standard-radius !important;
-}
-
-.nirvana-rounded {
-  border-radius: $round-radius !important;
-}
-
 .nirvana-back-blur {
   backdrop-filter: $backdrop;
   background-color: var(--nirvana-backdrop-color) !important;
