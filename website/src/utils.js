@@ -6,6 +6,8 @@ const delList = [
   'iconSize',
   'children',
   'username',
+  'itemRadius',
+  'itemColor',
   'backdrop',
   'padding',
   'outline',

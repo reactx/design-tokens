@@ -1,0 +1,97 @@
+.nirvana-breadcrumb {
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+  align-items: center;
+  height: 100%;
+
+  .breadcrumb-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
+    overflow: hidden;
+    height: 100%;
+    font-size: 12px;
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:before {
+      content: "\E76C";
+      z-index: 1;
+      padding: 0 5px;
+      font-family: "FabricMDL2Icons";
+    }
+
+    &:first-child:before {
+      content: "";
+      padding: 0px;
+    }
+
+    &:last-child span {
+      background-color: var(--nirvana-primary);
+      color: var(--nirvana-light);
+      line-height: 1.75em;
+      padding: 2px 4px;
+      border-radius: $standard-radius;
+    }
+  }
+
+  &.danger .breadcrumb-item:last-child span {
+    background-color: var(--nirvana-danger);
+    color: var(--nirvana-light);
+  }
+
+  &.success .breadcrumb-item:last-child span {
+    background-color: var(--nirvana-success);
+  }
+
+  &.primary .breadcrumb-item:last-child span {
+    background-color: var(--nirvana-primary);
+  }
+
+  &.info .breadcrumb-item:last-child span {
+    background-color: var(--nirvana-info);
+  }
+
+  &.dark .breadcrumb-item:last-child span {
+    background-color: var(--nirvana-dark);
+  }
+
+  &.light .breadcrumb-item:last-child span {
+    background-color: var(--nirvana-light);
+    color: var(--nirvana-dark);
+  }
+
+  &.warning .breadcrumb-item:last-child span {
+    background-color: var(--nirvana-warning);
+  }
+
+  &.none .breadcrumb-item span {
+    border-radius: 0;
+  }
+
+  &.small .breadcrumb-item span {
+    border-radius: $half-radius;
+  }
+
+  &.normal .breadcrumb-item span {
+    border-radius: $standard-radius;
+  }
+
+  &.curve .breadcrumb-item span {
+    border-radius: $double-size-radius;
+  }
+
+  &.rounded .breadcrumb-item span {
+    border-radius: $round-radius;
+  }
+
+  &.pill .breadcrumb-item span {
+    border-radius: 50rem;
+  }
+}
