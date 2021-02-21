@@ -1,0 +1,32 @@
+.nirvana-collapse {
+  border-radius: $standard-radius;
+  overflow: hidden;
+  transition: $standard-animation;
+
+  .collapse-title {
+    background-color: rgba(0, 0, 0, .06);
+    padding: $standard-padding;
+
+    &::before {
+      content: '\E70D';
+      font-family: 'FabricMDL2Icons';
+      font-size: $font-size-sm;
+      padding: 0 $standard-padding;
+    }
+  }
+
+  .collapse-data {
+    background-color: rgba(0, 0, 0, .03);
+    padding: $standard-padding;
+  }
+
+  &[open] {
+    .collapse-title {
+      &::before {
+        content: '\E70E';
+      }
+    }
+  }
+
+  @include colorsLight(collapse, 'background');
+}
