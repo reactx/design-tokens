@@ -83,7 +83,13 @@ const InputTextComponent = (props) => {
           )}
         </>
       )}
-      <input {...parentProps} className={generateClass(props, 'input')} />
+      <div className={generateClass(props, 'input-container')}>
+        {props.prepend && (
+          <div className="control-prepend">{props.prepend}</div>
+        )}
+        <input {...parentProps} className={generateClass(props, 'input')} />
+        {props.append && <div className="control-append">{props.append}</div>}
+      </div>
       {props.type !== TYPE.HIDDEN && props.description && (
         <div className="control-description">{props.description}</div>
       )}
@@ -111,10 +117,12 @@ InputText.propTypes = {
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   formControlStyle: PropTypes.oneOf(Object.values(CONTROL_STYLE)),
   validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
-  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  validMessage: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  invalidMessage: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  prepend: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  append: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  label: PropTypes.string,
+  description: PropTypes.string,
+  validMessage: PropTypes.string,
+  invalidMessage: PropTypes.string,
   value: PropTypes.string,
   title: PropTypes.string,
   placeholder: PropTypes.string,

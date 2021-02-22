@@ -12,6 +12,8 @@ const delList = [
   'validMessage',
   'invalidMessage',
   'backdrop',
+  'prepend',
+  'append',
   'padding',
   'outline',
   'theme',

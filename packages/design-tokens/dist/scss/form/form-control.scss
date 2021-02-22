@@ -42,8 +42,67 @@
     grid-area: label;
   }
 
-  .nirvana-input {
+  .nirvana-input-container {
     grid-area: input;
+    display: flex;
+    overflow: hidden;
+    border-radius: $standard-radius;
+    border: $standard-border;
+    border-color: var(--nirvana-dark-backdrop-3);
+    box-sizing: border-box;
+    transition: $standard-animation;
+
+    &:focus-within {
+      border: $standard-border !important;
+      border-color: var(--nirvana-primary) !important;
+    }
+
+    &.has-prepend {
+      .nirvana-input {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+
+    &.has-append {
+      .nirvana-input {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+    }
+
+    .nirvana-input {
+      border-width: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .control-append,
+    .control-prepend {
+      background-color: $gray-200;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5em;
+      font-size: 0.9em;
+    }
+
+    &.nirvana-input-valid {
+      border: 1px solid $green;
+
+      .control-append,
+      .control-prepend {
+        background-color: $green;
+      }
+    }
+
+    &.nirvana-input-invalid {
+      border: 1px solid $red;
+
+      .control-append,
+      .control-prepend {
+        background-color: $red;
+      }
+    }
   }
 
   .control-description {
@@ -74,4 +133,5 @@
   &.form-control-extra {
     font-size: $h2-font-size;
   }
+
 }

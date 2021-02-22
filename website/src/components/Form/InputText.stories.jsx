@@ -12,7 +12,6 @@ export default {
       },
     },
     type: {
-      control: 'inline-radio',
       table: {
         category: 'Attribute',
       },
@@ -63,6 +62,16 @@ export default {
       },
     },
     className: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    prepend: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    append: {
       table: {
         category: 'Attribute',
       },
@@ -132,3 +141,16 @@ export default {
 
 export const Basic = (args) => <InputText {...args} />;
 Basic.args = { validMessage: 'is Valid', invalidMessage: 'is Invalid' };
+export const WithDescription = (args) => <InputText {...args} />;
+WithDescription.args = {
+  validMessage: 'is Valid',
+  invalidMessage: 'is Invalid',
+  description: 'Description text',
+};
+export const WithAppendPrepend = (args) => <InputText {...args} />;
+WithAppendPrepend.args = {
+  validMessage: 'is Valid',
+  invalidMessage: 'is Invalid',
+  prepend: 'Email',
+  append: 'Cancel',
+};
