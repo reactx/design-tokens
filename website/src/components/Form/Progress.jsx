@@ -40,7 +40,6 @@ const ProgressComponent = (props) => {
   cleanProps(parentProps);
 
   const calcPosition = () => {
-    debugger;
     let one = props.max / 100;
     let result = Math.ceil(props.value / one);
     return result + '%';
