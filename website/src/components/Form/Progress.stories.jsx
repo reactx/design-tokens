@@ -42,7 +42,7 @@ export default {
         category: 'Style',
       },
     },
-    line: {
+    striped: {
       table: {
         category: 'Style',
       },
