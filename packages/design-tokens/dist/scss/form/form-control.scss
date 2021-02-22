@@ -1,0 +1,77 @@
+.nirvana-form-control {
+  display: grid;
+  grid-template-areas:
+    'label'
+    'input'
+    'description'
+    'validation';
+
+  &.form-control-inline {
+    grid-template-areas:
+      'label input input input'
+      'label description description description'
+      'label validation validation validation';
+  }
+
+  .control-label {
+    padding: $standard-padding 0;
+  }
+
+  .control-description {
+    width: 100%;
+    text-align: end;
+    font-size: 0.75em;
+    opacity: 0.85;
+    height: 0.5em
+  }
+
+  .valid-feedback {
+    font-size: 1em;
+    color: var(--nirvana-success);
+    font-size: 0.9em;
+  }
+
+  .invalid-feedback {
+    font-size: 1em;
+    color: var(--nirvana-danger);
+    font-size: 0.9em;
+  }
+
+
+  .control-label {
+    grid-area: label;
+  }
+
+  .nirvana-input {
+    grid-area: input;
+  }
+
+  .control-description {
+    grid-area: description;
+  }
+
+  .valid-feedback,
+  .invalid-feedback {
+    grid-area: validation;
+  }
+
+  &.form-control-tiny {
+    font-size: $font-size-sm*0.85;
+  }
+
+  &.form-control-small {
+    font-size: $font-size-sm;
+  }
+
+  &.form-control-medium {
+    font-size: $h6-font-size;
+  }
+
+  &.form-control-large {
+    font-size: $h4-font-size;
+  }
+
+  &.form-control-extra {
+    font-size: $h2-font-size;
+  }
+}

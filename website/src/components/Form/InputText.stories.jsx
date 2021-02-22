@@ -22,7 +22,17 @@ export default {
         category: 'Attribute',
       },
     },
+    label: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     placeholder: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    description: {
       table: {
         category: 'Attribute',
       },
@@ -57,6 +67,12 @@ export default {
         category: 'Attribute',
       },
     },
+    formControlStyle: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
     radius: {
       control: 'inline-radio',
       table: {
@@ -77,6 +93,16 @@ export default {
     },
     validationStates: {
       control: 'inline-radio',
+      table: {
+        category: 'Validation',
+      },
+    },
+    validMessage: {
+      table: {
+        category: 'Validation',
+      },
+    },
+    invalidMessage: {
       table: {
         category: 'Validation',
       },
@@ -105,3 +131,4 @@ export default {
 };
 
 export const Basic = (args) => <InputText {...args} />;
+Basic.args = { validMessage: 'is Valid', invalidMessage: 'is Invalid' };
