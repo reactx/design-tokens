@@ -87,7 +87,14 @@ const InputTextComponent = (props) => {
         {props.prepend && (
           <div className="control-prepend">{props.prepend}</div>
         )}
-        <input {...parentProps} className={generateClass(props, 'input')} />
+        {props.multiLine ? (
+          <textarea
+            {...parentProps}
+            className={generateClass(props, 'input')}
+          ></textarea>
+        ) : (
+          <input {...parentProps} className={generateClass(props, 'input')} />
+        )}
         {props.append && <div className="control-append">{props.append}</div>}
       </div>
       {props.type !== TYPE.HIDDEN && props.description && (
@@ -135,6 +142,7 @@ InputText.propTypes = {
   minLength: PropTypes.number,
   maxLength: PropTypes.number,
   onChange: PropTypes.func,
+  multiLine: PropTypes.bool,
 };
 
 InputText.defaultProps = {
