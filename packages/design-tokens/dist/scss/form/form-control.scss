@@ -25,18 +25,20 @@
     height: 0.5em
   }
 
-  .valid-feedback {
+  .valid-feedback,
+  .invalid-feedback {
     font-size: 1em;
-    color: var(--nirvana-success);
     font-size: 0.9em;
+  }
+
+  .valid-feedback {
+    color: var(--nirvana-success);
+
   }
 
   .invalid-feedback {
-    font-size: 1em;
     color: var(--nirvana-danger);
-    font-size: 0.9em;
   }
-
 
   .control-label {
     grid-area: label;
