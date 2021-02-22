@@ -76,6 +76,11 @@ export default {
         category: 'Attribute',
       },
     },
+    multiLine: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     formControlStyle: {
       control: 'inline-radio',
       table: {
@@ -153,4 +158,8 @@ WithAppendPrepend.args = {
   invalidMessage: 'is Invalid',
   prepend: 'Email',
   append: 'Cancel',
+};
+export const TextArea = (args) => <InputText {...args} />;
+TextArea.args = {
+  multiLine: true,
 };
