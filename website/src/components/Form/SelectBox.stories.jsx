@@ -61,6 +61,11 @@ export default {
         category: 'Attribute',
       },
     },
+    fixIcon: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     radius: {
       control: 'inline-radio',
       table: {
@@ -99,4 +104,12 @@ Basic.args = {
     { name: 'item 1', value: 'value' },
     { name: 'item 2', value: 'value' },
   ],
+};
+export const WithFixIcon = (args) => <SelectBox {...args} />;
+WithFixIcon.args = {
+  items: [
+    { name: 'item 1', value: 'value' },
+    { name: 'item 2', value: 'value' },
+  ],
+  fixIcon: 'BorderAll',
 };
