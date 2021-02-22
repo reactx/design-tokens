@@ -14,6 +14,7 @@ const delList = [
   'backdrop',
   'prepend',
   'multiLine',
+  'fixIcon',
   'append',
   'padding',
   'outline',

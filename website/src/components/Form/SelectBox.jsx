@@ -88,23 +88,39 @@ const SelectBoxComponent = (props) => {
       }}
     >
       <div className="selectbox-item">
-        <span className="selectbox-arrow">
-          {isOpen ? (
-            <FluentIcon
-              icon="ChevronFold10"
-              iconSize={props.size}
-              className="nirvana-p-0"
-            />
-          ) : (
-            <FluentIcon
-              icon="ChevronUnfold10"
-              iconSize={props.size}
-              className="nirvana-p-0"
-            />
-          )}
-        </span>
-        <span className="selectbox-value">{selectItem.value}</span>
-        <span className="selectbox-name">{selectItem.name}</span>
+        {props.fixIcon ? (
+          <>
+            {typeof props.fixIcon === 'string' ? (
+              <FluentIcon
+                icon={props.fixIcon}
+                className="nirvana-p-0"
+                iconSize={props.size}
+              />
+            ) : (
+              <>{props.fixIcon}</>
+            )}
+          </>
+        ) : (
+          <>
+            <span className="selectbox-arrow">
+              {isOpen ? (
+                <FluentIcon
+                  icon="ChevronFold10"
+                  iconSize={props.size}
+                  className="nirvana-p-0"
+                />
+              ) : (
+                <FluentIcon
+                  icon="ChevronUnfold10"
+                  iconSize={props.size}
+                  className="nirvana-p-0"
+                />
+              )}
+            </span>
+            <span className="selectbox-value">{selectItem.value}</span>
+            <span className="selectbox-name">{selectItem.name}</span>
+          </>
+        )}
       </div>
       <div className="selectbox-dropdown">
         {props.items &&
@@ -127,6 +143,7 @@ SelectBox.propTypes = {
   size: PropTypes.oneOf(Object.values(SIZE)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
+  fixIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   title: PropTypes.string,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
