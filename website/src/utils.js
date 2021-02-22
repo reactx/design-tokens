@@ -7,7 +7,10 @@ const delList = [
   'children',
   'username',
   'itemRadius',
+  'formControlStyle',
   'itemColor',
+  'validMessage',
+  'invalidMessage',
   'backdrop',
   'padding',
   'outline',
@@ -23,6 +26,7 @@ const delList = [
   'header',
   'size',
   'icon',
+  'description',
   'src',
   'items',
 ];

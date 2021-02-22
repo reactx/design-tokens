@@ -11,12 +11,6 @@ export default {
         category: 'Attribute',
       },
     },
-    validationStates: {
-      control: 'inline-radio',
-      table: {
-        category: 'Attribute',
-      },
-    },
     format: {
       table: {
         category: 'Attribute',
@@ -68,6 +62,12 @@ export default {
       control: 'inline-radio',
       table: {
         category: 'Style',
+      },
+    },
+    validationStates: {
+      control: 'inline-radio',
+      table: {
+        category: 'Validation',
       },
     },
     onChange: {
