@@ -93,4 +93,12 @@
       padding: $half-size-padding $standard-padding;
       font-size: $h2-font-size;
     }
+
+    &.nirvana-input-valid {
+      border: 1px solid $green;
+    }
+
+    &.nirvana-input-invalid {
+      border: 1px solid $red;
+    }
   }

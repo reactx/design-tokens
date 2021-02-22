@@ -47,15 +47,11 @@ const ProgressComponent = (props) => {
   };
 
   return (
-    // <progress
-    //   {...parentProps}
-    //   className={generateClass(props, 'progress')}
-    // ></progress>
     <div {...parentProps} className={generateClass(props, 'progress')}>
       <div
         className={
           'progress-bar' +
-          (props.line ? ' line' : '') +
+          (props.striped ? ' striped' : '') +
           (props.animation ? ' animation' : '')
         }
         style={{ width: calcPosition() }}
@@ -72,7 +68,7 @@ const Progress = React.forwardRef((props) => <ProgressComponent {...props} />);
 Progress.propTypes = {
   id: PropTypes.string,
   showLabel: PropTypes.bool,
-  line: PropTypes.bool,
+  striped: PropTypes.bool,
   animation: PropTypes.bool,
   radius: PropTypes.oneOf(Object.values(RADIUS)),
   size: PropTypes.oneOf(Object.values(SIZE)),

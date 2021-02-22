@@ -83,7 +83,9 @@ const SelectBoxComponent = (props) => {
       ref={selectboxRef}
       {...parentProps}
       className={generateClass(props, 'selectbox') + (isOpen ? ' _active' : '')}
-      onClick={() => SetOpen(!isOpen)}
+      onClick={() => {
+        !props.disabled && SetOpen(!isOpen);
+      }}
     >
       <div className="selectbox-item">
         <span className="selectbox-arrow">
