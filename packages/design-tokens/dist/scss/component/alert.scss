@@ -6,15 +6,11 @@
   margin-bottom: 1rem;
   position: relative;
   display: block;
-  opacity: 0.85;
-
-  &:hover {
-    opacity: 1;
-  }
 
   &.border-1 {
     border: 1px solid
   }
 
   @include colorsLight(alert, 'background');
+  @include colorsHover(alert, 'background');
 }

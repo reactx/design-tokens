@@ -42,3 +42,4 @@ export default {
 };
 
 export const Basic = (args) => <Loading {...args} />;
+Basic.args = { enabled: true };

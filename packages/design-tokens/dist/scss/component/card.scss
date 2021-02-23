@@ -12,8 +12,7 @@
   min-width: 0;
 
   &-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-    background-color: rgba(0, 0, 0, .03);
+    background-color: rgba(0, 0, 0, .09);
     padding: $standard-padding;
     align-items: center;
     display: flex;
@@ -25,8 +24,7 @@
   }
 
   &-footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.09);
-    background-color: rgba(0, 0, 0, .03);
+    background-color: rgba(0, 0, 0, .09);
     padding: $standard-padding;
   }
 
