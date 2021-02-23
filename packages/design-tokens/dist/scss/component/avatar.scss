@@ -57,11 +57,13 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    line-height: 100%;
   }
 
   &.border-1 {
     border: 1px solid;
   }
 
-  @include colors(avatar, 'background')
+  @include colors(avatar, 'background');
+  @include colorsHover(avatar, 'background');
 }

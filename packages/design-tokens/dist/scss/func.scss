@@ -34,6 +34,20 @@ $colors:primary danger secondary success info warning light dark;
   }
 }
 
+@mixin colorsHover($propertyClass, $property) {
+  @each $color in $colors {
+    &.nirvana-#{$propertyClass}-#{$color}:hover {
+      color: var(--nirvana-light);
+
+      @if($color==light) {
+        color: var(--nirvana-dark);
+      }
+
+      #{$property}: var(--nirvana-#{$color}-dark) !important;
+    }
+  }
+}
+
 /*
 dark and light
 

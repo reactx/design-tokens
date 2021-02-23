@@ -43,6 +43,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NONE: 'none',
 };
 
 const RADIUS = {
@@ -112,7 +113,7 @@ export const generateClass = (prop, baseName) => {
   //OUTLINE AND COLOR
   if (prop.outline && prop.color) {
     classList.push('border-1 nirvana-color-' + prop.color);
-  } else if (prop.color) {
+  } else if (prop.color && prop.color !== COLOR.NONE) {
     classList.push('nirvana-' + baseName + '-' + prop.color);
   }
   //VALIDATION

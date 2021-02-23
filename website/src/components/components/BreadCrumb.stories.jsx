@@ -21,13 +21,25 @@ export default {
         category: 'Attribute',
       },
     },
-    itemColor: {
+    color: {
       control: 'inline-radio',
       table: {
         category: 'Style',
       },
     },
-    itemRadius: {
+    radius: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    shadow: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    size: {
       control: 'inline-radio',
       table: {
         category: 'Style',

@@ -16,4 +16,5 @@
   }
 
   @include colors(badge, 'background');
+  @include colorsHover(badge, 'background');
 }

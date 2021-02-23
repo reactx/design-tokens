@@ -13,7 +13,6 @@
     background-color: var(--nirvana-backdrop-7);
     @include rtlOrLtr(right, left, 25px, 25px);
     box-shadow: var(--nirvana-normal-shadow);
-    padding: $standard-padding;
     box-shadow: $medium-shadow;
     text-align: right;
     flex-flow: column;
@@ -67,7 +66,7 @@
       top: unset;
     }
 
-    @include colors(modal, 'background');
+    @include colorsLight(modal, 'background');
   }
 
   &-title {
@@ -82,11 +81,11 @@
     display: flex;
     flex: 0 1 auto;
     padding: $standard-padding $double-size-padding;
-    border-bottom: $standard-border;
     height: 30px;
     line-height: 25px;
     vertical-align: middle;
     margin-bottom: $standard-margin;
+    background-color: rgba(0, 0, 0, .03);
 
     &-icon {
       margin: 0 5px;
@@ -106,7 +105,7 @@
   }
 
   &-footer {
-    border-top: 1px solid var(--nirvana-dark-backdrop-1);
+    background-color: rgba(0, 0, 0, .03);
     padding: $standard-padding $double-size-padding;
     display: flex;
     justify-content: flex-end;

@@ -10,6 +10,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NONE: 'none',
 };
 
 const RADIUS = {
@@ -27,24 +28,20 @@ const SHADOW = {
   LARGE: 'large',
 };
 
+const SIZE = {
+  TINY: 'tiny',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  EXTRA: 'extra',
+};
+
 const BreadCrumbComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   return (
-    // <div {...parentProps} className={generateClass(props, 'alert')}>
-    //   {props.children}
-    // </div>
-    <div
-      {...parentProps}
-      className={
-        generateClass(props, 'breadcrumb') +
-        ' ' +
-        props.itemColor +
-        ' ' +
-        props.itemRadius
-      }
-    >
+    <div {...parentProps} className={generateClass(props, 'breadcrumb')}>
       {props.items.map((item, index) => {
         return (
           <div className="breadcrumb-item" key={index}>
@@ -62,15 +59,19 @@ const BreadCrumb = React.forwardRef((props) => (
 
 BreadCrumb.propTypes = {
   id: PropTypes.string,
-  itemColor: PropTypes.oneOf(Object.values(COLOR)),
-  itemRadius: PropTypes.oneOf(Object.values(RADIUS)),
+  color: PropTypes.oneOf(Object.values(COLOR)),
+  radius: PropTypes.oneOf(Object.values(RADIUS)),
+  size: PropTypes.oneOf(Object.values(SIZE)),
+  shadow: PropTypes.oneOf(Object.values(SHADOW)),
   className: PropTypes.string,
   items: PropTypes.array,
 };
 
 BreadCrumb.defaultProps = {
-  itemColor: COLOR.LIGHT,
-  itemRadius: RADIUS.NORMAL,
+  color: COLOR.NONE,
+  radius: RADIUS.NORMAL,
+  size: SIZE.MEDIUM,
+  shadow: SHADOW.NONE,
   className: '',
 };
 

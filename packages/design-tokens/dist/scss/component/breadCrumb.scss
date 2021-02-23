@@ -4,15 +4,19 @@
   user-select: none;
   align-items: center;
   height: 100%;
+  padding: $standard-padding;
+  border-radius: $standard-radius;
+  transition: $standard-animation;
+  font-size: $h6-font-size;
 
   .breadcrumb-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100px;
+    max-width: 150px;
     overflow: hidden;
     height: 100%;
-    font-size: 12px;
+    font-size: 1em;
 
     span {
       overflow: hidden;
@@ -31,67 +35,23 @@
       content: "";
       padding: 0px;
     }
-
-    &:last-child span {
-      background-color: var(--nirvana-primary);
-      color: var(--nirvana-light);
-      line-height: 1.75em;
-      padding: 2px 4px;
-      border-radius: $standard-radius;
-    }
   }
 
-  &.danger .breadcrumb-item:last-child span {
-    background-color: var(--nirvana-danger);
-    color: var(--nirvana-light);
+  &.breadcrumb-size-tiny {
+    font-size: $font-size-sm*0.85;
   }
 
-  &.success .breadcrumb-item:last-child span {
-    background-color: var(--nirvana-success);
+  &.breadcrumb-size-small {
+    font-size: $font-size-sm;
   }
 
-  &.primary .breadcrumb-item:last-child span {
-    background-color: var(--nirvana-primary);
+  &.breadcrumb-size-large {
+    font-size: $h4-font-size;
   }
 
-  &.info .breadcrumb-item:last-child span {
-    background-color: var(--nirvana-info);
+  &.breadcrumb-size-extra {
+    font-size: $h2-font-size;
   }
 
-  &.dark .breadcrumb-item:last-child span {
-    background-color: var(--nirvana-dark);
-  }
-
-  &.light .breadcrumb-item:last-child span {
-    background-color: var(--nirvana-light);
-    color: var(--nirvana-dark);
-  }
-
-  &.warning .breadcrumb-item:last-child span {
-    background-color: var(--nirvana-warning);
-  }
-
-  &.none .breadcrumb-item span {
-    border-radius: 0;
-  }
-
-  &.small .breadcrumb-item span {
-    border-radius: $half-radius;
-  }
-
-  &.normal .breadcrumb-item span {
-    border-radius: $standard-radius;
-  }
-
-  &.curve .breadcrumb-item span {
-    border-radius: $double-size-radius;
-  }
-
-  &.rounded .breadcrumb-item span {
-    border-radius: $round-radius;
-  }
-
-  &.pill .breadcrumb-item span {
-    border-radius: 50rem;
-  }
+  @include colors(breadcrumb, 'background');
 }
