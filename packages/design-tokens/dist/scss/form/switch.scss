@@ -59,7 +59,7 @@
       background-color: $gray-100;
       border: 1px solid $gray-300;
       transition: $standard-animation;
-      box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.5);
     }
 
     border-radius: 50em;
@@ -115,19 +115,19 @@
 
   &.switch-size-small {
     width: 16px;
-    height: 10px;
+    height: 11px;
 
     .nirvana-slider {
       &:before {
-        height: 8px;
-        width: 8px;
-        left: 0px;
-        bottom: 0px;
+        height: 7px;
+        width: 7px;
+        left: 1px;
+        bottom: 1px;
       }
     }
 
     input:checked+.nirvana-slider:before {
-      transform: translateX(6px);
+      transform: translateX(5px);
     }
   }
 
@@ -137,8 +137,8 @@
 
     .nirvana-slider {
       &:before {
-        height: 24px;
-        width: 24px;
+        height: 23px;
+        width: 23px;
         left: 2px;
         bottom: 2px;
       }
@@ -155,10 +155,10 @@
 
     .nirvana-slider {
       &:before {
-        height: 36px;
-        width: 36px;
+        height: 35px;
+        width: 35px;
         left: 2px;
-        bottom: 1px;
+        bottom: 2px;
       }
     }
 
