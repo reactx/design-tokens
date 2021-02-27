@@ -2,27 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  ROUNDED: 'rounded',
-};
-
 const SIZE = {
   TINY: 'tiny',
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
   EXTRA: 'extra',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
 };
 
 const COLOR = {

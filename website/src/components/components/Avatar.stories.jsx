@@ -37,6 +37,11 @@ export default {
         category: 'Attribute',
       },
     },
+    loading: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     color: {
       control: 'inline-radio',
       table: {

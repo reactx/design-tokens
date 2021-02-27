@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
+import { Loading } from './Loading';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -34,6 +35,14 @@ const SHADOW = {
   LARGE: 'large',
 };
 
+const LOADING_SIZE = {
+  tiny: 'tiny',
+  small: 'tiny',
+  medium: 'small',
+  large: 'medium',
+  extra: 'large',
+};
+
 const AvatarComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -46,6 +55,13 @@ const AvatarComponent = (props) => {
         <span className="nirvana-avatar-letter">
           {props.username.substring(0, 1).toUpperCase()}
         </span>
+      )}
+      {props.loading && (
+        <Loading
+          enabled={props.loading}
+          color={props.color}
+          size={LOADING_SIZE[props.size]}
+        />
       )}
     </div>
   );
@@ -66,18 +82,20 @@ Avatar.propTypes = {
   src: PropTypes.string,
   title: PropTypes.string,
   disabled: PropTypes.bool,
+  loading: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 Avatar.defaultProps = {
   title: 'Avatar',
-  color: COLOR.LIGHT,
+  color: COLOR.PRIMARY,
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
   outline: false,
   disabled: false,
+  loading: false,
   username: 'Nirvana',
   className: '',
 };
