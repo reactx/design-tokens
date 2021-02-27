@@ -1,0 +1,49 @@
+.nirvana-tooltip {
+  background: $black;
+  animation: fadeInTooltip 0.3s ease-in;
+  color: var(--nirvana-backdrop-9);
+  border-radius: $standard-radius;
+  padding: $standard-padding;
+  font-size: $font-size-sm;
+  max-width: 150px;
+  position: fixed;
+  opacity: 0;
+  user-select: none;
+  z-index: 9999;
+  top: 0px;
+  left: 0px;
+
+  &-fade-out {
+    animation: fadeOutTooltip 0.3s ease-in;
+    opacity: 0;
+  }
+
+  &-active {
+    opacity: 1;
+  }
+
+
+  &.tooltip-size-small {
+    padding: $standard-padding;
+    font-size: $font-size-sm*.75;
+  }
+
+  &.tooltip-size-medium {
+    padding: $standard-padding;
+    font-size: $font-size-base;
+  }
+
+  &.tooltip-size-large {
+    padding: $double-size-padding;
+    font-size: $h4-font-size;
+    max-width: 200px;
+  }
+
+  &.tooltip-size-extra {
+    padding: $double-size-padding;
+    font-size: $h2-font-size;
+    max-width: 250px;
+  }
+
+  @include colors(tooltip, 'background');
+}
