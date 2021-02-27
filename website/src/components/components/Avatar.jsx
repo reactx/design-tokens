@@ -56,13 +56,11 @@ const AvatarComponent = (props) => {
           {props.username.substring(0, 1).toUpperCase()}
         </span>
       )}
-      {props.loading && (
-        <Loading
-          enabled={props.loading}
-          color={props.color}
-          size={LOADING_SIZE[props.size]}
-        />
-      )}
+      <Loading
+        enabled={props.loading}
+        color={props.color}
+        size={LOADING_SIZE[props.size]}
+      />
     </div>
   );
 };
