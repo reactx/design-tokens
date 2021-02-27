@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
@@ -21,17 +21,32 @@ const COLOR = {
 };
 
 const LoadingComponent = (props) => {
+  const [lastState, setLast] = useState(false);
+  const loadingRef = useRef(null);
   const parentProps = { ...props };
   cleanProps(parentProps);
+
+  useEffect(() => {
+    if (!loadingRef.current) return;
+    if (props.enabled) {
+      loadingRef.current.classList.add('nirvana-loading-enable');
+      loadingRef.current.classList.remove('nirvana-loading-disable');
+      setLast(true);
+    } else if (lastState) {
+      loadingRef.current.classList.remove('nirvana-loading-enable');
+      loadingRef.current.classList.add('nirvana-loading-disable');
+      setLast(false);
+      setTimeout(function () {
+        loadingRef.current?.classList?.remove('nirvana-loading-disable');
+      }, 3000);
+    }
+  }, [props.enabled]);
 
   return (
     <div
       {...parentProps}
-      className={
-        (props.className || '') +
-        'nirvana-loading ' +
-        (props.enabled ? 'nirvana-loading-enable' : 'nirvana-loading-disable')
-      }
+      ref={loadingRef}
+      className={(props.className || '') + 'nirvana-loading'}
     >
       <div
         className={

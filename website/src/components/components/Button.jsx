@@ -56,13 +56,11 @@ const ButtonComponent = (props) => {
   return (
     <button {...parentProps} className={generateClass(props, 'btn')}>
       {props.children}
-      {props.loading && (
-        <Loading
-          enabled={props.loading}
-          color={props.color}
-          size={LOADING_SIZE[props.size]}
-        />
-      )}
+      <Loading
+        enabled={props.loading}
+        color={props.color}
+        size={LOADING_SIZE[props.size]}
+      />
     </button>
   );
 };
