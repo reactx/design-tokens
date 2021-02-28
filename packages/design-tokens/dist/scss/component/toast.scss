@@ -1,0 +1,22 @@
+$toast-width:15em;
+
+.nirvana-toast {
+  border-radius: $standard-radius;
+  position: fixed;
+  width: $toast-width;
+  overflow: hidden;
+
+  .toast-header {
+    background-color: rgba(0, 0, 0, .09);
+    padding: $standard-padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .toast-body {
+    padding: $standard-padding;
+  }
+
+  @include colorsLight(toast, 'background');
+}
