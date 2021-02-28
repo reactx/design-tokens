@@ -1,0 +1,50 @@
+import React from 'react';
+import { Pagination } from './Pagination';
+
+export default {
+  title: 'Components/Pagination',
+  component: Pagination,
+  argTypes: {
+    id: {
+      control: 'text',
+      table: {
+        category: 'Attribute',
+      },
+    },
+    disabled: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    items: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    className: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    radius: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    size: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    changePagePosition: {
+      table: {
+        category: 'Action',
+      },
+    },
+  },
+};
+
+export const Basic = (args) => <Pagination {...args} />;
+Basic.args = { items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] };

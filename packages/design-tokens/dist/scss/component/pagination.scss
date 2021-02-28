@@ -1,0 +1,85 @@
+.nirvana-pagination-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.nirvana-pagination {
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  display: flex;
+  padding: 1em;
+  margin: 0;
+
+  &-item {
+    background-color: var(--nirvana-backdrop-9);
+    border-radius: $standard-radius;
+    margin: 0 $half-size-margin;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    line-height: 2em;
+    cursor: default;
+    font-size: 1em;
+    display: flex;
+    height: 2em;
+    width: 2em;
+    padding: 0;
+
+    &.nirvana-active {
+      background-color: var(--nirvana-primary) !important;
+      color: white;
+    }
+  }
+
+  &.radius-curve {
+    .nirvana-pagination-item {
+      border-radius: $double-size-radius;
+    }
+  }
+
+  &.radius-pill {
+    .nirvana-pagination-item {
+      border-radius: 50rem;
+    }
+  }
+
+  &.radius-none {
+    .nirvana-pagination-item {
+      border-radius: 0;
+    }
+  }
+
+  &.radius-small {
+    .nirvana-pagination-item {
+      border-radius: $half-radius;
+    }
+  }
+
+  &.radius-rounded {
+    .nirvana-pagination-item {
+      border-radius: $round-radius;
+    }
+  }
+
+  &.pagination-size-tiny {
+    font-size: $font-size-sm*0.75;
+  }
+
+  &.pagination-size-small {
+    font-size: $font-size-sm;
+  }
+
+  &.pagination-size-medium {
+    font-size: $font-size-base;
+  }
+
+  &.pagination-size-large {
+    font-size: $h4-font-size;
+  }
+
+  &.pagination-size-extra {
+    font-size: $h2-font-size;
+  }
+}
