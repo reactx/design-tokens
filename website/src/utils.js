@@ -17,6 +17,8 @@ const delList = [
   'fixIcon',
   'append',
   'padding',
+  'brand',
+  'menu',
   'outline',
   'theme',
   'radius',
@@ -27,6 +29,7 @@ const delList = [
   'animation',
   'footer',
   'color',
+  'background',
   'header',
   'size',
   'icon',
@@ -109,6 +112,10 @@ export const generateClass = (prop, baseName) => {
   //SIZE
   if (prop.size && prop.size !== SIZE.MEDIUM) {
     classList.push(baseName + '-size-' + prop.size);
+  }
+  //BACKGROUND
+  if (prop.background && prop.background !== COLOR.LIGHT) {
+    classList.push(baseName + '-background-' + prop.background);
   }
   //OUTLINE AND COLOR
   if (prop.outline && prop.color) {
