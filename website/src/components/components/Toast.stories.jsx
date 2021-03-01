@@ -36,6 +36,11 @@ export default {
         category: 'Attribute',
       },
     },
+    outline: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     className: {
       table: {
         category: 'Attribute',

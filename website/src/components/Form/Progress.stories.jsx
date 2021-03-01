@@ -74,3 +74,4 @@ export default {
 };
 
 export const Basic = (args) => <Progress {...args} />;
+Basic.args = { value: 50 };

@@ -14,6 +14,13 @@ const POSITION = {
 
 const ToastManagerComponent = (props) => {
   const [toastList, SetToastList] = useState(props.items ? props.items : []);
+
+  const addItem = (item) => {
+    let list = [...toastList];
+    list.push(item);
+    SetToastList(list);
+  };
+
   const parentProps = { ...props };
   delete parentProps.type;
   cleanProps(parentProps);
