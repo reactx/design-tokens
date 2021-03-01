@@ -16,6 +16,21 @@ export default {
         category: 'Attribute',
       },
     },
+    size: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    sizeMd: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    sizeLg: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     className: {
       table: {
         category: 'Attribute',
@@ -25,3 +40,17 @@ export default {
 };
 
 export const Basic = (args) => <Column {...args} />;
+Basic.args = { children: 'col-12' };
+export const MultiCol = (args) => (
+  <>
+    <Column {...args} size="4">
+      col-4
+    </Column>
+    <Column {...args} size="4">
+      col-4
+    </Column>
+    <Column {...args} size="4">
+      col-4
+    </Column>
+  </>
+);

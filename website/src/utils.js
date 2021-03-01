@@ -35,6 +35,8 @@ const delList = [
   'background',
   'header',
   'size',
+  'sizeMd',
+  'sizeLg',
   'icon',
   'description',
   'src',
