@@ -27,12 +27,6 @@ export default {
         category: 'Attribute',
       },
     },
-    // radius: {
-    //   control: 'inline-radio',
-    //   table: {
-    //     category: 'Style',
-    //   },
-    // },
     addToast: {
       table: {
         category: 'Action',
@@ -51,6 +45,12 @@ Basic.args = {
       header: 'Toast Header',
       color: 'danger',
       useDefaultIcon: true,
+    },
+    {
+      children: 'Toast Message',
+      color: 'success',
+      useDefaultIcon: true,
+      outline: true,
     },
   ],
 };

@@ -20,8 +20,8 @@ const ICON = {
   DANGER: 'ErrorBadge',
   WARNING: 'Error',
   INFO: 'Info',
-  DARK: 'MostyClearNight',
-  LIGHT: 'Brightness',
+  DARK: 'SettingsSecure',
+  LIGHT: 'Feedback',
 };
 
 const RADIUS = {
@@ -95,6 +95,7 @@ Toast.propTypes = {
   onClick: PropTypes.func,
   closeAction: PropTypes.func,
   progressBar: PropTypes.bool,
+  outline: PropTypes.bool,
   useDefaultIcon: PropTypes.bool,
   showDuration: PropTypes.number,
 };
@@ -104,6 +105,7 @@ Toast.defaultProps = {
   radius: RADIUS.SMALL,
   shadow: SHADOW.SMALL,
   progressBar: false,
+  outline: false,
   useDefaultIcon: false,
   showDuration: 3000,
 };

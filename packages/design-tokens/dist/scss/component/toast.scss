@@ -1,7 +1,6 @@
 $toast-width:17em;
 
 .nirvana-toast {
-  border: 1px solid rgba(100, 100, 100, 0.1);
   border-radius: $standard-radius;
   margin-bottom: $double-size-margin;
   width: $toast-width;
@@ -26,6 +25,61 @@ $toast-width:17em;
     border: 0;
   }
 
+  &.nirvana-color-danger {
+    border-left: 4px solid var(--nirvana-danger-light);
+    color: var(--nirvana-foreground) !important;
+
+    .toast-body .nirvana-icon {
+      color: var(--nirvana-danger-light);
+    }
+  }
+
+  &.nirvana-color-success {
+    border-left: 4px solid var(--nirvana-success-light);
+    color: var(--nirvana-foreground) !important;
+
+    .toast-body .nirvana-icon {
+      color: var(--nirvana-success-light);
+    }
+  }
+
+  &.nirvana-color-warning {
+    border-left: 4px solid var(--nirvana-warning-light);
+    color: var(--nirvana-foreground) !important;
+
+    .toast-body .nirvana-icon {
+      color: var(--nirvana-warning-light);
+    }
+  }
+
+  &.nirvana-color-info {
+    border-left: 4px solid var(--nirvana-info-light);
+    color: var(--nirvana-foreground) !important;
+
+    .toast-body .nirvana-icon {
+      color: var(--nirvana-info-light);
+    }
+  }
+
+  &.nirvana-color-dark {
+    border-left: 4px solid var(--nirvana-dark-light);
+    color: var(--nirvana-foreground) !important;
+  }
+
+  &.nirvana-color-light {
+    border-left: 4px solid var(--nirvana-light-light);
+    color: var(--nirvana-foreground) !important;
+  }
+
+  &.nirvana-color-primary {
+    border-left: 4px solid var(--nirvana-primary-light);
+    color: var(--nirvana-foreground) !important;
+
+    .toast-body .nirvana-icon {
+      color: var(--nirvana-primary-light);
+    }
+  }
+
   @include colorsLight(toast, 'background');
 }
 
@@ -36,16 +90,19 @@ $toast-width:17em;
   width: $toast-width;
 
   &.toast-top-right {
+    flex-direction: column-reverse;
     right: 10px;
     top: 10px;
   }
 
   &.toast-top-left {
+    flex-direction: column-reverse;
     left: 10px;
     top: 10px;
   }
 
   &.toast-top-center {
+    flex-direction: column-reverse;
     left: calc(50% - #{$toast-width/2});
     top: 10px;
   }
@@ -53,17 +110,14 @@ $toast-width:17em;
   &.toast-bottom-right {
     right: 10px;
     bottom: 10px;
-    flex-direction: column-reverse;
   }
 
   &.toast-bottom-left {
     left: 10px;
     bottom: 10px;
-    flex-direction: column-reverse;
   }
 
   &.toast-bottom-center {
-    flex-direction: column-reverse;
     left: calc(50% - #{$toast-width/2});
     bottom: 10px;
   }
