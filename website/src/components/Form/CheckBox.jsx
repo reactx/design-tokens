@@ -43,7 +43,6 @@ CheckBox.propTypes = {
 CheckBox.defaultProps = {
   size: SIZE.MEDIUM,
   checked: false,
-  label: 'CheckBox Text',
   disabled: false,
   readOnly: false,
   autoFocus: false,

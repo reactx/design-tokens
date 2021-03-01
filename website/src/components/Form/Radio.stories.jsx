@@ -51,3 +51,4 @@ export default {
 };
 
 export const Basic = (args) => <Radio {...args} />;
+Basic.args = { label: 'Radio Text' };

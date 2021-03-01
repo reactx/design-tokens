@@ -153,8 +153,6 @@ InputText.defaultProps = {
   shadow: SHADOW.NONE,
   validationStates: VALIDATION.NONE,
   formControlStyle: CONTROL_STYLE.NORMAL,
-  title: 'InputText Text',
-  label: 'InputText Label',
   disabled: false,
   readOnly: false,
   required: false,

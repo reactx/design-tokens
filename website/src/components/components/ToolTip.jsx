@@ -70,7 +70,6 @@ ToolTip.defaultProps = {
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
-  children: 'ToolTip Message',
   className: '',
 };
 

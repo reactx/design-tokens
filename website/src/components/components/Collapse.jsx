@@ -59,9 +59,7 @@ Collapse.defaultProps = {
   color: COLOR.PRIMARY,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
-  title: 'Collapse Text',
   disabled: false,
-  children: 'Collapse Message',
   className: '',
 };
 

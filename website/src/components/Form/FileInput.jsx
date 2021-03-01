@@ -76,7 +76,6 @@ FileInput.defaultProps = {
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
-  title: 'FileInput Text',
   validationStates: VALIDATION.NONE,
   format: FORMAT.ALL,
   disabled: false,

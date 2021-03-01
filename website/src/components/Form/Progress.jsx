@@ -83,7 +83,6 @@ Progress.defaultProps = {
   color: COLOR.PRIMARY,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
-  title: 'Progress Text',
   className: '',
   max: 100,
 };

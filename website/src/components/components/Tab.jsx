@@ -113,9 +113,7 @@ Tab.propTypes = {
 };
 
 Tab.defaultProps = {
-  title: 'Tab Text',
   disabled: false,
-  children: 'Tab Message',
   className: '',
   activeTabId: 1,
 };

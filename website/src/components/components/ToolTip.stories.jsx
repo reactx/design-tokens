@@ -49,4 +49,8 @@ export default {
 };
 
 export const Basic = (args) => <ToolTip {...args} />;
-Basic.args = { active: true, style: { top: '10px', left: '10px' } };
+Basic.args = {
+  active: true,
+  style: { top: '10px', left: '10px' },
+  children: 'Tooltip text',
+};

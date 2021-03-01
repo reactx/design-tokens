@@ -80,8 +80,6 @@ Range.defaultProps = {
   min: 0,
   max: 100,
   step: 1,
-  title: 'Range Text',
-  label: 'Range Label',
   disabled: false,
   required: false,
   autoFocus: false,

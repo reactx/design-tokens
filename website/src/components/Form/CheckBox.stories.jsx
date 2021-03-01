@@ -51,3 +51,4 @@ export default {
 };
 
 export const Basic = (args) => <CheckBox {...args} />;
+Basic.args = { label: 'Checkbox Text' };

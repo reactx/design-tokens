@@ -62,6 +62,7 @@ export default {
 
 export const Basic = (args) => <Tab {...args} />;
 Basic.args = {
+  children: 'Tab data',
   tabList: [
     { name: 'item 1 test', tabId: 1 },
     { name: 'item 2 test', tabId: 2 },

@@ -68,3 +68,4 @@ export default {
 };
 
 export const Basic = (args) => <Switch {...args} />;
+Basic.args = { label: 'switch Text' };

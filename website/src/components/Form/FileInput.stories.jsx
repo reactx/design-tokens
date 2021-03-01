@@ -79,3 +79,4 @@ export default {
 };
 
 export const Basic = (args) => <FileInput {...args} />;
+Basic.args = { label: 'Input Text' };
