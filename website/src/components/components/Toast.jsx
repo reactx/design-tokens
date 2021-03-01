@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 import { FluentIcon } from './FluentIcon';
+import { Progress } from '../form/Progress';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -11,6 +12,16 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+};
+
+const ICON = {
+  PRIMARY: 'ProgressLoopOuter spinner',
+  SUCCESS: 'Completed',
+  DANGER: 'ErrorBadge',
+  WARNING: 'Error',
+  INFO: 'Info',
+  DARK: 'MostyClearNight',
+  LIGHT: 'Brightness',
 };
 
 const RADIUS = {
@@ -39,11 +50,34 @@ const ToastComponent = (props) => {
         <div className="toast-header">
           <div>{props.header}</div>
           <div>
-            <FluentIcon icon="ChromeClose" radius="rounded" iconSize="tiny" />
+            <FluentIcon
+              icon="ChromeClose"
+              radius="rounded"
+              iconSize="tiny"
+              onClick={props.closeAction}
+            />
           </div>
         </div>
       )}
-      <div className="toast-body">{props.children}</div>
+      <div className="toast-body">
+        {props.useDefaultIcon && (
+          <FluentIcon
+            icon={ICON[props.color.toUpperCase()]}
+            radius="rounded"
+            iconSize="extra-large"
+          />
+        )}
+        {props.children}
+      </div>
+      {props.progressBar && (
+        <Progress
+          value={10}
+          size="tiny"
+          radius="none"
+          max={100}
+          color={props.color}
+        />
+      )}
     </div>
   );
 };
@@ -59,12 +93,19 @@ Toast.propTypes = {
   header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   className: PropTypes.string,
   onClick: PropTypes.func,
+  closeAction: PropTypes.func,
+  progressBar: PropTypes.bool,
+  useDefaultIcon: PropTypes.bool,
+  showDuration: PropTypes.number,
 };
 
 Toast.defaultProps = {
   color: COLOR.LIGHT,
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.MEDIUM,
+  radius: RADIUS.SMALL,
+  shadow: SHADOW.SMALL,
+  progressBar: false,
+  useDefaultIcon: false,
+  showDuration: 3000,
 };
 
 export { Toast };

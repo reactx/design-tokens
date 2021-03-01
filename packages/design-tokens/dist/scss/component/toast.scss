@@ -1,13 +1,15 @@
-$toast-width:15em;
+$toast-width:17em;
 
 .nirvana-toast {
+  border: 1px solid rgba(100, 100, 100, 0.1);
   border-radius: $standard-radius;
-  position: fixed;
+  margin-bottom: $double-size-margin;
   width: $toast-width;
   overflow: hidden;
+  position: relative;
 
   .toast-header {
-    background-color: rgba(0, 0, 0, .09);
+    background-color: rgba(0, 0, 0, .03);
     padding: $standard-padding;
     display: flex;
     justify-content: space-between;
@@ -15,8 +17,54 @@ $toast-width:15em;
   }
 
   .toast-body {
-    padding: $standard-padding;
+    padding: $double-size-padding $standard-padding;
+    display: flex;
+    align-items: center;
+  }
+
+  .nirvana-progress {
+    border: 0;
   }
 
   @include colorsLight(toast, 'background');
+}
+
+.nirvana-toast-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: $toast-width;
+
+  &.toast-top-right {
+    right: 10px;
+    top: 10px;
+  }
+
+  &.toast-top-left {
+    left: 10px;
+    top: 10px;
+  }
+
+  &.toast-top-center {
+    left: calc(50% - #{$toast-width/2});
+    top: 10px;
+  }
+
+  &.toast-bottom-right {
+    right: 10px;
+    bottom: 10px;
+    flex-direction: column-reverse;
+  }
+
+  &.toast-bottom-left {
+    left: 10px;
+    bottom: 10px;
+    flex-direction: column-reverse;
+  }
+
+  &.toast-bottom-center {
+    flex-direction: column-reverse;
+    left: calc(50% - #{$toast-width/2});
+    bottom: 10px;
+  }
 }
