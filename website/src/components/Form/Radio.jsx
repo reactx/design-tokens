@@ -43,7 +43,6 @@ Radio.propTypes = {
 Radio.defaultProps = {
   size: SIZE.MEDIUM,
   checked: false,
-  label: 'Radio Text',
   disabled: false,
   readOnly: false,
   autoFocus: false,

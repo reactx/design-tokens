@@ -160,8 +160,6 @@ SelectBox.defaultProps = {
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
   validationStates: VALIDATION.NONE,
-  title: 'SelectBox Text',
-  text: 'SelectBox Text',
   disabled: false,
   readOnly: false,
   required: false,

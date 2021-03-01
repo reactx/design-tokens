@@ -148,12 +148,14 @@ export const Basic = (args) => <InputText {...args} />;
 Basic.args = { validMessage: 'is Valid', invalidMessage: 'is Invalid' };
 export const WithDescription = (args) => <InputText {...args} />;
 WithDescription.args = {
+  label: 'Input Text',
   validMessage: 'is Valid',
   invalidMessage: 'is Invalid',
   description: 'Description text',
 };
 export const WithAppendPrepend = (args) => <InputText {...args} />;
 WithAppendPrepend.args = {
+  label: 'Input Text',
   validMessage: 'is Valid',
   invalidMessage: 'is Invalid',
   prepend: 'Email',
@@ -161,5 +163,6 @@ WithAppendPrepend.args = {
 };
 export const TextArea = (args) => <InputText {...args} />;
 TextArea.args = {
+  label: 'Input Text',
   multiLine: true,
 };

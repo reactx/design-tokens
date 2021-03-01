@@ -89,8 +89,6 @@ Button.defaultProps = {
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
-  children: 'Button Text',
-  title: 'Button Text',
   outline: false,
   disabled: false,
   loading: false,

@@ -64,3 +64,4 @@ export default {
 };
 
 export const Basic = (args) => <Alert {...args} />;
+Basic.args = { children: 'Alert Default Message' };

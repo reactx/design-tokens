@@ -67,9 +67,6 @@ Card.defaultProps = {
   shadow: SHADOW.NONE,
   outline: false,
   disabled: false,
-  children: 'Card Body Text',
-  header: 'Header Text',
-  footer: 'Footer Text',
   className: '',
 };
 

@@ -100,6 +100,7 @@ export default {
 
 export const Basic = (args) => <SelectBox {...args} />;
 Basic.args = {
+  text: 'select item',
   items: [
     { name: 'item 1', value: 'value' },
     { name: 'item 2', value: 'value' },
@@ -107,6 +108,7 @@ Basic.args = {
 };
 export const WithFixIcon = (args) => <SelectBox {...args} />;
 WithFixIcon.args = {
+  text: 'select item',
   items: [
     { name: 'item 1', value: 'value' },
     { name: 'item 2', value: 'value' },

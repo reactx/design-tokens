@@ -60,7 +60,6 @@ Alert.defaultProps = {
   shadow: SHADOW.NONE,
   outline: false,
   disabled: false,
-  children: 'Alert Message',
   className: '',
 };
 

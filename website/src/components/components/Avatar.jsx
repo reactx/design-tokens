@@ -94,7 +94,6 @@ Avatar.defaultProps = {
   outline: false,
   disabled: false,
   loading: false,
-  username: 'Nirvana',
   className: '',
 };
 

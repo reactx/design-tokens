@@ -82,3 +82,4 @@ export default {
 };
 
 export const Basic = (args) => <Range {...args} />;
+Basic.args = { label: 'Range Label' };
