@@ -9,6 +9,8 @@ const delList = [
   'itemRadius',
   'formControlStyle',
   'position',
+  'closeAction',
+  'showDuration',
   'itemColor',
   'validMessage',
   'invalidMessage',

@@ -2258,6 +2258,7 @@ FluentIcon.propTypes = {
   shadowOnHover: PropTypes.oneOf(Object.values(SHADOW)),
   iconSize: PropTypes.oneOf(Object.values(SIZE)),
   className: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 FluentIcon.defaultProps = {

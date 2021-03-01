@@ -21,6 +21,21 @@ export default {
         category: 'Attribute',
       },
     },
+    showDuration: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    useDefaultIcon: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    progressBar: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     className: {
       table: {
         category: 'Attribute',
@@ -45,6 +60,11 @@ export default {
       },
     },
     onClick: {
+      table: {
+        category: 'Action',
+      },
+    },
+    closeAction: {
       table: {
         category: 'Action',
       },

@@ -38,7 +38,6 @@ const SIZE = {
 const ProgressComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
-
   const calcPosition = () => {
     let one = props.max / 100;
     let result = Math.ceil(props.value / one);
@@ -86,7 +85,6 @@ Progress.defaultProps = {
   shadow: SHADOW.NONE,
   title: 'Progress Text',
   className: '',
-  value: 50,
   max: 100,
 };
 
