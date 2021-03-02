@@ -48,7 +48,7 @@ ToastManager.propTypes = {
 
 ToastManager.defaultProps = {
   position: POSITION.TOP_RIGHT,
-  toastShowCount: 3,
+  toastShowCount: 10,
 };
 
 export { ToastManager };
