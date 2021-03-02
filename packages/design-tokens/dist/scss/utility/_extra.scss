@@ -27,32 +27,6 @@
 // Nirvana-color-*
 @include colors(color, 'color');
 
-/* Nirvana Align and Justify */
-@each $align in $aligns {
-  .nirvana-align-#{$align} {
-    display: flex;
-    align-items: $align !important;
-  }
-}
-
-.nirvana-justify-start {
-  display: flex;
-  justify-content: flex-start !important;
-}
-
-.nirvana-justify-center {
-  display: flex;
-  justify-content: center !important;
-}
-
-.nirvana-justify-end {
-  display: flex;
-  justify-content: flex-end !important;
-}
-
-.nirvana-relative-position {
-  position: relative;
-}
 
 /* Height and width */
 @each $size in $sizes {
@@ -72,26 +46,7 @@
   }
 }
 
-/* end Display */
-.nirvana-silent-text {
-  background-color: var(--nirvana-dark-backdrop-5);
-  color: transparent;
-  text-shadow: 0px 2px 2px var(--nirvana-dark-backdrop-1);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-}
-
-.nirvana-message {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: var(--nirvana-dark-backdrop-5);
-}
+/* End Display */
 
 /* Overflow */
 @each $item in $overflow {
