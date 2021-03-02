@@ -2,7 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
-const SIZE = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+const SIZE = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  'auto',
+];
 
 const ColumnComponent = (props) => {
   const parentProps = { ...props };

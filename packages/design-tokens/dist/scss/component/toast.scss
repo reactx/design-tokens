@@ -3,6 +3,7 @@ $toast-width:17em;
 .nirvana-toast {
   border-radius: $standard-radius;
   margin-bottom: $double-size-margin;
+  background-color: var(--nirvana-backdrop-9);
   width: $toast-width;
   overflow: hidden;
   position: relative;
@@ -84,6 +85,7 @@ $toast-width:17em;
 }
 
 .nirvana-toast-container {
+  z-index: 1000;
   position: fixed;
   display: flex;
   flex-direction: column;

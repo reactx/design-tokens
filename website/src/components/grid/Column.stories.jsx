@@ -41,16 +41,10 @@ export default {
 
 export const Basic = (args) => <Column {...args} />;
 Basic.args = { children: 'col-12' };
-export const MultiCol = (args) => (
+export const MultiCol = () => (
   <>
-    <Column {...args} size="4">
-      col-4
-    </Column>
-    <Column {...args} size="4">
-      col-4
-    </Column>
-    <Column {...args} size="4">
-      col-4
-    </Column>
+    <Column size="4">col-4</Column>
+    <Column size="4">col-4</Column>
+    <Column size="4">col-4</Column>
   </>
 );

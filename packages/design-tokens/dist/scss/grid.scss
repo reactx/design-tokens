@@ -1,5 +1,11 @@
 $base-width:100;
 
+.nirvana-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $standard-padding;
+}
+
 .nirvana-column {
   display: inline-flex;
 
@@ -7,6 +13,10 @@ $base-width:100;
     &.col-#{$i} {
       width: ($base-width/12)*$i#{'%'};
     }
+  }
+
+  &.col-auto {
+    flex: 1 1 auto;
   }
 }
 
