@@ -74,17 +74,6 @@ $medium-shadow:0px 3.2px 7.2px rgba(0, 0, 0, 0.13),
 $large-shadow:0px 0px 9.2px rgba(0, 0, 0, 0.11),
 0px 12.8px 28.8px rgba(0, 0, 0, 0.13);
 
-/* Utility */
-$paddingMargin: ([p pt pl pr pb], [m mt ml mb mr]);
-$mp:(p:'padding', m:'margin');
-$pdDirection: (t: '-top', l: '-left', r: '-right', b: '-bottom');
-$pdDirectionLtr: (t: '-top', l: '-right', r: '-left', b: '-bottom');
-$aligns: flex-start start center flex-end end stretch;
-$justifies: start center end space-between space-around space-evenly left right normal stretch;
-$displays:inline block contents flex grid inline-block inline-flex inline-grid inline-table list-item run-in table table-cell table-row none initial inherit;
-$overflow:hidden auto scroll visible overlay unset;
-$sizes:100 75 50 25;
-
 $spacing-none: 0;
 $spacing-extra-tight: 4px;
 $spacing-tight: 8px;

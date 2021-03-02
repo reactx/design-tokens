@@ -4,7 +4,9 @@
 "utility/font",
 "utility/shadow",
 "utility/justify_align",
-"utility/extra";
+"utility/display",
+"utility/overflow",
+"utility/height_width";
 
 [disabled] {
   cursor: not-allowed !important;
@@ -12,4 +14,31 @@
   filter: grayscale(1) !important;
 }
 
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.nirvana-back-blur {
+  backdrop-filter: $backdrop;
+  background-color: var(--nirvana-backdrop-color) !important;
+}
+
+.nirvana-medium-back-blur {
+  background-color: var(--nirvana-backdrop-7) !important;
+}
+
+.nirvana-light-back-blur {
+  background-color: var(--nirvana-backdrop-3) !important;
+}
+
+/* nirvana Background and Color */
+// nirvana-bg-*
+@include colors(bg, 'background');
+// nirvana-color-*
 @include colors(color, 'color');

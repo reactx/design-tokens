@@ -1,3 +1,8 @@
+$paddingMargin: ([p pt pl pr pb], [m mt ml mb mr]);
+$mp:(p:'padding', m:'margin');
+$pdDirection: (t: '-top', l: '-left', r: '-right', b: '-bottom');
+$pdDirectionLtr: (t: '-top', l: '-right', r: '-left', b: '-bottom');
+
 @each $pm in $paddingMargin {
   @each $pmItem in $pm {
     @for $i from 0 through 5 {

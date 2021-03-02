@@ -1,3 +1,6 @@
+$justifies: start center end space-between space-around space-evenly left right normal stretch;
+$aligns: flex-start start center flex-end end stretch;
+
 @each $justify in $justifies {
   .justify-#{$justify} {
     justify-content: $justify !important;
