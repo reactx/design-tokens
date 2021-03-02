@@ -17,6 +17,7 @@ $gray-700: #374151;
 $gray-800: #1F2937;
 $gray-900: #111827;
 $primary:$blue;
+$secondary:$gray-600;
 
 // Break Points
 $tablet-break-point:1024px;
@@ -65,8 +66,8 @@ $standard-icon-size:32px;
 $large-icon-size:48px;
 $backdrop: saturate(180%) blur(20px);
 
-/* Shadow */
-$bottom-shadow: 0 0 3px 1px var(--nirvana-dark-backdrop-3);
+// Shadow
+$bottom-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.13);
 $small-shadow:0px 1.6px 3.6px rgba(0, 0, 0, 0.13),
 0px 0px 2.9px rgba(0, 0, 0, 0.11);
 $medium-shadow:0px 3.2px 7.2px rgba(0, 0, 0, 0.13),
@@ -74,13 +75,6 @@ $medium-shadow:0px 3.2px 7.2px rgba(0, 0, 0, 0.13),
 $large-shadow:0px 0px 9.2px rgba(0, 0, 0, 0.11),
 0px 12.8px 28.8px rgba(0, 0, 0, 0.13);
 
-$spacing-none: 0;
-$spacing-extra-tight: 4px;
-$spacing-tight: 8px;
-$spacing-base-tight: 12px;
-$spacing-base: 16px;
-$spacing-loose: 20px;
-$spacing-extra-loose: 32px;
 $font-stack-base: -apple-system,
 blinkmacsystemfont,
 'San Francisco',
@@ -88,12 +82,6 @@ roboto,
 'Segoe UI',
 'Helvetica Neue',
 sans-serif;
-$font-stack-monospace: monaco,
-consolas,
-'Lucida Console',
-monospace;
-$size-small: 13px;
-$size-default: 16px;
 
 :root {
   @include darkAndLightColor('primary', $primary);
@@ -103,12 +91,12 @@ $size-default: 16px;
   @include darkAndLightColor('danger', $red);
   @include darkAndLightColor('light', $white);
   @include darkAndLightColor('dark', $black);
-
   @include darkAndLightColor('gray', $gray-400);
   @include darkAndLightColor('blue', $blue);
   @include darkAndLightColor('green', $green);
   @include darkAndLightColor('red', $red);
   @include darkAndLightColor('yellow', $yellow);
+  @include darkAndLightColor('purple', $purple);
 
   --nirvana-success: #{$green};
   --nirvana-info: #{$teal};
