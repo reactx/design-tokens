@@ -1,9 +1,11 @@
 $base-width:100;
 
 .nirvana-row {
-  display: flex;
-  flex-wrap: wrap;
   padding: $standard-padding;
+  flex-wrap: wrap;
+  max-width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .nirvana-column {

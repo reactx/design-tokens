@@ -1,0 +1,11 @@
+$sizes:100 90 75 60 50 40 25 10;
+
+@each $size in $sizes {
+  .nirvana-h-#{$size} {
+    height: $size#{'%'} !important;
+  }
+
+  .nirvana-w-#{$size} {
+    width: $size#{'%'} !important;
+  }
+}

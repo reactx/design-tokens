@@ -1,0 +1,15 @@
+$overflow:hidden auto scroll visible overlay unset;
+
+@each $item in $overflow {
+  .nirvana-overflow-#{$item} {
+    overflow: #{$item} !important;
+  }
+
+  .nirvana-overflow-x-#{$item} {
+    overflow: #{$item} !important;
+  }
+
+  .nirvana-overflow-y-#{$item} {
+    overflow: #{$item} !important;
+  }
+}
