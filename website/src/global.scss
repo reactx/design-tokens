@@ -19,3 +19,20 @@
   align-items: center;
   min-height: 50px;
 }
+
+.nirvana-pallet {
+
+  .nirvana-column {
+    border-width: 0;
+    font-size: 0;
+    transition: all 0.3s ease;
+    color: #fff;
+    cursor: pointer;
+    user-select: all;
+  }
+
+  .nirvana-column:Hover {
+    font-size: 1em;
+    color: #fff;
+  }
+}
