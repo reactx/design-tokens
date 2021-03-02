@@ -13,6 +13,7 @@ const delList = [
   'showDuration',
   'itemColor',
   'validMessage',
+  'body',
   'invalidMessage',
   'backdrop',
   'justifyContent',
