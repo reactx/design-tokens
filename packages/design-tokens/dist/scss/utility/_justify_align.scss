@@ -1,0 +1,11 @@
+@each $justify in $justifies {
+  .justify-#{$justify} {
+    justify-content: $justify !important;
+  }
+}
+
+@each $align in $aligns {
+  .align-#{$align} {
+    align-items: $align !important;
+  }
+}

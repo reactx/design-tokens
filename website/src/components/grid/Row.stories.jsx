@@ -22,6 +22,18 @@ export default {
         category: 'Attribute',
       },
     },
+    justifyContent: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
+    alignItem: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
   },
 };
 
@@ -32,6 +44,7 @@ Basic.args = {
       <Column size="auto">Auto</Column>
       <Column size="auto">Auto</Column>
       <Column size="12">col-12</Column>
+      <Column size="3">Col-3</Column>
       <Column size="3">Col-3</Column>
     </>
   ),
