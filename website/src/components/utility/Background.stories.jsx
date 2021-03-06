@@ -12,6 +12,9 @@ export const Basic = () => (
     <div className="nirvana-bg-success display-block nirvana-p-1 nirvana-mb-1">
       nirvana-bg-success
     </div>
+    <div className="nirvana-bg-info display-block nirvana-p-1 nirvana-mb-1">
+      nirvana-bg-info
+    </div>
     <div className="nirvana-bg-warning display-block nirvana-p-1 nirvana-mb-1">
       nirvana-bg-warning
     </div>

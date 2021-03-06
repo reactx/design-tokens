@@ -40,6 +40,18 @@ export const Basic = () => (
         { class: 'nirvana-pl-3', properties: 'padding-left: 3em' },
         { class: 'nirvana-pl-4', properties: 'padding-left: 4em' },
         { class: 'nirvana-pl-5', properties: 'padding-left: 5em' },
+        { class: 'nirvana-px-0', properties: 'padding:0 0em' },
+        { class: 'nirvana-px-1', properties: 'padding:0 1em' },
+        { class: 'nirvana-px-2', properties: 'padding:0 2em' },
+        { class: 'nirvana-px-3', properties: 'padding:0 3em' },
+        { class: 'nirvana-px-4', properties: 'padding:0 4em' },
+        { class: 'nirvana-px-5', properties: 'padding:0 5em' },
+        { class: 'nirvana-py-0', properties: 'padding: 0em 0' },
+        { class: 'nirvana-py-1', properties: 'padding: 1em 0' },
+        { class: 'nirvana-py-2', properties: 'padding: 2em 0' },
+        { class: 'nirvana-py-3', properties: 'padding: 3em 0' },
+        { class: 'nirvana-py-4', properties: 'padding: 4em 0' },
+        { class: 'nirvana-py-5', properties: 'padding: 5em 0' },
       ]}
     />
 
