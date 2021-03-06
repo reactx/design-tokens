@@ -11,34 +11,36 @@
     align-items: center;
     height: 100%;
   }
+}
 
-  @include colorsLight(navbar, 'color');
-
-  &.navbar-background-primary {
+.navbar-background {
+  &-primary {
     background-color: var(--nirvana-primary);
   }
 
-  &.navbar-background-success {
+  &-success {
     background-color: var(--nirvana-success);
   }
 
-  &.navbar-background-danger {
+  &-danger {
     background-color: var(--nirvana-danger);
   }
 
-  &.navbar-background-warning {
+  &-warning {
     background-color: var(--nirvana-warning);
   }
 
-  &.navbar-background-info {
+  &-info {
     background-color: var(--nirvana-info);
   }
 
-  &.navbar-background-dark {
+  &-dark {
     background-color: var(--nirvana-dark);
   }
 
-  &.navbar-background-light {
+  &-light {
     background-color: var(--nirvana-light);
   }
 }
+
+@include colorsLight(navbar, 'color');

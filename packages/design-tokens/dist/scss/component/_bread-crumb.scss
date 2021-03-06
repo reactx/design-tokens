@@ -8,8 +8,26 @@
   border-radius: $standard-radius;
   transition: $standard-animation;
   font-size: $h6-font-size;
+}
 
-  .breadcrumb-item {
+.breadcrumb {
+  &-size-tiny {
+    font-size: $font-size-sm*0.85;
+  }
+
+  &-size-small {
+    font-size: $font-size-sm;
+  }
+
+  &-size-large {
+    font-size: $h4-font-size;
+  }
+
+  &-size-extra {
+    font-size: $h2-font-size;
+  }
+
+  &-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,22 +54,7 @@
       padding: 0px;
     }
   }
-
-  &.breadcrumb-size-tiny {
-    font-size: $font-size-sm*0.85;
-  }
-
-  &.breadcrumb-size-small {
-    font-size: $font-size-sm;
-  }
-
-  &.breadcrumb-size-large {
-    font-size: $h4-font-size;
-  }
-
-  &.breadcrumb-size-extra {
-    font-size: $h2-font-size;
-  }
-
-  @include colors(breadcrumb, 'background');
 }
+
+
+@include colors(breadcrumb, 'background');

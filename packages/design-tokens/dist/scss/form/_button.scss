@@ -41,9 +41,10 @@
     font-size: $h2-font-size;
   }
 
-  @include colors(btn, 'background');
-  @include colorsHover(btn, 'background');
 }
+
+@include colors(btn, 'background');
+@include colorsHover(btn, 'background');
 
 .nirvana-btn-group {
   display: flex;

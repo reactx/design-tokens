@@ -14,11 +14,9 @@
     @include rtlOrLtr(right, left, 25px, 25px);
     box-shadow: var(--nirvana-normal-shadow);
     box-shadow: $medium-shadow;
-    text-align: right;
     flex-flow: column;
     overflow: hidden;
     min-width: 20vw;
-    direction: rtl;
     display: none;
     width: auto;
     border-radius: $standard-radius;
@@ -66,7 +64,6 @@
       top: unset;
     }
 
-    @include colorsLight(modal, 'background');
   }
 
   &-title {
@@ -118,6 +115,8 @@
     background-color: var(--nirvana-backdrop-color);
   }
 }
+
+@include colorsLight(modal, 'background');
 
 .nirvana-close-btn {
   background-color: var(--nirvana-danger);

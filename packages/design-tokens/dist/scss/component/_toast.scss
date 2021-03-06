@@ -81,8 +81,9 @@ $toast-width:17em;
     }
   }
 
-  @include colorsLight(toast, 'background');
 }
+
+@include colorsLight(toast, 'background');
 
 .nirvana-toast-container {
   z-index: 1000;
