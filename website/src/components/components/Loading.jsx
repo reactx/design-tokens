@@ -55,11 +55,11 @@ const LoadingComponent = (props) => {
           (props.size !== SIZE.EXTRA ? ' loading-size-' + props.size : '')
         }
       >
-        <div className="nirvana-loading-circle" />
-        <div className="nirvana-loading-circle" />
-        <div className="nirvana-loading-circle" />
-        <div className="nirvana-loading-circle" />
-        <div className="nirvana-loading-circle" />
+        <div className="loading-circle" />
+        <div className="loading-circle" />
+        <div className="loading-circle" />
+        <div className="loading-circle" />
+        <div className="loading-circle" />
       </div>
     </div>
   );

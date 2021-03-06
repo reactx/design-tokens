@@ -4,7 +4,7 @@
   flex: 1 1 auto;
   display: flex;
 
-  .nirvana-tabs-section {
+  &s-section {
     direction: var(--nirvana-language-direction);
     background-color: var(--nirvana-backdrop-9);
     padding: $half-size-padding;
@@ -24,7 +24,7 @@
     }
   }
 
-  .nirvana-tabs {
+  &s {
     overflow: hidden;
     flex: 0 1 auto;
     display: flex;
@@ -33,78 +33,78 @@
       height: 0px;
       width: 0px;
     }
+  }
 
-    .nirvana-tab-header-item {
-      border: 1px solid var(--nirvana-dark-backdrop-1);
-      transition: $standard-animation;
-      @include flex-position-center;
-      padding: 0 $standard-padding;
-      border-top-right-radius: 3px;
-      border-top-left-radius: 3px;
-      border-bottom: none;
-      min-width: min-content;
-      max-width: 200px;
-      cursor: pointer;
-      margin: 0 1px;
-      height: 25px;
+  &-header-item {
+    border: 1px solid var(--nirvana-dark-backdrop-1);
+    transition: $standard-animation;
+    @include flex-position-center;
+    padding: 0 $standard-padding;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom: none;
+    min-width: min-content;
+    max-width: 200px;
+    cursor: pointer;
+    margin: 0 1px;
+    height: 25px;
 
-      &:hover {
-        background-color: var(--nirvana-dark-backdrop-1);
+    &:hover {
+      background-color: var(--nirvana-dark-backdrop-1);
 
-        .nirvana-tab-header-close-btn {
-          opacity: 1;
-        }
+      .nirvana-tab-header-close-btn {
+        opacity: 1;
       }
+    }
 
-      &.nirvana-active-tab {
-        background-color: var(--nirvana-dark-backdrop-1);
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
+    &.nirvana-active-tab {
+      background-color: var(--nirvana-dark-backdrop-1);
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
 
-        .nirvana-tab-header-close-btn {
-          opacity: 1;
-        }
-
-        .nirvana-tab-header-title {
-          i {
-            color: var(--nirvana-primary);
-          }
-        }
+      .nirvana-tab-header-close-btn {
+        opacity: 1;
       }
 
       .nirvana-tab-header-title {
-        text-indent: $standard-text-indent;
-        @include flex-position-center;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        flex: 1 1 auto;
-        height: 100%;
-
         i {
-          margin: 0 $half-size-margin;
-          font-size: $font-size-sm;
+          color: var(--nirvana-primary);
         }
       }
+    }
 
-      .nirvana-tab-header-close-btn {
-        transition: $standard-animation;
-        @include flex-position-center;
-        border-radius: $standard-radius;
-        margin: 0 2px;
-        height: 15px;
-        width: 15px;
-        opacity: 0;
+    .nirvana-tab-header-title {
+      text-indent: $standard-text-indent;
+      @include flex-position-center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      flex: 1 1 auto;
+      height: 100%;
 
-        &:hover {
-          background-color: var(--nirvana-danger);
-          color: var(--nirvana-light);
-        }
+      i {
+        margin: 0 $half-size-margin;
+        font-size: $font-size-sm;
+      }
+    }
+
+    .nirvana-tab-header-close-btn {
+      transition: $standard-animation;
+      @include flex-position-center;
+      border-radius: $standard-radius;
+      margin: 0 2px;
+      height: 15px;
+      width: 15px;
+      opacity: 0;
+
+      &:hover {
+        background-color: var(--nirvana-danger);
+        color: var(--nirvana-light);
       }
     }
   }
 
-  .nirvana-tab-content {
+  &-content {
     position: relative;
     flex: 1 1 auto;
     overflow: hidden;

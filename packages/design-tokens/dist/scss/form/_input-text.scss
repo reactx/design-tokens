@@ -45,11 +45,11 @@
     border-radius: 0;
   }
 
-  &.nirvana-input-valid {
+  &-valid {
     border: 1px solid $green;
   }
 
-  &.nirvana-input-invalid {
+  &-invalid {
     border: 1px solid $red;
   }
 

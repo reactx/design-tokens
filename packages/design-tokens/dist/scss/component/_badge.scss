@@ -14,7 +14,7 @@
   &.border-1 {
     border: 1px solid;
   }
-
-  @include colors(badge, 'background');
-  @include colorsHover(badge, 'background');
 }
+
+@include colors(badge, 'background');
+@include colorsHover(badge, 'background');

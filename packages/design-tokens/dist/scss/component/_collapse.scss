@@ -33,5 +33,6 @@
     }
   }
 
-  @include colorsLight(collapse, 'background');
 }
+
+@include colorsLight(collapse, 'background');

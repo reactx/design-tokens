@@ -45,5 +45,6 @@
     max-width: 250px;
   }
 
-  @include colors(tooltip, 'background');
 }
+
+@include colors(tooltip, 'background');

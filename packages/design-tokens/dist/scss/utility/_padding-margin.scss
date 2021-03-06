@@ -10,16 +10,6 @@ $pdDirectionLtr: (t: '-top', l: '-right', r: '-left', b: '-bottom');
         $varPOrM:#{map-get($mp, str-slice($pmItem,0,1))};
         $varDirLtr:#{map-get($pdDirectionLtr, str-slice($pmItem,2,-1))};
         #{$varPOrM}#{$varDirLtr}: $i#{'em'} !important;
-
-        .nirvana-ltr & {
-          $varDirLtr:#{map-get($pdDirectionLtr, str-slice($pmItem,2,-1))};
-          #{$varPOrM}#{$varDirLtr}: $i#{'em'} !important;
-        }
-
-        .nirvana-rtl & {
-          $varDir:#{map-get($pdDirection, str-slice($pmItem,2,-1))};
-          #{$varPOrM}#{$varDir}: $i#{'em'} !important;
-        }
       }
     }
   }

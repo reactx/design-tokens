@@ -10,7 +10,7 @@
   &.border-1 {
     border: 1px solid
   }
-
-  @include colorsLight(alert, 'background');
-  @include colorsHover(alert, 'background');
 }
+
+@include colorsLight(alert, 'background');
+@include colorsHover(alert, 'background');

@@ -49,43 +49,43 @@
     text-shadow: 0px 0 3px var(--nirvana-light);
   }
 
-  &.nirvana-progress-primary {
+  &-primary {
     .progress-bar {
       background: var(--nirvana-primary);
     }
   }
 
-  &.nirvana-progress-info {
+  &-info {
     .progress-bar {
       background: var(--nirvana-info);
     }
   }
 
-  &.nirvana-progress-success {
+  &-success {
     .progress-bar {
       background: var(--nirvana-success);
     }
   }
 
-  &.nirvana-progress-warning {
+  &-warning {
     .progress-bar {
       background: var(--nirvana-warning);
     }
   }
 
-  &.nirvana-progress-dark {
+  &-dark {
     .progress-bar {
       background: var(--nirvana-dark);
     }
   }
 
-  &.nirvana-progress-light {
+  &-light {
     .progress-bar {
       background: $gray-300;
     }
   }
 
-  &.nirvana-progress-danger {
+  &-danger {
     .progress-bar {
       background: var(--nirvana-danger);
     }
