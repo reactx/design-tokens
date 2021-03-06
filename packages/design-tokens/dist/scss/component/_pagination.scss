@@ -12,6 +12,38 @@
   padding: 1em;
   margin: 0;
 
+  &.radius-curve {
+    .pagination-item {
+      border-radius: $double-size-radius;
+    }
+  }
+
+  &.radius-pill {
+    .pagination-item {
+      border-radius: 50rem;
+    }
+  }
+
+  &.radius-none {
+    .pagination-item {
+      border-radius: 0;
+    }
+  }
+
+  &.radius-small {
+    .pagination-item {
+      border-radius: $half-radius;
+    }
+  }
+
+  &.radius-rounded {
+    .pagination-item {
+      border-radius: $round-radius;
+    }
+  }
+}
+
+.pagination {
   &-item {
     background-color: var(--nirvana-backdrop-9);
     border-radius: $standard-radius;
@@ -27,59 +59,29 @@
     width: 2em;
     padding: 0;
 
-    &.nirvana-active {
+    &.active {
       background-color: var(--nirvana-primary) !important;
       color: white;
     }
   }
 
-  &.radius-curve {
-    .nirvana-pagination-item {
-      border-radius: $double-size-radius;
-    }
-  }
-
-  &.radius-pill {
-    .nirvana-pagination-item {
-      border-radius: 50rem;
-    }
-  }
-
-  &.radius-none {
-    .nirvana-pagination-item {
-      border-radius: 0;
-    }
-  }
-
-  &.radius-small {
-    .nirvana-pagination-item {
-      border-radius: $half-radius;
-    }
-  }
-
-  &.radius-rounded {
-    .nirvana-pagination-item {
-      border-radius: $round-radius;
-    }
-  }
-
-  &.pagination-size-tiny {
+  &-size-tiny {
     font-size: $font-size-sm*0.75;
   }
 
-  &.pagination-size-small {
+  &-size-small {
     font-size: $font-size-sm;
   }
 
-  &.pagination-size-medium {
+  &-size-medium {
     font-size: $font-size-base;
   }
 
-  &.pagination-size-large {
+  &-size-large {
     font-size: $h4-font-size;
   }
 
-  &.pagination-size-extra {
+  &-size-extra {
     font-size: $h2-font-size;
   }
 }

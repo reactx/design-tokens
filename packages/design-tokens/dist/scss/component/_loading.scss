@@ -12,61 +12,6 @@
   opacity: 0;
   z-index: -1;
 
-  &-enable {
-    animation-duration: 0.2s;
-    animation-name: displayNone;
-    animation-timing-function: linear;
-    z-index: 100;
-    opacity: 1;
-  }
-
-  &-disable {
-    animation-duration: 2s;
-    animation-name: toDisplayNone;
-    animation-timing-function: linear;
-  }
-
-  &-loader {
-    width: 60px;
-    height: 60px;
-
-    .loading-circle {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      opacity: 0;
-      transform: rotate(225deg);
-      animation-iteration-count: infinite;
-      animation-name: orbit;
-      animation-duration: 5.5s;
-
-      &:after {
-        content: '';
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: var(--nirvana-primary);
-      }
-
-      &:nth-child(2) {
-        animation-delay: 240ms;
-      }
-
-      &:nth-child(3) {
-        animation-delay: 480ms;
-      }
-
-      &:nth-child(4) {
-        animation-delay: 720ms;
-      }
-
-      &:nth-child(5) {
-        animation-delay: 960ms;
-      }
-    }
-  }
-
   &-primary {
     .loading-circle:after {
       background-color: var(--nirvana-primary);
@@ -166,6 +111,63 @@
         width: 2px;
         height: 2px;
       }
+    }
+  }
+}
+
+.loading {
+  &-enable {
+    animation-duration: 0.2s;
+    animation-name: displayNone;
+    animation-timing-function: linear;
+    z-index: 100;
+    opacity: 1;
+  }
+
+  &-disable {
+    animation-duration: 2s;
+    animation-name: toDisplayNone;
+    animation-timing-function: linear;
+  }
+
+  &-loader {
+    width: 60px;
+    height: 60px;
+  }
+
+  &-circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    transform: rotate(225deg);
+    animation-iteration-count: infinite;
+    animation-name: orbit;
+    animation-duration: 5.5s;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--nirvana-primary);
+    }
+
+    &:nth-child(2) {
+      animation-delay: 240ms;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 480ms;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 720ms;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 960ms;
     }
   }
 }

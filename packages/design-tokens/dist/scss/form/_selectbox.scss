@@ -26,46 +26,48 @@
     cursor: pointer;
     width: 100%;
 
-    .selectbox-value {
-      display: none
-    }
+    .selectbox {
+      &-value {
+        display: none
+      }
 
-    .selectbox-item {
-      display: flex;
-      align-items: center;
-      padding: $standard-padding;
-    }
+      &-item {
+        display: flex;
+        align-items: center;
+        padding: $standard-padding;
+      }
 
-    .selectbox-arrow {
-      display: flex;
-      align-items: center;
-    }
+      &-arrow {
+        display: flex;
+        align-items: center;
+      }
 
-    .selectbox-selected {
-      background-color: var(--nirvana-dark-backdrop-1);
-      padding: $half-size-padding $double-size-padding;
-    }
+      &-selected {
+        background-color: var(--nirvana-dark-backdrop-1);
+        padding: $half-size-padding $double-size-padding;
+      }
 
-    .selectbox-dropdown {
-      background-color: var(--nirvana-backdrop-color);
-      border-color: var(--nirvana-dark-backdrop-3);
-      box-shadow: var(--nirvana-normal-shadow);
-      border-radius: $standard-radius;
-      backdrop-filter: $backdrop;
-      border: $standard-border;
-      position: absolute;
-      max-height: 50vh;
-      min-width: 150px;
-      left: 0;
-      right: 0;
-      overflow: auto;
-      height: auto;
-      width: 100%;
-      display: none;
+      &-dropdown {
+        background-color: var(--nirvana-backdrop-color);
+        border-color: var(--nirvana-dark-backdrop-3);
+        box-shadow: $medium-shadow;
+        border-radius: $standard-radius;
+        backdrop-filter: $backdrop;
+        border: $standard-border;
+        position: absolute;
+        max-height: 50vh;
+        min-width: 150px;
+        left: 0;
+        right: 0;
+        overflow: auto;
+        height: auto;
+        width: 100%;
+        display: none;
 
-      .selectbox-selected:hover,
-      .selectbox-item:hover {
-        background: var(--nirvana-dark-backdrop-1);
+        .selectbox-selected:hover,
+        .selectbox-item:hover {
+          background: var(--nirvana-dark-backdrop-1);
+        }
       }
     }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
+import { FluentIcon } from './FluentIcon';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -57,14 +58,14 @@ const ModalComponent = (props) => {
     <div
       className={
         'nirvana-modal-container' +
-        (props.backdrop && props.show ? ' nirvana-modal-backdrop' : '')
+        (props.backdrop && props.show ? ' modal-backdrop' : '')
       }
     >
       <div
         {...parentProps}
         className={
-          (props.show ? 'nirvana-modal-wrapper-active ' : '') +
-          'nirvana-modal-wrapper ' +
+          (props.show ? 'modal-wrapper-active ' : '') +
+          'modal-wrapper ' +
           (props.className || '') +
           ('modal-' + props.modalType) +
           (props.color ? ' nirvana-modal-' + props.color : '') +
@@ -74,36 +75,30 @@ const ModalComponent = (props) => {
         ref={modalRef}
       >
         {props.header && (
-          <div className="nirvana-modal-header">
-            <div className="nirvana-modal-title">{props.header}</div>
+          <div className="modal-header">
+            <div className="modal-title">{props.header}</div>
             {props.closeBtn && (
-              <div className="nirvana-modal-btn">
+              <div className="modal-btn">
                 <button
-                  className="nirvana-close-btn"
+                  className="close-btn"
                   aria-label="close"
-                  // onClick={() => {
-                  //   props.closeAction(!props.show);
-                  // }}
+                  onClick={() => {
+                    props.closeAction;
+                  }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-x"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                  </svg>
+                  <FluentIcon
+                    icon="CalculatorMultiply"
+                    color="#fff"
+                    iconSize="tiny"
+                    className="nirvana-p-0"
+                  />
                 </button>
               </div>
             )}
           </div>
         )}
-        <div className="nirvana-modal-body">{props.children}</div>
-        {props.footer && (
-          <div className="nirvana-modal-footer">{props.footer}</div>
-        )}
+        <div className="modal-body">{props.children}</div>
+        {props.footer && <div className="modal-footer">{props.footer}</div>}
       </div>
     </div>
   );
@@ -124,6 +119,7 @@ Modal.propTypes = {
   backdrop: PropTypes.bool,
   show: PropTypes.bool,
   className: PropTypes.string,
+  closeAction: PropTypes.func,
 };
 
 Modal.defaultProps = {

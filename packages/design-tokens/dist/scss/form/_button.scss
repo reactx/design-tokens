@@ -21,26 +21,27 @@
     border: 1px solid;
   }
 
-  &.btn-size-small {
-    padding: $standard-padding;
-    font-size: $font-size-sm;
-  }
+  &.btn-size {
+    &-small {
+      padding: $standard-padding;
+      font-size: $font-size-sm;
+    }
 
-  &.btn-size-medium {
-    padding: $standard-padding;
-    font-size: $font-size-base;
-  }
+    &-medium {
+      padding: $standard-padding;
+      font-size: $font-size-base;
+    }
 
-  &.btn-size-large {
-    padding: $double-size-padding;
-    font-size: $h4-font-size;
-  }
+    &-large {
+      padding: $double-size-padding;
+      font-size: $h4-font-size;
+    }
 
-  &.btn-size-extra {
-    padding: $double-size-padding;
-    font-size: $h2-font-size;
+    &-extra {
+      padding: $double-size-padding;
+      font-size: $h2-font-size;
+    }
   }
-
 }
 
 @include colors(btn, 'background');
@@ -73,5 +74,4 @@
       border-bottom-left-radius: 0 !important;
     }
   }
-
 }

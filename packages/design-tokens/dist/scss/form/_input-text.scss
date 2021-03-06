@@ -13,7 +13,6 @@
   -moz-appearance: none;
   appearance: none;
   outline: none;
-  cursor: pointer;
   display: block;
   width: 100%;
   min-width: 0;
@@ -52,23 +51,25 @@
   &-invalid {
     border: 1px solid $red;
   }
+}
 
-  &.input-size-tiny {
+.input-size {
+  &-tiny {
     padding: 0 ($half-size-padding*0.75);
     font-size: $font-size-sm*0.75;
   }
 
-  &.input-size-small {
+  &-small {
     padding: 0 ($half-size-padding*0.9);
     font-size: $font-size-sm*0.9;
   }
 
-  &.input-size-large {
+  &-large {
     padding: $half-size-padding $standard-padding;
     font-size: $h4-font-size;
   }
 
-  &.input-size-extra {
+  &-extra {
     padding: $half-size-padding $standard-padding;
     font-size: $h2-font-size;
   }

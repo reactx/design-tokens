@@ -10,34 +10,30 @@ $base-width:100;
 
 .nirvana-column {
   display: inline-flex;
+}
 
-  @for $i from 1 through 12 {
-    &.col-#{$i} {
-      width: ($base-width/12)*$i#{'%'};
-    }
-  }
-
-  &.col-auto {
-    flex: 1 1 auto;
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: ($base-width/12)*$i#{'%'};
   }
 }
 
 @media (min-width:$mobile-break-point) {
-  .nirvana-column {
-    @for $i from 1 through 12 {
-      &.col-md-#{$i} {
-        width: ($base-width/12)*$i#{'%'};
-      }
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: ($base-width/12)*$i#{'%'};
     }
   }
 }
 
 @media (min-width:$tablet-break-point) {
-  .nirvana-column {
-    @for $i from 1 through 12 {
-      &.col-lg-#{$i} {
-        width: ($base-width/12)*$i#{'%'};
-      }
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      width: ($base-width/12)*$i#{'%'};
     }
   }
+}
+
+.col-auto {
+  flex: 1 1 auto;
 }

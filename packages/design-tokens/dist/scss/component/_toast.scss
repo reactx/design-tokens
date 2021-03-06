@@ -26,61 +26,62 @@ $toast-width:17em;
     border: 0;
   }
 
-  &.nirvana-color-danger {
-    border-left: 4px solid var(--nirvana-danger-light);
-    color: var(--nirvana-foreground) !important;
+  &.nirvana-color {
+    &-danger {
+      border-left: 4px solid var(--nirvana-danger-light);
+      color: var(--nirvana-foreground) !important;
 
-    .toast-body .nirvana-icon {
-      color: var(--nirvana-danger-light);
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-danger-light);
+      }
+    }
+
+    &-success {
+      border-left: 4px solid var(--nirvana-success-light);
+      color: var(--nirvana-foreground) !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-success-light);
+      }
+    }
+
+    &-warning {
+      border-left: 4px solid var(--nirvana-warning-light);
+      color: var(--nirvana-foreground) !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-warning-light);
+      }
+    }
+
+    &-info {
+      border-left: 4px solid var(--nirvana-info-light);
+      color: var(--nirvana-foreground) !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-info-light);
+      }
+    }
+
+    &-dark {
+      border-left: 4px solid var(--nirvana-dark-light);
+      color: var(--nirvana-foreground) !important;
+    }
+
+    &-light {
+      border-left: 4px solid var(--nirvana-light-light);
+      color: var(--nirvana-foreground) !important;
+    }
+
+    &-primary {
+      border-left: 4px solid var(--nirvana-primary-light);
+      color: var(--nirvana-foreground) !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-primary-light);
+      }
     }
   }
-
-  &.nirvana-color-success {
-    border-left: 4px solid var(--nirvana-success-light);
-    color: var(--nirvana-foreground) !important;
-
-    .toast-body .nirvana-icon {
-      color: var(--nirvana-success-light);
-    }
-  }
-
-  &.nirvana-color-warning {
-    border-left: 4px solid var(--nirvana-warning-light);
-    color: var(--nirvana-foreground) !important;
-
-    .toast-body .nirvana-icon {
-      color: var(--nirvana-warning-light);
-    }
-  }
-
-  &.nirvana-color-info {
-    border-left: 4px solid var(--nirvana-info-light);
-    color: var(--nirvana-foreground) !important;
-
-    .toast-body .nirvana-icon {
-      color: var(--nirvana-info-light);
-    }
-  }
-
-  &.nirvana-color-dark {
-    border-left: 4px solid var(--nirvana-dark-light);
-    color: var(--nirvana-foreground) !important;
-  }
-
-  &.nirvana-color-light {
-    border-left: 4px solid var(--nirvana-light-light);
-    color: var(--nirvana-foreground) !important;
-  }
-
-  &.nirvana-color-primary {
-    border-left: 4px solid var(--nirvana-primary-light);
-    color: var(--nirvana-foreground) !important;
-
-    .toast-body .nirvana-icon {
-      color: var(--nirvana-primary-light);
-    }
-  }
-
 }
 
 @include colorsLight(toast, 'background');

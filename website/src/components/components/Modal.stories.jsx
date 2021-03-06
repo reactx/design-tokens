@@ -41,6 +41,11 @@ export default {
         category: 'Attribute',
       },
     },
+    closeAction: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     className: {
       table: {
         category: 'Attribute',
