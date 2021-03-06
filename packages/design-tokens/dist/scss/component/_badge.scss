@@ -5,11 +5,16 @@
   white-space: nowrap;
   border-radius: $double-size-radius;
   transition: $standard-animation;
-  min-height: 1.1em;
-  min-width: 1.1em;
+
+
   white-space: nowrap;
   @include flex-position-center;
   display: inline-flex;
+
+  min: {
+    height: 1.1em;
+    width: 1.1em;
+  }
 
   &.border-1 {
     border: 1px solid;

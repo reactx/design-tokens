@@ -1,9 +1,6 @@
 .nirvana-input {
   cursor: pointer;
   padding: 0 $half-size-padding;
-  border-radius: $standard-radius;
-  border: $standard-border;
-  border-color: var(--nirvana-dark-backdrop-3);
   background-color: var(--nirvana-backdrop-9);
   color: $foreground-color;
   transition: $standard-animation;
@@ -15,9 +12,17 @@
   outline: none;
   display: block;
   width: 100%;
-  min-width: 0;
-  min-height: 2em;
   line-height: 2em;
+
+  min: {
+    width: 0;
+    height: 2em;
+  }
+
+  border: $standard-border {
+    radius: $standard-radius;
+    color: var(--nirvana-dark-backdrop-3);
+  }
 
   &:focus {
     border: $standard-border !important;

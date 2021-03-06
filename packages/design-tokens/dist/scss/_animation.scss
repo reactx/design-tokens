@@ -1,13 +1,7 @@
-.animated {
-  animation-duration: 0.2s;
-  animation-fill-mode: both;
-  animation-timing-function: ease-in;
-}
-
-.nirvana-animation {
+.nirvana-animation,
+.animate {
   transition: $standard-animation;
 }
-
 
 .blink {
   color: $blue;
@@ -54,9 +48,11 @@
   animation-name: fadeInDown;
 
   &>div {
-    animation-name: displayNone;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in;
+    animation: {
+      name: displayNone;
+      duration: 0.5s;
+      timing-function: ease-in;
+    }
   }
 }
 
@@ -65,9 +61,11 @@
   position: relative;
 
   &>div:nth-child(1) {
-    animation-name: displayNone;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-in;
+    animation: {
+      name: displayNone;
+      duration: 0.8s;
+      timing-function: ease-in;
+    }
   }
 }
 
