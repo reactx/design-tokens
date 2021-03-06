@@ -12,7 +12,6 @@ $Direction: (t: '-top', l: '-left', r: '-right', b: '-bottom');
   }
 }
 
-
 @for $i from 0 through 5 {
   .nirvana-bx-#{$i} {
     border-left: $i#{'px'} solid $gray-200 !important;
@@ -30,9 +29,3 @@ $Direction: (t: '-top', l: '-left', r: '-right', b: '-bottom');
     border-color: var(--nirvana-#{$col}) !important;
   }
 }
-
-// @for $i from 0 through 5 {
-//   .nirvana-b-#{$i} {
-//     border-width: $i#{'px'};
-//   }
-// }
