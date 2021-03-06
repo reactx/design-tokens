@@ -30,7 +30,6 @@ export const Basic = () => (
   <>
     {Colors.map((color, indexColor) => (
       <React.Fragment key={indexColor}>
-        <h3>{color}</h3>
         <div className="nirvana-row nirvana-pallet">
           {ColorMode.map((mode, index) => (
             <div
