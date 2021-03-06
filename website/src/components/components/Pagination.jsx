@@ -69,8 +69,7 @@ const PaginationComponent = (props) => {
             key={item}
             onClick={() => changePagePosition(item - 1)}
             className={
-              'nirvana-pagination-item ' +
-              (item === active + 1 ? 'nirvana-active' : '')
+              'pagination-item ' + (item === active + 1 ? 'active' : '')
             }
           >
             {item}

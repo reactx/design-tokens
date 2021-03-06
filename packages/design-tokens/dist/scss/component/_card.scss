@@ -11,6 +11,12 @@
   display: flex;
   min-width: 0;
 
+  &.border-1 {
+    border: 1px solid
+  }
+}
+
+.card {
   &-header {
     background-color: rgba(0, 0, 0, .09);
     padding: $standard-padding;
@@ -47,11 +53,6 @@
       font-size: 48px;
     }
   }
-
-  &.border-1 {
-    border: 1px solid
-  }
-
 }
 
 @include colorsLight(card, 'background');

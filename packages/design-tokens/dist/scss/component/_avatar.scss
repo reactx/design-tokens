@@ -3,7 +3,7 @@
   border-radius: $round-radius;
   padding: 0;
   overflow: hidden;
-  box-shadow: var(--nirvana-normal-shadow);
+  box-shadow: $medium-shadow;
   background: $gray-200;
   transition: $standard-animation;
   height: 48px;
@@ -22,34 +22,36 @@
     color: $gray-400;
   }
 
-  &.avatar-size-tiny {
-    height: 24px;
-    width: 24px;
-    font-size: $font-size-base;
-  }
+  &.avatar-size {
+    &-tiny {
+      height: 24px;
+      width: 24px;
+      font-size: $font-size-base;
+    }
 
-  &.avatar-size-small {
-    height: 32px;
-    width: 32px;
-    font-size: $h5-font-size;
-  }
+    &-small {
+      height: 32px;
+      width: 32px;
+      font-size: $h5-font-size;
+    }
 
-  &.avatar-size-medium {
-    height: 48px;
-    width: 48px;
-    font-size: $h3-font-size;
-  }
+    &-medium {
+      height: 48px;
+      width: 48px;
+      font-size: $h3-font-size;
+    }
 
-  &.avatar-size-large {
-    height: 64px;
-    width: 64px;
-    font-size: $h2-font-size;
-  }
+    &-large {
+      height: 64px;
+      width: 64px;
+      font-size: $h2-font-size;
+    }
 
-  &.avatar-size-extra {
-    height: 128px;
-    width: 128px;
-    font-size: $h1-font-size*2;
+    &-extra {
+      height: 128px;
+      width: 128px;
+      font-size: $h1-font-size*2;
+    }
   }
 
   &-letter {

@@ -32,13 +32,9 @@ const CardComponent = (props) => {
 
   return (
     <div {...parentProps} className={generateClass(props, 'card')}>
-      {props.header && (
-        <div className="nirvana-card-header">{props.header}</div>
-      )}
-      <div className="nirvana-card-body">{props.children}</div>
-      {props.footer && (
-        <div className="nirvana-card-footer">{props.footer}</div>
-      )}
+      {props.header && <div className="card-header">{props.header}</div>}
+      <div className="card-body">{props.children}</div>
+      {props.footer && <div className="card-footer">{props.footer}</div>}
     </div>
   );
 };

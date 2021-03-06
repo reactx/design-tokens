@@ -60,43 +60,45 @@
     display: flex;
   }
 
-  &.range-size-tiny {
-    font-size: $font-size-sm*0.75;
+  &.range-size {
+    &-tiny {
+      font-size: $font-size-sm*0.75;
 
-    .nirvana-range {
-      padding: $half-size-padding 0;
+      .nirvana-range {
+        padding: $half-size-padding 0;
+      }
     }
-  }
 
-  &.range-size-small {
-    font-size: $font-size-sm;
+    &-small {
+      font-size: $font-size-sm;
 
-    .nirvana-range {
-      padding: $half-size-padding 0;
+      .nirvana-range {
+        padding: $half-size-padding 0;
+      }
     }
-  }
 
-  &.range-size-medium {
-    font-size: $font-size-base;
+    &-medium {
+      font-size: $font-size-base;
 
-    .nirvana-range {
-      padding: $standard-padding 0;
+      .nirvana-range {
+        padding: $standard-padding 0;
+      }
     }
-  }
 
-  &.range-size-large {
-    font-size: $h4-font-size;
+    &-large {
+      font-size: $h4-font-size;
 
-    .nirvana-range {
-      padding: $double-size-padding 0;
+      .nirvana-range {
+        padding: $double-size-padding 0;
+      }
     }
-  }
 
-  &.range-size-extra {
-    font-size: $h2-font-size;
+    &-extra {
+      font-size: $h2-font-size;
 
-    .nirvana-range {
-      padding: $double-size-padding 0;
+      .nirvana-range {
+        padding: $double-size-padding 0;
+      }
     }
   }
 }

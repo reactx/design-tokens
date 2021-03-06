@@ -21,30 +21,30 @@
   &-active {
     opacity: 1;
   }
+}
 
-
-  &.tooltip-size-small {
+.tooltip-size {
+  &-small {
     padding: $standard-padding;
     font-size: $font-size-sm*.75;
   }
 
-  &.tooltip-size-medium {
+  &-medium {
     padding: $standard-padding;
     font-size: $font-size-base;
   }
 
-  &.tooltip-size-large {
+  &-large {
     padding: $double-size-padding;
     font-size: $h4-font-size;
     max-width: 200px;
   }
 
-  &.tooltip-size-extra {
+  &-extra {
     padding: $double-size-padding;
     font-size: $h2-font-size;
     max-width: 250px;
   }
-
 }
 
 @include colors(tooltip, 'background');

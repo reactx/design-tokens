@@ -29,15 +29,15 @@ const LoadingComponent = (props) => {
   useEffect(() => {
     if (!loadingRef.current) return;
     if (props.enabled) {
-      loadingRef.current.classList.add('nirvana-loading-enable');
-      loadingRef.current.classList.remove('nirvana-loading-disable');
+      loadingRef.current.classList.add('loading-enable');
+      loadingRef.current.classList.remove('loading-disable');
       setLast(true);
     } else if (lastState) {
-      loadingRef.current.classList.remove('nirvana-loading-enable');
-      loadingRef.current.classList.add('nirvana-loading-disable');
+      loadingRef.current.classList.remove('loading-enable');
+      loadingRef.current.classList.add('loading-disable');
       setLast(false);
       setTimeout(function () {
-        loadingRef.current?.classList?.remove('nirvana-loading-disable');
+        loadingRef.current?.classList?.remove('loading-disable');
       }, 3000);
     }
   }, [props.enabled]);
@@ -50,7 +50,7 @@ const LoadingComponent = (props) => {
     >
       <div
         className={
-          'nirvana-loading-loader ' +
+          'loading-loader ' +
           (props.color ? ' nirvana-loading-' + props.color : '') +
           (props.size !== SIZE.EXTRA ? ' loading-size-' + props.size : '')
         }
