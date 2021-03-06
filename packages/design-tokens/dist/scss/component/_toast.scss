@@ -29,7 +29,7 @@ $toast-width:17em;
   &.nirvana-color {
     &-danger {
       border-left: 4px solid var(--nirvana-danger-light);
-      color: var(--nirvana-foreground) !important;
+      color: $foreground-color !important;
 
       .toast-body .nirvana-icon {
         color: var(--nirvana-danger-light);
@@ -38,7 +38,7 @@ $toast-width:17em;
 
     &-success {
       border-left: 4px solid var(--nirvana-success-light);
-      color: var(--nirvana-foreground) !important;
+      color: $foreground-color !important;
 
       .toast-body .nirvana-icon {
         color: var(--nirvana-success-light);
@@ -47,7 +47,7 @@ $toast-width:17em;
 
     &-warning {
       border-left: 4px solid var(--nirvana-warning-light);
-      color: var(--nirvana-foreground) !important;
+      color: $foreground-color !important;
 
       .toast-body .nirvana-icon {
         color: var(--nirvana-warning-light);
@@ -56,7 +56,7 @@ $toast-width:17em;
 
     &-info {
       border-left: 4px solid var(--nirvana-info-light);
-      color: var(--nirvana-foreground) !important;
+      color: $foreground-color !important;
 
       .toast-body .nirvana-icon {
         color: var(--nirvana-info-light);
@@ -65,17 +65,17 @@ $toast-width:17em;
 
     &-dark {
       border-left: 4px solid var(--nirvana-dark-light);
-      color: var(--nirvana-foreground) !important;
+      color: $foreground-color !important;
     }
 
     &-light {
       border-left: 4px solid var(--nirvana-light-light);
-      color: var(--nirvana-foreground) !important;
+      color: $foreground-color !important;
     }
 
     &-primary {
       border-left: 4px solid var(--nirvana-primary-light);
-      color: var(--nirvana-foreground) !important;
+      color: $foreground-color !important;
 
       .toast-body .nirvana-icon {
         color: var(--nirvana-primary-light);

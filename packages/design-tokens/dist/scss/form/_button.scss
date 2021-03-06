@@ -1,6 +1,6 @@
 .nirvana-btn {
   background: var(--nirvana-backdrop-7);
-  color: var(--nirvana-foreground);
+  color: $foreground-color;
   transition: $standard-animation;
   border-radius: $standard-radius;
   @include flex-position-center;
