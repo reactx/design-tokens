@@ -10,17 +10,7 @@ const ColorMode = [
   '-darkest',
 ];
 
-const Colors = [
-  'primary',
-  'success',
-  'info',
-  'danger',
-  'warning',
-  'purple',
-  'dark',
-  'gray',
-  'light',
-];
+const Colors = ['primary', 'success', 'info', 'danger', 'warning', 'gray'];
 
 export default {
   title: 'Utility/Color Pallet',

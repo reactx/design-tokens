@@ -12,7 +12,7 @@
       background: radial-gradient(ellipse at center, var(--nirvana-backdrop-9) 0%, var(--nirvana-backdrop-6) 70%);
       backdrop-filter: $backdrop;
       border-radius: 50%;
-      border: 8px solid var(--nirvana-foreground);
+      border: 8px solid $foreground-color;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,8 +54,8 @@
       }
 
       .clock-hand-hour {
-        border: 1px solid var(--nirvana-foreground);
-        background-color: var(--nirvana-foreground);
+        border: 1px solid $foreground-color;
+        background-color: $foreground-color;
         height: 32%;
         left: calc(50% - 4px);
         top: 18%;
@@ -63,8 +63,8 @@
       }
 
       .clock-hand-minute {
-        border: 1px solid var(--nirvana-foreground);
-        background-color: var(--nirvana-foreground);
+        border: 1px solid $foreground-color;
+        background-color: $foreground-color;
         height: 37%;
         left: calc(50% - 2px);
         top: 13%;
@@ -83,7 +83,7 @@
       .clock-center-circle {
         width: 20px;
         height: 20px;
-        background: var(--nirvana-foreground);
+        background: $foreground-color;
         border-radius: 50%;
         top: calc(50% - 10px);
         left: calc(50% - 10px);
@@ -118,7 +118,7 @@
           position: absolute;
           top: 50%;
           left: 50%;
-          background: var(--nirvana-foreground);
+          background: $foreground-color;
         }
 
         &:after {

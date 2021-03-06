@@ -2,7 +2,6 @@ module.exports = {
   colorBlack: '#1F2937',
   colorPrimary: '#0067B8',
   colorBlue: '#0067B8',
-  colorPurple: '#8B5CF6',
   colorRed: '#EF4444',
   colorYellow: '#F59E0B',
   colorGreen: '#10B981',

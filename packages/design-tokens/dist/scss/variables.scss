@@ -1,11 +1,14 @@
+// Colors
 $blue: #0067B8;
-$purple: #8B5CF6;
-$red: #EF4444;
-$yellow: #F59E0B;
-$green: #10B981;
-$teal: #20c997;
+$red: #E53935;
+$yellow: #FBC02D;
+$green: #388E3C;
+$teal: #00ACC1;
 $white: #FAFAFA;
-$black:#1F2937;
+$black:#212121;
+$white-100: #F6F6F6;
+$white-200: #EAEAEA;
+$white-300: #CACACA;
 $gray-50: #F9FAFB;
 $gray-100: #F3F4F6;
 $gray-200: #E5E7EB;
@@ -18,6 +21,7 @@ $gray-800: #1F2937;
 $gray-900: #111827;
 $primary:$blue;
 $secondary:$gray-600;
+$foreground-color: $gray-900;
 
 // Break Points
 $tablet-break-point:1024px;
@@ -37,6 +41,8 @@ $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
+$standard-icon-size:32px;
+$large-icon-size:48px;
 
 // Border
 $standard-border-size:1px !default;
@@ -62,8 +68,6 @@ $half-size-padding:$standard-padding / 2;
 $standard-text-indent:5px !default;
 $standard-animation-duration:0.15s;
 $standard-animation: all $standard-animation-duration ease-in;
-$standard-icon-size:32px;
-$large-icon-size:48px;
 $backdrop: saturate(180%) blur(20px);
 
 // Shadow
@@ -82,41 +86,3 @@ roboto,
 'Segoe UI',
 'Helvetica Neue',
 sans-serif;
-
-:root {
-  @include darkAndLightColor('primary', $primary);
-  @include darkAndLightColor('success', $green);
-  @include darkAndLightColor('info', $teal);
-  @include darkAndLightColor('warning', $yellow);
-  @include darkAndLightColor('danger', $red);
-  @include darkAndLightColor('light', $white);
-  @include darkAndLightColor('dark', $black);
-  @include darkAndLightColor('gray', $gray-400);
-  @include darkAndLightColor('blue', $blue);
-  @include darkAndLightColor('green', $green);
-  @include darkAndLightColor('red', $red);
-  @include darkAndLightColor('yellow', $yellow);
-  @include darkAndLightColor('purple', $purple);
-
-  --nirvana-success: #{$green};
-  --nirvana-info: #{$teal};
-  --nirvana-warning: #{$yellow};
-  --nirvana-danger: #{$red};
-  --nirvana-light: #{$white};
-  --nirvana-dark: #{$black};
-
-  --nirvana-language-direction: #{$direction};
-
-  --nirvana-backdrop-color: rgba(250, 250, 250, 0.8);
-  --nirvana-foreground: #111827;
-  --nirvana-backdrop-9: #FEFEFE;
-  --nirvana-backdrop-7: #F9FAFB;
-  --nirvana-backdrop-5: #F6F6F6;
-  --nirvana-backdrop-3: #EAEAEA;
-  --nirvana-backdrop-1: #CACACA;
-  --nirvana-dark-backdrop-1: #E5E7EB;
-  --nirvana-dark-backdrop-3: #D1D5DB;
-  --nirvana-dark-backdrop-5: #6B7280;
-  --nirvana-dark-backdrop-7: #374151;
-  --nirvana-dark-backdrop-9: #111827;
-}

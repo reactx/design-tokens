@@ -5,7 +5,7 @@
   border: $standard-border;
   border-color: var(--nirvana-dark-backdrop-3);
   background-color: var(--nirvana-backdrop-9);
-  color: var(--nirvana-foreground);
+  color: $foreground-color;
   transition: $standard-animation;
   font-size: $font-size-base;
   background-clip: padding-box;
