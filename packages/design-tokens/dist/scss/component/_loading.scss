@@ -117,17 +117,22 @@
 
 .loading {
   &-enable {
-    animation-duration: 0.2s;
-    animation-name: displayNone;
-    animation-timing-function: linear;
+    animation: {
+      duration: 0.2s;
+      name: displayNone;
+      timing-function: linear;
+    }
+
     z-index: 100;
     opacity: 1;
   }
 
   &-disable {
-    animation-duration: 2s;
-    animation-name: toDisplayNone;
-    animation-timing-function: linear;
+    animation: {
+      duration: 2s;
+      name: toDisplayNone;
+      timing-function: linear;
+    }
   }
 
   &-loader {
@@ -141,9 +146,12 @@
     height: 60px;
     opacity: 0;
     transform: rotate(225deg);
-    animation-iteration-count: infinite;
-    animation-name: orbit;
-    animation-duration: 5.5s;
+
+    animation: {
+      iteration-count: infinite;
+      name: orbit;
+      duration: 5.5s;
+    }
 
     &:after {
       content: '';

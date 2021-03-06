@@ -12,11 +12,13 @@
     padding-bottom: 0;
     list-style: none;
     min-height: 28px;
-    flex-wrap: wrap;
-    flex-flow: row;
-    flex: 0 1 28px;
     display: flex;
     margin: 0;
+
+    flex: 0 1 28px {
+      wrap: wrap;
+      flow: row;
+    }
 
     .nirvana-tab-action {
       display: flex;
@@ -58,8 +60,11 @@
 
     &.nirvana-active-tab {
       background-color: var(--nirvana-dark-backdrop-1);
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
+
+      border-bottom: {
+        right-radius: 0;
+        left-radius: 0;
+      }
 
       .nirvana-tab-header-close-btn {
         opacity: 1;
