@@ -25,50 +25,20 @@ $pdDirectionLtr: (t: '-top', l: '-right', r: '-left', b: '-bottom');
   }
 }
 
-.nirvana-p-sm {
-  padding: $standard-padding !important;
-}
+@for $i from 0 through 5 {
+  .nirvana-px-#{$i} {
+    padding: 0 $i#{'em'} !important;
+  }
 
-.nirvana-px-xs {
-  padding: 0px $half-size-padding !important;
-}
+  .nirvana-py-#{$i} {
+    padding: $i#{'em'} 0 !important;
+  }
 
-.nirvana-px-sm {
-  padding: 0px $standard-padding !important;
-}
+  .nirvana-mx-#{$i} {
+    padding: 0 $i#{'em'} !important;
+  }
 
-.nirvana-px-1 {
-  padding: 0px $standard-padding*2 !important;
-}
-
-.nirvana-px-2 {
-  padding: 0px $standard-padding*4 !important;
-}
-
-.nirvana-pl-sm {
-  padding-left: $standard-padding !important;
-}
-
-.nirvana-pr-sm {
-  padding-right: $standard-padding !important;
-}
-
-.nirvana-py-1 {
-  padding: $standard-padding 0px !important;
-}
-
-.nirvana-m-auto {
-  margin: 0px auto !important;
-}
-
-.nirvana-mx-1 {
-  margin: 0px $standard-margin !important;
-}
-
-.nirvana-m-0 {
-  margin: 0 !important;
-}
-
-.nirvana-p-0 {
-  padding: 0 !important;
+  .nirvana-my-#{$i} {
+    padding: $i#{'em'} 0 !important;
+  }
 }
