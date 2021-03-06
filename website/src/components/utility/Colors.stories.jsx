@@ -10,15 +10,15 @@ const ColorMode = [
   '-darkest',
 ];
 
-const Colors = ['primary', 'success', 'info', 'danger', 'warning', 'gray'];
+const colorList = ['primary', 'success', 'info', 'danger', 'warning', 'gray'];
 
 export default {
-  title: 'Utility/Color Pallet',
+  title: 'Utility/Colors',
 };
 
 export const Basic = () => (
   <>
-    {Colors.map((color, indexColor) => (
+    {colorList.map((color, indexColor) => (
       <React.Fragment key={indexColor}>
         <div className="nirvana-row nirvana-pallet">
           {ColorMode.map((mode, index) => (
