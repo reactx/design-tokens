@@ -32,16 +32,15 @@
   width: 32px;
 
   input {
+    @include width-height(0);
     opacity: 0;
-    height: 0;
-    width: 0;
   }
 
   .nirvana-slider {
     transition: $standard-animation;
+    border-radius: $round-radius;
     border: 1px solid $gray-300;
     background-color: $gray-50;
-    border-radius: 50em;
     position: absolute;
     cursor: pointer;
     bottom: 0;
@@ -117,9 +116,8 @@
 
     .nirvana-slider {
       &:before {
-        height: 7px;
+        @include width-height(7px);
         bottom: 1px;
-        width: 7px;
         left: 1px;
       }
     }
@@ -135,8 +133,7 @@
 
     .nirvana-slider {
       &:before {
-        height: 23px;
-        width: 23px;
+        @include width-height(23px);
         bottom: 2px;
         left: 2px;
       }
@@ -153,8 +150,7 @@
 
     .nirvana-slider {
       &:before {
-        height: 35px;
-        width: 35px;
+        @include width-height(35px);
         bottom: 2px;
         left: 2px;
       }

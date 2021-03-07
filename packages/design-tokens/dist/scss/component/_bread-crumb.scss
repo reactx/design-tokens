@@ -28,12 +28,10 @@
   }
 
   &-item {
-    justify-content: center;
-    align-items: center;
+    @include flex-position-center;
     max-width: 150px;
     overflow: hidden;
     font-size: 1em;
-    display: flex;
     height: 100%;
 
     span {
@@ -55,6 +53,5 @@
     }
   }
 }
-
 
 @include colors(breadcrumb, 'background');

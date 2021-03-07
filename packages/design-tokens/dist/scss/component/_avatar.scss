@@ -5,12 +5,11 @@ $large-size:64px;
 $extra-size:128px;
 
 .nirvana-avatar {
+  @include width-height($medium-size);
   transition: $standard-animation;
   font-size: $h3-font-size;
   background: $gray-100;
-  height: $medium-size;
   display: inline-flex;
-  width: $medium-size;
   position: relative;
   overflow: hidden;
   padding: 0;
@@ -20,9 +19,8 @@ $extra-size:128px;
   }
 
   img {
+    @include width-height(100%);
     object-fit: cover;
-    height: 100%;
-    width: 100%;
   }
 
   path {
@@ -31,43 +29,35 @@ $extra-size:128px;
 
   &.avatar-size {
     &-tiny {
+      @include width-height($tiny-size);
       font-size: $font-size-base;
-      height: $tiny-size;
-      width: $tiny-size;
     }
 
     &-small {
+      @include width-height($small-size);
       font-size: $h5-font-size;
-      height: $small-size;
-      width: $small-size;
     }
 
     &-medium {
+      @include width-height($medium-size);
       font-size: $h3-font-size;
-      height: $medium-size;
-      width: $medium-size;
     }
 
     &-large {
+      @include width-height($large-size);
       font-size: $h2-font-size;
-      height: $large-size;
-      width: $large-size;
     }
 
     &-extra {
+      @include width-height($extra-size);
       font-size: $h1-font-size*2;
-      height: $extra-size;
-      width: $extra-size;
     }
   }
 
   &-letter {
-    justify-content: center;
-    align-items: center;
+    @include flex-position-center;
+    @include width-height(100%);
     line-height: 100%;
-    display: flex;
-    height: 100%;
-    width: 100%;
   }
 
   &.border-1 {

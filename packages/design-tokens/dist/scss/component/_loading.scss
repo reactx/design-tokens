@@ -5,12 +5,9 @@ $tiny-size:14px;
 
 .nirvana-loading {
   background: var(--nirvana-backdrop-color);
-  justify-content: center;
-  align-items: center;
+  @include flex-position-center;
+  @include width-height(100%);
   position: absolute;
-  display: flex;
-  height: 100%;
-  width: 100%;
   z-index: -1;
   opacity: 0;
   left: 0;
@@ -59,61 +56,49 @@ $tiny-size:14px;
   }
 
   .loading-size-large {
-    height: $large-size;
-    width: $large-size;
+    @include width-height($large-size);
 
     .loading-circle {
-      height: $large-size;
-      width: $large-size;
+      @include width-height($large-size);
 
       &:after {
-        height: 6px;
-        width: 6px;
+        @include width-height(6px);
       }
     }
   }
 
   .loading-size-medium {
-    height: $medium-size;
-    width: $medium-size;
+    @include width-height($medium-size);
 
     .loading-circle {
-      height: $medium-size;
-      width: $medium-size;
+      @include width-height($medium-size);
 
       &:after {
-        height: 5px;
-        width: 5px;
+        @include width-height(5px);
       }
     }
   }
 
   .loading-size-small {
-    height: $small-size;
-    width: $small-size;
+    @include width-height($small-size);
 
     .loading-circle {
-      height: $small-size;
-      width: $small-size;
+      @include width-height($small-size);
 
       &:after {
-        height: 3px;
-        width: 3px;
+        @include width-height(3px);
       }
     }
   }
 
   .loading-size-tiny {
-    height: $tiny-size;
-    width: $tiny-size;
+    @include width-height($tiny-size);
 
     .loading-circle {
-      height: $tiny-size;
-      width: $tiny-size;
+      @include width-height($tiny-size);
 
       &:after {
-        height: 2px;
-        width: 2px;
+        @include width-height(2px);
       }
     }
   }
@@ -140,15 +125,13 @@ $tiny-size:14px;
   }
 
   &-loader {
-    height: 60px;
-    width: 60px;
+    @include width-height(60px);
   }
 
   &-circle {
+    @include width-height(60px);
     transform: rotate(225deg);
     position: absolute;
-    height: 60px;
-    width: 60px;
     opacity: 0;
 
     animation: {
@@ -159,11 +142,10 @@ $tiny-size:14px;
 
     &:after {
       background-color: var(--nirvana-primary);
+      @include width-height(8px);
       border-radius: 50%;
       position: absolute;
       content: '';
-      height: 8px;
-      width: 8px;
     }
 
     &:nth-child(2) {

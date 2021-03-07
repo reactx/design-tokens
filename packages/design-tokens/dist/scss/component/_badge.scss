@@ -9,8 +9,7 @@
   line-height: 1;
 
   min: {
-    height: 1.1em;
-    width: 1.1em;
+    @include width-height(1.1em);
   }
 
   &.border-1 {

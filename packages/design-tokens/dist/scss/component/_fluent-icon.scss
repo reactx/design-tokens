@@ -4,11 +4,9 @@
 }
 
 .nirvana-icon-warper {
+  @include flex-position-center(inline-flex);
   padding: $standard-padding;
-  justify-content: center;
   flex-direction: column;
-  display: inline-flex;
-  align-items: center;
 }
 
 .nirvana-icon {

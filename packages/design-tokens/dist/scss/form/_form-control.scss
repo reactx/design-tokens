@@ -116,12 +116,10 @@
 
   .control-append,
   .control-prepend {
+    @include flex-position-center;
     background-color: $gray-200;
-    justify-content: center;
-    align-items: center;
     font-size: 0.9em;
     padding: 0.5em;
-    display: flex;
   }
 
   &.nirvana-input-valid {

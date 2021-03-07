@@ -3,17 +3,13 @@
   display: none;
 
   &+.radio-title {
+    @include flex-position-center(inline-flex);
     transition: $standard-animation;
-    justify-content: center;
-    display: inline-flex;
-    align-items: center;
 
     &:before {
+      @include flex-position-center(inline-flex);
       letter-spacing: $standard-padding;
       font-family: 'FabricMDL2Icons';
-      justify-content: center;
-      display: inline-flex;
-      align-items: center;
       content: "\ECCA";
     }
   }

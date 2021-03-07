@@ -1,14 +1,10 @@
 .nirvana-pagination-container {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  @include flex-position-center;
 }
 
 .nirvana-pagination {
-  justify-content: center;
-  align-items: center;
+  @include flex-position-center;
   list-style: none;
-  display: flex;
   padding: 1em;
   margin: 0;
 
@@ -47,16 +43,12 @@
   &-item {
     background-color: var(--nirvana-backdrop-9);
     border-radius: $standard-radius;
+    @include flex-position-center;
     margin: 0 $half-size-margin;
-    justify-content: center;
+    @include width-height(2em);
     box-sizing: border-box;
-    align-items: center;
     line-height: 2em;
     cursor: default;
-    font-size: 1em;
-    display: flex;
-    height: 2em;
-    width: 2em;
     padding: 0;
 
     &.active {

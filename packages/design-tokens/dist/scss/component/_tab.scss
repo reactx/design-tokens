@@ -35,8 +35,7 @@
     display: flex;
 
     &::-webkit-scrollbar {
-      height: 0px;
-      width: 0px;
+      @include width-height(0);
     }
   }
 
@@ -105,9 +104,8 @@
       transition: $standard-animation;
       border-radius: $standard-radius;
       @include flex-position-center;
+      @include width-height(15px);
       margin: 0 2px;
-      height: 15px;
-      width: 15px;
       opacity: 0;
 
       &:hover {

@@ -29,13 +29,12 @@
   %slider-thumb {
     box-shadow: 0px 0px 0.15em $gray-900;
     border-radius: $round-radius;
+    @include width-height(1.2em);
     background-color: $gray-50;
     -webkit-appearance: none;
     will-change: transform;
     margin-top: -0.5em;
     cursor: pointer;
-    height: 1.2em;
-    width: 1.2em;
     opacity: 1;
   }
 

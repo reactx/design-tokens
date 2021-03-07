@@ -38,6 +38,7 @@ const InfoCardComponent = (props) => {
       radius={props.radius}
       color={props.color}
       outline={props.outline}
+      title={props.description}
     >
       <div className={'info-card'}>
         <h2>{props.number}</h2>

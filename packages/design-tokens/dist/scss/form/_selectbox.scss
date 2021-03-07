@@ -2,10 +2,7 @@
     cursor: pointer;
     transition: $standard-animation;
     padding: 0 $half-size-padding;
-    font-size: $font-size-base;
     color: $foreground-color;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     position: relative;
     line-height: 1.5em;
     appearance: none;
@@ -20,8 +17,8 @@
     }
 
     min: {
-      width: 0;
       height: 2em;
+      width: 0;
     }
 
     border: $standard-border {

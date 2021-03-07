@@ -1,5 +1,10 @@
-@mixin flex-position-center {
+@mixin flex-position-center($dis:flex) {
   justify-content: center;
   align-items: center;
-  display: flex;
+  display: $dis;
+}
+
+@mixin width-height($num) {
+  width: $num;
+  height: $num;
 }
