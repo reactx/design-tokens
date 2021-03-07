@@ -18,9 +18,9 @@ const TabComponent = (props) => {
 
   return (
     <div className={generateClass(props, 'tab')} {...parentProps}>
-      <div className="nirvana-tabs-section">
+      <div className="tab-container">
         {tabsRef.current?.scrollWidth !== tabsRef.current?.offsetWidth && (
-          <div className="nirvana-tab-action">
+          <div className="tab-action">
             <button
               className="nirvana-btn nirvana-p-0"
               onClick={() => scrollTabs('left')}
@@ -29,22 +29,20 @@ const TabComponent = (props) => {
             </button>
           </div>
         )}
-        <div className="nirvana-tabs" ref={tabsRef}>
+        <div className="tabs" ref={tabsRef}>
           {props.tabList &&
             props.tabList.map((item, index) => (
               <div
                 id={item.tabId}
                 className={
-                  'nirvana-tab-header-item ' +
-                  (item.tabId === props.activeTabId
-                    ? 'nirvana-active-tab'
-                    : '') +
+                  'tab-header-item ' +
+                  (item.tabId === props.activeTabId ? 'active-tab' : '') +
                   (item.color ? ' nirvana-border-top-3-' + item.color : '')
                 }
                 key={index}
               >
                 <span
-                  className="nirvana-tab-header-title"
+                  className="tab-header-title"
                   data-tooltip={item.name || item.displayName}
                   onAuxClick={(e) => {
                     if (e.button === 1 && deleteTabAction) {
@@ -60,7 +58,7 @@ const TabComponent = (props) => {
                 </span>
                 {props.deleteTabAction && (
                   <span
-                    className="nirvana-tab-header-close-btn"
+                    className="tab-header-close-btn"
                     data-tooltip="بستن تب"
                     aria-label="بستن تب"
                     onClick={() => props.deleteTabAction(item.tabId)}
@@ -72,7 +70,7 @@ const TabComponent = (props) => {
             ))}
         </div>
         {props.addTabAction && (
-          <div className="nirvana-tab-action">
+          <div className="tab-action">
             {tabsRef.current?.scrollWidth !== tabsRef.current?.offsetWidth && (
               <button
                 className="nirvana-btn nirvana-p-0"
@@ -92,7 +90,7 @@ const TabComponent = (props) => {
           </div>
         )}
       </div>
-      <div className="nirvana-tab-content nirvana-row">{props.children}</div>
+      <div className="tab-content nirvana-row">{props.children}</div>
     </div>
   );
 };

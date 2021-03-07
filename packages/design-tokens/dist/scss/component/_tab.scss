@@ -6,7 +6,7 @@
     flow: column;
   }
 
-  &s-section {
+  .tab-container {
     background-color: var(--nirvana-backdrop-9);
     box-sizing: border-box;
     align-items: center;
@@ -24,12 +24,12 @@
       flow: row;
     }
 
-    .nirvana-tab-action {
+    .tab-action {
       display: flex;
     }
   }
 
-  &s {
+  .tabs {
     overflow: hidden;
     flex: 0 1 auto;
     display: flex;
@@ -40,8 +40,7 @@
     }
   }
 
-  &-header-item {
-    border: 1px solid var(--nirvana-dark-backdrop-1);
+  .tab-header-item {
     transition: $standard-animation;
     @include flex-position-center;
     padding: 0 $standard-padding;
@@ -51,7 +50,7 @@
     margin: 0 1px;
     height: 25px;
 
-    border: {
+    border: 1px solid var(--nirvana-dark-backdrop-1) {
       top-right-radius: 3px;
       top-left-radius: 3px;
       bottom: none;
@@ -60,12 +59,12 @@
     &:hover {
       background-color: var(--nirvana-dark-backdrop-1);
 
-      .nirvana-tab-header-close-btn {
+      .tab-header-close-btn {
         opacity: 1;
       }
     }
 
-    &.nirvana-active-tab {
+    &.active-tab {
       background-color: var(--nirvana-dark-backdrop-1);
 
       border-bottom: {
@@ -73,18 +72,18 @@
         left-radius: 0;
       }
 
-      .nirvana-tab-header-close-btn {
+      .tab-header-close-btn {
         opacity: 1;
       }
 
-      .nirvana-tab-header-title {
+      .tab-header-title {
         i {
           color: var(--nirvana-primary);
         }
       }
     }
 
-    .nirvana-tab-header-title {
+    .tab-header-title {
       @include flex-position-center;
       white-space: nowrap;
       overflow: hidden;
@@ -102,7 +101,7 @@
       }
     }
 
-    .nirvana-tab-header-close-btn {
+    .tab-header-close-btn {
       transition: $standard-animation;
       border-radius: $standard-radius;
       @include flex-position-center;
@@ -118,10 +117,10 @@
     }
   }
 
-  &-content {
+  .tab-content {
+    padding: $standard-padding;
     position: relative;
     overflow: hidden;
     flex: 1 1 auto;
-    padding: 0;
   }
 }
