@@ -1,22 +1,23 @@
   .nirvana-selectbox {
     cursor: pointer;
-    background-color: var(--nirvana-backdrop-9);
-    padding: 0 $half-size-padding;
-    color: $foreground-color;
     transition: $standard-animation;
+    padding: 0 $half-size-padding;
     font-size: $font-size-base;
-    background-clip: padding-box;
+    color: $foreground-color;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
-    outline: none;
-    cursor: pointer;
-    display: block;
-    width: 100%;
     position: relative;
     line-height: 1.5em;
+    appearance: none;
     cursor: pointer;
+    display: block;
+    outline: none;
     width: 100%;
+
+    background: {
+      color: var(--nirvana-backdrop-9);
+      clip: padding-box;
+    }
 
     min: {
       width: 0;
@@ -24,7 +25,6 @@
     }
 
     border: $standard-border {
-      radius: $standard-radius;
       color: var(--nirvana-dark-backdrop-3);
       width: $standard-border-size;
       radius: $standard-radius;
@@ -36,14 +36,14 @@
       }
 
       &-item {
-        display: flex;
-        align-items: center;
         padding: $standard-padding;
+        align-items: center;
+        display: flex;
       }
 
       &-arrow {
-        display: flex;
         align-items: center;
+        display: flex;
       }
 
       &-selected {
@@ -58,16 +58,16 @@
         position: absolute;
         max-height: 50vh;
         min-width: 150px;
-        left: 0;
-        right: 0;
         overflow: auto;
+        display: none;
         height: auto;
         width: 100%;
-        display: none;
+        right: 0;
+        left: 0;
 
         border: $standard-border {
-          radius: $standard-radius;
           color: var(--nirvana-dark-backdrop-3);
+          radius: $standard-radius;
         }
 
         .selectbox-selected:hover,

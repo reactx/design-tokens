@@ -1,13 +1,13 @@
 .nirvana-breadcrumb {
-  display: flex;
-  flex-direction: row;
-  user-select: none;
-  align-items: center;
-  height: 100%;
-  padding: $standard-padding;
-  border-radius: $standard-radius;
   transition: $standard-animation;
+  border-radius: $standard-radius;
+  padding: $standard-padding;
   font-size: $h6-font-size;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  display: flex;
+  height: 100%;
 }
 
 .breadcrumb {
@@ -28,30 +28,30 @@
   }
 
   &-item {
-    display: flex;
     justify-content: center;
     align-items: center;
     max-width: 150px;
     overflow: hidden;
-    height: 100%;
     font-size: 1em;
+    display: flex;
+    height: 100%;
 
     span {
-      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      overflow: hidden;
     }
 
     &:before {
-      content: "\E76C";
-      z-index: 1;
-      padding: 0 5px;
       font-family: "FabricMDL2Icons";
+      content: "\E76C";
+      padding: 0 $standard-padding;
+      z-index: 1;
     }
 
     &:first-child:before {
-      content: "";
       padding: 0px;
+      content: "";
     }
   }
 }

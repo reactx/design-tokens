@@ -1,26 +1,29 @@
 @font-face {
-  font-family: 'FabricMDL2Icons';
   src: url('./fonts/fabric-icons.woff') format('woff');
+  font-family: 'FabricMDL2Icons';
 }
 
 .nirvana-icon-warper {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: $standard-padding;
+  justify-content: center;
+  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nirvana-icon {
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 $half-size-margin;
   display: inline-block;
-  font-family: 'FabricMDL2Icons';
-  font-style: normal;
-  font-weight: normal;
   speak: none;
-  margin: 0 3px;
-  font-size: $h4-font-size;
+
+  font: {
+    family: 'FabricMDL2Icons';
+    size: $h4-font-size;
+    weight: normal;
+    style: normal;
+  }
 }
 
 .icon-size-extra-large {

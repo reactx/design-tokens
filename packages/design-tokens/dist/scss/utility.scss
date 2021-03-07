@@ -9,9 +9,9 @@
 "utility/height_width";
 
 [disabled] {
+  filter: grayscale(1) !important;
   cursor: not-allowed !important;
   opacity: 0.5 !important;
-  filter: grayscale(1) !important;
 }
 
 .clearfix:before,
@@ -25,8 +25,8 @@
 }
 
 .nirvana-back-blur {
-  backdrop-filter: $backdrop;
   background-color: var(--nirvana-backdrop-color) !important;
+  backdrop-filter: $backdrop;
 }
 
 .nirvana-medium-back-blur {

@@ -11,100 +11,120 @@
   &-wrapper {
     background-color: var(--nirvana-backdrop-7);
     @include rtlOrLtr(right, left, 25px, 25px);
+    border-radius: $standard-radius;
     box-shadow: $medium-shadow;
     flex-flow: column;
     overflow: hidden;
     min-width: 20vw;
     display: none;
     width: auto;
-    border-radius: $standard-radius;
 
     &-active {
       display: flex;
     }
 
     &.modal-left {
-      animation-timing-function: ease-in-out;
-      border-right: $standard-border;
-      animation-name: fadeInRight;
-      animation-duration: 0.2s;
       position: absolute;
-      border-radius: 0;
       height: 100vh;
       left: 0;
       top: 0;
+
+      border: {
+        right: $standard-border;
+        radius: 0;
+      }
+
+      animation: {
+        timing-function: ease-in-out;
+        name: fadeInRight;
+        duration: 0.2s;
+      }
     }
 
     &.modal-right {
-      animation-timing-function: ease-in-out;
-      border-left: $standard-border;
-      animation-name: fadeInLeft;
-      animation-duration: 0.2s;
       position: absolute;
-      border-radius: 0;
       height: 100vh;
       right: 0;
       top: 0;
+
+      border: {
+        left: $standard-border;
+        radius: 0;
+      }
+
+      animation: {
+        timing-function: ease-in-out;
+        name: fadeInLeft;
+        duration: 0.2s;
+      }
     }
 
     &.modal-full {
       background-color: var(--nirvana-backdrop-7);
-      animation-timing-function: ease-in-out;
-      animation-name: fadeInDown;
-      animation-duration: 0.2s;
       border: $standard-border;
       min-width: 50vw;
-      max-height: 80%;
-      max-width: 70%;
       bottom: unset;
       right: unset;
       left: unset;
       top: unset;
+
+      max: {
+        height: 80%;
+        width: 70%;
+      }
+
+      animation: {
+        timing-function: ease-in-out;
+        name: fadeInDown;
+        duration: 0.2s;
+      }
     }
 
   }
 
   &-title {
-    display: flex;
     justify-content: flex-start;
-    align-items: center;
     text-transform: capitalize;
+    align-items: center;
+    display: flex;
     flex: 1 1;
   }
 
   &-header {
-    display: flex;
-    flex: 0 1 auto;
     padding: $standard-padding $double-size-padding;
-    height: 30px;
-    line-height: 25px;
-    vertical-align: middle;
-    margin-bottom: $standard-margin;
     background-color: rgba(0, 0, 0, .03);
+    margin-bottom: $standard-margin;
+    vertical-align: middle;
+    line-height: 25px;
+    flex: 0 1 auto;
+    display: flex;
+    height: 30px;
 
     &-icon {
-      margin: 0 5px;
       color: var(--nirvana-primary);
+      margin: 0 5px;
     }
 
     .close-btn {
       background-color: var(--nirvana-danger);
-      border-radius: $round-radius;
-      width: 16px;
-      height: 16px;
-      line-height: 16px;
-      padding: 0;
-      border: none;
-      cursor: pointer;
-      outline: none;
-      display: flex;
       justify-content: center;
       align-items: center;
+      line-height: 16px;
+      cursor: pointer;
+      display: flex;
+      outline: none;
+      height: 16px;
+      width: 16px;
+      padding: 0;
+
+      border: none {
+        radius: $round-radius;
+      }
 
       .nirvana-icon-warper {
-        opacity: 0;
         transition: $standard-animation;
         font-size: $font-size-sm;
+        opacity: 0;
       }
 
       &:hover .nirvana-icon-warper {
@@ -114,28 +134,30 @@
   }
 
   &-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1 1 auto;
-    overflow-y: auto;
-    min-height: 70px;
     padding: $standard-padding $double-size-padding;
     margin: 0 $standard-margin;
+    justify-content: center;
+    overflow-y: auto;
+    min-height: 70px;
+    display: flex;
+
+    flex: 1 1 auto {
+      direction: column;
+    }
   }
 
   &-footer {
-    background-color: rgba(0, 0, 0, .03);
     padding: $standard-padding $double-size-padding;
-    display: flex;
+    background-color: rgba(0, 0, 0, .03);
     justify-content: flex-end;
     align-items: center;
+    display: flex;
   }
 
   &-backdrop {
     animation-duration: $standard-animation-duration !important;
-    backdrop-filter: $backdrop;
     background-color: var(--nirvana-backdrop-color);
+    backdrop-filter: $backdrop;
   }
 }
 

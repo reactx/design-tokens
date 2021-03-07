@@ -1,25 +1,25 @@
 $toast-width:17em;
 
 .nirvana-toast {
-  border-radius: $standard-radius;
-  margin-bottom: $double-size-margin;
   background-color: var(--nirvana-backdrop-9);
+  margin-bottom: $double-size-margin;
+  border-radius: $standard-radius;
   width: $toast-width;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 
   .toast-header {
     background-color: rgba(0, 0, 0, .03);
-    padding: $standard-padding;
-    display: flex;
     justify-content: space-between;
+    padding: $standard-padding;
     align-items: center;
+    display: flex;
   }
 
   .toast-body {
     padding: $double-size-padding $standard-padding;
-    display: flex;
     align-items: center;
+    display: flex;
   }
 
   .nirvana-progress {
@@ -87,11 +87,11 @@ $toast-width:17em;
 @include colorsLight(toast, 'background');
 
 .nirvana-toast-container {
-  z-index: 1000;
-  position: fixed;
-  display: flex;
   flex-direction: column;
   width: $toast-width;
+  position: fixed;
+  display: flex;
+  z-index: 1000;
 
   &.toast-top-right {
     flex-direction: column-reverse;
@@ -106,19 +106,19 @@ $toast-width:17em;
   }
 
   &.toast-top-center {
-    flex-direction: column-reverse;
     left: calc(50% - #{$toast-width/2});
+    flex-direction: column-reverse;
     top: 10px;
   }
 
   &.toast-bottom-right {
-    right: 10px;
     bottom: 10px;
+    right: 10px;
   }
 
   &.toast-bottom-left {
-    left: 10px;
     bottom: 10px;
+    left: 10px;
   }
 
   &.toast-bottom-center {

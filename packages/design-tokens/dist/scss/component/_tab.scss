@@ -1,19 +1,23 @@
 .nirvana-tab {
   height: 100%;
-  flex-flow: column;
-  flex: 1 1 auto;
   display: flex;
+
+  flex: 1 1 auto {
+    flow: column;
+  }
 
   &s-section {
     background-color: var(--nirvana-backdrop-9);
-    padding: $half-size-padding;
     box-sizing: border-box;
     align-items: center;
-    padding-bottom: 0;
     list-style: none;
     min-height: 28px;
     display: flex;
     margin: 0;
+
+    padding: $half-size-padding {
+      bottom: 0;
+    }
 
     flex: 0 1 28px {
       wrap: wrap;
@@ -41,14 +45,17 @@
     transition: $standard-animation;
     @include flex-position-center;
     padding: 0 $standard-padding;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    border-bottom: none;
     min-width: min-content;
     max-width: 200px;
     cursor: pointer;
     margin: 0 1px;
     height: 25px;
+
+    border: {
+      top-right-radius: 3px;
+      top-left-radius: 3px;
+      bottom: none;
+    }
 
     &:hover {
       background-color: var(--nirvana-dark-backdrop-1);
@@ -78,13 +85,16 @@
     }
 
     .nirvana-tab-header-title {
-      text-indent: $standard-text-indent;
       @include flex-position-center;
-      text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
       flex: 1 1 auto;
       height: 100%;
+
+      text: {
+        indent: $standard-text-indent;
+        overflow: ellipsis;
+      }
 
       i {
         margin: 0 $half-size-margin;
@@ -94,8 +104,8 @@
 
     .nirvana-tab-header-close-btn {
       transition: $standard-animation;
-      @include flex-position-center;
       border-radius: $standard-radius;
+      @include flex-position-center;
       margin: 0 2px;
       height: 15px;
       width: 15px;
@@ -110,8 +120,8 @@
 
   &-content {
     position: relative;
-    flex: 1 1 auto;
     overflow: hidden;
+    flex: 1 1 auto;
     padding: 0;
   }
 }

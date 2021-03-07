@@ -52,7 +52,8 @@ $standard-border:$standard-border-size solid var(--nirvana-dark-backdrop-1);
 $standard-radius:4px !default;
 $double-size-radius:$standard-radius * 2 !default;
 $half-radius:$standard-radius / 2 !default;
-$round-radius:50%;
+$round-radius:50% !default;
+$pill-radius:50rem !default;
 
 // Margin
 $standard-margin:5px !default;

@@ -18,16 +18,15 @@
   }
 
   .control-description {
-    width: 100%;
-    text-align: end;
     font-size: 0.75em;
+    text-align: end;
+    height: 0.5em;
     opacity: 0.85;
-    height: 0.5em
+    width: 100%;
   }
 
   .valid-feedback,
   .invalid-feedback {
-    font-size: 1em;
     font-size: 0.9em;
   }
 
@@ -75,47 +74,54 @@
 }
 
 .nirvana-input-container {
-  grid-area: input;
-  display: flex;
-  overflow: hidden;
-  border-radius: $standard-radius;
-  border: $standard-border;
-  border-color: var(--nirvana-dark-backdrop-3);
-  box-sizing: border-box;
   transition: $standard-animation;
+  box-sizing: border-box;
+  grid-area: input;
+  overflow: hidden;
+  display: flex;
+
+  border: $standard-border {
+    color: var(--nirvana-dark-backdrop-3);
+    radius: $standard-radius;
+  }
 
   &:focus-within {
-    border: $standard-border !important;
-    border-color: var(--nirvana-primary) !important;
+    border: $standard-border !important {
+      color: var(--nirvana-primary) !important;
+    }
   }
 
   &.has-prepend {
     .nirvana-input {
-      border-top-left-radius: 0 !important;
-      border-bottom-left-radius: 0 !important;
+      border: {
+        bottom-left-radius: 0 !important;
+        top-left-radius: 0 !important;
+      }
     }
   }
 
   &.has-append {
     .nirvana-input {
-      border-top-right-radius: 0 !important;
-      border-bottom-right-radius: 0 !important;
+      border: {
+        bottom-right-radius: 0 !important;
+        top-right-radius: 0 !important;
+      }
     }
   }
 
   .nirvana-input {
-    border-width: 0 !important;
     box-shadow: none !important;
+    border-width: 0 !important;
   }
 
   .control-append,
   .control-prepend {
     background-color: $gray-200;
-    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5em;
     font-size: 0.9em;
+    padding: 0.5em;
+    display: flex;
   }
 
   &.nirvana-input-valid {
