@@ -1,10 +1,9 @@
 .nirvana-btn {
   background: var(--nirvana-backdrop-7);
-  color: $foreground-color;
   transition: $standard-animation;
-  border-radius: $standard-radius;
   @include flex-position-center;
   padding: $standard-padding;
+  color: $foreground-color;
   display: inline-flex;
   white-space: nowrap;
   position: relative;
@@ -15,7 +14,10 @@
   cursor: pointer;
   min-width: 28px;
   outline: none;
-  border: none;
+
+  border: none {
+    radius: $standard-radius;
+  }
 
   &.border-1 {
     border: 1px solid;
@@ -54,24 +56,32 @@
     margin: 0;
 
     &:not(:last-child) {
-      border-top-right-radius: 0 !important;
-      border-bottom-right-radius: 0 !important;
+      border: {
+        bottom-right-radius: 0 !important;
+        top-right-radius: 0 !important;
+      }
     }
 
     &:not(:first-child) {
-      border-top-left-radius: 0 !important;
-      border-bottom-left-radius: 0 !important;
-      border-left-width: 0 !important;
+      border: {
+        bottom-left-radius: 0 !important;
+        top-left-radius: 0 !important;
+        left-width: 0 !important;
+      }
     }
 
     &:first-child {
-      border-top-right-radius: 0 !important;
-      border-bottom-right-radius: 0 !important;
+      border: {
+        bottom-right-radius: 0 !important;
+        top-right-radius: 0 !important;
+      }
     }
 
     &:last-child {
-      border-top-left-radius: 0 !important;
-      border-bottom-left-radius: 0 !important;
+      border: {
+        bottom-left-radius: 0 !important;
+        top-left-radius: 0 !important;
+      }
     }
   }
 }

@@ -1,11 +1,13 @@
 .nirvana-table {
-  margin: 10px 0;
-  display: flex;
+  margin: $double-size-margin 0;
   flex-direction: column;
-  width: 100%;
-  border: 1px solid $gray-50;
-  border-radius: $standard-radius;
   overflow: hidden;
+  display: flex;
+  width: 100%;
+
+  border: 1px solid $gray-50 {
+    radius: $standard-radius;
+  }
 
   .table-row {
     display: flex;
@@ -16,11 +18,11 @@
     }
 
     .table-row-item {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
       text-indent: $standard-text-indent;
+      justify-content: space-between;
       padding: $standard-padding 0;
+      display: flex;
+      width: 100%;
     }
 
     &:hover {
@@ -34,12 +36,12 @@
     width: 100%;
 
     .table-header-item {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
       text-indent: $standard-text-indent;
-      font-weight: bold;
+      justify-content: space-between;
       padding: $standard-padding 0;
+      font-weight: bold;
+      display: flex;
+      width: 100%;
     }
   }
 

@@ -1,32 +1,36 @@
 .nirvana-input {
-  cursor: pointer;
-  padding: 0 $half-size-padding;
-  background-color: var(--nirvana-backdrop-9);
-  color: $foreground-color;
   transition: $standard-animation;
+  padding: 0 $half-size-padding;
   font-size: $font-size-base;
-  background-clip: padding-box;
+  color: $foreground-color;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  outline: none;
-  display: block;
-  width: 100%;
   line-height: 2em;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  width: 100%;
+
+  background: {
+    color: var(--nirvana-backdrop-9);
+    clip: padding-box;
+  }
 
   min: {
-    width: 0;
     height: 2em;
+    width: 0;
   }
 
   border: $standard-border {
-    radius: $standard-radius;
     color: var(--nirvana-dark-backdrop-3);
+    radius: $standard-radius;
   }
 
   &:focus {
-    border: $standard-border !important;
-    border-color: var(--nirvana-primary) !important;
+    border: $standard-border !important {
+      color: var(--nirvana-primary) !important;
+    }
   }
 
   &[type="color"] {
@@ -39,14 +43,17 @@
   }
 
   &::file-selector-button {
-    min-height: 2em;
-    height: 100%;
     background-color: $gray-200;
     pointer-events: none;
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0;
-    border-radius: 0;
+    min-height: 2em;
+    height: 100%;
+
+    border: {
+      color: inherit;
+      style: solid;
+      radius: 0;
+      width: 0;
+    }
   }
 
   &-valid {

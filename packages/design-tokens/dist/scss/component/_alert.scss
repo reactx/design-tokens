@@ -1,10 +1,10 @@
 .nirvana-alert {
   transition: $standard-animation;
-  padding: $double-size-padding;
   margin-bottom: $standard-margin;
+  padding: $double-size-padding;
+  border-radius: $half-radius;
   position: relative;
   display: block;
-  border-radius: $half-radius;
 
   &.border-1 {
     border: 1px solid

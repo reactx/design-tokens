@@ -1,19 +1,19 @@
 .nirvana-checkbox {
-  display: none;
   transition: $standard-animation;
+  display: none;
 
   &+.checkbox-title {
+    transition: $standard-animation;
+    justify-content: center;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    transition: $standard-animation;
 
     &:before {
       letter-spacing: $standard-padding;
       font-family: 'FabricMDL2Icons';
+      justify-content: center;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       content: "\E739";
     }
   }

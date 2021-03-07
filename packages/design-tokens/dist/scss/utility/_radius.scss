@@ -1,5 +1,5 @@
 $radius:none small normal curve rounded pill;
-$size:(none:'0', small:#{$half-radius}, normal:#{$standard-radius}, curve:#{$double-size-radius}, rounded:#{$round-radius}, pill:'50rem');
+$size:(none:'0', small:#{$half-radius}, normal:#{$standard-radius}, curve:#{$double-size-radius}, rounded:#{$round-radius}, pill:#{$pill-radius});
 
 @each $rad in $radius {
   .radius-#{$rad} {
@@ -7,13 +7,17 @@ $size:(none:'0', small:#{$half-radius}, normal:#{$standard-radius}, curve:#{$dou
   }
 
   .radius-b-#{$rad} {
-    border-bottom-left-radius: #{map-get($size, $rad)} !important;
-    border-bottom-right-radius: #{map-get($size, $rad)} !important;
+    border: {
+      bottom-right-radius: #{map-get($size, $rad)} !important;
+      bottom-left-radius: #{map-get($size, $rad)} !important;
+    }
   }
 
   .radius-t-#{$rad} {
-    border-top-left-radius: #{map-get($size, $rad)} !important;
-    border-top-right-radius: #{map-get($size, $rad)} !important;
+    border: {
+      top-right-radius: #{map-get($size, $rad)} !important;
+      top-left-radius: #{map-get($size, $rad)} !important;
+    }
   }
 
   .radius-tl-#{$rad} {

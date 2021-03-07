@@ -4,8 +4,8 @@
 }
 
 .blink {
-  color: $blue;
   animation: blink-animation 1s steps(5, start) infinite;
+  color: $blue;
 }
 
 .fadeIn,
@@ -17,14 +17,18 @@
 .flipInY,
 .flash,
 .slideInRight {
-  animation-duration: 0.2s;
-  animation-timing-function: ease-in-out;
+  animation: {
+    timing-function: ease-in-out;
+    duration: 0.2s;
+  }
 }
 
 .flipReverse,
 .flip {
-  animation-duration: 0.4s;
-  animation-timing-function: ease-out;
+  animation: {
+    timing-function: ease-out;
+    duration: 0.4s;
+  }
 }
 
 .fadeIn {
@@ -49,9 +53,9 @@
 
   &>div {
     animation: {
+      timing-function: ease-in;
       name: displayNone;
       duration: 0.5s;
-      timing-function: ease-in;
     }
   }
 }
@@ -62,9 +66,9 @@
 
   &>div:nth-child(1) {
     animation: {
+      timing-function: ease-in;
       name: displayNone;
       duration: 0.8s;
-      timing-function: ease-in;
     }
   }
 }
@@ -79,13 +83,13 @@
 }
 
 .flipReverse {
-  animation-name: flipReverse;
   backface-visibility: visible;
+  animation-name: flipReverse;
 }
 
 .flip {
-  animation-name: flip;
   backface-visibility: visible;
+  animation-name: flip;
 }
 
 .flash {
@@ -93,8 +97,9 @@
 }
 
 .spinner {
-  animation: 2.5s linear infinite spinner;
-  animation-play-state: inherit;
+  animation: 2.5s linear infinite spinner {
+    play-state: inherit;
+  }
 }
 
 @keyframes fadeIn {
@@ -110,8 +115,10 @@
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translate3d(0, 75%, 0) perspective(400px) rotateX(45deg);
-    transform-origin: bottom center;
+
+    transform: translate3d(0, 75%, 0) perspective(400px) rotateX(45deg) {
+      origin: bottom center;
+    }
   }
 
   to {
@@ -145,20 +152,22 @@
 @keyframes fadeInDown {
   0% {
     opacity: 0.5;
-    transform: translate3d(0, -75%, 0) perspective(400px) rotateX(45deg);
-    transform-origin: bottom center;
+
+    transform: translate3d(0, -75%, 0) perspective(400px) rotateX(45deg) {
+      origin: bottom center;
+    }
   }
 
   to {
-    opacity: 1;
     transform: translate3d(0, 0, 0) perspective(0px) rotateX(0deg);
+    opacity: 1;
   }
 }
 
 @keyframes zoomIn {
   0% {
+    transform: scale3d(.3, .3, .3);
     opacity: 0;
-    transform: scale3d(.3, .3, .3)
   }
 
   50% {
@@ -169,11 +178,11 @@
 @keyframes slideInUp {
   0% {
     transform: translate3d(0, 100%, 0);
-    visibility: visible
+    visibility: visible;
   }
 
   to {
-    transform: translateZ(0)
+    transform: translateZ(0);
   }
 }
 
@@ -262,9 +271,9 @@
   }
 
   to {
+    display: none;
     z-index: 0;
     opacity: 0;
-    display: none;
   }
 }
 

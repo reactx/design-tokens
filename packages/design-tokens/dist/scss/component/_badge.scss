@@ -1,15 +1,12 @@
 .nirvana-badge {
-  padding: $standard-padding;
-  font-size: $font-size-sm;
-  line-height: 1;
-  white-space: nowrap;
   border-radius: $double-size-radius;
   transition: $standard-animation;
-
-
-  white-space: nowrap;
   @include flex-position-center;
+  padding: $standard-padding;
+  font-size: $font-size-sm;
   display: inline-flex;
+  white-space: nowrap;
+  line-height: 1;
 
   min: {
     height: 1.1em;
@@ -21,5 +18,5 @@
   }
 }
 
-@include colors(badge, 'background');
 @include colorsHover(badge, 'background');
+@include colors(badge, 'background');

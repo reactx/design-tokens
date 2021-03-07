@@ -1,13 +1,13 @@
 html {
+  -webkit-text-size-adjust: 100%;
   font-family: $font-stack-base;
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
 }
 
 article,
@@ -47,8 +47,8 @@ template {
 }
 
 a {
-  background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  background-color: transparent;
 }
 
 a:active,
@@ -57,15 +57,13 @@ a:hover {
 }
 
 abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
   text-decoration: underline dotted;
+  border-bottom: none;
 }
 
 b,
 strong {
   font-weight: inherit;
-  font-weight: bolder;
 }
 
 dfn {
@@ -73,8 +71,8 @@ dfn {
 }
 
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
+  font-size: 2em;
 }
 
 mark {
@@ -88,10 +86,10 @@ small {
 
 sub,
 sup {
+  vertical-align: baseline;
+  position: relative;
   font-size: 75%;
   line-height: 0;
-  position: relative;
-  vertical-align: baseline;
 }
 
 sub {
@@ -124,8 +122,8 @@ figure {
 
 hr {
   box-sizing: content-box;
-  height: 0;
   overflow: visible;
+  height: 0;
 }
 
 button,
@@ -152,18 +150,18 @@ select {
 }
 
 fieldset {
+  padding: 0.35em 0.625em 0.75em;
   border: 1px solid silver;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
   box-sizing: border-box;
+  white-space: normal;
+  max-width: 100%;
   color: inherit;
   display: table;
-  max-width: 100%;
   padding: 0;
-  white-space: normal;
 }
 
 textarea {

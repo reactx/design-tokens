@@ -1,16 +1,24 @@
+$tiny-size:24px;
+$small-size:32px;
+$medium-size:48px;
+$large-size:64px;
+$extra-size:128px;
+
 .nirvana-avatar {
-  border: $standard-border-size solid transparent;
-  border-radius: $round-radius;
   padding: 0;
   overflow: hidden;
   box-shadow: $medium-shadow;
   background: $gray-200;
   transition: $standard-animation;
-  height: 48px;
-  width: 48px;
+  height: $medium-size;
+  width: $medium-size;
   display: inline-flex;
   font-size: $h3-font-size;
   position: relative;
+
+  border: $standard-border-size solid transparent {
+    radius: $round-radius;
+  }
 
   img {
     height: 100%;
@@ -24,32 +32,32 @@
 
   &.avatar-size {
     &-tiny {
-      height: 24px;
-      width: 24px;
+      height: $tiny-size;
+      width: $tiny-size;
       font-size: $font-size-base;
     }
 
     &-small {
-      height: 32px;
-      width: 32px;
+      height: $small-size;
+      width: $small-size;
       font-size: $h5-font-size;
     }
 
     &-medium {
-      height: 48px;
-      width: 48px;
+      height: $medium-size;
+      width: $medium-size;
       font-size: $h3-font-size;
     }
 
     &-large {
-      height: 64px;
-      width: 64px;
+      height: $large-size;
+      width: $large-size;
       font-size: $h2-font-size;
     }
 
     &-extra {
-      height: 128px;
-      width: 128px;
+      height: $extra-size;
+      width: $extra-size;
       font-size: $h1-font-size*2;
     }
   }

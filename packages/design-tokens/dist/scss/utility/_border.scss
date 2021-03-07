@@ -14,13 +14,17 @@ $Direction: (t: '-top', l: '-left', r: '-right', b: '-bottom');
 
 @for $i from 0 through 5 {
   .nirvana-bx-#{$i} {
-    border-left: $i#{'px'} solid $gray-200 !important;
-    border-right: $i#{'px'} solid $gray-200 !important;
+    border: {
+      right: $i#{'px'} solid $gray-200 !important;
+      left: $i#{'px'} solid $gray-200 !important;
+    }
   }
 
   .nirvana-by-#{$i} {
-    border-top: $i#{'px'} solid $gray-200 !important;
-    border-bottom: $i#{'px'} solid $gray-200 !important;
+    border: {
+      bottom: $i#{'px'} solid $gray-200 !important;
+      top: $i#{'px'} solid $gray-200 !important;
+    }
   }
 }
 

@@ -1,25 +1,29 @@
 .nirvana-progress {
-  width: 100%;
-  height: 25px;
-  overflow: hidden;
-  border-radius: $standard-radius;
-  position: relative;
   background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(100, 100, 100, 0.1);
+  position: relative;
+  overflow: hidden;
+  height: 25px;
+  width: 100%;
+
+  border: 1px solid rgba(100, 100, 100, 0.1) {
+    radius: $standard-radius;
+  }
 
   &::after {
     // box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    height: 100%;
     content: '';
     width: 100%;
-    height: 100%;
-    position: absolute;
     top: 0;
   }
 
   .progress-bar {
     height: 100%;
-    background: var(--nirvana-primary);
-    background-size: 40px 100%, 100% 100%, 100% 100% !important;
+
+    background: var(--nirvana-primary) {
+      size: 40px 100%, 100% 100%, 100% 100% !important;
+    }
 
 
     &.striped {
@@ -38,15 +42,15 @@
   }
 
   .progress-label {
+    text-shadow: 0px 0 3px var(--nirvana-light);
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
     height: 100%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 0px 0 3px var(--nirvana-light);
+    left: 0;
+    top: 0;
   }
 
   &-primary {
@@ -92,8 +96,8 @@
   }
 
   &.progress-size-tiny {
-    height: 10px;
     font-size: $font-size-sm;
+    height: 10px;
 
     .progress-bar {
       background-size: 20px 100%, 100% 100%, 100% 100% !important;
@@ -101,8 +105,8 @@
   }
 
   &.progress-size-small {
-    height: 15px;
     font-size: $font-size-sm;
+    height: 15px;
 
     .progress-bar {
       background-size: 30px 100%, 100% 100%, 100% 100% !important;
@@ -118,8 +122,8 @@
   }
 
   &.progress-size-large {
-    height: 40px;
     font-size: $h4-font-size;
+    height: 40px;
 
     .progress-bar {
       background-size: 80px 100%, 100% 100%, 100% 100% !important;
@@ -127,8 +131,8 @@
   }
 
   &.progress-size-extra {
-    height: 60px;
     font-size: $h2-font-size;
+    height: 60px;
 
     .progress-bar {
       background-size: 120px 100%, 100% 100%, 100% 100% !important;

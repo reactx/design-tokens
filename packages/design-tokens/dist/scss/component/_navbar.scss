@@ -1,14 +1,14 @@
 .nirvana-navbar {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 0 $standard-padding;
+  align-items: center;
+  display: flex;
 
   .navbar-section-brand,
   .navbar-section-middle,
   .navbar-section-menu {
-    display: flex;
     align-items: center;
+    display: flex;
     height: 100%;
   }
 }

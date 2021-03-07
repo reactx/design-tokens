@@ -1,17 +1,17 @@
 .nirvana-tooltip {
-  background: $black;
   animation: fadeInTooltip 0.3s ease-in;
   color: var(--nirvana-backdrop-9);
   border-radius: $standard-radius;
   padding: $standard-padding;
   font-size: $font-size-sm;
+  background: $black;
+  user-select: none;
   max-width: 150px;
   position: fixed;
-  opacity: 0;
-  user-select: none;
   z-index: 9999;
-  top: 0px;
+  opacity: 0;
   left: 0px;
+  top: 0px;
 
   &-fade-out {
     animation: fadeOutTooltip 0.3s ease-in;
@@ -25,8 +25,8 @@
 
 .tooltip-size {
   &-small {
-    padding: $standard-padding;
     font-size: $font-size-sm*.75;
+    padding: $standard-padding;
   }
 
   &-medium {

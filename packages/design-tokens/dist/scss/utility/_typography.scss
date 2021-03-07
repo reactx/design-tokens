@@ -41,26 +41,36 @@ $fontSize: (1: #{$h1-font-size}, 2: #{$h2-font-size}, 3: #{$h3-font-size}, 4:#{$
 }
 
 .text-justify-none {
-  text-align: justify;
-  text-justify: none;
+  text: {
+    align: justify;
+    justify: none;
+  }
 }
 
 .text-justify-auto {
-  text-align: justify;
-  text-justify: auto;
+  text: {
+    align: justify;
+    justify: auto;
+  }
 }
 
 .text-justify-distribute {
-  text-align: justify;
-  text-justify: distribute;
+  text: {
+    justify: distribute;
+    align: justify;
+  }
 }
 
 .text-justify-inter-word {
-  text-align: justify;
-  text-justify: inter-word;
+  text: {
+    justify: inter-word;
+    align: justify;
+  }
 }
 
 .text-justify-inter-character {
-  text-align: justify;
-  text-justify: inter-character;
+  text: {
+    justify: inter-character;
+    align: justify;
+  }
 }

@@ -1,7 +1,7 @@
 .nirvana-collapse {
   border-radius: $standard-radius;
-  overflow: hidden;
   transition: $standard-animation;
+  overflow: hidden;
 
   &[open] {
     .collapse-title {
@@ -19,10 +19,13 @@
     padding: $standard-padding;
 
     &::before {
-      content: '\E70D';
-      font-family: 'FabricMDL2Icons';
-      font-size: $font-size-sm;
       padding: 0 $standard-padding;
+      content: '\E70D';
+
+      font: {
+        family: 'FabricMDL2Icons';
+        size: $font-size-sm;
+      }
     }
 
     &:hover {
