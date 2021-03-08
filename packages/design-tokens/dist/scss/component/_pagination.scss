@@ -45,6 +45,7 @@
     border-radius: $standard-radius;
     @include flex-position-center;
     margin: 0 $half-size-margin;
+    background-image: $gradient;
     @include width-height(2em);
     box-sizing: border-box;
     line-height: 2em;

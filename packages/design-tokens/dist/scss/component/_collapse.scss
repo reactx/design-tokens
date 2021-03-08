@@ -19,6 +19,7 @@
   &-title {
     background-color: rgba(0, 0, 0, 0.06);
     transition: $standard-animation;
+    background-image: $gradient;
     padding: $standard-padding;
 
     &::before {
@@ -41,4 +42,4 @@
   }
 }
 
-@include colorsLight(collapse, 'background');
+@include colorsLight(collapse, 'background-color');

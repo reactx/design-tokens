@@ -117,6 +117,7 @@
   .control-append,
   .control-prepend {
     @include flex-position-center;
+    background-image: $gradient;
     background-color: $gray-200;
     font-size: 0.9em;
     padding: 0.5em;

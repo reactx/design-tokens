@@ -44,6 +44,7 @@
     @include flex-position-center;
     padding: 0 $standard-padding;
     background-color: $gray-200;
+    background-image: $gradient;
     min-width: min-content;
     max-width: 200px;
     cursor: pointer;

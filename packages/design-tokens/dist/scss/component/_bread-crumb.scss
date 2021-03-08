@@ -1,6 +1,7 @@
 .nirvana-breadcrumb {
   transition: $standard-animation;
   border-radius: $standard-radius;
+  background-image: $gradient;
   padding: $standard-padding;
   font-size: $h6-font-size;
   flex-direction: row;
@@ -54,4 +55,4 @@
   }
 }
 
-@include colors(breadcrumb, 'background');
+@include colors(breadcrumb, 'background-color');

@@ -4,6 +4,7 @@ $toast-width:17em;
   background-color: var(--nirvana-backdrop-9);
   margin-bottom: $double-size-margin;
   border-radius: $standard-radius;
+  background-image: $gradient;
   width: $toast-width;
   position: relative;
   overflow: hidden;
@@ -84,7 +85,7 @@ $toast-width:17em;
   }
 }
 
-@include colorsLight(toast, 'background');
+@include colorsLight(toast, 'background-color');
 
 .nirvana-toast-container {
   flex-direction: column;

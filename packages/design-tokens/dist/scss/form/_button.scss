@@ -1,7 +1,8 @@
 .nirvana-btn {
-  background: var(--nirvana-backdrop-7);
+  background-color: var(--nirvana-backdrop-7);
   transition: $standard-animation;
   @include flex-position-center;
+  background-image: $gradient;
   padding: $standard-padding;
   color: $foreground-color;
   display: inline-flex;
@@ -46,8 +47,8 @@
   }
 }
 
-@include colors(btn, 'background');
-@include colorsHover(btn, 'background');
+@include colors(btn, 'background-color');
+@include colorsHover(btn, 'background-color');
 
 .nirvana-btn-group {
   display: flex;

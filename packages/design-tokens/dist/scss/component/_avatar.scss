@@ -7,6 +7,7 @@ $extra-size:128px;
 .nirvana-avatar {
   @include width-height($medium-size);
   transition: $standard-animation;
+  background-image: $gradient;
   font-size: $h3-font-size;
   background: $gray-100;
   display: inline-flex;
@@ -65,5 +66,5 @@ $extra-size:128px;
   }
 }
 
-@include colors(avatar, 'background');
-@include colorsHover(avatar, 'background');
+@include colors(avatar, 'background-color');
+@include colorsHover(avatar, 'background-color');

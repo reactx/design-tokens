@@ -34,6 +34,7 @@
 
   .table-header {
     background-color: rgba(0, 0, 0, .09);
+    background-image: $gradient;
     display: flex;
     width: 100%;
 
@@ -55,4 +56,4 @@
 
 }
 
-@include colors(table, 'background');
+@include colors(table, 'background-color');

@@ -12,6 +12,7 @@
     background-color: var(--nirvana-backdrop-7);
     @include rtlOrLtr(right, left, 25px, 25px);
     border-radius: $standard-radius;
+    background-image: $gradient;
     box-shadow: $medium-shadow;
     flex-flow: column;
     overflow: hidden;
@@ -61,7 +62,6 @@
 
     &.modal-full {
       background-color: var(--nirvana-backdrop-7);
-      border: $standard-border;
       min-width: 50vw;
       bottom: unset;
       right: unset;
@@ -160,4 +160,4 @@
   }
 }
 
-@include colorsLight(modal, 'background');
+@include colorsLight(modal, 'background-color');

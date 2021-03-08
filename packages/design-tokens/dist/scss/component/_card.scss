@@ -1,5 +1,6 @@
 .nirvana-card {
   transition: $standard-animation;
+  background-image: $gradient;
   margin: $standard-margin 0;
   flex-direction: column;
   word-wrap: break-word;
@@ -68,4 +69,4 @@
   display: flex;
 }
 
-@include colorsLight(card, 'background');
+@include colorsLight(card, 'background-color');

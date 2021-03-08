@@ -3,6 +3,7 @@
   margin-bottom: $standard-margin;
   padding: $double-size-padding;
   border-radius: $half-radius;
+  background-image: $gradient;
   position: relative;
   display: block;
 
@@ -11,5 +12,5 @@
   }
 }
 
-@include colorsLight(alert, 'background');
-@include colorsHover(alert, 'background');
+@include colorsLight(alert, 'background-color');
+@include colorsHover(alert, 'background-color');

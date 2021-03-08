@@ -39,6 +39,10 @@
 
 /* nirvana Background and Color */
 // nirvana-bg-*
-@include colors(bg, 'background');
+@include colors(bg, 'background-color');
 // nirvana-color-*
 @include colors(color, 'color');
+
+.nirvana-bg-gradient {
+  background-image: $gradient;
+}
