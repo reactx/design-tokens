@@ -1,0 +1,40 @@
+.nirvana-comment {
+  display: flex;
+  margin: $standard-margin 0;
+  margin-bottom: $double-size-margin;
+  background-color: $gray-50;
+  border-radius: $standard-radius;
+  overflow: hidden;
+}
+
+.comment {
+  &-avatar {
+    flex: 0 1 100px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  &-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $gray-100;
+    padding: $standard-padding;
+  }
+
+  &-username {
+    font-weight: bold;
+    border-bottom: 1px solid $gray-200;
+  }
+
+  &-date {
+    font-size: $font-size-sm;
+    text-align: end;
+    color: $gray-400;
+  }
+
+  &-text {
+    min-height: 3em;
+  }
+}

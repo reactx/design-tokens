@@ -20,6 +20,15 @@
   min-height: 50px;
 }
 
+.nirvana-comment {
+  .nirvana-column {
+    border: none;
+    justify-content: unset;
+    align-items: center;
+    min-height: unset;
+  }
+}
+
 .nirvana-pallet {
 
   .nirvana-column {
