@@ -1,0 +1,47 @@
+.nirvana-timeline {
+  padding: $standard-padding;
+  overflow: auto;
+  height: 100vh;
+}
+
+.timeline {
+  &-item {
+    border-left: 2px solid $primary;
+    display: flex;
+  }
+
+  &-date {
+    @include flex-position-center;
+    position: relative;
+    color: $gray-300;
+    flex: 0 1 100px;
+
+    &:before {
+      border: 2px solid $white;
+      background: $primary;
+      position: absolute;
+      border-radius: 50%;
+      height: 10px;
+      content: '';
+      width: 10px;
+      left: -6px;
+    }
+  }
+
+  &-data {
+    border-radius: $standard-radius;
+    background-color: $gray-100;
+    background-image: $gradient;
+    margin: $half-size-margin 0;
+    padding: $standard-padding;
+    flex: 1 1 auto;
+  }
+
+  &-title {
+    font-weight: bold;
+  }
+
+  &-description {
+    color: $gray-500;
+  }
+}
