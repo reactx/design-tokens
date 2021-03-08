@@ -37,7 +37,7 @@ const TabComponent = (props) => {
                 className={
                   'tab-header-item ' +
                   (item.tabId === props.activeTabId ? 'active-tab' : '') +
-                  (item.color ? ' nirvana-border-top-3-' + item.color : '')
+                  (item.color ? ' nirvana-bt-3 border-' + item.color : '')
                 }
                 key={index}
               >
@@ -52,7 +52,7 @@ const TabComponent = (props) => {
                   onClick={() => props.selectedItem(item)}
                 >
                   {item.default && (
-                    <i className="fa fa-star" data-tooltip="Inbox" />
+                    <FluentIcon icon="FavoriteStar" iconSize="tiny" />
                   )}
                   {item.name || item.displayName}
                 </span>
@@ -85,7 +85,7 @@ const TabComponent = (props) => {
               aria-label="تب جدید"
               onClick={() => props.addTabAction(true)}
             >
-              <FluentIcon icon="CirclePlus" />
+              <FluentIcon icon="CalculatorAddition" shadowOnHover="small" />
             </button>
           </div>
         )}

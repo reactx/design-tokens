@@ -7,7 +7,7 @@
   }
 
   .tab-container {
-    background-color: var(--nirvana-backdrop-9);
+    background-color: $gray-50;
     box-sizing: border-box;
     align-items: center;
     list-style: none;
@@ -43,20 +43,20 @@
     transition: $standard-animation;
     @include flex-position-center;
     padding: 0 $standard-padding;
+    background-color: $gray-200;
     min-width: min-content;
     max-width: 200px;
     cursor: pointer;
     margin: 0 1px;
     height: 25px;
 
-    border: 1px solid var(--nirvana-dark-backdrop-1) {
-      top-right-radius: 3px;
-      top-left-radius: 3px;
-      bottom: none;
+    border: {
+      top-right-radius: $half-radius;
+      top-left-radius: $half-radius;
     }
 
     &:hover {
-      background-color: var(--nirvana-dark-backdrop-1);
+      background-color: $gray-300;
 
       .tab-header-close-btn {
         opacity: 1;
@@ -64,12 +64,8 @@
     }
 
     &.active-tab {
-      background-color: var(--nirvana-dark-backdrop-1);
-
-      border-bottom: {
-        right-radius: 0;
-        left-radius: 0;
-      }
+      background-color: $primary;
+      color: $white;
 
       .tab-header-close-btn {
         opacity: 1;
@@ -116,9 +112,12 @@
   }
 
   .tab-content {
+    border-top: 2px solid $primary;
+    background-color: $gray-100;
     padding: $standard-padding;
     position: relative;
     overflow: hidden;
     flex: 1 1 auto;
+    height: 100%;
   }
 }

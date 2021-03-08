@@ -31,3 +31,8 @@
   --nirvana-backdrop-3: #{$white-200};
   --nirvana-backdrop-1: #{$white-300};
 }
+
+//TODO: Light and Dark mode
+@media (prefers-color-scheme: dark) {}
+
+@media (prefers-color-scheme: light) {}

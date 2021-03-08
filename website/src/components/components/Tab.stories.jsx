@@ -63,6 +63,8 @@ export default {
 export const Basic = (args) => <Tab {...args} />;
 Basic.args = {
   children: 'Tab data',
+  addTabAction: () => alert('add Tab'),
+  deleteTabAction: () => alert('delete Tab'),
   tabList: [
     { name: 'item 1 test', tabId: 1 },
     { name: 'item 2 test', tabId: 2 },
