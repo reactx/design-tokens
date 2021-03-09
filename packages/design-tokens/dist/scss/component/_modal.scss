@@ -9,7 +9,6 @@
 
 .modal {
   &-wrapper {
-    @include rtlOrLtr(right, left, 25px, 25px);
     border-radius: $standard-radius;
     box-shadow: $medium-shadow;
     flex-flow: column;
@@ -17,6 +16,7 @@
     min-width: 20vw;
     display: none;
     width: auto;
+    left: 25px;
 
     background: {
       color: var(--nirvana-backdrop-7);

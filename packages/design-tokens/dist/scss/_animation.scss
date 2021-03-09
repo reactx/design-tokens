@@ -44,7 +44,6 @@
 }
 
 .fadeInLeft {
-  @include rtlOrLtr(animation-name, animation-name, fadeInLeft, fadeInRight);
   animation-name: fadeInLeft;
 }
 
@@ -61,7 +60,7 @@
 }
 
 .slideInLeft {
-  @include rtlOrLtr(animation-name, animation-name, slideInLeft, slideInRight);
+  animation-name: slideInLeft;
   position: relative;
 
   &>div:nth-child(1) {
@@ -74,7 +73,7 @@
 }
 
 .slideInRight {
-  @include rtlOrLtr(animation-name, animation-name, slideInRight, slideInLeft);
+  animation-name: slideInRight;
   position: relative;
 }
 

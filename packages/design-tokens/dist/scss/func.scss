@@ -9,6 +9,7 @@ $colors:primary danger secondary success info warning light dark;
 @mixin colors($propertyClass, $property) {
   @each $color in $colors {
     &.nirvana-#{$propertyClass}-#{$color} {
+      #{$property}: var(--nirvana-#{$color}) !important;
 
       @if($color==light) {
         color: var(--nirvana-dark);
@@ -17,8 +18,6 @@ $colors:primary danger secondary success info warning light dark;
       @else {
         color: var(--nirvana-light);
       }
-
-      #{$property}: var(--nirvana-#{$color}) !important;
     }
   }
 }
@@ -26,6 +25,7 @@ $colors:primary danger secondary success info warning light dark;
 @mixin colorsLight($propertyClass, $property) {
   @each $color in $colors {
     &.nirvana-#{$propertyClass}-#{$color} {
+      #{$property}: var(--nirvana-#{$color}-light) !important;
 
       @if($color==light) {
         color: var(--nirvana-dark);
@@ -34,8 +34,6 @@ $colors:primary danger secondary success info warning light dark;
       @else {
         color: var(--nirvana-light);
       }
-
-      #{$property}: var(--nirvana-#{$color}-light) !important;
     }
   }
 }
@@ -45,6 +43,7 @@ $colors:primary danger secondary success info warning light dark;
 
     &.nirvana-#{$propertyClass}-#{$color}:hover,
     &.nirvana-#{$propertyClass}-#{$color}:active {
+      #{$property}: var(--nirvana-#{$color}-dark) !important;
 
       @if($color==light) {
         color: var(--nirvana-dark);
@@ -53,8 +52,6 @@ $colors:primary danger secondary success info warning light dark;
       @else {
         color: var(--nirvana-light);
       }
-
-      #{$property}: var(--nirvana-#{$color}-dark) !important;
     }
   }
 }
@@ -123,24 +120,4 @@ usage:
   @for $i from 1 through 9 {
     --nirvana-#{$propertyClass}-#{$i}: #{colorOpacity($property,$i/10)};
   }
-}
-
-/*
-add rtl ltr Support
-
-usage:
-    selector{
-    @include rtlOrLtr(border-right, border-left, 10px,5px);
-    }
-*/
-@mixin rtlOrLtr($rtlProperty, $ltrProperty, $rtl-value, $ltr-value) {
-  .nirvana-ltr & {
-    #{$ltrProperty}:#{$ltr-value};
-
-  }
-
-  .nirvana-rtl & {
-    #{$rtlProperty}:#{$rtl-value};
-  }
-
 }

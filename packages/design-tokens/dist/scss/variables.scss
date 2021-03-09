@@ -33,14 +33,14 @@ $alignItem: left;
 
 // Font size
 $font-size-base: 13px !default;
-$font-size-lg: $font-size-base * 1.15 !default;
-$font-size-sm: $font-size-base * 0.85 !default;
-$h1-font-size: $font-size-base * 2.5 !default;
+$font-size-lg: floor($font-size-base * 1.15) !default;
+$font-size-sm: floor($font-size-base * 0.85) !default;
+$h1-font-size: floor($font-size-base * 2.5) !default;
 $h2-font-size: $font-size-base * 2 !default;
-$h3-font-size: $font-size-base * 1.75 !default;
-$h4-font-size: $font-size-base * 1.5 !default;
-$h5-font-size: $font-size-base * 1.25 !default;
-$h6-font-size: $font-size-base*1.1 !default;
+$h3-font-size: floor($font-size-base * 1.75) !default;
+$h4-font-size: floor($font-size-base * 1.5) !default;
+$h5-font-size: floor($font-size-base * 1.25) !default;
+$h6-font-size: floor($font-size-base*1.1) !default;
 $standard-icon-size:32px;
 $large-icon-size:48px;
 
@@ -51,19 +51,19 @@ $standard-border:$standard-border-size solid var(--nirvana-dark-backdrop-1);
 // Radius
 $standard-radius:4px !default;
 $double-size-radius:$standard-radius * 2 !default;
-$half-radius:$standard-radius / 2 !default;
+$half-radius:floor($standard-radius / 2) !default;
 $round-radius:50% !default;
 $pill-radius:50rem !default;
 
 // Margin
 $standard-margin:5px !default;
 $double-size-margin:$standard-margin * 2;
-$half-size-margin:$standard-margin / 2;
+$half-size-margin:floor($standard-margin / 2);
 
 // Padding
 $standard-padding:5px !default;
 $double-size-padding:$standard-padding * 2;
-$half-size-padding:$standard-padding / 2;
+$half-size-padding:floor($standard-padding / 2);
 
 // Other
 $standard-text-indent:5px !default;

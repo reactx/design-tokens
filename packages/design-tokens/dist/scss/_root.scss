@@ -12,13 +12,6 @@
   @include darkAndLightColor('blue', $blue);
   @include darkAndLightColor('red', $red);
 
-  --nirvana-warning: #{$yellow};
-  --nirvana-success: #{$green};
-  --nirvana-danger: #{$red};
-  --nirvana-light: #{$white};
-  --nirvana-info: #{$teal};
-  --nirvana-dark: #{$black};
-
   --nirvana-backdrop-color: rgba(250, 250, 250, 0.8);
   --nirvana-dark-backdrop-1: #{$gray-200};
   --nirvana-dark-backdrop-3: #{$gray-300};
