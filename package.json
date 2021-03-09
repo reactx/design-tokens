@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Source for the design tokens",
   "main": "index.js",
-  "repository": "http://192.168.2.6/DefaultCollection/Design-Token/_git/Design-Token",
+  "repository": "https://github.com/reactx/design-system",
   "author": "Behzad Abbasi",
   "license": "SEE LICENSE.MD",
-  "private": true,
+  "private": false,
+  "homepage": "http://reactx.github.io/design-system",
   "scripts": {
     "lint": "npm-run-all lint:*",
     "lint:js": "eslint website/ --ext .js,.jsx,.ts,.tsx --format codeframe",
