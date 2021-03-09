@@ -80,6 +80,8 @@ Basic.args = {
       disliked: true,
       likeCount: 1,
       dislikeCount: 11,
+      isReplayed: true,
+      replayLock: true,
     },
   ],
   like: (val, action) => alert(val.id + ' is ' + action),

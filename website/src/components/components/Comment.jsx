@@ -19,7 +19,6 @@ const RADIUS = {
   SMALL: 'small',
   NORMAL: 'normal',
   CURVE: 'curve',
-  PILL: 'pill',
 };
 
 const SHADOW = {
@@ -39,37 +38,41 @@ const CommentComponent = (props) => {
         <div
           key={item.id}
           {...parentProps}
-          className={generateClass(props, 'comment')}
+          className={
+            generateClass(props, 'comment') +
+            (item.isReplayed ? ' nirvana-ml-1' : '')
+          }
         >
+          {item.isReplayed && (
+            <FluentIcon icon="ReturnKey" className="comment-replayed" />
+          )}
           <div className="comment-avatar">
             <Avatar
               username={item.username}
+              letterCount={2}
               color={props.color}
               src={item.avatar}
-              outline={true}
             />
           </div>
           <div className="comment-body">
             <div className="comment-header">
               <div className="comment-username">{item.username}</div>
-              <div className="comment-actions">
-                {props.like && (
-                  <>
-                    <span>{item.likeCount || 0}</span>
-                    <FluentIcon
-                      icon={item.liked ? 'LikeSolid' : 'Like'}
-                      color="var(--nirvana-success)"
-                      onClick={() => props.like(item, 'like')}
-                    />
-                    <span>{item.dislikeCount || 0}</span>
-                    <FluentIcon
-                      icon={item.disliked ? 'DislikeSolid' : 'Dislike'}
-                      color="var(--nirvana-danger)"
-                      onClick={() => props.like(item, 'dislike')}
-                    />
-                  </>
-                )}
-              </div>
+              {props.like && (
+                <div className="comment-actions">
+                  <span>{item.likeCount || 0}</span>
+                  <FluentIcon
+                    icon={item.liked ? 'LikeSolid' : 'Like'}
+                    color="var(--nirvana-success)"
+                    onClick={() => props.like(item, 'like')}
+                  />
+                  <span>{item.dislikeCount || 0}</span>
+                  <FluentIcon
+                    icon={item.disliked ? 'DislikeSolid' : 'Dislike'}
+                    color="var(--nirvana-danger)"
+                    onClick={() => props.like(item, 'dislike')}
+                  />
+                </div>
+              )}
             </div>
             <div className="comment-text">{item.comment}</div>
             <div className="comment-footer">
@@ -101,7 +104,7 @@ Comment.propTypes = {
 };
 
 Comment.defaultProps = {
-  color: COLOR.PRIMARY,
+  color: COLOR.LIGHT,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.SMALL,
   className: '',

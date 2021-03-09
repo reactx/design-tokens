@@ -53,7 +53,10 @@ const AvatarComponent = (props) => {
         <img src={props.src} alt={props.username} />
       ) : (
         <span className="nirvana-avatar-letter">
-          {props.username.substring(0, 1).toUpperCase()}
+          {props.username
+            .substring(0, props.letterCount)
+            .trim()
+            .replace(/^\w/, (c) => c.toUpperCase())}
         </span>
       )}
       <Loading
@@ -65,9 +68,7 @@ const AvatarComponent = (props) => {
   );
 };
 
-const Avatar = React.forwardRef((props) => (
-  <AvatarComponent {...props}></AvatarComponent>
-));
+const Avatar = React.forwardRef((props) => <AvatarComponent {...props} />);
 
 Avatar.propTypes = {
   id: PropTypes.string,
@@ -80,17 +81,18 @@ Avatar.propTypes = {
   src: PropTypes.string,
   title: PropTypes.string,
   disabled: PropTypes.bool,
+  letterCount: PropTypes.number,
   loading: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 Avatar.defaultProps = {
-  title: 'Avatar',
   color: COLOR.PRIMARY,
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
+  letterCount: 1,
   outline: false,
   disabled: false,
   loading: false,

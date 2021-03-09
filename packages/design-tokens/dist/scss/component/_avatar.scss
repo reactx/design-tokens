@@ -7,15 +7,17 @@ $extra-size:128px;
 .nirvana-avatar {
   @include width-height($medium-size);
   transition: $standard-animation;
-  background-image: $gradient;
   font-size: $h3-font-size;
-  background: $gray-100;
   display: inline-flex;
   position: relative;
   overflow: hidden;
   padding: 0;
 
-  border: $standard-border-size solid transparent {
+  background: $gray-100 {
+    image: $gradient;
+  }
+
+  border: 1px solid rgba(0, 0, 0, .09) {
     radius: $round-radius;
   }
 
