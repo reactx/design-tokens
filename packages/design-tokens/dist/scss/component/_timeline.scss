@@ -30,11 +30,14 @@
 
   &-data {
     border-radius: $standard-radius;
-    background-color: $gray-100;
-    background-image: $gradient;
     margin: $half-size-margin 0;
     padding: $standard-padding;
     flex: 1 1 auto;
+
+    background: {
+      color: $gray-100;
+      image: $gradient;
+    }
   }
 
   &-title {

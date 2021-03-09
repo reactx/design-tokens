@@ -9,16 +9,19 @@
 
 .modal {
   &-wrapper {
-    background-color: var(--nirvana-backdrop-7);
     @include rtlOrLtr(right, left, 25px, 25px);
     border-radius: $standard-radius;
-    background-image: $gradient;
     box-shadow: $medium-shadow;
     flex-flow: column;
     overflow: hidden;
     min-width: 20vw;
     display: none;
     width: auto;
+
+    background: {
+      color: var(--nirvana-backdrop-7);
+      image: $gradient;
+    }
 
     &-active {
       display: flex;

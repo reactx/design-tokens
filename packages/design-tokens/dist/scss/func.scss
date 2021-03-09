@@ -9,10 +9,13 @@ $colors:primary danger secondary success info warning light dark;
 @mixin colors($propertyClass, $property) {
   @each $color in $colors {
     &.nirvana-#{$propertyClass}-#{$color} {
-      color: var(--nirvana-light);
 
       @if($color==light) {
         color: var(--nirvana-dark);
+      }
+
+      @else {
+        color: var(--nirvana-light);
       }
 
       #{$property}: var(--nirvana-#{$color}) !important;
@@ -23,10 +26,13 @@ $colors:primary danger secondary success info warning light dark;
 @mixin colorsLight($propertyClass, $property) {
   @each $color in $colors {
     &.nirvana-#{$propertyClass}-#{$color} {
-      color: var(--nirvana-light);
 
       @if($color==light) {
         color: var(--nirvana-dark);
+      }
+
+      @else {
+        color: var(--nirvana-light);
       }
 
       #{$property}: var(--nirvana-#{$color}-light) !important;
@@ -36,11 +42,16 @@ $colors:primary danger secondary success info warning light dark;
 
 @mixin colorsHover($propertyClass, $property) {
   @each $color in $colors {
-    &.nirvana-#{$propertyClass}-#{$color}:hover {
-      color: var(--nirvana-light);
+
+    &.nirvana-#{$propertyClass}-#{$color}:hover,
+    &.nirvana-#{$propertyClass}-#{$color}:active {
 
       @if($color==light) {
         color: var(--nirvana-dark);
+      }
+
+      @else {
+        color: var(--nirvana-light);
       }
 
       #{$property}: var(--nirvana-#{$color}-dark) !important;

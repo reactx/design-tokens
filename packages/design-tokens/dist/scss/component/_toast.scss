@@ -1,13 +1,16 @@
 $toast-width:17em;
 
 .nirvana-toast {
-  background-color: var(--nirvana-backdrop-9);
   margin-bottom: $double-size-margin;
   border-radius: $standard-radius;
-  background-image: $gradient;
   width: $toast-width;
   position: relative;
   overflow: hidden;
+
+  background {
+    color: var(--nirvana-backdrop-9);
+    image: $gradient;
+  }
 
   .toast-header {
     background-color: rgba(0, 0, 0, .03);

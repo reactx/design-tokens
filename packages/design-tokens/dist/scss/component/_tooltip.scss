@@ -2,10 +2,8 @@
   animation: fadeInTooltip 0.3s ease-in;
   color: var(--nirvana-backdrop-9);
   border-radius: $standard-radius;
-  background-image: $gradient;
   padding: $standard-padding;
   font-size: $font-size-sm;
-  background: $black;
   user-select: none;
   max-width: 150px;
   position: fixed;
@@ -13,6 +11,10 @@
   opacity: 0;
   left: 0px;
   top: 0px;
+
+  background: $black {
+    image: $gradient;
+  }
 
   &-fade-out {
     animation: fadeOutTooltip 0.3s ease-in;

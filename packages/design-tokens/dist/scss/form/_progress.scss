@@ -1,3 +1,5 @@
+$colors:primary danger secondary success info warning light dark;
+
 .nirvana-progress {
   background-color: rgba(255, 255, 255, 0.6);
   position: relative;
@@ -16,45 +18,11 @@
     top: 0;
   }
 
-  &-primary {
-    .progress-bar {
-      background: var(--nirvana-primary);
-    }
-  }
-
-  &-info {
-    .progress-bar {
-      background: var(--nirvana-info);
-    }
-  }
-
-  &-success {
-    .progress-bar {
-      background: var(--nirvana-success);
-    }
-  }
-
-  &-warning {
-    .progress-bar {
-      background: var(--nirvana-warning);
-    }
-  }
-
-  &-dark {
-    .progress-bar {
-      background: var(--nirvana-dark);
-    }
-  }
-
-  &-light {
-    .progress-bar {
-      background: $gray-300;
-    }
-  }
-
-  &-danger {
-    .progress-bar {
-      background: var(--nirvana-danger);
+  @each $color in $colors {
+    &-#{$color} {
+      .progress-bar {
+        background-color: var(--nirvana-#{$color});
+      }
     }
   }
 

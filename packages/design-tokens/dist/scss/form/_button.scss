@@ -1,8 +1,6 @@
 .nirvana-btn {
-  background-color: var(--nirvana-backdrop-7);
   transition: $standard-animation;
   @include flex-position-center;
-  background-image: $gradient;
   padding: $standard-padding;
   color: $foreground-color;
   display: inline-flex;
@@ -15,6 +13,11 @@
   cursor: pointer;
   min-width: 28px;
   outline: none;
+
+  background: {
+    color: var(--nirvana-backdrop-7);
+    image: $gradient;
+  }
 
   border: none {
     radius: $standard-radius;

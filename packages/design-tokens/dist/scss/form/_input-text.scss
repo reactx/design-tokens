@@ -41,11 +41,14 @@
   }
 
   &::file-selector-button {
-    background-color: $gray-200;
-    background-image: $gradient;
     pointer-events: none;
     min-height: 2em;
     height: 100%;
+
+    background: {
+      color: $gray-200;
+      image: $gradient;
+    }
 
     border: {
       color: inherit;
