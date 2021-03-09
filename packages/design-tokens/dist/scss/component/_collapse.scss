@@ -17,10 +17,13 @@
 
 .collapse {
   &-title {
-    background-color: rgba(0, 0, 0, 0.06);
     transition: $standard-animation;
-    background-image: $gradient;
     padding: $standard-padding;
+
+    background: {
+      color: rgba(0, 0, 0, 0.06);
+      image: $gradient;
+    }
 
     &::before {
       padding: 0 $standard-padding;
@@ -39,7 +42,17 @@
 
   &-data {
     padding: $standard-padding;
+    display: none;
+
+    &.collapsed {
+      display: block;
+    }
   }
 }
 
 @include colorsLight(collapse, 'background-color');
+
+.nirvana-accordion {
+  overflow: hidden;
+  border-radius: $standard-radius;
+}

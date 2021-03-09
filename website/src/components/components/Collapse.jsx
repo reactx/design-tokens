@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
@@ -33,10 +33,18 @@ const CollapseComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <details {...parentProps} className={generateClass(props, 'collapse')}>
-      <summary className="collapse-title">{props.head}</summary>
-      <div className="collapse-data">{props.children}</div>
-    </details>
+    <div
+      {...parentProps}
+      className={generateClass(props, 'collapse')}
+      onClick={() => props.onClick(props.id)}
+    >
+      <div className="collapse-title" onClick={() => props.onClick(props.id)}>
+        {props.head}
+      </div>
+      <div className={'collapse-data' + (props.open ? ' collapsed' : '')}>
+        {props.children}
+      </div>
+    </div>
   );
 };
 
@@ -51,15 +59,15 @@ Collapse.propTypes = {
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   title: PropTypes.string,
   disabled: PropTypes.bool,
+  open: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 Collapse.defaultProps = {
-  color: COLOR.PRIMARY,
+  color: COLOR.LIGHT,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
-  disabled: false,
   className: '',
 };
 

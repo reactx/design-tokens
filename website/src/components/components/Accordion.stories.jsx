@@ -1,9 +1,9 @@
 import React from 'react';
-import { Collapse } from './Collapse';
+import { Accordion } from './Accordion';
 
 export default {
-  title: 'Components/Collapse',
-  component: Collapse,
+  title: 'Components/Accordion',
+  component: Accordion,
   argTypes: {
     id: {
       control: 'text',
@@ -11,33 +11,17 @@ export default {
         category: 'Attribute',
       },
     },
-    head: {
+    items: {
       table: {
         category: 'Attribute',
       },
     },
-    children: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    title: {
-      control: 'text',
-      table: {
-        category: 'Attribute',
-      },
-    },
-    disabled: {
+    default: {
       table: {
         category: 'Attribute',
       },
     },
     className: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    open: {
       table: {
         category: 'Attribute',
       },
@@ -60,16 +44,15 @@ export default {
         category: 'Style',
       },
     },
-    onClick: {
-      table: {
-        category: 'Action',
-      },
-    },
   },
 };
 
-export const Basic = (args) => <Collapse {...args} />;
+export const Basic = (args) => <Accordion {...args} />;
 Basic.args = {
-  head: 'Title',
-  children: 'detail data',
+  items: [
+    { id: 1, head: 'Accordion 1 Title', children: 'Accordion 1 Message' },
+    { id: 2, head: 'Accordion 2 Title', children: 'Accordion 2 Message' },
+    { id: 3, head: 'Accordion 3 Title', children: 'Accordion 3 Message' },
+  ],
+  default: 1,
 };

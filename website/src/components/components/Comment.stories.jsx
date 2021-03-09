@@ -71,6 +71,24 @@ Basic.args = {
       likeCount: 10,
       dislikeCount: 1,
     },
+  ],
+  like: (val, action) => alert(val.id + ' is ' + action),
+  replay: (val) => alert(val.id),
+};
+
+export const WithReplay = (args) => <Comment {...args} />;
+WithReplay.args = {
+  items: [
+    {
+      id: '1',
+      avatar: '',
+      username: 'nirvana',
+      comment: 'comment 1',
+      date: '1399',
+      liked: true,
+      likeCount: 10,
+      dislikeCount: 1,
+    },
     {
       id: '2',
       avatar: '',

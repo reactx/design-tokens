@@ -59,11 +59,13 @@ const AvatarComponent = (props) => {
             .replace(/^\w/, (c) => c.toUpperCase())}
         </span>
       )}
-      <Loading
-        enabled={props.loading}
-        color={props.color}
-        size={LOADING_SIZE[props.size]}
-      />
+      {props.loading && (
+        <Loading
+          enabled={props.loading}
+          color={props.color}
+          size={LOADING_SIZE[props.size]}
+        />
+      )}
     </div>
   );
 };
