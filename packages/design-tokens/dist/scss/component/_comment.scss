@@ -4,7 +4,13 @@
   margin-bottom: $double-size-margin;
   background-color: $gray-50;
   border-radius: $standard-radius;
+  background-image: $gradient;
   overflow: hidden;
+
+  &:Hover .comment-actions,
+  &:Hover .comment-replay {
+    opacity: 1;
+  }
 }
 
 .comment {
@@ -23,9 +29,14 @@
     padding: $standard-padding;
   }
 
+  &-header {
+    border-bottom: 1px solid $gray-200;
+    display: flex;
+  }
+
   &-username {
     font-weight: bold;
-    border-bottom: 1px solid $gray-200;
+    flex: 1 1 auto;
   }
 
   &-date {
@@ -34,7 +45,28 @@
     color: $gray-400;
   }
 
+  &-actions,
+  &-replay {
+    opacity: 0;
+    transition: $standard-animation;
+  }
+
   &-text {
     min-height: 3em;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: $font-size-sm;
+    }
   }
 }

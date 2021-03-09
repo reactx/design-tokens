@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 import { Avatar } from './Avatar';
+import { FluentIcon } from './FluentIcon';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -49,9 +50,36 @@ const CommentComponent = (props) => {
             />
           </div>
           <div className="comment-body">
-            <div className="comment-username">{item.username}</div>
+            <div className="comment-header">
+              <div className="comment-username">{item.username}</div>
+              <div className="comment-actions">
+                {props.like && (
+                  <>
+                    <span>{item.likeCount || 0}</span>
+                    <FluentIcon
+                      icon={item.liked ? 'LikeSolid' : 'Like'}
+                      color="var(--nirvana-success)"
+                      onClick={() => props.like(item, 'like')}
+                    />
+                    <span>{item.dislikeCount || 0}</span>
+                    <FluentIcon
+                      icon={item.disliked ? 'DislikeSolid' : 'Dislike'}
+                      color="var(--nirvana-danger)"
+                      onClick={() => props.like(item, 'dislike')}
+                    />
+                  </>
+                )}
+              </div>
+            </div>
             <div className="comment-text">{item.comment}</div>
-            <div className="comment-date">{item.date}</div>
+            <div className="comment-footer">
+              <div className="comment-date">{item.date}</div>
+              {props.replay && !item.replayLock && (
+                <div className="comment-replay">
+                  <FluentIcon icon="Reply" onClick={() => props.replay(item)} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       ))}
@@ -67,8 +95,9 @@ Comment.propTypes = {
   radius: PropTypes.oneOf(Object.values(RADIUS)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   items: PropTypes.array.isRequired,
+  like: PropTypes.func,
+  replay: PropTypes.func,
   className: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 Comment.defaultProps = {

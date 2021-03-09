@@ -45,9 +45,14 @@ export default {
         category: 'Style',
       },
     },
-    onClick: {
+    like: {
       table: {
-        category: 'Action',
+        category: 'action',
+      },
+    },
+    replay: {
+      table: {
+        category: 'action',
       },
     },
   },
@@ -62,6 +67,9 @@ Basic.args = {
       username: 'nirvana',
       comment: 'comment 1',
       date: '1399',
+      liked: true,
+      likeCount: 10,
+      dislikeCount: 1,
     },
     {
       id: '2',
@@ -69,6 +77,11 @@ Basic.args = {
       username: 'microsoft',
       comment: 'comment 2',
       date: '1399',
+      disliked: true,
+      likeCount: 1,
+      dislikeCount: 11,
     },
   ],
+  like: (val, action) => alert(val.id + ' is ' + action),
+  replay: (val) => alert(val.id),
 };
