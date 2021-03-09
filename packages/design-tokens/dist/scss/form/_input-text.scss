@@ -1,0 +1,94 @@
+.nirvana-input {
+  transition: $standard-animation;
+  padding: 0 $half-size-padding;
+  font-size: $font-size-base;
+  color: $foreground-color;
+  appearance: none;
+  line-height: 2em;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  width: 100%;
+
+  background: {
+    color: var(--nirvana-backdrop-9);
+    clip: padding-box;
+  }
+
+  min: {
+    height: 2em;
+    width: 0;
+  }
+
+  border: $standard-border {
+    color: var(--nirvana-dark-backdrop-3);
+    radius: $standard-radius;
+  }
+
+  &:focus {
+    border: $standard-border !important {
+      color: var(--nirvana-primary) !important;
+    }
+  }
+
+  &[type="color"] {
+    height: 30px;
+  }
+
+  &[type="file"] {
+    padding: 0 !important;
+    min-height: 2em;
+  }
+
+  &::file-selector-button {
+    pointer-events: none;
+    min-height: 2em;
+    height: 100%;
+
+    background: {
+      color: $gray-200;
+      image: $gradient;
+    }
+
+    border: {
+      color: inherit;
+      style: solid;
+      radius: 0;
+      width: 0;
+    }
+  }
+
+  &-valid {
+    border: 1px solid $green;
+  }
+
+  &-invalid {
+    border: 1px solid $red;
+  }
+}
+
+.input-size {
+  &-tiny {
+    padding: 0 ($half-size-padding*0.75);
+    font-size: $font-size-sm*0.75;
+  }
+
+  &-small {
+    padding: 0 ($half-size-padding*0.9);
+    font-size: $font-size-sm*0.9;
+  }
+
+  &-large {
+    padding: $half-size-padding $standard-padding;
+    font-size: $h4-font-size;
+  }
+
+  &-extra {
+    padding: $half-size-padding $standard-padding;
+    font-size: $h2-font-size;
+  }
+}
+
+textarea.nirvana-input {
+  min-height: 5em;
+}

@@ -74,3 +74,8 @@ export default {
 };
 
 export const Basic = (args) => <Card {...args} />;
+Basic.args = {
+  children: 'card Default Message',
+  header: 'header',
+  footer: 'footer',
+};

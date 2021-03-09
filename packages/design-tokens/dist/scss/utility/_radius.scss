@@ -1,23 +1,38 @@
-.radius-none {
-  border-radius: 0 !important;
-}
+$radius:none small normal curve rounded pill;
+$size:(none:'0', small:#{$half-radius}, normal:#{$standard-radius}, curve:#{$double-size-radius}, rounded:#{$round-radius}, pill:#{$pill-radius});
 
-.radius-small {
-  border-radius: $half-radius !important;
-}
+@each $rad in $radius {
+  .radius-#{$rad} {
+    border-radius: #{map-get($size, $rad)} !important;
+  }
 
-.radius-normal {
-  border-radius: $standard-radius !important;
-}
+  .radius-b-#{$rad} {
+    border: {
+      bottom-right-radius: #{map-get($size, $rad)} !important;
+      bottom-left-radius: #{map-get($size, $rad)} !important;
+    }
+  }
 
-.radius-curve {
-  border-radius: $double-size-radius !important;
-}
+  .radius-t-#{$rad} {
+    border: {
+      top-right-radius: #{map-get($size, $rad)} !important;
+      top-left-radius: #{map-get($size, $rad)} !important;
+    }
+  }
 
-.radius-rounded {
-  border-radius: $round-radius !important;
-}
+  .radius-tl-#{$rad} {
+    border-top-left-radius: #{map-get($size, $rad)} !important;
+  }
 
-.radius-pill {
-  border-radius: 50rem !important;
+  .radius-tr-#{$rad} {
+    border-top-right-radius: #{map-get($size, $rad)} !important;
+  }
+
+  .radius-br-#{$rad} {
+    border-bottom-right-radius: #{map-get($size, $rad)} !important;
+  }
+
+  .radius-bl-#{$rad} {
+    border-bottom-left-radius: #{map-get($size, $rad)} !important;
+  }
 }

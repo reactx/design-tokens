@@ -1,27 +1,13 @@
-.shadow-none {
-  box-shadow: none !important;
-}
+$shadows:none small medium large;
+$size:(none:'none', small:#{$small-shadow}, medium:#{$medium-shadow}, large:#{$large-shadow});
 
-.shadow-small {
-  box-shadow: $small-shadow !important;
-}
+@each $sh in $shadows {
+  .shadow-#{$sh} {
+    box-shadow: #{map-get($size, $sh)} !important;
+  }
 
-.shadow-medium {
-  box-shadow: $medium-shadow !important;
-}
-
-.shadow-large {
-  box-shadow: $large-shadow !important;
-}
-
-.shadow-on-hover-small:hover {
-  box-shadow: $small-shadow !important;
-}
-
-.shadow-on-hover-medium:hover {
-  box-shadow: $medium-shadow !important;
-}
-
-.shadow-on-hover-large:hover {
-  box-shadow: $large-shadow !important;
+  .shadow-on-hover-#{$sh}:hover {
+    box-shadow: #{map-get($size, $sh)} !important;
+    transition: $standard-animation;
+  }
 }

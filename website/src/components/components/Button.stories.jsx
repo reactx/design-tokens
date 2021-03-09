@@ -81,4 +81,17 @@ export default {
 };
 
 export const Basic = (args) => <Button {...args} />;
-// Basic.args = { pseudo: { hover: true } };
+Basic.args = { children: 'Button Text' };
+export const ButtonGroup = (args) => (
+  <div className="nirvana-btn-group">
+    <Button color="primary" {...args}>
+      1
+    </Button>
+    <Button color="primary" {...args}>
+      2
+    </Button>
+    <Button color="primary" {...args}>
+      3
+    </Button>
+  </div>
+);

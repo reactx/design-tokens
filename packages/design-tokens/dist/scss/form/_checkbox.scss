@@ -1,0 +1,48 @@
+.nirvana-checkbox {
+  transition: $standard-animation;
+  display: none;
+
+  &+.checkbox-title {
+    @include flex-position-center(inline-flex);
+    transition: $standard-animation;
+
+    &:before {
+      @include flex-position-center(inline-flex);
+      letter-spacing: $standard-padding;
+      font-family: 'FabricMDL2Icons';
+      content: "\E739";
+    }
+  }
+
+  &:checked {
+    &+.checkbox-title:before {
+      content: "\E73A";
+    }
+  }
+
+  &.checkbox-size {
+    &-small {
+      &+.checkbox-title {
+        font-size: $font-size-sm;
+      }
+    }
+
+    &-medium {
+      &+.checkbox-title {
+        font-size: $h6-font-size;
+      }
+    }
+
+    &-large {
+      &+.checkbox-title {
+        font-size: $h4-font-size;
+      }
+    }
+
+    &-extra {
+      &+.checkbox-title {
+        font-size: $h2-font-size;
+      }
+    }
+  }
+}

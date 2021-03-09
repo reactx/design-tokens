@@ -1,17 +1,11 @@
-.animated {
-	animation-duration: 0.2s;
-	animation-fill-mode: both;
-	animation-timing-function: ease-in;
+.nirvana-animation,
+.animate {
+  transition: $standard-animation;
 }
-
-.nirvana-animation {
-	transition: $standard-animation;
-}
-
 
 .blink {
-	color: $purple;
-	animation: blink-animation 1s steps(5, start) infinite;
+  animation: blink-animation 1s steps(5, start) infinite;
+  color: $blue;
 }
 
 .fadeIn,
@@ -23,326 +17,341 @@
 .flipInY,
 .flash,
 .slideInRight {
-	animation-duration: 0.2s;
-	animation-timing-function: ease-in-out;
+  animation: {
+    timing-function: ease-in-out;
+    duration: 0.2s;
+  }
 }
 
 .flipReverse,
 .flip {
-	animation-duration: 0.4s;
-	animation-timing-function: ease-out;
+  animation: {
+    timing-function: ease-out;
+    duration: 0.4s;
+  }
 }
 
 .fadeIn {
-	animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 
 .zoomIn {
-	animation-name: zoomIn;
+  animation-name: zoomIn;
 }
 
 .fadeInUp {
-	animation-name: fadeInUp;
+  animation-name: fadeInUp;
 }
 
 .fadeInLeft {
-	@include rtlOrLtr(animation-name, animation-name, fadeInLeft, fadeInRight);
-	animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
 }
 
 .fadeInDown {
-	animation-name: fadeInDown;
+  animation-name: fadeInDown;
 
-	&>div {
-		animation-name: displayNone;
-		animation-duration: 0.5s;
-		animation-timing-function: ease-in;
-	}
+  &>div {
+    animation: {
+      timing-function: ease-in;
+      name: displayNone;
+      duration: 0.5s;
+    }
+  }
 }
 
 .slideInLeft {
-	@include rtlOrLtr(animation-name, animation-name, slideInLeft, slideInRight);
-	position: relative;
+  animation-name: slideInLeft;
+  position: relative;
 
-	&>div:nth-child(1) {
-		animation-name: displayNone;
-		animation-duration: 0.8s;
-		animation-timing-function: ease-in;
-	}
+  &>div:nth-child(1) {
+    animation: {
+      timing-function: ease-in;
+      name: displayNone;
+      duration: 0.8s;
+    }
+  }
 }
 
 .slideInRight {
-	@include rtlOrLtr(animation-name, animation-name, slideInRight, slideInLeft);
-	position: relative;
+  animation-name: slideInRight;
+  position: relative;
 }
 
 .flipInY {
-	animation-name: flipInY;
+  animation-name: flipInY;
 }
 
 .flipReverse {
-	animation-name: flipReverse;
-	backface-visibility: visible;
+  backface-visibility: visible;
+  animation-name: flipReverse;
 }
 
 .flip {
-	animation-name: flip;
-	backface-visibility: visible;
+  backface-visibility: visible;
+  animation-name: flip;
 }
 
 .flash {
-	animation-name: flash;
+  animation-name: flash;
+}
+
+.spinner {
+  animation: 2.5s linear infinite spinner {
+    play-state: inherit;
+  }
 }
 
 @keyframes fadeIn {
-	0% {
-		opacity: 0
-	}
+  0% {
+    opacity: 0
+  }
 
-	to {
-		opacity: 1
-	}
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		transform: translate3d(0, 75%, 0) perspective(400px) rotateX(45deg);
-		transform-origin: bottom center;
-	}
+  0% {
+    opacity: 0;
 
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0) perspective(0px) rotateX(0deg);
-	}
+    transform: translate3d(0, 75%, 0) perspective(400px) rotateX(45deg) {
+      origin: bottom center;
+    }
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) perspective(0px) rotateX(0deg);
+  }
 }
 
 @keyframes fadeInLeft {
-	from {
-		transform: translate3d(10px, 0, 0)
-	}
+  from {
+    transform: translate3d(10px, 0, 0)
+  }
 
-	to {
-		transform: translate3d(0, 0, 0);
-		opacity: 1
-	}
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
 }
 
 @keyframes fadeInRight {
-	from {
-		transform: translate3d(-10px, 0, 0)
-	}
+  from {
+    transform: translate3d(-10px, 0, 0)
+  }
 
-	to {
-		transform: translate3d(0, 0, 0);
-		opacity: 1
-	}
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
 }
 
 @keyframes fadeInDown {
-	0% {
-		opacity: 0.5;
-		transform: translate3d(0, -75%, 0) perspective(400px) rotateX(45deg);
-		transform-origin: bottom center;
-	}
+  0% {
+    opacity: 0.5;
 
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0) perspective(0px) rotateX(0deg);
-	}
+    transform: translate3d(0, -75%, 0) perspective(400px) rotateX(45deg) {
+      origin: bottom center;
+    }
+  }
+
+  to {
+    transform: translate3d(0, 0, 0) perspective(0px) rotateX(0deg);
+    opacity: 1;
+  }
 }
 
 @keyframes zoomIn {
-	0% {
-		opacity: 0;
-		transform: scale3d(.3, .3, .3)
-	}
+  0% {
+    transform: scale3d(.3, .3, .3);
+    opacity: 0;
+  }
 
-	50% {
-		opacity: 1
-	}
+  50% {
+    opacity: 1
+  }
 }
 
 @keyframes slideInUp {
-	0% {
-		transform: translate3d(0, 100%, 0);
-		visibility: visible
-	}
+  0% {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
 
-	to {
-		transform: translateZ(0)
-	}
+  to {
+    transform: translateZ(0);
+  }
 }
 
 @keyframes slideInLeft {
-	0% {
-		left: -500%;
-	}
+  0% {
+    left: -500%;
+  }
 
-	25% {
-		left: -500%;
-	}
+  25% {
+    left: -500%;
+  }
 
-	to {
-		left: 0;
-	}
+  to {
+    left: 0;
+  }
 }
 
 @keyframes slideInRight {
-	0% {
-		right: -500%;
-	}
+  0% {
+    right: -500%;
+  }
 
-	25% {
-		right: -500%;
-	}
+  25% {
+    right: -500%;
+  }
 
-	to {
-		right: 0;
-	}
+  to {
+    right: 0;
+  }
 }
 
 @keyframes flip {
-	from {
-		transform: perspective(400px) scale(1) rotateY(180deg);
-		animation-timing-function: ease-out;
-		overflow: hidden;
-	}
+  from {
+    transform: perspective(400px) scale(1) rotateY(180deg);
+    animation-timing-function: ease-out;
+    overflow: hidden;
+  }
 
-	to {
-		transform: perspective(400px) scale(1) rotateY(0deg);
-		animation-timing-function: ease-in;
-		overflow: hidden;
+  to {
+    transform: perspective(400px) scale(1) rotateY(0deg);
+    animation-timing-function: ease-in;
+    overflow: hidden;
 
-	}
+  }
 }
 
 @keyframes flipReverse {
-	from {
-		transform: perspective(400px) scale(1) rotateY(-180deg);
-		animation-timing-function: ease-out;
-		overflow: hidden;
-	}
+  from {
+    transform: perspective(400px) scale(1) rotateY(-180deg);
+    animation-timing-function: ease-out;
+    overflow: hidden;
+  }
 
-	to {
-		transform: perspective(400px) scale(1) rotateY(0deg);
-		animation-timing-function: ease-in;
-		overflow: hidden;
-	}
+  to {
+    transform: perspective(400px) scale(1) rotateY(0deg);
+    animation-timing-function: ease-in;
+    overflow: hidden;
+  }
 }
 
 @keyframes displayNone {
-	from {
-		display: none;
-		opacity: 0;
-	}
+  from {
+    display: none;
+    opacity: 0;
+  }
 
-	60% {
-		display: block;
-		opacity: 0;
-	}
+  60% {
+    display: block;
+    opacity: 0;
+  }
 
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes toDisplayNone {
-	from {
-		z-index: 100;
-		opacity: 1;
-	}
+  from {
+    z-index: 100;
+    opacity: 1;
+  }
 
-	60% {
-		z-index: 100;
-		opacity: 1;
-	}
+  60% {
+    z-index: 100;
+    opacity: 1;
+  }
 
-	to {
-		z-index: 0;
-		opacity: 0;
-		display: none;
-	}
+  to {
+    display: none;
+    z-index: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes flash {
 
-	0% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 1;
+  }
 
-	25% {
-		opacity: 0.5;
-		background-color: var(--nirvana-primary-light);
-	}
+  25% {
+    opacity: 0.5;
+    background-color: var(--nirvana-primary-light);
+  }
 
-	50% {
-		opacity: 1;
-		background-color: var(--nirvana-primary-lightest);
-	}
+  50% {
+    opacity: 1;
+    background-color: var(--nirvana-primary-lightest);
+  }
 
-	75% {
-		opacity: 0.75;
-		background-color: var(--nirvana-primary-light);
-	}
+  75% {
+    opacity: 0.75;
+    background-color: var(--nirvana-primary-light);
+  }
 
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
 }
 
-
 @keyframes blink-animation {
-	to {
-		visibility: hidden;
-	}
+  to {
+    visibility: hidden;
+  }
 }
 
 @keyframes fadeInTooltip {
-	0% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+  }
 
-	40% {
-		opacity: 0;
-	}
+  40% {
+    opacity: 0;
+  }
 
-	90% {
-		opacity: 1
-	}
+  90% {
+    opacity: 1
+  }
 }
 
-
 @keyframes fadeOutTooltip {
-	0% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 1;
+  }
 
-	40% {
-		opacity: 1;
-	}
+  40% {
+    opacity: 1;
+  }
 
-	90% {
-		opacity: 0;
-	}
+  90% {
+    opacity: 0;
+  }
 }
 
 @keyframes intellixShimmer {
-	0% {
-		background-position: 0 -20px;
-	}
+  0% {
+    background-position: 0 -20px;
+  }
 
-	100% {
-		background-position: 0 20px;
-	}
+  100% {
+    background-position: 0 20px;
+  }
 }
 
-@keyframes storeShimmer {
-	0% {
-		background-position: -250px 0;
-	}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
 
-	100% {
-		background-position: 250px 0;
-	}
+  100% {
+    transform: rotate(360deg);
+  }
 }

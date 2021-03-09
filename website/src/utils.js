@@ -6,18 +6,48 @@ const delList = [
   'iconSize',
   'children',
   'username',
+  'itemRadius',
+  'formControlStyle',
+  'position',
+  'closeAction',
+  'like',
+  'isReplayed',
+  'replay',
+  'letterCount',
+  'showDuration',
+  'itemColor',
+  'validMessage',
+  'body',
+  'invalidMessage',
   'backdrop',
+  'justifyContent',
+  'alignItem',
+  'prepend',
+  'multiLine',
+  'fixIcon',
+  'append',
   'padding',
+  'brand',
+  'menu',
   'outline',
+  'theme',
   'radius',
   'shadow',
   'label',
+  'tabList',
+  'line',
+  'animation',
   'footer',
   'color',
+  'background',
   'header',
   'size',
+  'sizeMd',
+  'sizeLg',
   'icon',
+  'description',
   'src',
+  'items',
 ];
 
 const COLOR = {
@@ -28,6 +58,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NONE: 'none',
 };
 
 const RADIUS = {
@@ -94,15 +125,23 @@ export const generateClass = (prop, baseName) => {
   if (prop.size && prop.size !== SIZE.MEDIUM) {
     classList.push(baseName + '-size-' + prop.size);
   }
+  //BACKGROUND
+  if (prop.background && prop.background !== COLOR.LIGHT) {
+    classList.push(baseName + '-background-' + prop.background);
+  }
   //OUTLINE AND COLOR
   if (prop.outline && prop.color) {
-    classList.push('border-1 nirvana-color-' + prop.color);
-  } else if (prop.color) {
+    classList.push('outline nirvana-color-' + prop.color);
+  } else if (prop.color && prop.color !== COLOR.NONE) {
     classList.push('nirvana-' + baseName + '-' + prop.color);
   }
   //VALIDATION
   if (prop.validationStates && prop.validationStates !== 'none') {
     classList.push('nirvana-input-' + prop.validationStates);
+  }
+  //THEME
+  if (prop.theme) {
+    classList.push(prop.theme);
   }
 
   return classList.join(' ');

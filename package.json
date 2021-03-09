@@ -6,7 +6,7 @@
   "repository": "https://github.com/reactx/design-system",
   "author": "Behzad Abbasi",
   "license": "SEE LICENSE.MD",
-  "private": true,
+  "private": false,
   "homepage": "http://reactx.github.io/design-system",
   "scripts": {
     "lint": "npm-run-all lint:*",

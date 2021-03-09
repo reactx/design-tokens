@@ -1,0 +1,91 @@
+.nirvana-btn {
+  transition: $standard-animation;
+  @include flex-position-center;
+  padding: $standard-padding;
+  color: $foreground-color;
+  display: inline-flex;
+  white-space: nowrap;
+  position: relative;
+  width: fit-content;
+  line-height: 100%;
+  margin-left: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  min-width: 28px;
+  outline: none;
+
+  background: {
+    color: var(--nirvana-backdrop-7);
+    image: $gradient;
+  }
+
+  border: none {
+    radius: $standard-radius;
+  }
+
+  &.outline {
+    border: 1px solid;
+  }
+
+  &.btn-size {
+    &-small {
+      padding: $standard-padding;
+      font-size: $font-size-sm;
+    }
+
+    &-medium {
+      padding: $standard-padding;
+      font-size: $font-size-base;
+    }
+
+    &-large {
+      padding: $double-size-padding;
+      font-size: $h4-font-size;
+    }
+
+    &-extra {
+      padding: $double-size-padding;
+      font-size: $h2-font-size;
+    }
+  }
+}
+
+@include colors(btn, 'background-color');
+@include colorsHover(btn, 'background-color');
+
+.nirvana-btn-group {
+  display: flex;
+
+  .nirvana-btn {
+    margin: 0;
+
+    &:not(:last-child) {
+      border: {
+        bottom-right-radius: 0 !important;
+        top-right-radius: 0 !important;
+      }
+    }
+
+    &:not(:first-child) {
+      border: {
+        bottom-left-radius: 0 !important;
+        top-left-radius: 0 !important;
+        left-width: 0 !important;
+      }
+    }
+
+    &:first-child {
+      border: {
+        bottom-right-radius: 0 !important;
+        top-right-radius: 0 !important;
+      }
+    }
+
+    &:last-child {
+      border: {
+        bottom-left-radius: 0 !important;
+        top-left-radius: 0 !important;
+      }
+    }
+  }
+}

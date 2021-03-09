@@ -1,0 +1,112 @@
+$colors:primary danger secondary success info warning light dark;
+
+.nirvana-progress {
+  background-color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+  height: 25px;
+  width: 100%;
+
+  border: 1px solid rgba(100, 100, 100, 0.1) {
+    radius: $standard-radius;
+  }
+
+  &::after {
+    @include width-height(100%);
+    position: absolute;
+    content: '';
+    top: 0;
+  }
+
+  @each $color in $colors {
+    &-#{$color} {
+      .progress-bar {
+        background-color: var(--nirvana-#{$color});
+      }
+    }
+  }
+
+  &.progress-size-tiny {
+    font-size: $font-size-sm;
+    height: 10px;
+
+    .progress-bar {
+      background-size: 20px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+
+  &.progress-size-small {
+    font-size: $font-size-sm;
+    height: 15px;
+
+    .progress-bar {
+      background-size: 30px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+
+  &.progress-size-medium {
+    height: 25px;
+
+    .progress-bar {
+      background-size: 40px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+
+  &.progress-size-large {
+    font-size: $h4-font-size;
+    height: 40px;
+
+    .progress-bar {
+      background-size: 80px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+
+  &.progress-size-extra {
+    font-size: $h2-font-size;
+    height: 60px;
+
+    .progress-bar {
+      background-size: 120px 100%, 100% 100%, 100% 100% !important;
+    }
+  }
+}
+
+.progress-bar {
+  height: 100%;
+
+  background: {
+    image: $gradient;
+    color: var(--nirvana-primary);
+    size: 40px 100%, 100% 100%, 100% 100% !important;
+  }
+
+
+  &.striped {
+    background-image:
+      -webkit-linear-gradient(-45deg,
+        transparent 33%, rgba(0, 0, 0, .1) 33%,
+        rgba(0, 0, 0, .1) 66%, transparent 66%),
+      -webkit-linear-gradient(top,
+        rgba(255, 255, 255, .25),
+        rgba(0, 0, 0, .25)) !important;
+  }
+
+  &.animation {
+    animation: animate-stripes 5s linear infinite;
+  }
+}
+
+.progress-label {
+  text-shadow: 0px 0 3px var(--nirvana-light);
+  @include flex-position-center;
+  @include width-height(100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@keyframes animate-stripes {
+  100% {
+    background-position: 240px 0px;
+  }
+}

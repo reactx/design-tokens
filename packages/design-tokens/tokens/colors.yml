@@ -6,8 +6,6 @@ props:
     value: '#0067B8'
   - name: color-indigo
     value: '#6610f2'
-  - name: color-purple
-    value: '#6f42c1'
   - name: color-red
     value: '#bb3937'
   - name: color-orange

@@ -1,14 +1,48 @@
 @import "utility/padding-margin",
 "utility/border",
 "utility/radius",
-"utility/font",
+"utility/typography",
 "utility/shadow",
-"utility/extra";
+"utility/justify_align",
+"utility/display",
+"utility/overflow",
+"utility/height_width";
 
 [disabled] {
+  filter: grayscale(1) !important;
   cursor: not-allowed !important;
   opacity: 0.5 !important;
-  filter: grayscale(1) !important;
 }
 
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.nirvana-back-blur {
+  background-color: var(--nirvana-backdrop-color) !important;
+  backdrop-filter: $backdrop;
+}
+
+.nirvana-medium-back-blur {
+  background-color: var(--nirvana-backdrop-7) !important;
+}
+
+.nirvana-light-back-blur {
+  background-color: var(--nirvana-backdrop-3) !important;
+}
+
+/* nirvana Background and Color */
+// nirvana-bg-*
+@include colors(bg, 'background-color');
+// nirvana-color-*
 @include colors(color, 'color');
+
+.nirvana-bg-gradient {
+  background-image: $gradient;
+}

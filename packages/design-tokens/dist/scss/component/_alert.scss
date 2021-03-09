@@ -1,0 +1,16 @@
+.nirvana-alert {
+  transition: $standard-animation;
+  margin-bottom: $standard-margin;
+  padding: $double-size-padding;
+  border-radius: $half-radius;
+  background-image: $gradient;
+  position: relative;
+  display: block;
+
+  &.outline {
+    border: 1px solid
+  }
+}
+
+@include colorsLight(alert, 'background-color');
+@include colorsHover(alert, 'background-color');

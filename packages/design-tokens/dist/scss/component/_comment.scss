@@ -1,0 +1,79 @@
+.nirvana-comment {
+  display: flex;
+  margin: $standard-margin 0;
+  margin-bottom: $double-size-margin;
+  background-color: $gray-50;
+  border-radius: $standard-radius;
+  background-image: $gradient;
+  overflow: hidden;
+  position: relative;
+
+  &:Hover .comment-actions,
+  &:Hover .comment-replay {
+    opacity: 1;
+  }
+}
+
+@include colorsLight(comment, 'background-color');
+
+.comment {
+  &-avatar {
+    flex: 0 1 100px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  &-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: $standard-padding;
+  }
+
+  &-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    display: flex;
+  }
+
+  &-username {
+    font-weight: bold;
+    flex: 1 1 auto;
+  }
+
+  &-date {
+    font-size: $font-size-sm;
+    text-align: end;
+  }
+
+  &-actions,
+  &-replay {
+    opacity: 0;
+    transition: $standard-animation;
+  }
+
+  &-text {
+    min-height: 3em;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &-replayed {
+    position: absolute;
+    transform: rotate(90deg);
+  }
+}

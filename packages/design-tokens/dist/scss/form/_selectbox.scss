@@ -1,0 +1,110 @@
+  .nirvana-selectbox {
+    cursor: pointer;
+    transition: $standard-animation;
+    padding: 0 $half-size-padding;
+    color: $foreground-color;
+    position: relative;
+    line-height: 1.5em;
+    appearance: none;
+    cursor: pointer;
+    display: block;
+    outline: none;
+    width: 100%;
+
+    background: {
+      color: var(--nirvana-backdrop-9);
+      clip: padding-box;
+    }
+
+    min: {
+      height: 2em;
+      width: 0;
+    }
+
+    border: $standard-border {
+      color: var(--nirvana-dark-backdrop-3);
+      width: $standard-border-size;
+      radius: $standard-radius;
+    }
+
+    .selectbox {
+      &-value {
+        display: none
+      }
+
+      &-item {
+        padding: $standard-padding;
+        align-items: center;
+        display: flex;
+      }
+
+      &-arrow {
+        align-items: center;
+        display: flex;
+      }
+
+      &-selected {
+        background-color: var(--nirvana-dark-backdrop-1);
+        padding: $half-size-padding $double-size-padding;
+      }
+
+      &-dropdown {
+        background-color: var(--nirvana-backdrop-color);
+        box-shadow: $medium-shadow;
+        backdrop-filter: $backdrop;
+        position: absolute;
+        max-height: 50vh;
+        min-width: 150px;
+        overflow: auto;
+        display: none;
+        height: auto;
+        width: 100%;
+        right: 0;
+        left: 0;
+
+        border: $standard-border {
+          color: var(--nirvana-dark-backdrop-3);
+          radius: $standard-radius;
+        }
+
+        .selectbox-selected:hover,
+        .selectbox-item:hover {
+          background: var(--nirvana-dark-backdrop-1);
+        }
+      }
+    }
+
+    &._active {
+      .selectbox-dropdown {
+        display: block;
+      }
+    }
+
+    &.selectbox-size-tiny {
+      padding: 0 ($half-size-padding*0.75);
+      font-size: $font-size-sm*0.75;
+    }
+
+    &.selectbox-size-small {
+      padding: 0 ($half-size-padding*0.9);
+      font-size: $font-size-sm*0.9;
+    }
+
+    &.selectbox-size-large {
+      padding: $half-size-padding $standard-padding;
+      font-size: $h4-font-size;
+    }
+
+    &.selectbox-size-extra {
+      padding: $half-size-padding $standard-padding;
+      font-size: $h2-font-size;
+    }
+
+    &.nirvana-input-valid {
+      border: 1px solid $green;
+    }
+
+    &.nirvana-input-invalid {
+      border: 1px solid $red;
+    }
+  }

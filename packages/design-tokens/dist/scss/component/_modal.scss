@@ -1,0 +1,166 @@
+.nirvana-modal-container {
+  @include flex-position-center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.modal {
+  &-wrapper {
+    border-radius: $standard-radius;
+    box-shadow: $medium-shadow;
+    flex-flow: column;
+    overflow: hidden;
+    min-width: 20vw;
+    display: none;
+    width: auto;
+    left: 25px;
+
+    background: {
+      color: var(--nirvana-backdrop-7);
+      image: $gradient;
+    }
+
+    &-active {
+      display: flex;
+    }
+
+    &.modal-left {
+      position: absolute;
+      height: 100vh;
+      left: 0;
+      top: 0;
+
+      border: {
+        right: $standard-border;
+        radius: 0;
+      }
+
+      animation: {
+        timing-function: ease-in-out;
+        name: fadeInRight;
+        duration: 0.2s;
+      }
+    }
+
+    &.modal-right {
+      position: absolute;
+      height: 100vh;
+      right: 0;
+      top: 0;
+
+      border: {
+        left: $standard-border;
+        radius: 0;
+      }
+
+      animation: {
+        timing-function: ease-in-out;
+        name: fadeInLeft;
+        duration: 0.2s;
+      }
+    }
+
+    &.modal-full {
+      background-color: var(--nirvana-backdrop-7);
+      min-width: 50vw;
+      bottom: unset;
+      right: unset;
+      left: unset;
+      top: unset;
+
+      max: {
+        height: 80%;
+        width: 70%;
+      }
+
+      animation: {
+        timing-function: ease-in-out;
+        name: fadeInDown;
+        duration: 0.2s;
+      }
+    }
+
+  }
+
+  &-title {
+    justify-content: flex-start;
+    text-transform: capitalize;
+    align-items: center;
+    display: flex;
+    flex: 1 1;
+  }
+
+  &-header {
+    padding: $standard-padding $double-size-padding;
+    background-color: rgba(0, 0, 0, .03);
+    margin-bottom: $standard-margin;
+    vertical-align: middle;
+    line-height: 25px;
+    flex: 0 1 auto;
+    display: flex;
+    height: 30px;
+
+    &-icon {
+      color: var(--nirvana-primary);
+      margin: 0 5px;
+    }
+
+    .close-btn {
+      background-color: var(--nirvana-danger);
+      @include width-height(16px);
+      justify-content: center;
+      align-items: center;
+      line-height: 16px;
+      cursor: pointer;
+      display: flex;
+      outline: none;
+      padding: 0;
+
+      border: none {
+        radius: $round-radius;
+      }
+
+      .nirvana-icon-warper {
+        transition: $standard-animation;
+        font-size: $font-size-sm;
+        opacity: 0;
+      }
+
+      &:hover .nirvana-icon-warper {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-body {
+    padding: $standard-padding $double-size-padding;
+    margin: 0 $standard-margin;
+    justify-content: center;
+    overflow-y: auto;
+    min-height: 70px;
+    display: flex;
+
+    flex: 1 1 auto {
+      direction: column;
+    }
+  }
+
+  &-footer {
+    padding: $standard-padding $double-size-padding;
+    background-color: rgba(0, 0, 0, .03);
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+  }
+
+  &-backdrop {
+    animation-duration: $standard-animation-duration !important;
+    background-color: var(--nirvana-backdrop-color);
+    backdrop-filter: $backdrop;
+  }
+}
+
+@include colorsLight(modal, 'background-color');

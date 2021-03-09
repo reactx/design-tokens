@@ -1,0 +1,27 @@
+$position:static fixed absolute relative sticky;
+
+@each $item in $position {
+  .nirvana-position-#{$item} {
+    position: #{$item} !important;
+  }
+
+  .position-#{$item} {
+    position: #{$item} !important;
+  }
+}
+
+@media (min-width:$mobile-break-point) {
+  @each $item in $position {
+    .position-md-#{$item} {
+      position: #{$item} !important;
+    }
+  }
+}
+
+@media (min-width:$tablet-break-point) {
+  @each $item in $position {
+    .position-lg-#{$item} {
+      position: #{$item} !important;
+    }
+  }
+}

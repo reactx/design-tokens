@@ -41,6 +41,11 @@ export default {
         category: 'Attribute',
       },
     },
+    closeAction: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     className: {
       table: {
         category: 'Attribute',
@@ -74,3 +79,11 @@ export default {
 };
 
 export const Basic = (args) => <Modal {...args} />;
+Basic.args = { children: 'Modal Default Message' };
+
+export const WithHeaderFooter = (args) => <Modal {...args} />;
+WithHeaderFooter.args = {
+  children: 'Modal Default Message',
+  header: 'header',
+  footer: 'footer',
+};

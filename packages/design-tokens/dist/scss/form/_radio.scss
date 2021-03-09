@@ -1,0 +1,46 @@
+.nirvana-radio {
+  transition: $standard-animation;
+  display: none;
+
+  &+.radio-title {
+    @include flex-position-center(inline-flex);
+    transition: $standard-animation;
+
+    &:before {
+      @include flex-position-center(inline-flex);
+      letter-spacing: $standard-padding;
+      font-family: 'FabricMDL2Icons';
+      content: "\ECCA";
+    }
+  }
+
+  &:checked {
+    &+.radio-title:before {
+      content: "\ECCB";
+    }
+  }
+
+  &.radio-size-small {
+    &+.radio-title {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &.radio-size-medium {
+    &+.radio-title {
+      font-size: $h6-font-size;
+    }
+  }
+
+  &.radio-size-large {
+    &+.radio-title {
+      font-size: $h4-font-size;
+    }
+  }
+
+  &.radio-size-extra {
+    &+.radio-title {
+      font-size: $h2-font-size;
+    }
+  }
+}

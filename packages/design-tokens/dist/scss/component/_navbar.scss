@@ -1,0 +1,47 @@
+.nirvana-navbar {
+  justify-content: space-between;
+  padding: 0 $standard-padding;
+  background-image: $gradient;
+  align-items: center;
+  display: flex;
+
+  .navbar-section-brand,
+  .navbar-section-middle,
+  .navbar-section-menu {
+    align-items: center;
+    display: flex;
+    height: 100%;
+  }
+}
+
+.navbar-background {
+  &-primary {
+    background-color: var(--nirvana-primary);
+  }
+
+  &-success {
+    background-color: var(--nirvana-success);
+  }
+
+  &-danger {
+    background-color: var(--nirvana-danger);
+  }
+
+  &-warning {
+    background-color: var(--nirvana-warning);
+  }
+
+  &-info {
+    background-color: var(--nirvana-info);
+  }
+
+  &-dark {
+    background-color: var(--nirvana-dark);
+  }
+
+  &-light {
+    background-color: var(--nirvana-light);
+  }
+}
+
+@include colorsLight(navbar, 'color');

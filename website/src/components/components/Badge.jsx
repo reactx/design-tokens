@@ -59,7 +59,6 @@ Badge.defaultProps = {
   color: COLOR.LIGHT,
   shadow: SHADOW.NONE,
   outline: false,
-  children: 'Nirvana',
   className: '',
 };
 

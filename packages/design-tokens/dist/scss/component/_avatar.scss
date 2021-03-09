@@ -1,0 +1,72 @@
+$tiny-size:24px;
+$small-size:32px;
+$medium-size:48px;
+$large-size:64px;
+$extra-size:128px;
+
+.nirvana-avatar {
+  @include width-height($medium-size);
+  transition: $standard-animation;
+  font-size: $h3-font-size;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+
+  background: $gray-100 {
+    image: $gradient;
+  }
+
+  border: 1px solid rgba(0, 0, 0, .09) {
+    radius: $round-radius;
+  }
+
+  img {
+    @include width-height(100%);
+    object-fit: cover;
+  }
+
+  path {
+    color: $gray-400;
+  }
+
+  &.avatar-size {
+    &-tiny {
+      @include width-height($tiny-size);
+      font-size: $font-size-base;
+    }
+
+    &-small {
+      @include width-height($small-size);
+      font-size: $h5-font-size;
+    }
+
+    &-medium {
+      @include width-height($medium-size);
+      font-size: $h3-font-size;
+    }
+
+    &-large {
+      @include width-height($large-size);
+      font-size: $h2-font-size;
+    }
+
+    &-extra {
+      @include width-height($extra-size);
+      font-size: $h1-font-size*2;
+    }
+  }
+
+  &-letter {
+    @include flex-position-center;
+    @include width-height(100%);
+    line-height: 100%;
+  }
+
+  &.outline {
+    border: 1px solid;
+  }
+}
+
+@include colors(avatar, 'background-color');
+@include colorsHover(avatar, 'background-color');

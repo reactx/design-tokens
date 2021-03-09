@@ -1,0 +1,148 @@
+.nirvana-form-control {
+  display: grid;
+  grid-template-areas:
+    'label'
+    'input'
+    'description'
+    'validation';
+
+  &.form-control-inline {
+    grid-template-areas:
+      'label input input input'
+      'label description description description'
+      'label validation validation validation';
+  }
+
+  .control-label {
+    padding: $standard-padding 0;
+  }
+
+  .control-description {
+    font-size: 0.75em;
+    text-align: end;
+    height: 0.5em;
+    opacity: 0.85;
+    width: 100%;
+  }
+
+  .valid-feedback,
+  .invalid-feedback {
+    font-size: 0.9em;
+  }
+
+  .valid-feedback {
+    color: var(--nirvana-success);
+  }
+
+  .invalid-feedback {
+    color: var(--nirvana-danger);
+  }
+
+  .control-label {
+    grid-area: label;
+  }
+
+  .control-description {
+    grid-area: description;
+  }
+
+  .valid-feedback,
+  .invalid-feedback {
+    grid-area: validation;
+  }
+
+  &.form-control-tiny {
+    font-size: $font-size-sm*0.85;
+  }
+
+  &.form-control-small {
+    font-size: $font-size-sm;
+  }
+
+  &.form-control-medium {
+    font-size: $h6-font-size;
+  }
+
+  &.form-control-large {
+    font-size: $h4-font-size;
+  }
+
+  &.form-control-extra {
+    font-size: $h2-font-size;
+  }
+
+}
+
+.nirvana-input-container {
+  transition: $standard-animation;
+  box-sizing: border-box;
+  grid-area: input;
+  overflow: hidden;
+  display: flex;
+
+  border: $standard-border {
+    color: var(--nirvana-dark-backdrop-3);
+    radius: $standard-radius;
+  }
+
+  &:focus-within {
+    border: $standard-border !important {
+      color: var(--nirvana-primary) !important;
+    }
+  }
+
+  &.has-prepend {
+    .nirvana-input {
+      border: {
+        bottom-left-radius: 0 !important;
+        top-left-radius: 0 !important;
+      }
+    }
+  }
+
+  &.has-append {
+    .nirvana-input {
+      border: {
+        bottom-right-radius: 0 !important;
+        top-right-radius: 0 !important;
+      }
+    }
+  }
+
+  .nirvana-input {
+    box-shadow: none !important;
+    border-width: 0 !important;
+  }
+
+  .control-append,
+  .control-prepend {
+    @include flex-position-center;
+    font-size: 0.9em;
+    padding: 0.5em;
+
+    background {
+      image: $gradient;
+      color: $gray-200;
+    }
+  }
+
+  &.nirvana-input-valid {
+    border: 1px solid $green;
+
+    .control-append,
+    .control-prepend {
+      background-color: $green;
+      color: $gray-50;
+    }
+  }
+
+  &.nirvana-input-invalid {
+    border: 1px solid $red;
+
+    .control-append,
+    .control-prepend {
+      background-color: $red;
+      color: $gray-50;
+    }
+  }
+}

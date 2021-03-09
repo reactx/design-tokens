@@ -1,14 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
-
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  ROUNDED: 'rounded',
-};
 
 const SIZE = {
   TINY: 'tiny',
@@ -16,13 +8,6 @@ const SIZE = {
   MEDIUM: 'medium',
   LARGE: 'large',
   EXTRA: 'extra',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
 };
 
 const COLOR = {
@@ -36,30 +21,45 @@ const COLOR = {
 };
 
 const LoadingComponent = (props) => {
+  const [lastState, setLast] = useState(false);
+  const loadingRef = useRef(null);
   const parentProps = { ...props };
   cleanProps(parentProps);
+
+  useEffect(() => {
+    if (!loadingRef.current) return;
+    if (props.enabled) {
+      loadingRef.current.classList.add('loading-enable');
+      loadingRef.current.classList.remove('loading-disable');
+      setLast(true);
+    } else if (lastState) {
+      loadingRef.current.classList.remove('loading-enable');
+      loadingRef.current.classList.add('loading-disable');
+      setLast(false);
+      setTimeout(function () {
+        loadingRef.current?.classList?.remove('loading-disable');
+      }, 3000);
+    }
+  }, [props.enabled]);
 
   return (
     <div
       {...parentProps}
-      className={
-        (props.className || '') +
-        'nirvana-loading ' +
-        (props.enabled ? 'nirvana-loading-enable' : 'nirvana-loading-disable')
-      }
+      ref={loadingRef}
+      className={(props.className || '') + 'nirvana-loading'}
     >
       <div
         className={
-          'nirvana-loading-loader ' +
+          'loading-loader ' +
           (props.color ? ' nirvana-loading-' + props.color : '') +
           (props.size !== SIZE.EXTRA ? ' loading-size-' + props.size : '')
         }
       >
-        <div className="nirvana-loading-circle" />
-        <div className="nirvana-loading-circle" />
-        <div className="nirvana-loading-circle" />
-        <div className="nirvana-loading-circle" />
-        <div className="nirvana-loading-circle" />
+        <div className="loading-circle" />
+        <div className="loading-circle" />
+        <div className="loading-circle" />
+        <div className="loading-circle" />
+        <div className="loading-circle" />
       </div>
     </div>
   );

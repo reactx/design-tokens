@@ -1,0 +1,200 @@
+.nirvana-analog-clock {
+  @include width-height(300px);
+  text-align: center;
+  overflow: hidden;
+  padding: 10px;
+
+  .clock {
+    &-face {
+      background: radial-gradient(ellipse at center, var(--nirvana-backdrop-9) 0%, var(--nirvana-backdrop-6) 70%);
+      box-shadow: inset 4px 4px 10px 0 rgba(0, 0, 0, 0.4);
+      filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+      @include flex-position-center;
+      @include width-height(100%);
+      backdrop-filter: $backdrop;
+      position: relative;
+
+      border: 8px solid $foreground-color {
+        radius: 50%;
+      }
+
+      &:before {
+        background: linear-gradient(45deg, transparent 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, transparent 100%);
+        @include width-height(100%);
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.3;
+        content: "";
+        z-index: 1;
+      }
+    }
+
+    &-hands {
+      @include width-height(100%);
+      position: relative;
+
+      &>div {
+        transform-origin: bottom center;
+        position: absolute;
+        width: 1px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .clock-hand-hour,
+      .clock-hand-minute,
+      .clock-hand-second {
+        filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+
+        border: {
+          top-right-radius: 50%;
+          top-left-radius: 50%;
+        }
+      }
+
+      .clock-hand-hour {
+        border: 1px solid $foreground-color;
+        background-color: $foreground-color;
+        left: calc(50% - 4px);
+        height: 32%;
+        width: 7px;
+        top: 18%;
+      }
+
+      .clock-hand-minute {
+        border: 1px solid $foreground-color;
+        background-color: $foreground-color;
+        left: calc(50% - 2px);
+        height: 37%;
+        width: 5px;
+        top: 13%;
+      }
+
+      .clock-hand-second {
+        border: 1px solid var(--nirvana-danger);
+        background-color: var(--nirvana-danger);
+        left: calc(50% - 1px);
+        height: 45%;
+        width: 2px;
+        top: 5%;
+      }
+
+      .clock-center-circle {
+        filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+        background: $foreground-color;
+        border-radius: $round-radius;
+        @include width-height(20px);
+        left: calc(50% - 10px);
+        top: calc(50% - 10px);
+      }
+    }
+
+    &-marks {
+      @include width-height(100%);
+      position: absolute;
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      left: 0;
+      top: 0;
+
+      li {
+        transform-origin: right center;
+        position: absolute;
+        display: block;
+        left: -40%;
+        width: 90%;
+        top: 50%;
+
+        &:before {
+          background: $foreground-color;
+          position: absolute;
+          display: block;
+          content: "";
+          height: 2px;
+          width: 8px;
+          left: 50%;
+          top: 50%;
+        }
+
+        &:after {
+          position: absolute;
+          text-align: center;
+          line-height: 1;
+          width: 30px;
+
+          font: {
+            family: fantasy;
+            size: 24px;
+          }
+        }
+
+        &:nth-child(3):after {
+          transform: rotate(-90deg) translate(10px, 35px);
+          content: "12";
+        }
+
+        &:nth-child(6):after {
+          transform: rotate(180deg) translate(-35px, 10px);
+          content: "3";
+        }
+
+        &:nth-child(9):after {
+          transform: rotate(90deg) translate(-10px, -35px);
+          content: "6";
+        }
+
+        &:nth-child(12):after {
+          transform: translate(35px, -10px);
+          content: "9";
+        }
+      }
+    }
+  }
+
+  &.white-clock {
+    .clock-face {
+      background: radial-gradient(ellipse at center, var(--nirvana-backdrop-9) 0%, var(--nirvana-backdrop-6) 50%, var(--nirvana-backdrop-3) 100%);
+      border: 8px solid var(--nirvana-backdrop-9);
+    }
+
+    .clock-marks li:after {
+      display: none;
+    }
+  }
+
+  &.red-clock {
+    .clock-face {
+      background: radial-gradient(ellipse at center, var(--nirvana-red) 0%, var(--nirvana-red-light) 50%, var(--nirvana-red-lighter) 100%);
+      border: 8px solid var(--nirvana-backdrop-9);
+    }
+
+    .clock-hand-hour,
+    .clock-hand-minute {
+      background-color: var(--nirvana-backdrop-9);
+
+      border: 1px solid var(--nirvana-backdrop-9) {
+        radius: 0;
+      }
+    }
+
+    .clock-center-circle {
+      background-color: var(--nirvana-backdrop-9);
+    }
+
+    .clock-hand-second {
+      border: 1px solid var(--nirvana-red-lighter) {
+        radius: 0;
+      }
+    }
+
+    .clock-marks li {
+      color: var(--nirvana-backdrop-9);
+    }
+
+    .clock-marks li:before {
+      background-color: var(--nirvana-backdrop-9);
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.nirvana-table {
+  transition: $standard-animation;
+  margin: $double-size-margin 0;
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+
+  border: 1px solid $gray-50 {
+    radius: $standard-radius;
+  }
+
+  .table-row {
+    transition: $standard-animation;
+    display: flex;
+    width: 100%;
+
+    &:nth-child(even) {
+      background-color: rgba(0, 0, 0, .03);
+    }
+
+    .table-row-item {
+      text-indent: $standard-text-indent;
+      justify-content: space-between;
+      padding: $standard-padding 0;
+      display: flex;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .06);
+    }
+  }
+
+  .table-header {
+    background-color: rgba(0, 0, 0, .09);
+    background-image: $gradient;
+    display: flex;
+    width: 100%;
+
+    .table-header-item {
+      text-indent: $standard-text-indent;
+      justify-content: space-between;
+      padding: $standard-padding 0;
+      font-weight: bold;
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  .table-body {}
+
+  .table-footer {
+    background-color: rgba(0, 0, 0, .09);
+  }
+
+}
+
+@include colors(table, 'background-color');

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
 const SIZE = {
+  TINY: 'tiny',
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
@@ -2257,6 +2258,7 @@ FluentIcon.propTypes = {
   shadowOnHover: PropTypes.oneOf(Object.values(SHADOW)),
   iconSize: PropTypes.oneOf(Object.values(SIZE)),
   className: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 FluentIcon.defaultProps = {

@@ -11,12 +11,6 @@ export default {
         category: 'Attribute',
       },
     },
-    validationStates: {
-      control: 'inline-radio',
-      table: {
-        category: 'Attribute',
-      },
-    },
     format: {
       table: {
         category: 'Attribute',
@@ -70,6 +64,12 @@ export default {
         category: 'Style',
       },
     },
+    validationStates: {
+      control: 'inline-radio',
+      table: {
+        category: 'Validation',
+      },
+    },
     onChange: {
       table: {
         category: 'Action',
@@ -79,3 +79,4 @@ export default {
 };
 
 export const Basic = (args) => <FileInput {...args} />;
+Basic.args = { label: 'Input Text' };

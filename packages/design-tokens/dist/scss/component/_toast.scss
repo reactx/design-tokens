@@ -1,0 +1,132 @@
+$toast-width:17em;
+
+.nirvana-toast {
+  margin-bottom: $double-size-margin;
+  border-radius: $standard-radius;
+  width: $toast-width;
+  position: relative;
+  overflow: hidden;
+
+  background {
+    color: var(--nirvana-backdrop-9);
+    image: $gradient;
+  }
+
+  .toast-header {
+    background-color: rgba(0, 0, 0, .03);
+    justify-content: space-between;
+    padding: $standard-padding;
+    align-items: center;
+    display: flex;
+  }
+
+  .toast-body {
+    padding: $double-size-padding $standard-padding;
+    align-items: center;
+    display: flex;
+  }
+
+  .nirvana-progress {
+    border: 0;
+  }
+
+  &.nirvana-color {
+    &-danger {
+      border-left: 4px solid var(--nirvana-danger-light);
+      color: $foreground-color !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-danger-light);
+      }
+    }
+
+    &-success {
+      border-left: 4px solid var(--nirvana-success-light);
+      color: $foreground-color !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-success-light);
+      }
+    }
+
+    &-warning {
+      border-left: 4px solid var(--nirvana-warning-light);
+      color: $foreground-color !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-warning-light);
+      }
+    }
+
+    &-info {
+      border-left: 4px solid var(--nirvana-info-light);
+      color: $foreground-color !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-info-light);
+      }
+    }
+
+    &-dark {
+      border-left: 4px solid var(--nirvana-dark-light);
+      color: $foreground-color !important;
+    }
+
+    &-light {
+      border-left: 4px solid var(--nirvana-light-light);
+      color: $foreground-color !important;
+    }
+
+    &-primary {
+      border-left: 4px solid var(--nirvana-primary-light);
+      color: $foreground-color !important;
+
+      .toast-body .nirvana-icon {
+        color: var(--nirvana-primary-light);
+      }
+    }
+  }
+}
+
+@include colorsLight(toast, 'background-color');
+
+.nirvana-toast-container {
+  flex-direction: column;
+  width: $toast-width;
+  position: fixed;
+  display: flex;
+  z-index: 1000;
+
+  &.toast-top-right {
+    flex-direction: column-reverse;
+    right: 10px;
+    top: 10px;
+  }
+
+  &.toast-top-left {
+    flex-direction: column-reverse;
+    left: 10px;
+    top: 10px;
+  }
+
+  &.toast-top-center {
+    left: calc(50% - #{$toast-width/2});
+    flex-direction: column-reverse;
+    top: 10px;
+  }
+
+  &.toast-bottom-right {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  &.toast-bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  &.toast-bottom-center {
+    left: calc(50% - #{$toast-width/2});
+    bottom: 10px;
+  }
+}

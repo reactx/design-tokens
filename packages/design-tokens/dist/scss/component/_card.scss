@@ -1,0 +1,72 @@
+.nirvana-card {
+  transition: $standard-animation;
+  background-image: $gradient;
+  margin: $standard-margin 0;
+  flex-direction: column;
+  word-wrap: break-word;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  min-width: 0;
+
+  border: 1px solid rgba(0, 0, 0, .03) {
+    radius: $standard-radius;
+  }
+
+  background: {
+    color: var(--nirvana-backdrop-7);
+    clip: border-box;
+  }
+
+  &.outline {
+    border: 1px solid
+  }
+}
+
+.card {
+  &-header {
+    background-color: rgba(0, 0, 0, .03);
+    padding: $standard-padding;
+    align-items: center;
+    display: flex;
+  }
+
+  &-body {
+    padding: $standard-padding;
+    flex: 1 1 auto;
+  }
+
+  &-footer {
+    background-color: rgba(0, 0, 0, .03);
+    padding: $standard-padding;
+  }
+
+  &-image {
+    background: var(--nirvana-backdrop-3);
+    @include flex-position-center;
+    width: 100%;
+    height: 75%;
+
+    svg {
+      font-size: $h1-font-size;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    i {
+      color: var(--nirvana-primary);
+      font-size: 48px;
+    }
+  }
+}
+
+.info-card {
+  padding: $standard-padding;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+
+@include colorsLight(card, 'background-color');

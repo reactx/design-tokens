@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
+import { Loading } from './Loading';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -34,6 +35,14 @@ const SHADOW = {
   LARGE: 'large',
 };
 
+const LOADING_SIZE = {
+  tiny: 'tiny',
+  small: 'tiny',
+  medium: 'small',
+  large: 'medium',
+  extra: 'large',
+};
+
 const AvatarComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -44,16 +53,24 @@ const AvatarComponent = (props) => {
         <img src={props.src} alt={props.username} />
       ) : (
         <span className="nirvana-avatar-letter">
-          {props.username.substring(0, 1).toUpperCase()}
+          {props.username
+            .substring(0, props.letterCount)
+            .trim()
+            .replace(/^\w/, (c) => c.toUpperCase())}
         </span>
+      )}
+      {props.loading && (
+        <Loading
+          enabled={props.loading}
+          color={props.color}
+          size={LOADING_SIZE[props.size]}
+        />
       )}
     </div>
   );
 };
 
-const Avatar = React.forwardRef((props) => (
-  <AvatarComponent {...props}></AvatarComponent>
-));
+const Avatar = React.forwardRef((props) => <AvatarComponent {...props} />);
 
 Avatar.propTypes = {
   id: PropTypes.string,
@@ -66,19 +83,21 @@ Avatar.propTypes = {
   src: PropTypes.string,
   title: PropTypes.string,
   disabled: PropTypes.bool,
+  letterCount: PropTypes.number,
+  loading: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 Avatar.defaultProps = {
-  title: 'Avatar',
-  color: COLOR.LIGHT,
+  color: COLOR.PRIMARY,
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
+  letterCount: 1,
   outline: false,
   disabled: false,
-  username: 'Nirvana',
+  loading: false,
   className: '',
 };
 

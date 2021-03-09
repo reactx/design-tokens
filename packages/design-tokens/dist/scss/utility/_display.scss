@@ -1,0 +1,27 @@
+$displays:inline block contents flex flow-root grid inline-block inline-flex inline-grid inline-table list-item run-in table table-cell table-row none;
+
+@each $item in $displays {
+  .nirvana-display-#{$item} {
+    display: #{$item} !important;
+  }
+
+  .display-#{$item} {
+    display: #{$item} !important;
+  }
+}
+
+@media (min-width:$mobile-break-point) {
+  @each $item in $displays {
+    .display-md-#{$item} {
+      display: #{$item} !important;
+    }
+  }
+}
+
+@media (min-width:$tablet-break-point) {
+  @each $item in $displays {
+    .display-lg-#{$item} {
+      display: #{$item} !important;
+    }
+  }
+}

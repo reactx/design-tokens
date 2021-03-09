@@ -74,8 +74,6 @@ Switch.defaultProps = {
   shadow: SHADOW.NONE,
   radius: RADIUS.NORMAL,
   checked: false,
-  title: 'Switch Text',
-  label: 'Switch Text',
   disabled: false,
   readOnly: false,
   autoFocus: false,

@@ -1,0 +1,58 @@
+.nirvana-breadcrumb {
+  transition: $standard-animation;
+  border-radius: $standard-radius;
+  background-image: $gradient;
+  padding: $standard-padding;
+  font-size: $h6-font-size;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  display: flex;
+  height: 100%;
+}
+
+.breadcrumb {
+  &-size-tiny {
+    font-size: $font-size-sm*0.85;
+  }
+
+  &-size-small {
+    font-size: $font-size-sm;
+  }
+
+  &-size-large {
+    font-size: $h4-font-size;
+  }
+
+  &-size-extra {
+    font-size: $h2-font-size;
+  }
+
+  &-item {
+    @include flex-position-center;
+    max-width: 150px;
+    overflow: hidden;
+    font-size: 1em;
+    height: 100%;
+
+    span {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &:before {
+      font-family: "FabricMDL2Icons";
+      padding: 0 $standard-padding;
+      content: "\E76C";
+      z-index: 1;
+    }
+
+    &:first-child:before {
+      padding: 0px;
+      content: "";
+    }
+  }
+}
+
+@include colors(breadcrumb, 'background-color');

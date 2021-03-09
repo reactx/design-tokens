@@ -1,0 +1,58 @@
+.nirvana-collapse {
+  transition: $standard-animation;
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 0, 0, .03) {
+    radius: $standard-radius;
+  }
+
+  &[open] {
+    .collapse-title {
+      &::before {
+        content: '\E70E';
+      }
+    }
+  }
+}
+
+.collapse {
+  &-title {
+    transition: $standard-animation;
+    padding: $standard-padding;
+
+    background: {
+      color: rgba(0, 0, 0, 0.06);
+      image: $gradient;
+    }
+
+    &::before {
+      padding: 0 $standard-padding;
+      content: '\E70D';
+
+      font: {
+        family: 'FabricMDL2Icons';
+        size: $font-size-sm;
+      }
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.09);
+    }
+  }
+
+  &-data {
+    padding: $standard-padding;
+    display: none;
+
+    &.collapsed {
+      display: block;
+    }
+  }
+}
+
+@include colorsLight(collapse, 'background-color');
+
+.nirvana-accordion {
+  overflow: hidden;
+  border-radius: $standard-radius;
+}
