@@ -1,7 +1,7 @@
 {
   "name": "reactx-design-token",
   "version": "1.0.0",
-  "description": "Source for the design tokens",
+  "description": "Source for the ReactX design tokens",
   "main": "index.js",
   "repository": "https://github.com/reactx/design-system",
   "author": "Behzad Abbasi",
