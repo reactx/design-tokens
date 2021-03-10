@@ -1,7 +1,7 @@
 {
   "name": "website",
   "private": true,
-  "description": "Source for the design-token website",
+  "description": "Source for the reactx-design-token website",
   "version": "0.1.0",
   "author": "Behzad Abbasi",
   "dependencies": {
@@ -50,7 +50,10 @@
     "storybook-chromatic": "^4.0.2"
   },
   "keywords": [
-    "gatsby"
+    "reactx",
+    "design",
+    "token",
+    "system design language"
   ],
   "license": "MIT",
   "scripts": {
