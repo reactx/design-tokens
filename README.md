@@ -1,4 +1,4 @@
-# Design-Token
+# ReactX Design-Token
 
 Work in progress - public contributions aren't accepted for the moment.
 

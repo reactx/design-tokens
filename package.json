@@ -1,5 +1,5 @@
 {
-  "name": "design-token",
+  "name": "reactx-design-token",
   "version": "1.0.0",
   "description": "Source for the design tokens",
   "main": "index.js",
