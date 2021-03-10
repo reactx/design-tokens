@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+*.lock
 package-lock.json
 
 # Dependency directory
