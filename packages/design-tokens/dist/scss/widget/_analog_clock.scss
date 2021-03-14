@@ -1,4 +1,4 @@
-.nirvana-analog-clock {
+.Reactx-analog-clock {
   @include width-height(300px);
   text-align: center;
   overflow: hidden;
@@ -6,7 +6,7 @@
 
   .clock {
     &-face {
-      background: radial-gradient(ellipse at center, var(--nirvana-backdrop-9) 0%, var(--nirvana-backdrop-6) 70%);
+      background: radial-gradient(ellipse at center, var(--Reactx-backdrop-9) 0%, var(--Reactx-backdrop-6) 70%);
       box-shadow: inset 4px 4px 10px 0 rgba(0, 0, 0, 0.4);
       filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
       @include flex-position-center;
@@ -71,8 +71,8 @@
       }
 
       .clock-hand-second {
-        border: 1px solid var(--nirvana-danger);
-        background-color: var(--nirvana-danger);
+        border: 1px solid var(--Reactx-danger);
+        background-color: var(--Reactx-danger);
         left: calc(50% - 1px);
         height: 45%;
         width: 2px;
@@ -155,8 +155,8 @@
 
   &.white-clock {
     .clock-face {
-      background: radial-gradient(ellipse at center, var(--nirvana-backdrop-9) 0%, var(--nirvana-backdrop-6) 50%, var(--nirvana-backdrop-3) 100%);
-      border: 8px solid var(--nirvana-backdrop-9);
+      background: radial-gradient(ellipse at center, var(--Reactx-backdrop-9) 0%, var(--Reactx-backdrop-6) 50%, var(--Reactx-backdrop-3) 100%);
+      border: 8px solid var(--Reactx-backdrop-9);
     }
 
     .clock-marks li:after {
@@ -166,35 +166,35 @@
 
   &.red-clock {
     .clock-face {
-      background: radial-gradient(ellipse at center, var(--nirvana-red) 0%, var(--nirvana-red-light) 50%, var(--nirvana-red-lighter) 100%);
-      border: 8px solid var(--nirvana-backdrop-9);
+      background: radial-gradient(ellipse at center, var(--Reactx-red) 0%, var(--Reactx-red-light) 50%, var(--Reactx-red-lighter) 100%);
+      border: 8px solid var(--Reactx-backdrop-9);
     }
 
     .clock-hand-hour,
     .clock-hand-minute {
-      background-color: var(--nirvana-backdrop-9);
+      background-color: var(--Reactx-backdrop-9);
 
-      border: 1px solid var(--nirvana-backdrop-9) {
+      border: 1px solid var(--Reactx-backdrop-9) {
         radius: 0;
       }
     }
 
     .clock-center-circle {
-      background-color: var(--nirvana-backdrop-9);
+      background-color: var(--Reactx-backdrop-9);
     }
 
     .clock-hand-second {
-      border: 1px solid var(--nirvana-red-lighter) {
+      border: 1px solid var(--Reactx-red-lighter) {
         radius: 0;
       }
     }
 
     .clock-marks li {
-      color: var(--nirvana-backdrop-9);
+      color: var(--Reactx-backdrop-9);
     }
 
     .clock-marks li:before {
-      background-color: var(--nirvana-backdrop-9);
+      background-color: var(--Reactx-backdrop-9);
     }
   }
 }

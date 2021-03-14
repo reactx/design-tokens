@@ -26,7 +26,7 @@ const ToastManagerComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <div className={'nirvana-toast-container' + (' toast-' + props.position)}>
+    <div className={'Reactx-toast-container' + (' toast-' + props.position)}>
       {toastList.map((item, index) => (
         <Toast {...item} />
       ))}

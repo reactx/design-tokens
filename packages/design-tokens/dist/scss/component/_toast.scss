@@ -1,18 +1,19 @@
 $toast-width:17em;
 
-.nirvana-toast {
+.Reactx-toast {
   margin-bottom: $double-size-margin;
   border-radius: $standard-radius;
   width: $toast-width;
   position: relative;
   overflow: hidden;
 
-  background {
-    color: var(--nirvana-backdrop-9);
+  background: {
+    color: var(--Reactx-backdrop-9);
     image: $gradient;
   }
 
   .toast-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     background-color: rgba(0, 0, 0, .03);
     justify-content: space-between;
     padding: $standard-padding;
@@ -26,63 +27,63 @@ $toast-width:17em;
     display: flex;
   }
 
-  .nirvana-progress {
+  .Reactx-progress {
     border: 0;
   }
 
-  &.nirvana-color {
+  &.Reactx-color {
     &-danger {
-      border-left: 4px solid var(--nirvana-danger-light);
+      border-left: 4px solid var(--Reactx-danger-light);
       color: $foreground-color !important;
 
-      .toast-body .nirvana-icon {
-        color: var(--nirvana-danger-light);
+      .toast-body .Reactx-icon {
+        color: var(--Reactx-danger-light);
       }
     }
 
     &-success {
-      border-left: 4px solid var(--nirvana-success-light);
+      border-left: 4px solid var(--Reactx-success-light);
       color: $foreground-color !important;
 
-      .toast-body .nirvana-icon {
-        color: var(--nirvana-success-light);
+      .toast-body .Reactx-icon {
+        color: var(--Reactx-success-light);
       }
     }
 
     &-warning {
-      border-left: 4px solid var(--nirvana-warning-light);
+      border-left: 4px solid var(--Reactx-warning-light);
       color: $foreground-color !important;
 
-      .toast-body .nirvana-icon {
-        color: var(--nirvana-warning-light);
+      .toast-body .Reactx-icon {
+        color: var(--Reactx-warning-light);
       }
     }
 
     &-info {
-      border-left: 4px solid var(--nirvana-info-light);
+      border-left: 4px solid var(--Reactx-info-light);
       color: $foreground-color !important;
 
-      .toast-body .nirvana-icon {
-        color: var(--nirvana-info-light);
+      .toast-body .Reactx-icon {
+        color: var(--Reactx-info-light);
       }
     }
 
     &-dark {
-      border-left: 4px solid var(--nirvana-dark-light);
+      border-left: 4px solid var(--Reactx-dark-light);
       color: $foreground-color !important;
     }
 
     &-light {
-      border-left: 4px solid var(--nirvana-light-light);
+      border-left: 4px solid var(--Reactx-light-light);
       color: $foreground-color !important;
     }
 
     &-primary {
-      border-left: 4px solid var(--nirvana-primary-light);
+      border-left: 4px solid var(--Reactx-primary-light);
       color: $foreground-color !important;
 
-      .toast-body .nirvana-icon {
-        color: var(--nirvana-primary-light);
+      .toast-body .Reactx-icon {
+        color: var(--Reactx-primary-light);
       }
     }
   }
@@ -90,7 +91,7 @@ $toast-width:17em;
 
 @include colorsLight(toast, 'background-color');
 
-.nirvana-toast-container {
+.Reactx-toast-container {
   flex-direction: column;
   width: $toast-width;
   position: fixed;

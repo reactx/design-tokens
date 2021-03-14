@@ -1,4 +1,4 @@
-.nirvana-form-control {
+.Reactx-form-control {
   display: grid;
   grid-template-areas:
     'label'
@@ -31,11 +31,11 @@
   }
 
   .valid-feedback {
-    color: var(--nirvana-success);
+    color: var(--Reactx-success);
   }
 
   .invalid-feedback {
-    color: var(--nirvana-danger);
+    color: var(--Reactx-danger);
   }
 
   .control-label {
@@ -73,7 +73,7 @@
 
 }
 
-.nirvana-input-container {
+.Reactx-input-container {
   transition: $standard-animation;
   box-sizing: border-box;
   grid-area: input;
@@ -81,18 +81,18 @@
   display: flex;
 
   border: $standard-border {
-    color: var(--nirvana-dark-backdrop-3);
+    color: var(--Reactx-dark-backdrop-3);
     radius: $standard-radius;
   }
 
   &:focus-within {
     border: $standard-border !important {
-      color: var(--nirvana-primary) !important;
+      color: var(--Reactx-primary) !important;
     }
   }
 
   &.has-prepend {
-    .nirvana-input {
+    .Reactx-input {
       border: {
         bottom-left-radius: 0 !important;
         top-left-radius: 0 !important;
@@ -101,7 +101,7 @@
   }
 
   &.has-append {
-    .nirvana-input {
+    .Reactx-input {
       border: {
         bottom-right-radius: 0 !important;
         top-right-radius: 0 !important;
@@ -109,7 +109,7 @@
     }
   }
 
-  .nirvana-input {
+  .Reactx-input {
     box-shadow: none !important;
     border-width: 0 !important;
   }
@@ -126,7 +126,7 @@
     }
   }
 
-  &.nirvana-input-valid {
+  &.Reactx-input-valid {
     border: 1px solid $green;
 
     .control-append,
@@ -136,7 +136,7 @@
     }
   }
 
-  &.nirvana-input-invalid {
+  &.Reactx-input-invalid {
     border: 1px solid $red;
 
     .control-append,

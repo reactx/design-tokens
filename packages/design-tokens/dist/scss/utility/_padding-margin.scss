@@ -5,7 +5,7 @@ $pdDirection: (t: '-top', l: '-left', r: '-right', b: '-bottom');
 @each $pm in $paddingMargin {
   @each $pmItem in $pm {
     @for $i from 0 through 5 {
-      .nirvana-#{$pmItem}-#{$i} {
+      .Reactx-#{$pmItem}-#{$i} {
         $varPOrM:#{map-get($mp, str-slice($pmItem,0,1))};
         $varDirLtr:#{map-get($pdDirection, str-slice($pmItem,2,-1))};
         #{$varPOrM}#{$varDirLtr}: $i#{'em'} !important;
@@ -15,19 +15,19 @@ $pdDirection: (t: '-top', l: '-left', r: '-right', b: '-bottom');
 }
 
 @for $i from 0 through 5 {
-  .nirvana-px-#{$i} {
+  .Reactx-px-#{$i} {
     padding: 0 $i#{'em'} !important;
   }
 
-  .nirvana-py-#{$i} {
+  .Reactx-py-#{$i} {
     padding: $i#{'em'} 0 !important;
   }
 
-  .nirvana-mx-#{$i} {
+  .Reactx-mx-#{$i} {
     padding: 0 $i#{'em'} !important;
   }
 
-  .nirvana-my-#{$i} {
+  .Reactx-my-#{$i} {
     padding: $i#{'em'} 0 !important;
   }
 }

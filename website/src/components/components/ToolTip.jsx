@@ -43,7 +43,7 @@ const ToolTipComponent = (props) => {
       {...parentProps}
       className={
         generateClass(props, 'tooltip') +
-        (props.active ? ' nirvana-tooltip-active' : ' nirvana-tooltip-fade-out')
+        (props.active ? ' Reactx-tooltip-active' : ' Reactx-tooltip-fade-out')
       }
     >
       {props.children}

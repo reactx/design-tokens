@@ -3,8 +3,8 @@ $medium-size:30px;
 $small-size:20px;
 $tiny-size:14px;
 
-.nirvana-loading {
-  background: var(--nirvana-backdrop-color);
+.Reactx-loading {
+  background: var(--Reactx-backdrop-color);
   @include flex-position-center;
   @include width-height(100%);
   position: absolute;
@@ -15,43 +15,43 @@ $tiny-size:14px;
 
   &-primary {
     .loading-circle:after {
-      background-color: var(--nirvana-primary);
+      background-color: var(--Reactx-primary);
     }
   }
 
   &-danger {
     .loading-circle:after {
-      background-color: var(--nirvana-danger);
+      background-color: var(--Reactx-danger);
     }
   }
 
   &-dark {
     .loading-circle:after {
-      background-color: var(--nirvana-dark);
+      background-color: var(--Reactx-dark);
     }
   }
 
   &-info {
     .loading-circle:after {
-      background-color: var(--nirvana-info);
+      background-color: var(--Reactx-info);
     }
   }
 
   &-light {
     .loading-circle:after {
-      background-color: var(--nirvana-light);
+      background-color: var(--Reactx-light);
     }
   }
 
   &-success {
     .loading-circle:after {
-      background-color: var(--nirvana-success);
+      background-color: var(--Reactx-success);
     }
   }
 
   &-warning {
     .loading-circle:after {
-      background-color: var(--nirvana-warning);
+      background-color: var(--Reactx-warning);
     }
   }
 
@@ -141,7 +141,7 @@ $tiny-size:14px;
     }
 
     &:after {
-      background-color: var(--nirvana-primary);
+      background-color: var(--Reactx-primary);
       @include width-height(8px);
       border-radius: 50%;
       position: absolute;

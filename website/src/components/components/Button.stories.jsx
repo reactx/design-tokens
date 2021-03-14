@@ -83,7 +83,7 @@ export default {
 export const Basic = (args) => <Button {...args} />;
 Basic.args = { children: 'Button Text' };
 export const ButtonGroup = (args) => (
-  <div className="nirvana-btn-group">
+  <div className="Reactx-btn-group">
     <Button color="primary" {...args}>
       1
     </Button>

@@ -10,69 +10,69 @@ export const Basic = () => (
     <Table
       header={['class', 'properties']}
       body={[
-        { class: 'nirvana-p-0', properties: 'padding: 0em' },
-        { class: 'nirvana-p-1', properties: 'padding: 1em' },
-        { class: 'nirvana-p-2', properties: 'padding: 2em' },
-        { class: 'nirvana-p-3', properties: 'padding: 3em' },
-        { class: 'nirvana-p-4', properties: 'padding: 4em' },
-        { class: 'nirvana-p-5', properties: 'padding: 5em' },
-        { class: 'nirvana-pt-0', properties: 'padding-top: 0em' },
-        { class: 'nirvana-pt-1', properties: 'padding-top: 1em' },
-        { class: 'nirvana-pt-2', properties: 'padding-top: 2em' },
-        { class: 'nirvana-pt-3', properties: 'padding-top: 3em' },
-        { class: 'nirvana-pt-4', properties: 'padding-top: 4em' },
-        { class: 'nirvana-pt-5', properties: 'padding-top: 5em' },
-        { class: 'nirvana-pb-0', properties: 'padding-bottom: 0em' },
-        { class: 'nirvana-pb-1', properties: 'padding-bottom: 1em' },
-        { class: 'nirvana-pb-2', properties: 'padding-bottom: 2em' },
-        { class: 'nirvana-pb-3', properties: 'padding-bottom: 3em' },
-        { class: 'nirvana-pb-4', properties: 'padding-bottom: 4em' },
-        { class: 'nirvana-pb-5', properties: 'padding-bottom: 5em' },
-        { class: 'nirvana-pr-0', properties: 'padding-right: 0em' },
-        { class: 'nirvana-pr-1', properties: 'padding-right: 1em' },
-        { class: 'nirvana-pr-2', properties: 'padding-right: 2em' },
-        { class: 'nirvana-pr-3', properties: 'padding-right: 3em' },
-        { class: 'nirvana-pr-4', properties: 'padding-right: 4em' },
-        { class: 'nirvana-pr-5', properties: 'padding-right: 5em' },
-        { class: 'nirvana-pl-0', properties: 'padding-left: 0em' },
-        { class: 'nirvana-pl-1', properties: 'padding-left: 1em' },
-        { class: 'nirvana-pl-2', properties: 'padding-left: 2em' },
-        { class: 'nirvana-pl-3', properties: 'padding-left: 3em' },
-        { class: 'nirvana-pl-4', properties: 'padding-left: 4em' },
-        { class: 'nirvana-pl-5', properties: 'padding-left: 5em' },
-        { class: 'nirvana-px-0', properties: 'padding:0 0em' },
-        { class: 'nirvana-px-1', properties: 'padding:0 1em' },
-        { class: 'nirvana-px-2', properties: 'padding:0 2em' },
-        { class: 'nirvana-px-3', properties: 'padding:0 3em' },
-        { class: 'nirvana-px-4', properties: 'padding:0 4em' },
-        { class: 'nirvana-px-5', properties: 'padding:0 5em' },
-        { class: 'nirvana-py-0', properties: 'padding: 0em 0' },
-        { class: 'nirvana-py-1', properties: 'padding: 1em 0' },
-        { class: 'nirvana-py-2', properties: 'padding: 2em 0' },
-        { class: 'nirvana-py-3', properties: 'padding: 3em 0' },
-        { class: 'nirvana-py-4', properties: 'padding: 4em 0' },
-        { class: 'nirvana-py-5', properties: 'padding: 5em 0' },
+        { class: 'Reactx-p-0', properties: 'padding: 0em' },
+        { class: 'Reactx-p-1', properties: 'padding: 1em' },
+        { class: 'Reactx-p-2', properties: 'padding: 2em' },
+        { class: 'Reactx-p-3', properties: 'padding: 3em' },
+        { class: 'Reactx-p-4', properties: 'padding: 4em' },
+        { class: 'Reactx-p-5', properties: 'padding: 5em' },
+        { class: 'Reactx-pt-0', properties: 'padding-top: 0em' },
+        { class: 'Reactx-pt-1', properties: 'padding-top: 1em' },
+        { class: 'Reactx-pt-2', properties: 'padding-top: 2em' },
+        { class: 'Reactx-pt-3', properties: 'padding-top: 3em' },
+        { class: 'Reactx-pt-4', properties: 'padding-top: 4em' },
+        { class: 'Reactx-pt-5', properties: 'padding-top: 5em' },
+        { class: 'Reactx-pb-0', properties: 'padding-bottom: 0em' },
+        { class: 'Reactx-pb-1', properties: 'padding-bottom: 1em' },
+        { class: 'Reactx-pb-2', properties: 'padding-bottom: 2em' },
+        { class: 'Reactx-pb-3', properties: 'padding-bottom: 3em' },
+        { class: 'Reactx-pb-4', properties: 'padding-bottom: 4em' },
+        { class: 'Reactx-pb-5', properties: 'padding-bottom: 5em' },
+        { class: 'Reactx-pr-0', properties: 'padding-right: 0em' },
+        { class: 'Reactx-pr-1', properties: 'padding-right: 1em' },
+        { class: 'Reactx-pr-2', properties: 'padding-right: 2em' },
+        { class: 'Reactx-pr-3', properties: 'padding-right: 3em' },
+        { class: 'Reactx-pr-4', properties: 'padding-right: 4em' },
+        { class: 'Reactx-pr-5', properties: 'padding-right: 5em' },
+        { class: 'Reactx-pl-0', properties: 'padding-left: 0em' },
+        { class: 'Reactx-pl-1', properties: 'padding-left: 1em' },
+        { class: 'Reactx-pl-2', properties: 'padding-left: 2em' },
+        { class: 'Reactx-pl-3', properties: 'padding-left: 3em' },
+        { class: 'Reactx-pl-4', properties: 'padding-left: 4em' },
+        { class: 'Reactx-pl-5', properties: 'padding-left: 5em' },
+        { class: 'Reactx-px-0', properties: 'padding:0 0em' },
+        { class: 'Reactx-px-1', properties: 'padding:0 1em' },
+        { class: 'Reactx-px-2', properties: 'padding:0 2em' },
+        { class: 'Reactx-px-3', properties: 'padding:0 3em' },
+        { class: 'Reactx-px-4', properties: 'padding:0 4em' },
+        { class: 'Reactx-px-5', properties: 'padding:0 5em' },
+        { class: 'Reactx-py-0', properties: 'padding: 0em 0' },
+        { class: 'Reactx-py-1', properties: 'padding: 1em 0' },
+        { class: 'Reactx-py-2', properties: 'padding: 2em 0' },
+        { class: 'Reactx-py-3', properties: 'padding: 3em 0' },
+        { class: 'Reactx-py-4', properties: 'padding: 4em 0' },
+        { class: 'Reactx-py-5', properties: 'padding: 5em 0' },
       ]}
     />
 
     <h3>Example:</h3>
-    <div className="nirvana-bg-primary display-block nirvana-p-0 nirvana-mb-1">
-      nirvana-p-0
+    <div className="Reactx-bg-primary display-block Reactx-p-0 Reactx-mb-1">
+      Reactx-p-0
     </div>
-    <div className="nirvana-bg-primary display-block nirvana-p-1 nirvana-mb-1">
-      nirvana-p-1
+    <div className="Reactx-bg-primary display-block Reactx-p-1 Reactx-mb-1">
+      Reactx-p-1
     </div>
-    <div className="nirvana-bg-primary display-block nirvana-p-2 nirvana-mb-1">
-      nirvana-p-2
+    <div className="Reactx-bg-primary display-block Reactx-p-2 Reactx-mb-1">
+      Reactx-p-2
     </div>
-    <div className="nirvana-bg-primary display-block nirvana-p-3 nirvana-mb-1">
-      nirvana-p-3
+    <div className="Reactx-bg-primary display-block Reactx-p-3 Reactx-mb-1">
+      Reactx-p-3
     </div>
-    <div className="nirvana-bg-primary display-block nirvana-p-4 nirvana-mb-1">
-      nirvana-p-4
+    <div className="Reactx-bg-primary display-block Reactx-p-4 Reactx-mb-1">
+      Reactx-p-4
     </div>
-    <div className="nirvana-bg-primary display-block nirvana-p-5 nirvana-mb-1">
-      nirvana-p-5
+    <div className="Reactx-bg-primary display-block Reactx-p-5 Reactx-mb-1">
+      Reactx-p-5
     </div>
   </>
 );

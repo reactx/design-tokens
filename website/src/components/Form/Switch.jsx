@@ -28,10 +28,10 @@ const SwitchComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <div className="nirvana-switch-container">
+    <div className="Reactx-switch-container">
       <label
         className={
-          'nirvana-switch ' +
+          'Reactx-switch ' +
           (props.className || '') +
           (props.size !== SIZE.MEDIUM ? ' switch-size-' + props.size : '')
         }
@@ -40,13 +40,13 @@ const SwitchComponent = (props) => {
         <input {...parentProps} type="checkbox" />
         <span
           className={
-            'nirvana-slider ' +
+            'Reactx-slider ' +
             (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
             (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
           }
         />
       </label>
-      <label htmlFor={props.id} className="nirvana-switch-title">
+      <label htmlFor={props.id} className="Reactx-switch-title">
         {props.title}
       </label>
     </div>

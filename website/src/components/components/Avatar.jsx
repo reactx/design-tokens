@@ -52,7 +52,7 @@ const AvatarComponent = (props) => {
       {props.src ? (
         <img src={props.src} alt={props.username} />
       ) : (
-        <span className="nirvana-avatar-letter">
+        <span className="Reactx-avatar-letter">
           {props.username
             .substring(0, props.letterCount)
             .trim()

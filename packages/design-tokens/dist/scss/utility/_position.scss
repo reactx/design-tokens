@@ -1,7 +1,7 @@
 $position:static fixed absolute relative sticky;
 
 @each $item in $position {
-  .nirvana-position-#{$item} {
+  .Reactx-position-#{$item} {
     position: #{$item} !important;
   }
 

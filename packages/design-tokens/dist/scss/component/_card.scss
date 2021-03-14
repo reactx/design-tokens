@@ -1,4 +1,4 @@
-.nirvana-card {
+.Reactx-card {
   transition: $standard-animation;
   background-image: $gradient;
   margin: $standard-margin 0;
@@ -14,7 +14,7 @@
   }
 
   background: {
-    color: var(--nirvana-backdrop-7);
+    color: var(--Reactx-backdrop-7);
     clip: border-box;
   }
 
@@ -25,6 +25,7 @@
 
 .card {
   &-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     background-color: rgba(0, 0, 0, .03);
     padding: $standard-padding;
     align-items: center;
@@ -37,12 +38,13 @@
   }
 
   &-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
     background-color: rgba(0, 0, 0, .03);
     padding: $standard-padding;
   }
 
   &-image {
-    background: var(--nirvana-backdrop-3);
+    background: var(--Reactx-backdrop-3);
     @include flex-position-center;
     width: 100%;
     height: 75%;
@@ -56,7 +58,7 @@
     }
 
     i {
-      color: var(--nirvana-primary);
+      color: var(--Reactx-primary);
       font-size: 48px;
     }
   }

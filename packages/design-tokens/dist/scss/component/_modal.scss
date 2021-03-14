@@ -1,4 +1,4 @@
-.nirvana-modal-container {
+.Reactx-modal-container {
   @include flex-position-center;
   position: fixed;
   bottom: 0;
@@ -19,7 +19,7 @@
     left: 25px;
 
     background: {
-      color: var(--nirvana-backdrop-7);
+      color: var(--Reactx-backdrop-7);
       image: $gradient;
     }
 
@@ -64,7 +64,7 @@
     }
 
     &.modal-full {
-      background-color: var(--nirvana-backdrop-7);
+      background-color: var(--Reactx-backdrop-7);
       min-width: 50vw;
       bottom: unset;
       right: unset;
@@ -95,6 +95,7 @@
 
   &-header {
     padding: $standard-padding $double-size-padding;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     background-color: rgba(0, 0, 0, .03);
     margin-bottom: $standard-margin;
     vertical-align: middle;
@@ -104,12 +105,12 @@
     height: 30px;
 
     &-icon {
-      color: var(--nirvana-primary);
+      color: var(--Reactx-primary);
       margin: 0 5px;
     }
 
     .close-btn {
-      background-color: var(--nirvana-danger);
+      background-color: var(--Reactx-danger);
       @include width-height(16px);
       justify-content: center;
       align-items: center;
@@ -123,13 +124,13 @@
         radius: $round-radius;
       }
 
-      .nirvana-icon-warper {
+      .Reactx-icon-warper {
         transition: $standard-animation;
         font-size: $font-size-sm;
         opacity: 0;
       }
 
-      &:hover .nirvana-icon-warper {
+      &:hover .Reactx-icon-warper {
         opacity: 1;
       }
     }
@@ -150,6 +151,7 @@
 
   &-footer {
     padding: $standard-padding $double-size-padding;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
     background-color: rgba(0, 0, 0, .03);
     justify-content: flex-end;
     align-items: center;
@@ -158,7 +160,7 @@
 
   &-backdrop {
     animation-duration: $standard-animation-duration !important;
-    background-color: var(--nirvana-backdrop-color);
+    background-color: var(--Reactx-backdrop-color);
     backdrop-filter: $backdrop;
   }
 }

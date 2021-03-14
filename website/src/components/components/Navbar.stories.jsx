@@ -63,4 +63,4 @@ export default {
 };
 
 export const Basic = (args) => <Navbar {...args} />;
-Basic.args = { brand: 'Nirvana', menu: <span>items</span> };
+Basic.args = { brand: 'Reactx', menu: <span>items</span> };

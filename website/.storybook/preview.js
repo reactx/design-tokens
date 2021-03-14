@@ -28,8 +28,8 @@ addDecorator(withA11y);
 // Gatsby's Link overrides:
 // Gatsby defines a global called ___loader to prevent its method calls from creating console errors you override it here
 global.___loader = {
-  enqueue: () => { },
-  hovering: () => { },
+  enqueue: () => {},
+  hovering: () => {},
 };
 
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
@@ -66,7 +66,7 @@ export const parameters = {
 
 // const withThemeProvider = (Story, context) => {
 //   return (
-//     <div className={"nirvana-full-screen " + context.globals.theme + "Theme"}><Story {...context} /></div>
+//     <div className={"Reactx-full-screen " + context.globals.theme + "Theme"}><Story {...context} /></div>
 //   )
 // }
 // export const decorators = [withThemeProvider];

@@ -1,8 +1,8 @@
-.nirvana-pagination-container {
+.Reactx-pagination-container {
   @include flex-position-center;
 }
 
-.nirvana-pagination {
+.Reactx-pagination {
   @include flex-position-center;
   list-style: none;
   padding: 1em;
@@ -51,12 +51,12 @@
     padding: 0;
 
     background: {
-      color: var(--nirvana-backdrop-9);
+      color: var(--Reactx-backdrop-9);
       image: $gradient;
     }
 
     &.active {
-      background-color: var(--nirvana-primary) !important;
+      background-color: var(--Reactx-primary) !important;
       color: white;
     }
   }

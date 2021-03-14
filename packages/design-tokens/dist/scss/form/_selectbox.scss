@@ -1,4 +1,4 @@
-  .nirvana-selectbox {
+  .Reactx-selectbox {
     cursor: pointer;
     transition: $standard-animation;
     padding: 0 $half-size-padding;
@@ -12,7 +12,7 @@
     width: 100%;
 
     background: {
-      color: var(--nirvana-backdrop-9);
+      color: var(--Reactx-backdrop-9);
       clip: padding-box;
     }
 
@@ -22,7 +22,7 @@
     }
 
     border: $standard-border {
-      color: var(--nirvana-dark-backdrop-3);
+      color: var(--Reactx-dark-backdrop-3);
       width: $standard-border-size;
       radius: $standard-radius;
     }
@@ -44,12 +44,12 @@
       }
 
       &-selected {
-        background-color: var(--nirvana-dark-backdrop-1);
+        background-color: var(--Reactx-dark-backdrop-1);
         padding: $half-size-padding $double-size-padding;
       }
 
       &-dropdown {
-        background-color: var(--nirvana-backdrop-color);
+        background-color: var(--Reactx-backdrop-color);
         box-shadow: $medium-shadow;
         backdrop-filter: $backdrop;
         position: absolute;
@@ -63,13 +63,13 @@
         left: 0;
 
         border: $standard-border {
-          color: var(--nirvana-dark-backdrop-3);
+          color: var(--Reactx-dark-backdrop-3);
           radius: $standard-radius;
         }
 
         .selectbox-selected:hover,
         .selectbox-item:hover {
-          background: var(--nirvana-dark-backdrop-1);
+          background: var(--Reactx-dark-backdrop-1);
         }
       }
     }
@@ -100,11 +100,11 @@
       font-size: $h2-font-size;
     }
 
-    &.nirvana-input-valid {
+    &.Reactx-input-valid {
       border: 1px solid $green;
     }
 
-    &.nirvana-input-invalid {
+    &.Reactx-input-invalid {
       border: 1px solid $red;
     }
   }

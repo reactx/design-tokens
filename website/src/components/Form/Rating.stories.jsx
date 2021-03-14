@@ -1,9 +1,9 @@
 import React from 'react';
-import { Badge } from './Badge';
+import { Rating } from './Rating';
 
 export default {
-  title: 'Components/Badge',
-  component: Badge,
+  title: 'Form/Rating',
+  component: Rating,
   argTypes: {
     id: {
       control: 'text',
@@ -11,13 +11,17 @@ export default {
         category: 'Attribute',
       },
     },
-    children: {
+    count: {
       table: {
         category: 'Attribute',
       },
     },
-    title: {
-      control: 'text',
+    value: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    disabled: {
       table: {
         category: 'Attribute',
       },
@@ -33,18 +37,13 @@ export default {
         category: 'Style',
       },
     },
-    outline: {
-      table: {
-        category: 'Style',
-      },
-    },
-    radius: {
+    shape: {
       control: 'inline-radio',
       table: {
         category: 'Style',
       },
     },
-    shadow: {
+    size: {
       control: 'inline-radio',
       table: {
         category: 'Style',
@@ -58,5 +57,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Badge {...args} />;
-Basic.args = { children: 'Reactx' };
+export const Basic = (args) => <Rating {...args} />;
+Basic.args = { value: 3 };

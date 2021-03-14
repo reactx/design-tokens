@@ -1,4 +1,4 @@
-.nirvana-btn {
+.Reactx-btn {
   transition: $standard-animation;
   @include flex-position-center;
   padding: $standard-padding;
@@ -15,12 +15,12 @@
   outline: none;
 
   background: {
-    color: var(--nirvana-backdrop-9);
+    color: var(--Reactx-backdrop-9);
     image: $gradient;
   }
 
   &:hover {
-    background-color: var(--nirvana-backdrop-3);
+    background-color: var(--Reactx-backdrop-3);
   }
 
   border: none {
@@ -57,10 +57,10 @@
 @include colors(btn, 'background-color');
 @include colorsHover(btn, 'background-color');
 
-.nirvana-btn-group {
+.Reactx-btn-group {
   display: flex;
 
-  .nirvana-btn {
+  .Reactx-btn {
     margin: 0;
 
     &:not(:last-child) {

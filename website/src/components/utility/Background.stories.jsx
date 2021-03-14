@@ -6,26 +6,26 @@ export default {
 
 export const Basic = () => (
   <>
-    <div className="nirvana-bg-primary display-block nirvana-p-1 nirvana-mb-1">
-      nirvana-bg-primary
+    <div className="Reactx-bg-primary display-block Reactx-p-1 Reactx-mb-1">
+      Reactx-bg-primary
     </div>
-    <div className="nirvana-bg-success display-block nirvana-p-1 nirvana-mb-1">
-      nirvana-bg-success
+    <div className="Reactx-bg-success display-block Reactx-p-1 Reactx-mb-1">
+      Reactx-bg-success
     </div>
-    <div className="nirvana-bg-info display-block nirvana-p-1 nirvana-mb-1">
-      nirvana-bg-info
+    <div className="Reactx-bg-info display-block Reactx-p-1 Reactx-mb-1">
+      Reactx-bg-info
     </div>
-    <div className="nirvana-bg-warning display-block nirvana-p-1 nirvana-mb-1">
-      nirvana-bg-warning
+    <div className="Reactx-bg-warning display-block Reactx-p-1 Reactx-mb-1">
+      Reactx-bg-warning
     </div>
-    <div className="nirvana-bg-danger display-block nirvana-p-1 nirvana-mb-1">
-      nirvana-bg-danger
+    <div className="Reactx-bg-danger display-block Reactx-p-1 Reactx-mb-1">
+      Reactx-bg-danger
     </div>
-    <div className="nirvana-bg-dark display-block nirvana-p-1 nirvana-mb-1">
-      nirvana-bg-dark
+    <div className="Reactx-bg-dark display-block Reactx-p-1 Reactx-mb-1">
+      Reactx-bg-dark
     </div>
-    <div className="nirvana-bg-light display-block nirvana-p-1 nirvana-mb-1">
-      nirvana-bg-light
+    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-1">
+      Reactx-bg-light
     </div>
   </>
 );

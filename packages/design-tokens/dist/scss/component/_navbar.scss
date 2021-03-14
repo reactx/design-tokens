@@ -1,4 +1,4 @@
-.nirvana-navbar {
+.Reactx-navbar {
   justify-content: space-between;
   padding: 0 $standard-padding;
   background-image: $gradient;
@@ -16,31 +16,31 @@
 
 .navbar-background {
   &-primary {
-    background-color: var(--nirvana-primary);
+    background-color: var(--Reactx-primary);
   }
 
   &-success {
-    background-color: var(--nirvana-success);
+    background-color: var(--Reactx-success);
   }
 
   &-danger {
-    background-color: var(--nirvana-danger);
+    background-color: var(--Reactx-danger);
   }
 
   &-warning {
-    background-color: var(--nirvana-warning);
+    background-color: var(--Reactx-warning);
   }
 
   &-info {
-    background-color: var(--nirvana-info);
+    background-color: var(--Reactx-info);
   }
 
   &-dark {
-    background-color: var(--nirvana-dark);
+    background-color: var(--Reactx-dark);
   }
 
   &-light {
-    background-color: var(--nirvana-light);
+    background-color: var(--Reactx-light);
   }
 }
 

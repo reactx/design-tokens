@@ -12,17 +12,17 @@
   @include darkAndLightColor('blue', $blue);
   @include darkAndLightColor('red', $red);
 
-  --nirvana-backdrop-color: rgba(250, 250, 250, 0.8);
-  --nirvana-dark-backdrop-1: #{$gray-200};
-  --nirvana-dark-backdrop-3: #{$gray-300};
-  --nirvana-dark-backdrop-5: #{$gray-500};
-  --nirvana-dark-backdrop-7: #{$gray-700};
-  --nirvana-dark-backdrop-9: #{$gray-900};
-  --nirvana-backdrop-9: #{$white};
-  --nirvana-backdrop-7: #{$gray-50};
-  --nirvana-backdrop-5: #{$white-100};
-  --nirvana-backdrop-3: #{$white-200};
-  --nirvana-backdrop-1: #{$white-300};
+  --Reactx-backdrop-color: rgba(250, 250, 250, 0.8);
+  --Reactx-dark-backdrop-1: #{$gray-200};
+  --Reactx-dark-backdrop-3: #{$gray-300};
+  --Reactx-dark-backdrop-5: #{$gray-500};
+  --Reactx-dark-backdrop-7: #{$gray-700};
+  --Reactx-dark-backdrop-9: #{$gray-900};
+  --Reactx-backdrop-9: #{$white};
+  --Reactx-backdrop-7: #{$gray-50};
+  --Reactx-backdrop-5: #{$white-100};
+  --Reactx-backdrop-3: #{$white-200};
+  --Reactx-backdrop-1: #{$white-300};
 }
 
 //TODO: Light and Dark mode
