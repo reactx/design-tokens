@@ -85,29 +85,29 @@ const ToastComponent = (props) => {
 const Toast = React.forwardRef((props) => <ToastComponent {...props} />);
 
 Toast.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  closeAction: PropTypes.func,
-  progressBar: PropTypes.bool,
-  outline: PropTypes.bool,
+  shadow: PropTypes.oneOf(Object.values(SHADOW)),
+  radius: PropTypes.oneOf(Object.values(RADIUS)),
+  color: PropTypes.oneOf(Object.values(COLOR)),
   useDefaultIcon: PropTypes.bool,
   showDuration: PropTypes.number,
+  className: PropTypes.string,
+  closeAction: PropTypes.func,
+  progressBar: PropTypes.bool,
+  onClick: PropTypes.func,
+  outline: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 Toast.defaultProps = {
-  color: COLOR.LIGHT,
+  useDefaultIcon: false,
   radius: RADIUS.SMALL,
   shadow: SHADOW.SMALL,
+  color: COLOR.LIGHT,
+  showDuration: 3000,
   progressBar: false,
   outline: false,
-  useDefaultIcon: false,
-  showDuration: 3000,
 };
 
 export { Toast };
