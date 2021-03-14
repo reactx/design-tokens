@@ -46,12 +46,12 @@ const LoadingComponent = (props) => {
     <div
       {...parentProps}
       ref={loadingRef}
-      className={(props.className || '') + 'Reactx-loading'}
+      className={(props.className || '') + 'nirvana-loading'}
     >
       <div
         className={
           'loading-loader ' +
-          (props.color ? ' Reactx-loading-' + props.color : '') +
+          (props.color ? ' nirvana-loading-' + props.color : '') +
           (props.size !== SIZE.EXTRA ? ' loading-size-' + props.size : '')
         }
       >
@@ -61,6 +61,7 @@ const LoadingComponent = (props) => {
         <div className="loading-circle" />
         <div className="loading-circle" />
       </div>
+      <span className="loading-text">{props.text}</span>
     </div>
   );
 };
@@ -71,6 +72,7 @@ Loading.propTypes = {
   id: PropTypes.string,
   size: PropTypes.oneOf(Object.values(SIZE)),
   color: PropTypes.oneOf(Object.values(COLOR)),
+  text: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
   enabled: PropTypes.bool,
