@@ -33,18 +33,16 @@ const InfoCardComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <Card
-      shadow={props.shadow}
-      radius={props.radius}
-      color={props.color}
-      outline={props.outline}
-      title={props.description}
+    <div
+      {...parentProps}
+      className={
+        generateClass(props, 'info-card') +
+        (props.inline ? ' info-card-inline' : '')
+      }
     >
-      <div className={'info-card'}>
-        <h2>{props.number}</h2>
-        <p>{props.description}</p>
-      </div>
-    </Card>
+      <span className="info-card-number">{props.number}</span>
+      <p className="info-card-description">{props.description}</p>
+    </div>
   );
 };
 
@@ -58,12 +56,13 @@ InfoCard.propTypes = {
   number: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
   description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   outline: PropTypes.bool,
+  inline: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 InfoCard.defaultProps = {
-  color: COLOR.LIGHT,
+  color: COLOR.PRIMARY,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
   outline: false,

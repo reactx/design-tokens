@@ -93,7 +93,7 @@ const SelectBoxComponent = (props) => {
             {typeof props.fixIcon === 'string' ? (
               <FluentIcon
                 icon={props.fixIcon}
-                className="nirvana-p-0"
+                className="reactx-p-0"
                 iconSize={props.size}
               />
             ) : (
@@ -107,13 +107,13 @@ const SelectBoxComponent = (props) => {
                 <FluentIcon
                   icon="ChevronFold10"
                   iconSize={props.size}
-                  className="nirvana-p-0"
+                  className="reactx-p-0"
                 />
               ) : (
                 <FluentIcon
                   icon="ChevronUnfold10"
                   iconSize={props.size}
-                  className="nirvana-p-0"
+                  className="reactx-p-0"
                 />
               )}
             </span>

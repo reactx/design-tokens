@@ -1,29 +1,29 @@
-.nirvana-switch-container {
+.reactx-switch-container {
   padding-bottom: $standard-padding;
   align-items: center;
   display: flex;
   width: 100%;
 
-  .nirvana-switch-title {
+  .reactx-switch-title {
     margin: 0 $standard-margin;
     font-size: $font-size-base;
     height: 100%;
   }
 
-  .switch-size-small+.nirvana-switch-title {
+  .switch-size-small+.reactx-switch-title {
     font-size: $font-size-sm;
   }
 
-  .switch-size-large+.nirvana-switch-title {
+  .switch-size-large+.reactx-switch-title {
     font-size: $h4-font-size;
   }
 
-  .switch-size-extra+.nirvana-switch-title {
+  .switch-size-extra+.reactx-switch-title {
     font-size: $h2-font-size;
   }
 }
 
-.nirvana-switch {
+.reactx-switch {
   transition: $standard-animation;
   align-items: center;
   position: relative;
@@ -36,7 +36,7 @@
     opacity: 0;
   }
 
-  .nirvana-slider {
+  .reactx-slider {
     transition: $standard-animation;
     border-radius: $pill-radius;
     border: 1px solid $gray-300;
@@ -98,15 +98,15 @@
     }
   }
 
-  input:checked+.nirvana-slider {
-    background-color: var(--nirvana-primary-lighter);
+  input:checked+.reactx-slider {
+    background-color: var(--reactx-primary-lighter);
   }
 
-  input:focus+.nirvana-slider {
-    box-shadow: 0 0 1px var(--nirvana-backdrop-7);
+  input:focus+.reactx-slider {
+    box-shadow: 0 0 1px var(--reactx-backdrop-7);
   }
 
-  input:checked+.nirvana-slider:before {
+  input:checked+.reactx-slider:before {
     transform: translateX(11px);
   }
 
@@ -114,7 +114,7 @@
     height: 11px;
     width: 16px;
 
-    .nirvana-slider {
+    .reactx-slider {
       &:before {
         @include width-height(7px);
         bottom: 1px;
@@ -122,7 +122,7 @@
       }
     }
 
-    input:checked+.nirvana-slider:before {
+    input:checked+.reactx-slider:before {
       transform: translateX(5px);
     }
   }
@@ -131,7 +131,7 @@
     height: 28px;
     width: 50px;
 
-    .nirvana-slider {
+    .reactx-slider {
       &:before {
         @include width-height(23px);
         bottom: 2px;
@@ -139,8 +139,8 @@
       }
     }
 
-    input:checked+.nirvana-slider:before {
-      transform: translateX(12px);
+    input:checked+.reactx-slider:before {
+      transform: translateX(21px);
     }
   }
 
@@ -148,7 +148,7 @@
     height: 40px;
     width: 70px;
 
-    .nirvana-slider {
+    .reactx-slider {
       &:before {
         @include width-height(35px);
         bottom: 2px;
@@ -156,7 +156,7 @@
       }
     }
 
-    input:checked+.nirvana-slider:before {
+    input:checked+.reactx-slider:before {
       transform: translateX(28px);
     }
   }

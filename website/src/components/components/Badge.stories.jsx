@@ -59,4 +59,4 @@ export default {
 };
 
 export const Basic = (args) => <Badge {...args} />;
-Basic.args = { children: 'Nirvana' };
+Basic.args = { children: 'reactx' };

@@ -2224,7 +2224,7 @@ const FluentIconComponent = (props) => {
       {...parentProps}
       className={
         (props.className || '') +
-        ' nirvana-icon-warper' +
+        ' reactx-icon-warper' +
         (props.radius !== RADIUS.NONE ? ' radius-' + props.radius : '') +
         (props.shadowOnHover !== SHADOW.NONE
           ? ' shadow-on-hover-' + props.shadowOnHover
@@ -2234,11 +2234,11 @@ const FluentIconComponent = (props) => {
     >
       <i
         className={
-          'icon-size-' + props.iconSize + ' nirvana-icon nf-icon-' + props.icon
+          'icon-size-' + props.iconSize + ' reactx-icon nf-icon-' + props.icon
         }
       />
       {parentProps.title && (
-        <span className="nirvana-icon-title">{parentProps.title}</span>
+        <span className="reactx-icon-title">{parentProps.title}</span>
       )}
     </span>
   );

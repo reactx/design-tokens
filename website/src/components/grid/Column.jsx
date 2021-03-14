@@ -26,7 +26,7 @@ const ColumnComponent = (props) => {
     <div
       {...parentProps}
       className={
-        'nirvana-column ' +
+        'reactx-column ' +
         (props.size ? 'col-' + props.size : '') +
         (props.sizeMd ? ' col-md-' + props.sizeMd : '') +
         (props.sizeLg ? ' col-lg-' + props.sizeLg : '') +

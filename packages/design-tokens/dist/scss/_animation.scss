@@ -1,4 +1,4 @@
-.nirvana-animation,
+.reactx-animation,
 .animate {
   transition: $standard-animation;
 }
@@ -284,17 +284,17 @@
 
   25% {
     opacity: 0.5;
-    background-color: var(--nirvana-primary-light);
+    background-color: var(--reactx-primary-light);
   }
 
   50% {
     opacity: 1;
-    background-color: var(--nirvana-primary-lightest);
+    background-color: var(--reactx-primary-lightest);
   }
 
   75% {
     opacity: 0.75;
-    background-color: var(--nirvana-primary-light);
+    background-color: var(--reactx-primary-light);
   }
 
   to {

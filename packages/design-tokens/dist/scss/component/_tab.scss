@@ -1,4 +1,4 @@
-.nirvana-tab {
+.reactx-tab {
   display: flex;
   height: 100%;
 
@@ -74,7 +74,7 @@
 
       .tab-header-title {
         i {
-          color: var(--nirvana-primary);
+          color: var(--reactx-primary);
         }
       }
     }
@@ -106,8 +106,8 @@
       opacity: 0;
 
       &:hover {
-        background-color: var(--nirvana-danger);
-        color: var(--nirvana-light);
+        background-color: var(--reactx-danger);
+        color: var(--reactx-light);
       }
     }
   }

@@ -24,25 +24,25 @@
   clear: both;
 }
 
-.nirvana-back-blur {
-  background-color: var(--nirvana-backdrop-color) !important;
+.reactx-back-blur {
+  background-color: var(--reactx-backdrop-color) !important;
   backdrop-filter: $backdrop;
 }
 
-.nirvana-medium-back-blur {
-  background-color: var(--nirvana-backdrop-7) !important;
+.reactx-medium-back-blur {
+  background-color: var(--reactx-backdrop-7) !important;
 }
 
-.nirvana-light-back-blur {
-  background-color: var(--nirvana-backdrop-3) !important;
+.reactx-light-back-blur {
+  background-color: var(--reactx-backdrop-3) !important;
 }
 
-/* nirvana Background and Color */
-// nirvana-bg-*
+/* reactx Background and Color */
+// reactx-bg-*
 @include colors(bg, 'background-color');
-// nirvana-color-*
+// reactx-color-*
 @include colors(color, 'color');
 
-.nirvana-bg-gradient {
+.reactx-bg-gradient {
   background-image: $gradient;
 }

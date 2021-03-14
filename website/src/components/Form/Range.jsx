@@ -24,7 +24,7 @@ const RangeComponent = (props) => {
   return (
     <div
       className={
-        'nirvana-form-control' +
+        'reactx-form-control' +
         (props.formControlStyle !== CONTROL_STYLE.NORMAL
           ? ' form-range-' + props.formControlStyle
           : '') +
@@ -36,9 +36,7 @@ const RangeComponent = (props) => {
           {typeof props.label === 'string' ? (
             <label htmlFor={props.id} className="control-label">
               {props.label}
-              {props.required && (
-                <span className="nirvana-color-danger">*</span>
-              )}
+              {props.required && <span className="reactx-color-danger">*</span>}
             </label>
           ) : (
             <>{props.label}</>

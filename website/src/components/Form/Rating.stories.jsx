@@ -1,9 +1,9 @@
 import React from 'react';
-import { Navbar } from './Navbar';
+import { Rating } from './Rating';
 
 export default {
-  title: 'Components/Navbar',
-  component: Navbar,
+  title: 'Form/Rating',
+  component: Rating,
   argTypes: {
     id: {
       control: 'text',
@@ -11,17 +11,12 @@ export default {
         category: 'Attribute',
       },
     },
-    brand: {
+    count: {
       table: {
         category: 'Attribute',
       },
     },
-    middle: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    menu: {
+    value: {
       table: {
         category: 'Attribute',
       },
@@ -42,13 +37,13 @@ export default {
         category: 'Style',
       },
     },
-    background: {
+    shape: {
       control: 'inline-radio',
       table: {
         category: 'Style',
       },
     },
-    shadow: {
+    size: {
       control: 'inline-radio',
       table: {
         category: 'Style',
@@ -62,5 +57,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Navbar {...args} />;
-Basic.args = { brand: 'reactx', menu: <span>items</span> };
+export const Basic = (args) => <Rating {...args} />;
+Basic.args = { value: 3 };

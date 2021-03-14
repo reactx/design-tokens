@@ -8,15 +8,17 @@ $colors:primary danger secondary success info warning light dark;
 
 @mixin colors($propertyClass, $property) {
   @each $color in $colors {
-    &.nirvana-#{$propertyClass}-#{$color} {
-      #{$property}: var(--nirvana-#{$color}) !important;
+    &.reactx-#{$propertyClass}-#{$color} {
+      #{$property}: var(--reactx-#{$color}) !important;
 
-      @if($color==light) {
-        color: var(--nirvana-dark);
-      }
+      @if($propertyClass !=color) {
+        @if($color==light) {
+          color: var(--reactx-dark);
+        }
 
-      @else {
-        color: var(--nirvana-light);
+        @else {
+          color: var(--reactx-light);
+        }
       }
     }
   }
@@ -24,15 +26,17 @@ $colors:primary danger secondary success info warning light dark;
 
 @mixin colorsLight($propertyClass, $property) {
   @each $color in $colors {
-    &.nirvana-#{$propertyClass}-#{$color} {
-      #{$property}: var(--nirvana-#{$color}-light) !important;
+    &.reactx-#{$propertyClass}-#{$color} {
+      #{$property}: var(--reactx-#{$color}-light) !important;
 
-      @if($color==light) {
-        color: var(--nirvana-dark);
-      }
+      @if($propertyClass !=color) {
+        @if($color==light) {
+          color: var(--reactx-dark);
+        }
 
-      @else {
-        color: var(--nirvana-light);
+        @else {
+          color: var(--reactx-light);
+        }
       }
     }
   }
@@ -41,16 +45,18 @@ $colors:primary danger secondary success info warning light dark;
 @mixin colorsHover($propertyClass, $property) {
   @each $color in $colors {
 
-    &.nirvana-#{$propertyClass}-#{$color}:hover,
-    &.nirvana-#{$propertyClass}-#{$color}:active {
-      #{$property}: var(--nirvana-#{$color}-dark) !important;
+    &.reactx-#{$propertyClass}-#{$color}:hover,
+    &.reactx-#{$propertyClass}-#{$color}:active {
+      #{$property}: var(--reactx-#{$color}-dark) !important;
 
-      @if($color==light) {
-        color: var(--nirvana-dark);
-      }
+      @if($propertyClass !=color) {
+        @if($color==light) {
+          color: var(--reactx-dark);
+        }
 
-      @else {
-        color: var(--nirvana-light);
+        @else {
+          color: var(--reactx-light);
+        }
       }
     }
   }
@@ -60,25 +66,25 @@ $colors:primary danger secondary success info warning light dark;
 dark and light
 
 usage:
-    @include darkAndLightColor('red', $nirvana-red);
+    @include darkAndLightColor('red', $reactx-red);
 */
 $lightList:light lighter lightest;
 $darkList:dark darker darkest;
 
 @mixin darkAndLightColor($colorName, $property) {
   $var: 0;
-  --nirvana-#{$colorName}: #{$property};
+  --reactx-#{$colorName}: #{$property};
 
   @each $item in $lightList {
     $var: $var + 10;
-    --nirvana-#{$colorName}-#{$item}: #{lighten($property,$var)};
+    --reactx-#{$colorName}-#{$item}: #{lighten($property,$var)};
   }
 
   $var:0;
 
   @each $item in $darkList {
     $var: $var + 10;
-    --nirvana-#{$colorName}-#{$item}: #{darken($property,$var)};
+    --reactx-#{$colorName}-#{$item}: #{darken($property,$var)};
   }
 }
 
@@ -118,6 +124,6 @@ usage:
  */
 @mixin OpacityColorList($propertyClass, $property) {
   @for $i from 1 through 9 {
-    --nirvana-#{$propertyClass}-#{$i}: #{colorOpacity($property,$i/10)};
+    --reactx-#{$propertyClass}-#{$i}: #{colorOpacity($property,$i/10)};
   }
 }

@@ -57,7 +57,7 @@ const ModalComponent = (props) => {
   return (
     <div
       className={
-        'nirvana-modal-container' +
+        'reactx-modal-container' +
         (props.backdrop && props.show ? ' modal-backdrop' : '')
       }
     >
@@ -68,7 +68,7 @@ const ModalComponent = (props) => {
           'modal-wrapper ' +
           (props.className || '') +
           ('modal-' + props.modalType) +
-          (props.color ? ' nirvana-modal-' + props.color : '') +
+          (props.color ? ' reactx-modal-' + props.color : '') +
           (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
           (props.shadow !== SHADOW.MEDIUM ? ' shadow-' + props.shadow : '')
         }
@@ -90,7 +90,7 @@ const ModalComponent = (props) => {
                     icon="CalculatorMultiply"
                     color="#fff"
                     iconSize="tiny"
-                    className="nirvana-p-0"
+                    className="reactx-p-0"
                   />
                 </button>
               </div>

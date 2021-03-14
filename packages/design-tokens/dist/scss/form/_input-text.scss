@@ -1,4 +1,4 @@
-.nirvana-input {
+.reactx-input {
   transition: $standard-animation;
   padding: 0 $half-size-padding;
   font-size: $font-size-base;
@@ -11,7 +11,7 @@
   width: 100%;
 
   background: {
-    color: var(--nirvana-backdrop-9);
+    color: var(--reactx-backdrop-9);
     clip: padding-box;
   }
 
@@ -21,13 +21,13 @@
   }
 
   border: $standard-border {
-    color: var(--nirvana-dark-backdrop-3);
+    color: var(--reactx-dark-backdrop-3);
     radius: $standard-radius;
   }
 
   &:focus {
     border: $standard-border !important {
-      color: var(--nirvana-primary) !important;
+      color: var(--reactx-primary) !important;
     }
   }
 
@@ -89,6 +89,6 @@
   }
 }
 
-textarea.nirvana-input {
+textarea.reactx-input {
   min-height: 5em;
 }

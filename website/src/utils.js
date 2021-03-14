@@ -110,7 +110,7 @@ export const cleanProps = (props) => {
 export const generateClass = (prop, baseName) => {
   let classList = [];
   //BASE COMPONENT CLASS
-  classList.push('nirvana-' + baseName);
+  classList.push('reactx-' + baseName);
   //EXTRA CLASS_NAME
   prop.className && classList.push(prop.className);
   //RADIUS
@@ -131,13 +131,13 @@ export const generateClass = (prop, baseName) => {
   }
   //OUTLINE AND COLOR
   if (prop.outline && prop.color) {
-    classList.push('outline nirvana-color-' + prop.color);
+    classList.push('outline reactx-color-' + prop.color);
   } else if (prop.color && prop.color !== COLOR.NONE) {
-    classList.push('nirvana-' + baseName + '-' + prop.color);
+    classList.push('reactx-' + baseName + '-' + prop.color);
   }
   //VALIDATION
   if (prop.validationStates && prop.validationStates !== 'none') {
-    classList.push('nirvana-input-' + prop.validationStates);
+    classList.push('reactx-input-' + prop.validationStates);
   }
   //THEME
   if (prop.theme) {

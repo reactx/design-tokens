@@ -3,55 +3,60 @@ $medium-size:30px;
 $small-size:20px;
 $tiny-size:14px;
 
-.nirvana-loading {
-  background: var(--nirvana-backdrop-color);
+.reactx-loading {
+  background: var(--reactx-backdrop-color);
   @include flex-position-center;
   @include width-height(100%);
+  flex-direction: column;
   position: absolute;
   z-index: -1;
   opacity: 0;
   left: 0;
   top: 0;
 
+  .loading-text {
+    padding: $double-size-padding 0;
+  }
+
   &-primary {
     .loading-circle:after {
-      background-color: var(--nirvana-primary);
+      background-color: var(--reactx-primary);
     }
   }
 
   &-danger {
     .loading-circle:after {
-      background-color: var(--nirvana-danger);
+      background-color: var(--reactx-danger);
     }
   }
 
   &-dark {
     .loading-circle:after {
-      background-color: var(--nirvana-dark);
+      background-color: var(--reactx-dark);
     }
   }
 
   &-info {
     .loading-circle:after {
-      background-color: var(--nirvana-info);
+      background-color: var(--reactx-info);
     }
   }
 
   &-light {
     .loading-circle:after {
-      background-color: var(--nirvana-light);
+      background-color: var(--reactx-light);
     }
   }
 
   &-success {
     .loading-circle:after {
-      background-color: var(--nirvana-success);
+      background-color: var(--reactx-success);
     }
   }
 
   &-warning {
     .loading-circle:after {
-      background-color: var(--nirvana-warning);
+      background-color: var(--reactx-warning);
     }
   }
 
@@ -141,7 +146,7 @@ $tiny-size:14px;
     }
 
     &:after {
-      background-color: var(--nirvana-primary);
+      background-color: var(--reactx-primary);
       @include width-height(8px);
       border-radius: 50%;
       position: absolute;

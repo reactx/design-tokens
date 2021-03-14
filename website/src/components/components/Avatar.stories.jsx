@@ -80,4 +80,4 @@ export default {
 };
 
 export const Basic = (args) => <Avatar {...args} />;
-Basic.args = { username: 'nirvana' };
+Basic.args = { username: 'reactx' };

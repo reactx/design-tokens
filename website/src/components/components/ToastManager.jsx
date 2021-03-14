@@ -13,23 +13,26 @@ const POSITION = {
 };
 
 const ToastManagerComponent = (props) => {
-  const [toastList, SetToastList] = useState(props.items ? props.items : []);
+  const [toastList, SetToastList] = useState([]);
 
-  const addItem = (item) => {
-    let list = [...toastList];
-    list.push(item);
-    SetToastList(list);
-  };
+  useEffect(() => {
+    if (!props.items || props.items.length === 0) return;
+    let start = props.items.length - props.toastShowCount;
+    let temp = [...props.items].slice(
+      start > 0 ? start : 0,
+      props.items.length,
+    );
+    SetToastList(temp);
+  }, [props.items, props.toastShowCount]);
 
   const parentProps = { ...props };
   delete parentProps.type;
   cleanProps(parentProps);
 
   return (
-    <div className={'nirvana-toast-container' + (' toast-' + props.position)}>
-      {toastList.map((item, index) => (
-        <Toast {...item} />
-      ))}
+    <div className={'reactx-toast-container' + (' toast-' + props.position)}>
+      {!props.doNotDisturb &&
+        toastList.map((item, index) => <Toast {...item} key={index} />)}
     </div>
   );
 };
@@ -39,16 +42,15 @@ const ToastManager = React.forwardRef((props) => (
 ));
 
 ToastManager.propTypes = {
-  addToast: PropTypes.func,
-  toastShowCount: PropTypes.number,
   position: PropTypes.oneOf(Object.values(POSITION)),
+  toastShowCount: PropTypes.number,
   doNotDisturb: PropTypes.bool,
   items: PropTypes.array,
 };
 
 ToastManager.defaultProps = {
   position: POSITION.TOP_RIGHT,
-  toastShowCount: 10,
+  toastShowCount: 3,
 };
 
 export { ToastManager };

@@ -30,14 +30,11 @@ const SHADOW = {
 
 const CollapseComponent = (props) => {
   const parentProps = { ...props };
+  delete parentProps.onClick;
   cleanProps(parentProps);
 
   return (
-    <div
-      {...parentProps}
-      className={generateClass(props, 'collapse')}
-      onClick={() => props.onClick(props.id)}
-    >
+    <div {...parentProps} className={generateClass(props, 'collapse')}>
       <div className="collapse-title" onClick={() => props.onClick(props.id)}>
         {props.head}
       </div>

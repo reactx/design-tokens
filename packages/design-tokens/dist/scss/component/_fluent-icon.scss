@@ -3,13 +3,13 @@
   font-family: 'FabricMDL2Icons';
 }
 
-.nirvana-icon-warper {
+.reactx-icon-warper {
   @include flex-position-center(inline-flex);
   padding: $standard-padding;
   flex-direction: column;
 }
 
-.nirvana-icon {
+.reactx-icon {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 $half-size-margin;

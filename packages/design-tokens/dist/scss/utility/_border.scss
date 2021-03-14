@@ -6,21 +6,21 @@ $Direction: (t: '-top', l: '-left', r: '-right', b: '-bottom');
   @for $i from 0 through 5 {
     $varDir:#{map-get($Direction, str-slice($pmItem,2,-1))};
 
-    .nirvana-#{$pmItem}-#{$i} {
+    .reactx-#{$pmItem}-#{$i} {
       border#{$varDir}:$i#{'px'} solid $gray-200 !important;
     }
   }
 }
 
 @for $i from 0 through 5 {
-  .nirvana-bx-#{$i} {
+  .reactx-bx-#{$i} {
     border: {
       right: $i#{'px'} solid $gray-200 !important;
       left: $i#{'px'} solid $gray-200 !important;
     }
   }
 
-  .nirvana-by-#{$i} {
+  .reactx-by-#{$i} {
     border: {
       bottom: $i#{'px'} solid $gray-200 !important;
       top: $i#{'px'} solid $gray-200 !important;
@@ -30,6 +30,6 @@ $Direction: (t: '-top', l: '-left', r: '-right', b: '-bottom');
 
 @each $col in $colors {
   .border-#{$col} {
-    border-color: var(--nirvana-#{$col}) !important;
+    border-color: var(--reactx-#{$col}) !important;
   }
 }

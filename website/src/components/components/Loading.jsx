@@ -61,6 +61,7 @@ const LoadingComponent = (props) => {
         <div className="loading-circle" />
         <div className="loading-circle" />
       </div>
+      <span className="loading-text">{props.text}</span>
     </div>
   );
 };
@@ -71,6 +72,7 @@ Loading.propTypes = {
   id: PropTypes.string,
   size: PropTypes.oneOf(Object.values(SIZE)),
   color: PropTypes.oneOf(Object.values(COLOR)),
+  text: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
   enabled: PropTypes.bool,
