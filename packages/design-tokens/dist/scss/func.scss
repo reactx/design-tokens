@@ -11,12 +11,14 @@ $colors:primary danger secondary success info warning light dark;
     &.nirvana-#{$propertyClass}-#{$color} {
       #{$property}: var(--nirvana-#{$color}) !important;
 
-      @if($color==light) {
-        color: var(--nirvana-dark);
-      }
+      @if($propertyClass !=color) {
+        @if($color==light) {
+          color: var(--nirvana-dark);
+        }
 
-      @else {
-        color: var(--nirvana-light);
+        @else {
+          color: var(--nirvana-light);
+        }
       }
     }
   }
@@ -27,12 +29,14 @@ $colors:primary danger secondary success info warning light dark;
     &.nirvana-#{$propertyClass}-#{$color} {
       #{$property}: var(--nirvana-#{$color}-light) !important;
 
-      @if($color==light) {
-        color: var(--nirvana-dark);
-      }
+      @if($propertyClass !=color) {
+        @if($color==light) {
+          color: var(--nirvana-dark);
+        }
 
-      @else {
-        color: var(--nirvana-light);
+        @else {
+          color: var(--nirvana-light);
+        }
       }
     }
   }
@@ -45,12 +49,14 @@ $colors:primary danger secondary success info warning light dark;
     &.nirvana-#{$propertyClass}-#{$color}:active {
       #{$property}: var(--nirvana-#{$color}-dark) !important;
 
-      @if($color==light) {
-        color: var(--nirvana-dark);
-      }
+      @if($propertyClass !=color) {
+        @if($color==light) {
+          color: var(--nirvana-dark);
+        }
 
-      @else {
-        color: var(--nirvana-light);
+        @else {
+          color: var(--nirvana-light);
+        }
       }
     }
   }

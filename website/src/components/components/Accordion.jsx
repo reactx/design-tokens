@@ -42,7 +42,9 @@ const AccordionComponent = (props) => {
           radius="none"
           open={item.id === active}
           color={props.color}
-          onClick={(id) => setActive(id)}
+          onClick={(id) => {
+            active === id ? setActive(null) : setActive(id);
+          }}
         >
           {item.children}
         </Collapse>

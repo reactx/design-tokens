@@ -15,8 +15,12 @@
   outline: none;
 
   background: {
-    color: var(--nirvana-backdrop-7);
+    color: var(--nirvana-backdrop-9);
     image: $gradient;
+  }
+
+  &:hover {
+    background-color: var(--nirvana-backdrop-3);
   }
 
   border: none {

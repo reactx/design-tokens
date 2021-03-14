@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 import { FluentIcon } from './FluentIcon';
-import { Progress } from '../form/Progress';
+import { Progress } from '../Form/Progress';
 
 const COLOR = {
   PRIMARY: 'primary',
