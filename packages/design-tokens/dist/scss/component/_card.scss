@@ -35,6 +35,7 @@
   &-body {
     padding: $standard-padding;
     flex: 1 1 auto;
+    width: 100%;
   }
 
   &-footer {
@@ -62,13 +63,6 @@
       font-size: 48px;
     }
   }
-}
-
-.info-card {
-  padding: $standard-padding;
-  justify-content: center;
-  flex-direction: column;
-  display: flex;
 }
 
 @include colorsLight(card, 'background-color');

@@ -49,6 +49,11 @@ export default {
         category: 'Style',
       },
     },
+    inline: {
+      table: {
+        category: 'Style',
+      },
+    },
     onClick: {
       table: {
         category: 'Action',
@@ -58,4 +63,33 @@ export default {
 };
 
 export const Basic = (args) => <InfoCard {...args} />;
-Basic.args = { number: '10', description: 'InfoCard Default Message' };
+Basic.args = {
+  number: '10',
+  description: 'InfoCard Default Message',
+  outline: true,
+};
+export const MultiCard = (args) => (
+  <div className="nirvana-row">
+    <InfoCard
+      {...args}
+      className="nirvana-column col-auto nirvana-m-1"
+      color="primary"
+      number="10"
+      description="InfoCard Message"
+    />
+    <InfoCard
+      {...args}
+      className="nirvana-column col-auto nirvana-m-1"
+      number="140"
+      color="danger"
+      description="InfoCard Message"
+    />
+    <InfoCard
+      {...args}
+      className="nirvana-column col-auto nirvana-m-1"
+      number="27"
+      color="success"
+      description="InfoCard Message"
+    />
+  </div>
+);

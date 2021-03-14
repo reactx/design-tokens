@@ -24,10 +24,10 @@ $pdDirection: (t: '-top', l: '-left', r: '-right', b: '-bottom');
   }
 
   .Reactx-mx-#{$i} {
-    padding: 0 $i#{'em'} !important;
+    margin: 0 $i#{'em'} !important;
   }
 
   .Reactx-my-#{$i} {
-    padding: $i#{'em'} 0 !important;
+    margin: $i#{'em'} 0 !important;
   }
 }

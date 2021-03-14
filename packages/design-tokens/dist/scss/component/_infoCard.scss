@@ -1,0 +1,41 @@
+.nirvana-info-card {
+  border-radius: $standard-radius;
+  background-image: $gradient;
+  padding: $standard-padding;
+  font-size: $font-size-base;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+
+  &.outline {
+    border: 1px solid;
+  }
+
+  &.radius-pill {
+    align-items: center;
+  }
+}
+
+.info-card {
+  &-inline {
+    justify-content: start !important;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+      margin: 0 $standard-margin;
+    }
+  }
+
+  &-number {
+    font-weight: bold;
+    font-size: 3em;
+  }
+
+  &-description {
+    font-size: 0.85em;
+  }
+}
+
+@include colorsLight(info-card, 'background-color');
