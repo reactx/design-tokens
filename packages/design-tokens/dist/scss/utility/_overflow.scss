@@ -1,15 +1,15 @@
 $overflow:hidden auto scroll visible overlay unset;
 
 @each $item in $overflow {
-  .Reactx-overflow-#{$item} {
+  .reactx-overflow-#{$item} {
     overflow: #{$item} !important;
   }
 
-  .Reactx-overflow-x-#{$item} {
+  .reactx-overflow-x-#{$item} {
     overflow: #{$item} !important;
   }
 
-  .Reactx-overflow-y-#{$item} {
+  .reactx-overflow-y-#{$item} {
     overflow: #{$item} !important;
   }
 }

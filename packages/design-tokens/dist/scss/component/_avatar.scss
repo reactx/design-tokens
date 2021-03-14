@@ -4,7 +4,7 @@ $medium-size:48px;
 $large-size:64px;
 $extra-size:128px;
 
-.Reactx-avatar {
+.reactx-avatar {
   @include width-height($medium-size);
   transition: $standard-animation;
   font-size: $h3-font-size;

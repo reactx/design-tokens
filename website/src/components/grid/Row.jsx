@@ -32,7 +32,7 @@ const RowComponent = (props) => {
     <div
       {...parentProps}
       className={
-        'Reactx-row ' +
+        'reactx-row ' +
         (props.className || '') +
         (props.justifyContent ? ' justify-' + props.justifyContent : '') +
         (props.alignItem ? ' align-' + props.alignItem : '')

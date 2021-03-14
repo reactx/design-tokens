@@ -168,23 +168,23 @@ export const Basic = () => (
     />
 
     <h3>Example:</h3>
-    <div className="Reactx-row Reactx-border-section">
-      <div className="Reactx-bg-primary Reactx-column col-auto radius-pill">
+    <div className="reactx-row reactx-border-section">
+      <div className="reactx-bg-primary reactx-column col-auto radius-pill">
         pill
       </div>
-      <div className="Reactx-bg-success Reactx-column col-auto radius-small">
+      <div className="reactx-bg-success reactx-column col-auto radius-small">
         small
       </div>
-      <div className="Reactx-bg-warning Reactx-column col-auto radius-normal">
+      <div className="reactx-bg-warning reactx-column col-auto radius-normal">
         normal
       </div>
-      <div className="Reactx-bg-info Reactx-column col-auto radius-curve">
+      <div className="reactx-bg-info reactx-column col-auto radius-curve">
         curve
       </div>
-      <div className="Reactx-bg-dark Reactx-column col-auto radius-rounded">
+      <div className="reactx-bg-dark reactx-column col-auto radius-rounded">
         rounded
       </div>
-      <div className="Reactx-bg-danger Reactx-column col-auto radius-none">
+      <div className="reactx-bg-danger reactx-column col-auto radius-none">
         none
       </div>
     </div>

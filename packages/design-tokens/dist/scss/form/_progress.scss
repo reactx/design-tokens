@@ -1,6 +1,6 @@
 $colors:primary danger secondary success info warning light dark;
 
-.Reactx-progress {
+.reactx-progress {
   background-color: rgba(255, 255, 255, 0.6);
   position: relative;
   overflow: hidden;
@@ -21,7 +21,7 @@ $colors:primary danger secondary success info warning light dark;
   @each $color in $colors {
     &-#{$color} {
       .progress-bar {
-        background-color: var(--Reactx-#{$color});
+        background-color: var(--reactx-#{$color});
       }
     }
   }
@@ -76,7 +76,7 @@ $colors:primary danger secondary success info warning light dark;
 
   background: {
     image: $gradient;
-    color: var(--Reactx-primary);
+    color: var(--reactx-primary);
     size: 40px 100%, 100% 100%, 100% 100% !important;
   }
 
@@ -97,8 +97,8 @@ $colors:primary danger secondary success info warning light dark;
 }
 
 .progress-label {
-  text-shadow: 0px 1px 1px var(--Reactx-light), 0px -1px 1px var(--Reactx-light),
-    1px 0px 1px var(--Reactx-light), -1px 0px 1px var(--Reactx-light);
+  text-shadow: 0px 1px 1px var(--reactx-light), 0px -1px 1px var(--reactx-light),
+    1px 0px 1px var(--reactx-light), -1px 0px 1px var(--reactx-light);
   @include flex-position-center;
   @include width-height(100%);
   position: absolute;

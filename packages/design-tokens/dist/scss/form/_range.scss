@@ -1,4 +1,4 @@
-.Reactx-range {
+.reactx-range {
   background-color: transparent;
   margin: $standard-margin 0;
   -webkit-appearance: none;
@@ -13,14 +13,14 @@
   }
 
   &::-webkit-slider-runnable-track {
-    background-color: var(--Reactx-primary);
+    background-color: var(--reactx-primary);
     border-radius: $standard-radius;
     will-change: transform;
     height: 0.2em;
   }
 
   &::-moz-range-track {
-    background-color: var(--Reactx-primary);
+    background-color: var(--reactx-primary);
     border-radius: $standard-radius;
     will-change: transform;
     height: 0.2em;
@@ -51,7 +51,7 @@
   }
 }
 
-.Reactx-form-control {
+.reactx-form-control {
   font-size: $font-size-base;
 
   &.form-range-inline {
@@ -62,7 +62,7 @@
     &-tiny {
       font-size: $font-size-sm*0.75;
 
-      .Reactx-range {
+      .reactx-range {
         padding: $half-size-padding 0;
       }
     }
@@ -70,7 +70,7 @@
     &-small {
       font-size: $font-size-sm;
 
-      .Reactx-range {
+      .reactx-range {
         padding: $half-size-padding 0;
       }
     }
@@ -78,7 +78,7 @@
     &-medium {
       font-size: $font-size-base;
 
-      .Reactx-range {
+      .reactx-range {
         padding: $standard-padding 0;
       }
     }
@@ -86,7 +86,7 @@
     &-large {
       font-size: $h4-font-size;
 
-      .Reactx-range {
+      .reactx-range {
         padding: $double-size-padding 0;
       }
     }
@@ -94,7 +94,7 @@
     &-extra {
       font-size: $h2-font-size;
 
-      .Reactx-range {
+      .reactx-range {
         padding: $double-size-padding 0;
       }
     }

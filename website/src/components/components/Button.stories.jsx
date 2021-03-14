@@ -83,7 +83,7 @@ export default {
 export const Basic = (args) => <Button {...args} />;
 Basic.args = { children: 'Button Text' };
 export const ButtonGroup = (args) => (
-  <div className="Reactx-btn-group">
+  <div className="reactx-btn-group">
     <Button color="primary" {...args}>
       1
     </Button>

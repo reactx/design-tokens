@@ -22,7 +22,7 @@ const TabComponent = (props) => {
         {tabsRef.current?.scrollWidth !== tabsRef.current?.offsetWidth && (
           <div className="tab-action">
             <button
-              className="Reactx-btn Reactx-p-0"
+              className="reactx-btn reactx-p-0"
               onClick={() => scrollTabs('left')}
             >
               <FluentIcon icon="ChevronLeft" iconSize="small" />
@@ -37,7 +37,7 @@ const TabComponent = (props) => {
                 className={
                   'tab-header-item ' +
                   (item.tabId === props.activeTabId ? 'active-tab' : '') +
-                  (item.color ? ' Reactx-bt-3 border-' + item.color : '')
+                  (item.color ? ' reactx-bt-3 border-' + item.color : '')
                 }
                 key={index}
               >
@@ -73,14 +73,14 @@ const TabComponent = (props) => {
           <div className="tab-action">
             {tabsRef.current?.scrollWidth !== tabsRef.current?.offsetWidth && (
               <button
-                className="Reactx-btn Reactx-p-0"
+                className="reactx-btn reactx-p-0"
                 onClick={() => scrollTabs('right')}
               >
                 <FluentIcon icon="ChevronRight" iconSize="small" />
               </button>
             )}
             <button
-              className="Reactx-btn Reactx-p-0"
+              className="reactx-btn reactx-p-0"
               data-tooltip="تب جدید"
               aria-label="تب جدید"
               onClick={() => props.addTabAction(true)}
@@ -90,7 +90,7 @@ const TabComponent = (props) => {
           </div>
         )}
       </div>
-      <div className="tab-content Reactx-row">{props.children}</div>
+      <div className="tab-content reactx-row">{props.children}</div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 $displays:inline block contents flex flow-root grid inline-block inline-flex inline-grid inline-table list-item run-in table table-cell table-row none;
 
 @each $item in $displays {
-  .Reactx-display-#{$item} {
+  .reactx-display-#{$item} {
     display: #{$item} !important;
   }
 

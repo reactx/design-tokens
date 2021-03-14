@@ -1,4 +1,4 @@
-.Reactx-form-control {
+.reactx-form-control {
   display: grid;
   grid-template-areas:
     'label'
@@ -31,11 +31,11 @@
   }
 
   .valid-feedback {
-    color: var(--Reactx-success);
+    color: var(--reactx-success);
   }
 
   .invalid-feedback {
-    color: var(--Reactx-danger);
+    color: var(--reactx-danger);
   }
 
   .control-label {
@@ -73,7 +73,7 @@
 
 }
 
-.Reactx-input-container {
+.reactx-input-container {
   transition: $standard-animation;
   box-sizing: border-box;
   grid-area: input;
@@ -81,18 +81,18 @@
   display: flex;
 
   border: $standard-border {
-    color: var(--Reactx-dark-backdrop-3);
+    color: var(--reactx-dark-backdrop-3);
     radius: $standard-radius;
   }
 
   &:focus-within {
     border: $standard-border !important {
-      color: var(--Reactx-primary) !important;
+      color: var(--reactx-primary) !important;
     }
   }
 
   &.has-prepend {
-    .Reactx-input {
+    .reactx-input {
       border: {
         bottom-left-radius: 0 !important;
         top-left-radius: 0 !important;
@@ -101,7 +101,7 @@
   }
 
   &.has-append {
-    .Reactx-input {
+    .reactx-input {
       border: {
         bottom-right-radius: 0 !important;
         top-right-radius: 0 !important;
@@ -109,7 +109,7 @@
     }
   }
 
-  .Reactx-input {
+  .reactx-input {
     box-shadow: none !important;
     border-width: 0 !important;
   }
@@ -126,7 +126,7 @@
     }
   }
 
-  &.Reactx-input-valid {
+  &.reactx-input-valid {
     border: 1px solid $green;
 
     .control-append,
@@ -136,7 +136,7 @@
     }
   }
 
-  &.Reactx-input-invalid {
+  &.reactx-input-invalid {
     border: 1px solid $red;
 
     .control-append,

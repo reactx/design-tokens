@@ -66,7 +66,7 @@ export const parameters = {
 
 // const withThemeProvider = (Story, context) => {
 //   return (
-//     <div className={"Reactx-full-screen " + context.globals.theme + "Theme"}><Story {...context} /></div>
+//     <div className={"reactx-full-screen " + context.globals.theme + "Theme"}><Story {...context} /></div>
 //   )
 // }
 // export const decorators = [withThemeProvider];

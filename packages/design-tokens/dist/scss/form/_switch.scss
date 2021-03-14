@@ -1,29 +1,29 @@
-.Reactx-switch-container {
+.reactx-switch-container {
   padding-bottom: $standard-padding;
   align-items: center;
   display: flex;
   width: 100%;
 
-  .Reactx-switch-title {
+  .reactx-switch-title {
     margin: 0 $standard-margin;
     font-size: $font-size-base;
     height: 100%;
   }
 
-  .switch-size-small+.Reactx-switch-title {
+  .switch-size-small+.reactx-switch-title {
     font-size: $font-size-sm;
   }
 
-  .switch-size-large+.Reactx-switch-title {
+  .switch-size-large+.reactx-switch-title {
     font-size: $h4-font-size;
   }
 
-  .switch-size-extra+.Reactx-switch-title {
+  .switch-size-extra+.reactx-switch-title {
     font-size: $h2-font-size;
   }
 }
 
-.Reactx-switch {
+.reactx-switch {
   transition: $standard-animation;
   align-items: center;
   position: relative;
@@ -36,7 +36,7 @@
     opacity: 0;
   }
 
-  .Reactx-slider {
+  .reactx-slider {
     transition: $standard-animation;
     border-radius: $pill-radius;
     border: 1px solid $gray-300;
@@ -98,15 +98,15 @@
     }
   }
 
-  input:checked+.Reactx-slider {
-    background-color: var(--Reactx-primary-lighter);
+  input:checked+.reactx-slider {
+    background-color: var(--reactx-primary-lighter);
   }
 
-  input:focus+.Reactx-slider {
-    box-shadow: 0 0 1px var(--Reactx-backdrop-7);
+  input:focus+.reactx-slider {
+    box-shadow: 0 0 1px var(--reactx-backdrop-7);
   }
 
-  input:checked+.Reactx-slider:before {
+  input:checked+.reactx-slider:before {
     transform: translateX(11px);
   }
 
@@ -114,7 +114,7 @@
     height: 11px;
     width: 16px;
 
-    .Reactx-slider {
+    .reactx-slider {
       &:before {
         @include width-height(7px);
         bottom: 1px;
@@ -122,7 +122,7 @@
       }
     }
 
-    input:checked+.Reactx-slider:before {
+    input:checked+.reactx-slider:before {
       transform: translateX(5px);
     }
   }
@@ -131,7 +131,7 @@
     height: 28px;
     width: 50px;
 
-    .Reactx-slider {
+    .reactx-slider {
       &:before {
         @include width-height(23px);
         bottom: 2px;
@@ -139,7 +139,7 @@
       }
     }
 
-    input:checked+.Reactx-slider:before {
+    input:checked+.reactx-slider:before {
       transform: translateX(21px);
     }
   }
@@ -148,7 +148,7 @@
     height: 40px;
     width: 70px;
 
-    .Reactx-slider {
+    .reactx-slider {
       &:before {
         @include width-height(35px);
         bottom: 2px;
@@ -156,7 +156,7 @@
       }
     }
 
-    input:checked+.Reactx-slider:before {
+    input:checked+.reactx-slider:before {
       transform: translateX(28px);
     }
   }

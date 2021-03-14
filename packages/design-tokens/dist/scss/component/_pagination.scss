@@ -1,8 +1,8 @@
-.Reactx-pagination-container {
+.reactx-pagination-container {
   @include flex-position-center;
 }
 
-.Reactx-pagination {
+.reactx-pagination {
   @include flex-position-center;
   list-style: none;
   padding: 1em;
@@ -51,12 +51,12 @@
     padding: 0;
 
     background: {
-      color: var(--Reactx-backdrop-9);
+      color: var(--reactx-backdrop-9);
       image: $gradient;
     }
 
     &.active {
-      background-color: var(--Reactx-primary) !important;
+      background-color: var(--reactx-primary) !important;
       color: white;
     }
   }

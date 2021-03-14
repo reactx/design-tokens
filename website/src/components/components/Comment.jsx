@@ -33,14 +33,14 @@ const CommentComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <div className="Reactx-comment-container">
+    <div className="reactx-comment-container">
       {props.items.map((item) => (
         <div
           key={item.id}
           {...parentProps}
           className={
             generateClass(props, 'comment') +
-            (item.isReplayed ? ' Reactx-ml-1' : '')
+            (item.isReplayed ? ' reactx-ml-1' : '')
           }
         >
           {item.isReplayed && (
@@ -62,13 +62,13 @@ const CommentComponent = (props) => {
                   <span>{item.likeCount || 0}</span>
                   <FluentIcon
                     icon={item.liked ? 'LikeSolid' : 'Like'}
-                    color="var(--Reactx-success)"
+                    color="var(--reactx-success)"
                     onClick={() => props.like(item, 'like')}
                   />
                   <span>{item.dislikeCount || 0}</span>
                   <FluentIcon
                     icon={item.disliked ? 'DislikeSolid' : 'Dislike'}
-                    color="var(--Reactx-danger)"
+                    color="var(--reactx-danger)"
                     onClick={() => props.like(item, 'dislike')}
                   />
                 </div>

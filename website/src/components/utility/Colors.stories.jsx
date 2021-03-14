@@ -20,13 +20,13 @@ export const Basic = () => (
   <>
     {colorList.map((color, indexColor) => (
       <React.Fragment key={indexColor}>
-        <div className="Reactx-row Reactx-pallet">
+        <div className="reactx-row reactx-pallet">
           {ColorMode.map((mode, index) => (
             <div
               key={index}
-              className="Reactx-column col-auto"
+              className="reactx-column col-auto"
               style={{
-                backgroundColor: 'var(--Reactx-' + color + mode + ')',
+                backgroundColor: 'var(--reactx-' + color + mode + ')',
                 height: '10px',
               }}
             >

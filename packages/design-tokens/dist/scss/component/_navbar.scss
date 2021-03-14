@@ -1,4 +1,4 @@
-.Reactx-navbar {
+.reactx-navbar {
   justify-content: space-between;
   padding: 0 $standard-padding;
   background-image: $gradient;
@@ -16,31 +16,31 @@
 
 .navbar-background {
   &-primary {
-    background-color: var(--Reactx-primary);
+    background-color: var(--reactx-primary);
   }
 
   &-success {
-    background-color: var(--Reactx-success);
+    background-color: var(--reactx-success);
   }
 
   &-danger {
-    background-color: var(--Reactx-danger);
+    background-color: var(--reactx-danger);
   }
 
   &-warning {
-    background-color: var(--Reactx-warning);
+    background-color: var(--reactx-warning);
   }
 
   &-info {
-    background-color: var(--Reactx-info);
+    background-color: var(--reactx-info);
   }
 
   &-dark {
-    background-color: var(--Reactx-dark);
+    background-color: var(--reactx-dark);
   }
 
   &-light {
-    background-color: var(--Reactx-light);
+    background-color: var(--reactx-light);
   }
 }
 

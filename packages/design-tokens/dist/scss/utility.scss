@@ -24,25 +24,25 @@
   clear: both;
 }
 
-.Reactx-back-blur {
-  background-color: var(--Reactx-backdrop-color) !important;
+.reactx-back-blur {
+  background-color: var(--reactx-backdrop-color) !important;
   backdrop-filter: $backdrop;
 }
 
-.Reactx-medium-back-blur {
-  background-color: var(--Reactx-backdrop-7) !important;
+.reactx-medium-back-blur {
+  background-color: var(--reactx-backdrop-7) !important;
 }
 
-.Reactx-light-back-blur {
-  background-color: var(--Reactx-backdrop-3) !important;
+.reactx-light-back-blur {
+  background-color: var(--reactx-backdrop-3) !important;
 }
 
-/* Reactx Background and Color */
-// Reactx-bg-*
+/* reactx Background and Color */
+// reactx-bg-*
 @include colors(bg, 'background-color');
-// Reactx-color-*
+// reactx-color-*
 @include colors(color, 'color');
 
-.Reactx-bg-gradient {
+.reactx-bg-gradient {
   background-image: $gradient;
 }

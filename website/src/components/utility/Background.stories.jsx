@@ -6,26 +6,26 @@ export default {
 
 export const Basic = () => (
   <>
-    <div className="Reactx-bg-primary display-block Reactx-p-1 Reactx-mb-1">
-      Reactx-bg-primary
+    <div className="reactx-bg-primary display-block reactx-p-1 reactx-mb-1">
+      reactx-bg-primary
     </div>
-    <div className="Reactx-bg-success display-block Reactx-p-1 Reactx-mb-1">
-      Reactx-bg-success
+    <div className="reactx-bg-success display-block reactx-p-1 reactx-mb-1">
+      reactx-bg-success
     </div>
-    <div className="Reactx-bg-info display-block Reactx-p-1 Reactx-mb-1">
-      Reactx-bg-info
+    <div className="reactx-bg-info display-block reactx-p-1 reactx-mb-1">
+      reactx-bg-info
     </div>
-    <div className="Reactx-bg-warning display-block Reactx-p-1 Reactx-mb-1">
-      Reactx-bg-warning
+    <div className="reactx-bg-warning display-block reactx-p-1 reactx-mb-1">
+      reactx-bg-warning
     </div>
-    <div className="Reactx-bg-danger display-block Reactx-p-1 Reactx-mb-1">
-      Reactx-bg-danger
+    <div className="reactx-bg-danger display-block reactx-p-1 reactx-mb-1">
+      reactx-bg-danger
     </div>
-    <div className="Reactx-bg-dark display-block Reactx-p-1 Reactx-mb-1">
-      Reactx-bg-dark
+    <div className="reactx-bg-dark display-block reactx-p-1 reactx-mb-1">
+      reactx-bg-dark
     </div>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-1">
-      Reactx-bg-light
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-1">
+      reactx-bg-light
     </div>
   </>
 );

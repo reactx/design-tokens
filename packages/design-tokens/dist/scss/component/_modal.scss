@@ -1,4 +1,4 @@
-.Reactx-modal-container {
+.reactx-modal-container {
   @include flex-position-center;
   position: fixed;
   bottom: 0;
@@ -19,7 +19,7 @@
     left: 25px;
 
     background: {
-      color: var(--Reactx-backdrop-7);
+      color: var(--reactx-backdrop-7);
       image: $gradient;
     }
 
@@ -64,7 +64,7 @@
     }
 
     &.modal-full {
-      background-color: var(--Reactx-backdrop-7);
+      background-color: var(--reactx-backdrop-7);
       min-width: 50vw;
       bottom: unset;
       right: unset;
@@ -105,12 +105,12 @@
     height: 30px;
 
     &-icon {
-      color: var(--Reactx-primary);
+      color: var(--reactx-primary);
       margin: 0 5px;
     }
 
     .close-btn {
-      background-color: var(--Reactx-danger);
+      background-color: var(--reactx-danger);
       @include width-height(16px);
       justify-content: center;
       align-items: center;
@@ -124,13 +124,13 @@
         radius: $round-radius;
       }
 
-      .Reactx-icon-warper {
+      .reactx-icon-warper {
         transition: $standard-animation;
         font-size: $font-size-sm;
         opacity: 0;
       }
 
-      &:hover .Reactx-icon-warper {
+      &:hover .reactx-icon-warper {
         opacity: 1;
       }
     }
@@ -160,7 +160,7 @@
 
   &-backdrop {
     animation-duration: $standard-animation-duration !important;
-    background-color: var(--Reactx-backdrop-color);
+    background-color: var(--reactx-backdrop-color);
     backdrop-filter: $backdrop;
   }
 }

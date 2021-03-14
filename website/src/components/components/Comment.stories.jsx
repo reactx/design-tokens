@@ -64,7 +64,7 @@ Basic.args = {
     {
       id: '1',
       avatar: '',
-      username: 'Reactx',
+      username: 'reactx',
       comment: 'comment 1',
       date: '1399',
       liked: true,
@@ -82,7 +82,7 @@ WithReplay.args = {
     {
       id: '1',
       avatar: '',
-      username: 'Reactx',
+      username: 'reactx',
       comment: 'comment 1',
       date: '1399',
       liked: true,

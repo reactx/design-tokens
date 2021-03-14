@@ -1,4 +1,4 @@
-.Reactx-btn {
+.reactx-btn {
   transition: $standard-animation;
   @include flex-position-center;
   padding: $standard-padding;
@@ -15,12 +15,12 @@
   outline: none;
 
   background: {
-    color: var(--Reactx-backdrop-9);
+    color: var(--reactx-backdrop-9);
     image: $gradient;
   }
 
   &:hover {
-    background-color: var(--Reactx-backdrop-3);
+    background-color: var(--reactx-backdrop-3);
   }
 
   border: none {
@@ -57,10 +57,10 @@
 @include colors(btn, 'background-color');
 @include colorsHover(btn, 'background-color');
 
-.Reactx-btn-group {
+.reactx-btn-group {
   display: flex;
 
-  .Reactx-btn {
+  .reactx-btn {
     margin: 0;
 
     &:not(:last-child) {

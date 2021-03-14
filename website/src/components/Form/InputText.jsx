@@ -62,7 +62,7 @@ const InputTextComponent = (props) => {
   return (
     <div
       className={
-        'Reactx-form-control' +
+        'reactx-form-control' +
         (props.formControlStyle !== CONTROL_STYLE.NORMAL
           ? ' form-control-' + props.formControlStyle
           : '') +
@@ -74,7 +74,7 @@ const InputTextComponent = (props) => {
           {typeof props.label === 'string' ? (
             <label htmlFor={props.id} className="control-label">
               {props.label}
-              {props.required && <span className="Reactx-color-danger">*</span>}
+              {props.required && <span className="reactx-color-danger">*</span>}
             </label>
           ) : (
             <>{props.label}</>

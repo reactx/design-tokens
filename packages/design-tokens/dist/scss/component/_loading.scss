@@ -3,8 +3,8 @@ $medium-size:30px;
 $small-size:20px;
 $tiny-size:14px;
 
-.Reactx-loading {
-  background: var(--Reactx-backdrop-color);
+.reactx-loading {
+  background: var(--reactx-backdrop-color);
   @include flex-position-center;
   @include width-height(100%);
   flex-direction: column;
@@ -20,43 +20,43 @@ $tiny-size:14px;
 
   &-primary {
     .loading-circle:after {
-      background-color: var(--Reactx-primary);
+      background-color: var(--reactx-primary);
     }
   }
 
   &-danger {
     .loading-circle:after {
-      background-color: var(--Reactx-danger);
+      background-color: var(--reactx-danger);
     }
   }
 
   &-dark {
     .loading-circle:after {
-      background-color: var(--Reactx-dark);
+      background-color: var(--reactx-dark);
     }
   }
 
   &-info {
     .loading-circle:after {
-      background-color: var(--Reactx-info);
+      background-color: var(--reactx-info);
     }
   }
 
   &-light {
     .loading-circle:after {
-      background-color: var(--Reactx-light);
+      background-color: var(--reactx-light);
     }
   }
 
   &-success {
     .loading-circle:after {
-      background-color: var(--Reactx-success);
+      background-color: var(--reactx-success);
     }
   }
 
   &-warning {
     .loading-circle:after {
-      background-color: var(--Reactx-warning);
+      background-color: var(--reactx-warning);
     }
   }
 
@@ -146,7 +146,7 @@ $tiny-size:14px;
     }
 
     &:after {
-      background-color: var(--Reactx-primary);
+      background-color: var(--reactx-primary);
       @include width-height(8px);
       border-radius: 50%;
       position: absolute;

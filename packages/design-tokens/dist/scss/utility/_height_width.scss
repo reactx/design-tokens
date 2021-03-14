@@ -1,11 +1,11 @@
 $sizes:100 90 75 60 50 40 25 10;
 
 @each $size in $sizes {
-  .Reactx-h-#{$size} {
+  .reactx-h-#{$size} {
     height: $size#{'%'} !important;
   }
 
-  .Reactx-w-#{$size} {
+  .reactx-w-#{$size} {
     width: $size#{'%'} !important;
   }
 }

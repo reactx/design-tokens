@@ -1,6 +1,6 @@
 $toast-width:17em;
 
-.Reactx-toast {
+.reactx-toast {
   margin-bottom: $double-size-margin;
   border-radius: $standard-radius;
   width: $toast-width;
@@ -8,7 +8,7 @@ $toast-width:17em;
   overflow: hidden;
 
   background: {
-    color: var(--Reactx-backdrop-9);
+    color: var(--reactx-backdrop-9);
     image: $gradient;
   }
 
@@ -27,63 +27,63 @@ $toast-width:17em;
     display: flex;
   }
 
-  .Reactx-progress {
+  .reactx-progress {
     border: 0;
   }
 
-  &.Reactx-color {
+  &.reactx-color {
     &-danger {
-      border-left: 4px solid var(--Reactx-danger-light);
+      border-left: 4px solid var(--reactx-danger-light);
       color: $foreground-color !important;
 
-      .toast-body .Reactx-icon {
-        color: var(--Reactx-danger-light);
+      .toast-body .reactx-icon {
+        color: var(--reactx-danger-light);
       }
     }
 
     &-success {
-      border-left: 4px solid var(--Reactx-success-light);
+      border-left: 4px solid var(--reactx-success-light);
       color: $foreground-color !important;
 
-      .toast-body .Reactx-icon {
-        color: var(--Reactx-success-light);
+      .toast-body .reactx-icon {
+        color: var(--reactx-success-light);
       }
     }
 
     &-warning {
-      border-left: 4px solid var(--Reactx-warning-light);
+      border-left: 4px solid var(--reactx-warning-light);
       color: $foreground-color !important;
 
-      .toast-body .Reactx-icon {
-        color: var(--Reactx-warning-light);
+      .toast-body .reactx-icon {
+        color: var(--reactx-warning-light);
       }
     }
 
     &-info {
-      border-left: 4px solid var(--Reactx-info-light);
+      border-left: 4px solid var(--reactx-info-light);
       color: $foreground-color !important;
 
-      .toast-body .Reactx-icon {
-        color: var(--Reactx-info-light);
+      .toast-body .reactx-icon {
+        color: var(--reactx-info-light);
       }
     }
 
     &-dark {
-      border-left: 4px solid var(--Reactx-dark-light);
+      border-left: 4px solid var(--reactx-dark-light);
       color: $foreground-color !important;
     }
 
     &-light {
-      border-left: 4px solid var(--Reactx-light-light);
+      border-left: 4px solid var(--reactx-light-light);
       color: $foreground-color !important;
     }
 
     &-primary {
-      border-left: 4px solid var(--Reactx-primary-light);
+      border-left: 4px solid var(--reactx-primary-light);
       color: $foreground-color !important;
 
-      .toast-body .Reactx-icon {
-        color: var(--Reactx-primary-light);
+      .toast-body .reactx-icon {
+        color: var(--reactx-primary-light);
       }
     }
   }
@@ -91,7 +91,7 @@ $toast-width:17em;
 
 @include colorsLight(toast, 'background-color');
 
-.Reactx-toast-container {
+.reactx-toast-container {
   flex-direction: column;
   width: $toast-width;
   position: fixed;

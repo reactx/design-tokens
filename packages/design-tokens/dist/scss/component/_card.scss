@@ -1,4 +1,4 @@
-.Reactx-card {
+.reactx-card {
   transition: $standard-animation;
   background-image: $gradient;
   margin: $standard-margin 0;
@@ -14,7 +14,7 @@
   }
 
   background: {
-    color: var(--Reactx-backdrop-7);
+    color: var(--reactx-backdrop-7);
     clip: border-box;
   }
 
@@ -45,7 +45,7 @@
   }
 
   &-image {
-    background: var(--Reactx-backdrop-3);
+    background: var(--reactx-backdrop-3);
     @include flex-position-center;
     width: 100%;
     height: 75%;
@@ -59,7 +59,7 @@
     }
 
     i {
-      color: var(--Reactx-primary);
+      color: var(--reactx-primary);
       font-size: 48px;
     }
   }

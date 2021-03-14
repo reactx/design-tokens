@@ -1,4 +1,4 @@
-.Reactx-collapse {
+.reactx-collapse {
   transition: $standard-animation;
   border-radius: $standard-radius;
   overflow: hidden;
@@ -48,7 +48,7 @@
 
 @include colorsLight(collapse, 'background-color');
 
-.Reactx-accordion {
+.reactx-accordion {
   overflow: hidden;
   border-radius: $standard-radius;
 }

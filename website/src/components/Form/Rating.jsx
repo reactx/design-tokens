@@ -61,7 +61,7 @@ const RatingComponent = (props) => {
           key={index}
           iconSize={props.size}
           onClick={() => clickFun(index + 1)}
-          color={'var(--Reactx-' + props.color + ')'}
+          color={'var(--reactx-' + props.color + ')'}
         />
       ))}
     </div>

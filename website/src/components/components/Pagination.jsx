@@ -45,7 +45,7 @@ const PaginationComponent = (props) => {
   }
 
   return (
-    <div className="Reactx-pagination-container">
+    <div className="reactx-pagination-container">
       <FluentIcon
         icon="DoubleChevronLeft"
         shadowOnHover="small"

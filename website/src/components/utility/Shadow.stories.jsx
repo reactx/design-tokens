@@ -47,29 +47,29 @@ export const Basic = () => (
     />
 
     <h3>Example:</h3>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-2 shadow-none">
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-2 shadow-none">
       None
     </div>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-2 shadow-small">
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-2 shadow-small">
       Small
     </div>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-2 shadow-medium">
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-2 shadow-medium">
       Medium
     </div>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-2 shadow-large">
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-2 shadow-large">
       Large
     </div>
-    <h3 className="Reactx-mb-1">On Hover Example:</h3>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-2 shadow-small shadow-on-hover-none">
+    <h3 className="reactx-mb-1">On Hover Example:</h3>
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-2 shadow-small shadow-on-hover-none">
       None
     </div>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-2 shadow-on-hover-small">
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-2 shadow-on-hover-small">
       Small
     </div>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-2 shadow-on-hover-medium">
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-2 shadow-on-hover-medium">
       Medium
     </div>
-    <div className="Reactx-bg-light display-block Reactx-p-1 Reactx-mb-2 shadow-on-hover-large">
+    <div className="reactx-bg-light display-block reactx-p-1 reactx-mb-2 shadow-on-hover-large">
       Large
     </div>
   </>

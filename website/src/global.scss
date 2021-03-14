@@ -5,7 +5,7 @@
 //   padding: 0;
 // }
 
-// .Reactx-full-screen {
+// .reactx-full-screen {
 //   height: 100vh;
 //   padding: 16px;
 
@@ -13,15 +13,15 @@
 //     background-color: #1F2937;
 //   }
 // }
-.Reactx-column {
+.reactx-column {
   border: 1px solid #ccc;
   justify-content: center;
   align-items: center;
   min-height: 50px;
 }
 
-.Reactx-comment {
-  .Reactx-column {
+.reactx-comment {
+  .reactx-column {
     border: none;
     justify-content: unset;
     align-items: center;
@@ -29,9 +29,9 @@
   }
 }
 
-.Reactx-pallet {
+.reactx-pallet {
 
-  .Reactx-column {
+  .reactx-column {
     border-width: 0;
     font-size: 0;
     transition: all 0.3s ease;
@@ -40,14 +40,14 @@
     user-select: all;
   }
 
-  .Reactx-column:Hover {
+  .reactx-column:Hover {
     font-size: 1em;
     color: #fff;
   }
 }
 
-.Reactx-border-section {
-  .Reactx-column {
+.reactx-border-section {
+  .reactx-column {
     border: 0px;
   }
 }
