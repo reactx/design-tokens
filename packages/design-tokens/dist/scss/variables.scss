@@ -1,16 +1,16 @@
 // Colors
-$blue: #0067B8;
-$red: #E53935;
-$yellow: #FBC02D;
-$green: #388E3C;
-$teal: #00ACC1;
+$blue: #0078d4;
+$red: #d13438;
+$yellow: #ffb900;
+$green: #107c10;
+$teal: #00B294;
 $white: #FAFAFA;
 $black:#212121;
-$white-100: #F6F6F6;
-$white-200: #EAEAEA;
-$white-300: #CACACA;
+$white-100: #ffffff;
+$white-200: #faf9f8;
+$white-300: #f3f2f1;
 
-$gray-50: #f3f2f1;
+$gray-50: #edebe9;
 $gray-100: #e1dfdd;
 $gray-200: #c8c6c4;
 $gray-300: #b3b0ad;
@@ -20,6 +20,8 @@ $gray-600: #484644;
 $gray-700: #323130;
 $gray-800: #252423;
 $gray-900: #1b1a19;
+
+$danger:$red;
 $primary:$blue;
 $secondary:$gray-600;
 $foreground-color: $gray-900;
@@ -47,7 +49,7 @@ $large-icon-size:48px;
 
 // Border
 $standard-border-size:1px !default;
-$standard-border:$standard-border-size solid var(--reactx-dark-backdrop-1);
+$standard-border:$standard-border-size solid $gray-100;
 
 // Radius
 $standard-radius:4px !default;

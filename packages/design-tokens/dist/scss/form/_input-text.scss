@@ -21,8 +21,8 @@
   }
 
   border: $standard-border {
-    color: var(--reactx-dark-backdrop-3);
     radius: $standard-radius;
+    color: $gray-100;
   }
 
   &:focus {

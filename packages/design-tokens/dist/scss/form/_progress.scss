@@ -7,7 +7,7 @@ $colors:primary danger secondary success info warning light dark;
   height: 25px;
   width: 100%;
 
-  border: 1px solid rgba(100, 100, 100, 0.1) {
+  border: 1px solid $gray-100 {
     radius: $standard-radius;
   }
 

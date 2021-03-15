@@ -19,7 +19,7 @@
     left: 25px;
 
     background: {
-      color: var(--reactx-backdrop-7);
+      color: $white-200;
       image: $gradient;
     }
 
@@ -64,7 +64,7 @@
     }
 
     &.modal-full {
-      background-color: var(--reactx-backdrop-7);
+      background-color: $white-200;
       min-width: 50vw;
       bottom: unset;
       right: unset;

@@ -6,7 +6,7 @@
 
   .clock {
     &-face {
-      background: radial-gradient(ellipse at center, var(--reactx-backdrop-9) 0%, var(--reactx-backdrop-6) 70%);
+      background: radial-gradient(ellipse at center, $gray-200 0%, $gray-50 70%);
       box-shadow: inset 4px 4px 10px 0 rgba(0, 0, 0, 0.4);
       filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
       @include flex-position-center;
@@ -71,8 +71,8 @@
       }
 
       .clock-hand-second {
-        border: 1px solid var(--reactx-danger);
-        background-color: var(--reactx-danger);
+        border: 1px solid $danger;
+        background-color: $danger;
         left: calc(50% - 1px);
         height: 45%;
         width: 2px;
@@ -155,8 +155,8 @@
 
   &.white-clock {
     .clock-face {
-      background: radial-gradient(ellipse at center, var(--reactx-backdrop-9) 0%, var(--reactx-backdrop-6) 50%, var(--reactx-backdrop-3) 100%);
-      border: 8px solid var(--reactx-backdrop-9);
+      background: radial-gradient(ellipse at center, $gray-200 0%, $gray-100 50%, $gray-50 100%);
+      border: 8px solid $gray-50;
     }
 
     .clock-marks li:after {
@@ -167,20 +167,20 @@
   &.red-clock {
     .clock-face {
       background: radial-gradient(ellipse at center, var(--reactx-red) 0%, var(--reactx-red-light) 50%, var(--reactx-red-lighter) 100%);
-      border: 8px solid var(--reactx-backdrop-9);
+      border: 8px solid $gray-50;
     }
 
     .clock-hand-hour,
     .clock-hand-minute {
-      background-color: var(--reactx-backdrop-9);
+      background-color: $gray-50;
 
-      border: 1px solid var(--reactx-backdrop-9) {
+      border: 1px solid $gray-50 {
         radius: 0;
       }
     }
 
     .clock-center-circle {
-      background-color: var(--reactx-backdrop-9);
+      background-color: $gray-50;
     }
 
     .clock-hand-second {
@@ -190,11 +190,11 @@
     }
 
     .clock-marks li {
-      color: var(--reactx-backdrop-9);
+      color: $gray-50;
     }
 
     .clock-marks li:before {
-      background-color: var(--reactx-backdrop-9);
+      background-color: $gray-50;
     }
   }
 }

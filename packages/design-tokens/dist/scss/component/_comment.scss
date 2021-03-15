@@ -1,13 +1,16 @@
 .reactx-comment {
   margin-bottom: $double-size-margin;
   border-radius: $standard-radius;
-  background-image: $gradient;
   margin: $standard-margin 0;
-  background-color: $gray-50;
   position: relative;
   overflow: hidden;
   color: $gray-900;
   display: flex;
+
+  background: {
+    image: $gradient;
+    color: $white-200;
+  }
 
   &:Hover .comment-actions,
   &:Hover .comment-replay {

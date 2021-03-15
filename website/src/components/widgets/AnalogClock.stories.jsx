@@ -28,12 +28,6 @@ export default {
         category: 'Style',
       },
     },
-    shadow: {
-      control: 'inline-radio',
-      table: {
-        category: 'Style',
-      },
-    },
     onClick: {
       table: {
         category: 'Action',
