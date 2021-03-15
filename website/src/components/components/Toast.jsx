@@ -16,12 +16,12 @@ const COLOR = {
 
 const ICON = {
   PRIMARY: 'ProgressLoopOuter spinner',
+  DARK: 'SettingsSecure',
   SUCCESS: 'Completed',
   DANGER: 'ErrorBadge',
+  LIGHT: 'Feedback',
   WARNING: 'Error',
   INFO: 'Info',
-  DARK: 'SettingsSecure',
-  LIGHT: 'Feedback',
 };
 
 const RADIUS = {

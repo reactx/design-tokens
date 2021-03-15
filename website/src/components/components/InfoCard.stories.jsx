@@ -69,24 +69,24 @@ Basic.args = {
   outline: true,
 };
 export const MultiCard = (args) => (
-  <div className="nirvana-row">
+  <div className="reactx-row">
     <InfoCard
       {...args}
-      className="nirvana-column col-auto nirvana-m-1"
+      className="reactx-column col-auto reactx-m-1"
       color="primary"
       number="10"
       description="InfoCard Message"
     />
     <InfoCard
       {...args}
-      className="nirvana-column col-auto nirvana-m-1"
+      className="reactx-column col-auto reactx-m-1"
       number="140"
       color="danger"
       description="InfoCard Message"
     />
     <InfoCard
       {...args}
-      className="nirvana-column col-auto nirvana-m-1"
+      className="reactx-column col-auto reactx-m-1"
       number="27"
       color="success"
       description="InfoCard Message"

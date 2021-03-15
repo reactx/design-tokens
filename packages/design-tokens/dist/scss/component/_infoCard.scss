@@ -1,4 +1,4 @@
-.nirvana-info-card {
+.reactx-info-card {
   border-radius: $standard-radius;
   background-image: $gradient;
   padding: $standard-padding;
@@ -39,3 +39,9 @@
 }
 
 @include colorsLight(info-card, 'background-color');
+
+.reactx-dark {
+  .reactx-info-card {
+    background-color: $white;
+  }
+}

@@ -80,7 +80,6 @@ $colors:primary danger secondary success info warning light dark;
     size: 40px 100%, 100% 100%, 100% 100% !important;
   }
 
-
   &.striped {
     background-image:
       -webkit-linear-gradient(-45deg,
@@ -109,5 +108,11 @@ $colors:primary danger secondary success info warning light dark;
 @keyframes animate-stripes {
   100% {
     background-position: 240px 0px;
+  }
+}
+
+.reactx-dark {
+  .reactx-progress {
+    background-color: $white;
   }
 }

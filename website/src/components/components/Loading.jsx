@@ -46,12 +46,12 @@ const LoadingComponent = (props) => {
     <div
       {...parentProps}
       ref={loadingRef}
-      className={(props.className || '') + 'nirvana-loading'}
+      className={(props.className || '') + 'reactx-loading'}
     >
       <div
         className={
           'loading-loader ' +
-          (props.color ? ' nirvana-loading-' + props.color : '') +
+          (props.color ? ' reactx-loading-' + props.color : '') +
           (props.size !== SIZE.EXTRA ? ' loading-size-' + props.size : '')
         }
       >

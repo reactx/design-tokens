@@ -17,7 +17,8 @@ module.exports = {
     '@storybook/addon-a11y',
     '@whitespace/storybook-addon-html',
     '@storybook/addon-toolbars',
-    "storybook-addon-pseudo-states",
+    'storybook-addon-pseudo-states',
     '@storybook/addon-controls',
   ],
+  logLevel: 'debug',
 };
