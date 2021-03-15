@@ -71,3 +71,13 @@ $extra-size:128px;
 
 @include colors(avatar, 'background-color');
 @include colorsHover(avatar, 'background-color');
+
+.reactx-dark {
+  .reactx-avatar {
+    background: {
+      color: $gray-700;
+    }
+
+    color:$gray-50;
+  }
+}

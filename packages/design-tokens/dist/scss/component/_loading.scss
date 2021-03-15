@@ -214,3 +214,11 @@ $tiny-size:14px;
     opacity: 0;
   }
 }
+
+.reactx-dark {
+  .reactx-loading {
+    background: {
+      color: colorOpacity($gray-700, 0.7);
+    }
+  }
+}

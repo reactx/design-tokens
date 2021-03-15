@@ -12,6 +12,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const ICON = {
@@ -104,7 +105,7 @@ Toast.defaultProps = {
   useDefaultIcon: false,
   radius: RADIUS.SMALL,
   shadow: SHADOW.SMALL,
-  color: COLOR.LIGHT,
+  color: COLOR.NORMAL,
   showDuration: 3000,
   progressBar: false,
   outline: false,

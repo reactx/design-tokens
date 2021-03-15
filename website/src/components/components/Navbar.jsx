@@ -10,6 +10,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const SHADOW = {
@@ -48,8 +49,8 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  color: COLOR.PRIMARY,
-  background: COLOR.LIGHT,
+  color: COLOR.NORMAL,
+  background: COLOR.NORMAL,
   shadow: SHADOW.NONE,
   outline: false,
   disabled: false,

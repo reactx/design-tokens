@@ -11,6 +11,7 @@ const COLOR = {
   DARK: 'dark',
   LIGHT: 'light',
   NONE: 'none',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -68,7 +69,7 @@ BreadCrumb.propTypes = {
 };
 
 BreadCrumb.defaultProps = {
-  color: COLOR.NONE,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,

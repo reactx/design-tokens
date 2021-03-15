@@ -11,6 +11,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -90,7 +91,7 @@ Avatar.propTypes = {
 };
 
 Avatar.defaultProps = {
-  color: COLOR.PRIMARY,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,

@@ -10,6 +10,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -71,7 +72,7 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
-  color: COLOR.LIGHT,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
   className: '',

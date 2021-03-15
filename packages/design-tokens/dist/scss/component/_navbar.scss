@@ -1,9 +1,13 @@
 .reactx-navbar {
   justify-content: space-between;
   padding: 0 $standard-padding;
-  background-image: $gradient;
   align-items: center;
   display: flex;
+
+  background: {
+    color: $gray-100;
+    image: $gradient;
+  }
 
   .navbar-section-brand,
   .navbar-section-middle,
@@ -16,32 +20,49 @@
 
 .navbar-background {
   &-primary {
-    background-color: var(--reactx-primary);
+    background-color: var(--reactx-primary) !important;
   }
 
   &-success {
-    background-color: var(--reactx-success);
+    background-color: var(--reactx-success) !important;
+    ;
   }
 
   &-danger {
-    background-color: var(--reactx-danger);
+    background-color: var(--reactx-danger) !important;
+    ;
   }
 
   &-warning {
-    background-color: var(--reactx-warning);
+    background-color: var(--reactx-warning) !important;
+    ;
   }
 
   &-info {
-    background-color: var(--reactx-info);
+    background-color: var(--reactx-info) !important;
+    ;
   }
 
   &-dark {
-    background-color: var(--reactx-dark);
+    background-color: var(--reactx-dark) !important;
+    ;
   }
 
   &-light {
-    background-color: var(--reactx-light);
+    background-color: var(--reactx-light) !important;
+    ;
   }
 }
 
 @include colorsLight(navbar, 'color');
+
+.reactx-dark {
+  .reactx-navbar {
+    background: {
+      color: $gray-800;
+      image: $gradient-dark;
+    }
+
+    color:$gray-50
+  }
+}

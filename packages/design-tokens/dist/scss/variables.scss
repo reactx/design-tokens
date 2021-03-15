@@ -9,16 +9,17 @@ $black:#212121;
 $white-100: #F6F6F6;
 $white-200: #EAEAEA;
 $white-300: #CACACA;
-$gray-50: #F9FAFB;
-$gray-100: #F3F4F6;
-$gray-200: #E5E7EB;
-$gray-300: #D1D5DB;
-$gray-400: #9CA3AF;
-$gray-500: #6B7280;
-$gray-600: #4B5563;
-$gray-700: #374151;
-$gray-800: #1F2937;
-$gray-900: #111827;
+
+$gray-50: #f3f2f1;
+$gray-100: #e1dfdd;
+$gray-200: #c8c6c4;
+$gray-300: #b3b0ad;
+$gray-400: #979593;
+$gray-500: #797775;
+$gray-600: #484644;
+$gray-700: #323130;
+$gray-800: #252423;
+$gray-900: #1b1a19;
 $primary:$blue;
 $secondary:$gray-600;
 $foreground-color: $gray-900;
@@ -89,3 +90,4 @@ roboto,
 sans-serif;
 
 $gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)) !important;
+$gradient-dark: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0)) !important;

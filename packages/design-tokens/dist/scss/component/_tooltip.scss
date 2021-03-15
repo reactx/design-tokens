@@ -51,3 +51,14 @@
 }
 
 @include colors(tooltip, 'background-color');
+
+.reactx-dark {
+  .reactx-tooltip {
+    background: {
+      color: $gray-600;
+      image: $gradient-dark;
+    }
+
+    color:$gray-50;
+  }
+}

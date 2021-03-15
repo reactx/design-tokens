@@ -10,6 +10,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -66,7 +67,7 @@ ToolTip.propTypes = {
 
 ToolTip.defaultProps = {
   id: 'tooltip-container',
-  color: COLOR.PRIMARY,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,

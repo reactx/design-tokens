@@ -74,6 +74,7 @@
 }
 
 .reactx-input-container {
+  background-color: var(--reactx-backdrop-9);
   transition: $standard-animation;
   box-sizing: border-box;
   grid-area: input;
@@ -143,6 +144,20 @@
     .control-prepend {
       background-color: $red;
       color: $gray-50;
+    }
+  }
+}
+
+.reactx-dark {
+  .reactx-input-container {
+    background-color: $gray-900;
+  }
+
+  .control-append,
+  .control-prepend {
+    background: {
+      image: $gradient-dark;
+      color: $gray-700;
     }
   }
 }

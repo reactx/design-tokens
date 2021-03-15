@@ -26,8 +26,8 @@
   }
 
   &:focus {
-    border: $standard-border !important {
-      color: var(--reactx-primary) !important;
+    border: $standard-border {
+      color: var(--reactx-primary);
     }
   }
 
@@ -91,4 +91,10 @@
 
 textarea.reactx-input {
   min-height: 5em;
+}
+
+.reactx-dark {
+  .reactx-input {
+    background-color: $gray-900;
+  }
 }

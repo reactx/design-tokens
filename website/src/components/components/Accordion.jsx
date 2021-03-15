@@ -11,6 +11,8 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -68,7 +70,7 @@ Accordion.propTypes = {
 };
 
 Accordion.defaultProps = {
-  color: COLOR.LIGHT,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
   className: '',

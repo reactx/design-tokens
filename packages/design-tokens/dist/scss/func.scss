@@ -13,11 +13,11 @@ $colors:primary danger secondary success info warning light dark;
 
       @if($propertyClass !=color) {
         @if($color==light) {
-          color: var(--reactx-dark);
+          color: var(--reactx-dark) !important;
         }
 
         @else {
-          color: var(--reactx-light);
+          color: var(--reactx-light) !important;
         }
       }
     }
@@ -31,11 +31,11 @@ $colors:primary danger secondary success info warning light dark;
 
       @if($propertyClass !=color) {
         @if($color==light) {
-          color: var(--reactx-dark);
+          color: var(--reactx-dark) !important;
         }
 
         @else {
-          color: var(--reactx-light);
+          color: var(--reactx-light) !important;
         }
       }
     }
@@ -51,11 +51,11 @@ $colors:primary danger secondary success info warning light dark;
 
       @if($propertyClass !=color) {
         @if($color==light) {
-          color: var(--reactx-dark);
+          color: var(--reactx-dark) !important;
         }
 
         @else {
-          color: var(--reactx-light);
+          color: var(--reactx-light) !important;
         }
       }
     }

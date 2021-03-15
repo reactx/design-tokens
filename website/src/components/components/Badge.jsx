@@ -26,6 +26,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const BadgeComponent = (props) => {
@@ -54,9 +55,8 @@ Badge.propTypes = {
 };
 
 Badge.defaultProps = {
-  title: 'Badge',
   radius: RADIUS.NORMAL,
-  color: COLOR.LIGHT,
+  color: COLOR.NORMAL,
   shadow: SHADOW.NONE,
   outline: false,
   className: '',

@@ -6,6 +6,7 @@
   word-wrap: break-word;
   position: relative;
   overflow: hidden;
+  color: $gray-900;
   display: flex;
   min-width: 0;
 
@@ -14,7 +15,7 @@
   }
 
   background: {
-    color: var(--reactx-backdrop-7);
+    color: $gray-50;
     clip: border-box;
   }
 
@@ -66,3 +67,14 @@
 }
 
 @include colorsLight(card, 'background-color');
+
+.reactx-dark {
+  .reactx-card {
+    background: {
+      color: $gray-600;
+      image: $gradient-dark;
+    }
+
+    color:$gray-50;
+  }
+}

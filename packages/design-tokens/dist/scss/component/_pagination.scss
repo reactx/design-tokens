@@ -46,12 +46,13 @@
     margin: 0 $half-size-margin;
     @include width-height(2em);
     box-sizing: border-box;
+    color: $gray-500;
     line-height: 2em;
     cursor: default;
     padding: 0;
 
     background: {
-      color: var(--reactx-backdrop-9);
+      color: $gray-50;
       image: $gradient;
     }
 
@@ -79,5 +80,16 @@
 
   &-size-extra {
     font-size: $h2-font-size;
+  }
+}
+
+.reactx-dark {
+  .pagination-item {
+    background: {
+      color: $gray-600;
+      image: $gradient-dark;
+    }
+
+    color:$gray-50;
   }
 }

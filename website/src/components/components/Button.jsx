@@ -11,6 +11,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -85,7 +86,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   type: TYPE.BUTTON,
-  color: COLOR.PRIMARY,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
