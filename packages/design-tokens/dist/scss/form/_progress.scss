@@ -7,7 +7,7 @@ $colors:primary danger secondary success info warning light dark;
   height: 25px;
   width: 100%;
 
-  border: 1px solid rgba(100, 100, 100, 0.1) {
+  border: 1px solid $gray-100 {
     radius: $standard-radius;
   }
 
@@ -80,7 +80,6 @@ $colors:primary danger secondary success info warning light dark;
     size: 40px 100%, 100% 100%, 100% 100% !important;
   }
 
-
   &.striped {
     background-image:
       -webkit-linear-gradient(-45deg,
@@ -109,5 +108,12 @@ $colors:primary danger secondary success info warning light dark;
 @keyframes animate-stripes {
   100% {
     background-position: 240px 0px;
+  }
+}
+
+.reactx-dark {
+  .reactx-progress {
+    background-color: $gray-900;
+    border: 1px solid $gray-500;
   }
 }

@@ -12,6 +12,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -104,7 +105,7 @@ Comment.propTypes = {
 };
 
 Comment.defaultProps = {
-  color: COLOR.LIGHT,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.SMALL,
   className: '',

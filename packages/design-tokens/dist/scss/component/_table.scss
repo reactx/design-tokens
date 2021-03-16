@@ -1,6 +1,7 @@
 .reactx-table {
   transition: $standard-animation;
   margin: $double-size-margin 0;
+  background-color: $white-200;
   flex-direction: column;
   overflow: hidden;
   display: flex;
@@ -57,3 +58,15 @@
 }
 
 @include colors(table, 'background-color');
+
+.reactx-dark {
+  .reactx-table {
+    background: {
+      color: $gray-600;
+      image: $gradient-dark;
+    }
+
+    border: 1px solid $gray-900;
+    color:$gray-50;
+  }
+}

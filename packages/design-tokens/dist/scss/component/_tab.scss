@@ -7,7 +7,7 @@
   }
 
   .tab-container {
-    background-color: $gray-50;
+    background-color: $white-200;
     box-sizing: border-box;
     align-items: center;
     list-style: none;
@@ -43,7 +43,7 @@
     transition: $standard-animation;
     @include flex-position-center;
     padding: 0 $standard-padding;
-    background-color: $gray-200;
+    background-color: $gray-100;
     background-image: $gradient;
     min-width: min-content;
     max-width: 200px;
@@ -114,7 +114,7 @@
 
   .tab-content {
     border-top: 2px solid $primary;
-    background-color: $gray-100;
+    background-color: $gray-50;
     padding: $standard-padding;
     position: relative;
     overflow: hidden;

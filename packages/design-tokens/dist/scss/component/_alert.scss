@@ -14,3 +14,9 @@
 
 @include colorsLight(alert, 'background-color');
 @include colorsHover(alert, 'background-color');
+
+.reactx-dark {
+  .reactx-alert {
+    background-color: $white;
+  }
+}

@@ -1,72 +1,188 @@
-import React from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { withCssResources } from '@storybook/addon-cssresources';
 import '../src/global.scss';
+import {
+  Global,
+  ThemeProvider,
+  themes,
+  createReset,
+  convert,
+  styled,
+  useTheme,
+} from '@storybook/theming';
 
-addParameters({
-  options: {
-    showRoots: true,
+const ThemeBlock = styled.div(
+  {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: '50vw',
+    width: '50vw',
+    height: '100vh',
+    bottom: 0,
+    overflow: 'auto',
+    padding: 10,
   },
-  docs: {
-    container: DocsContainer,
-    page: DocsPage,
-  },
-  dependencies: {
-    //display only dependencies/dependents that have a story in storybook
-    //by default this is false
-    withStoriesOnly: true,
+  ({ theme }) => ({
+    background: theme.background.app,
+    color: theme.color.defaultText,
+  }),
+  ({ side }) =>
+    side === 'left'
+      ? {
+          left: 0,
+          right: '50vw',
+        }
+      : {
+          right: 0,
+          left: '50vw',
+        },
+);
 
-    //completely hide a dependency/dependents block if it has no elements
-    //by default this is false
-    hideEmpty: true,
+const ThemeStack = styled.div(
+  {
+    padding: 10,
+    position: 'relative',
+    minHeight: 'calc(50vh - 15px)',
   },
+  ({ theme }) => ({
+    background: theme.background.app,
+  }),
+);
+
+const ThemeDef = styled.div({
+  padding: 10,
 });
 
 addDecorator(withA11y);
 
-// Gatsby's Link overrides:
-// Gatsby defines a global called ___loader to prevent its method calls from creating console errors you override it here
-global.___loader = {
-  enqueue: () => {},
-  hovering: () => {},
+const ThemedSetRoot = () => {
+  const theme = useTheme();
+
+  useEffect(() => {
+    document.body.style.background = theme.background.app;
+    document.body.style.color = theme.color.defaultText;
+
+    return () => {
+      //
+    };
+  });
+
+  return null;
 };
 
-// Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
-global.__PATH_PREFIX__ = '';
-
-// This is to utilized to override the window.___navigate method Gatsby defines and uses to report what path a Link would be taking us to if it wasn't inside a storybook
-window.___navigate = (pathname) => {
-  action('NavigateTo:')(pathname);
-};
+export const decorators = [
+  withCssResources,
+  (StoryFn, { globals: { theme = 'light' } }) => {
+    switch (theme) {
+      case 'side-by-side': {
+        return (
+          <Fragment>
+            <ThemeProvider theme={convert(themes.light)}>
+              <Global styles={createReset} />
+            </ThemeProvider>
+            <ThemeProvider theme={convert(themes.light)}>
+              <ThemeBlock
+                side="left"
+                data-side="left"
+                className={'reactx-light'}
+              >
+                <StoryFn />
+              </ThemeBlock>
+            </ThemeProvider>
+            <ThemeProvider theme={convert(themes.dark)}>
+              <ThemeBlock
+                side="right"
+                data-side="right"
+                className={'reactx-dark'}
+              >
+                <StoryFn />
+              </ThemeBlock>
+            </ThemeProvider>
+          </Fragment>
+        );
+      }
+      case 'stacked': {
+        return (
+          <Fragment>
+            <ThemeProvider theme={convert(themes.light)}>
+              <Global styles={createReset} />
+            </ThemeProvider>
+            <ThemeProvider theme={convert(themes.light)}>
+              <ThemeStack
+                side="left"
+                data-side="left"
+                className={'reactx-light'}
+              >
+                <StoryFn />
+              </ThemeStack>
+            </ThemeProvider>
+            <ThemeProvider theme={convert(themes.dark)}>
+              <ThemeStack
+                side="right"
+                data-side="right"
+                className={'reactx-dark'}
+              >
+                <StoryFn />
+              </ThemeStack>
+            </ThemeProvider>
+          </Fragment>
+        );
+      }
+      default: {
+        return (
+          <ThemeProvider theme={convert(themes[theme])}>
+            <Global styles={createReset} />
+            <ThemedSetRoot />
+            <ThemeDef className={'reactx-' + theme}>
+              <StoryFn />
+            </ThemeDef>
+          </ThemeProvider>
+        );
+      }
+    }
+  },
+];
 
 export const parameters = {
-  actions: { argTypesRegex: '^on.*' },
-  html: {
-    prettier: {
-      tabWidth: 2,
-      useTabs: true,
-      htmlWhitespaceSensitivity: 'strict',
+  exportedParameter: 'exportedParameter',
+  a11y: {
+    config: {},
+    options: {
+      checks: { 'color-contrast': { options: { noScroll: true } } },
+      restoreScroll: true,
+    },
+  },
+  options: {
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
+  },
+  docs: {
+    theme: themes.light,
+    page: () => <DocsPage subtitleSlot={({ kind }) => `Subtitle: ${kind}`} />,
+  },
+};
+
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'circlehollow',
+      items: [
+        { value: 'light', icon: 'circlehollow', title: 'light' },
+        { value: 'dark', icon: 'circle', title: 'dark' },
+        { value: 'side-by-side', icon: 'sidebar', title: 'side by side' },
+        { value: 'stacked', icon: 'bottombar', title: 'stacked' },
+      ],
     },
   },
 };
 
-// export const globalTypes = {
-//   theme: {
-//     name: 'Theme',
-//     description: 'Global theme for components',
-//     defaultValue: 'light',
-//     toolbar: {
-//       icon: 'circlehollow',
-//       // array of plain string values or MenuItem shape (see below)
-//       items: ['light', 'dark'],
-//     },
-//   },
-// };
-
-// const withThemeProvider = (Story, context) => {
-//   return (
-//     <div className={"reactx-full-screen " + context.globals.theme + "Theme"}><Story {...context} /></div>
-//   )
-// }
-// export const decorators = [withThemeProvider];
+export const loaders = [async () => ({ globalValue: 1 })];

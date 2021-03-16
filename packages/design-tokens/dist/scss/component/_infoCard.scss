@@ -1,12 +1,17 @@
-.nirvana-info-card {
+.reactx-info-card {
   border-radius: $standard-radius;
-  background-image: $gradient;
   padding: $standard-padding;
   font-size: $font-size-base;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  color: $gray-900;
   display: flex;
+
+  background: {
+    color: $white-200;
+    image: $gradient;
+  }
 
   &.outline {
     border: 1px solid;
@@ -39,3 +44,14 @@
 }
 
 @include colorsLight(info-card, 'background-color');
+
+.reactx-dark {
+  .reactx-info-card {
+    background: {
+      color: $gray-700;
+      image: $gradient-dark;
+    }
+
+    color: $gray-50;
+  }
+}

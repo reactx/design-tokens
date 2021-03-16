@@ -1,7 +1,7 @@
 .reactx-timeline {
   padding: $standard-padding;
   overflow: auto;
-  height: 100vh;
+  height: 100%;
 }
 
 .timeline {
@@ -35,7 +35,7 @@
     flex: 1 1 auto;
 
     background: {
-      color: $gray-100;
+      color: $gray-50;
       image: $gradient;
     }
   }
@@ -46,5 +46,16 @@
 
   &-description {
     color: $gray-500;
+  }
+}
+
+.reactx-dark {
+  .timeline-data {
+    background: {
+      color: $gray-600;
+      image: $gradient-dark;
+    }
+
+    color:$gray-50;
   }
 }

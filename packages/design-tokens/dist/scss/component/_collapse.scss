@@ -1,6 +1,7 @@
 .reactx-collapse {
   transition: $standard-animation;
   border-radius: $standard-radius;
+  color: $gray-900;
   overflow: hidden;
 
   &[open] {
@@ -35,8 +36,10 @@
   }
 
   &-data {
+    background-color: rgba(255, 255, 255, 0.11);
     border: 1px solid rgba(0, 0, 0, 0.06);
     padding: $standard-padding;
+    min-height: 3em;
     display: none;
     border-top: 0;
 
@@ -51,4 +54,24 @@
 .reactx-accordion {
   overflow: hidden;
   border-radius: $standard-radius;
+}
+
+.reactx-dark {
+  .reactx-collapse {
+    background: {
+      color: $gray-700;
+    }
+
+    color:$gray-50;
+  }
+
+  .collapse {
+    &-title {
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    &-data {
+      background-color: rgba(255, 255, 255, 0.11);
+    }
+  }
 }

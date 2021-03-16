@@ -2,6 +2,7 @@
   border-radius: $double-size-radius;
   transition: $standard-animation;
   @include flex-position-center;
+  background-color: $gray-100;
   background-image: $gradient;
   padding: $standard-padding;
   font-size: $font-size-sm;
@@ -20,3 +21,14 @@
 
 @include colorsHover(badge, 'background-color');
 @include colors(badge, 'background-color');
+
+.reactx-dark {
+  .reactx-badge {
+    background: {
+      color: $gray-600;
+      image: $gradient-dark;
+    }
+
+    color:$gray-50;
+  }
+}

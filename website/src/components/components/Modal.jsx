@@ -11,6 +11,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -124,7 +125,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   modalType: TYPE.FULL,
-  color: COLOR.LIGHT,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.MEDIUM,
   show: true,

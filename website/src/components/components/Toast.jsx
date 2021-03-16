@@ -12,16 +12,17 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const ICON = {
   PRIMARY: 'ProgressLoopOuter spinner',
+  DARK: 'SettingsSecure',
   SUCCESS: 'Completed',
   DANGER: 'ErrorBadge',
+  LIGHT: 'Feedback',
   WARNING: 'Error',
   INFO: 'Info',
-  DARK: 'SettingsSecure',
-  LIGHT: 'Feedback',
 };
 
 const RADIUS = {
@@ -104,7 +105,7 @@ Toast.defaultProps = {
   useDefaultIcon: false,
   radius: RADIUS.SMALL,
   shadow: SHADOW.SMALL,
-  color: COLOR.LIGHT,
+  color: COLOR.NORMAL,
   showDuration: 3000,
   progressBar: false,
   outline: false,

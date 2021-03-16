@@ -22,9 +22,9 @@
     }
 
     border: $standard-border {
-      color: var(--reactx-dark-backdrop-3);
       width: $standard-border-size;
       radius: $standard-radius;
+      color: $gray-100;
     }
 
     .selectbox {

@@ -131,3 +131,14 @@ $toast-width:17em;
     bottom: 10px;
   }
 }
+
+.reactx-dark {
+  .reactx-toast {
+    background: {
+      color: $gray-600;
+      image: $gradient-dark;
+    }
+
+    color:$gray-50;
+  }
+}

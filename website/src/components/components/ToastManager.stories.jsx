@@ -27,15 +27,11 @@ export default {
         category: 'Attribute',
       },
     },
-    addToast: {
-      table: {
-        category: 'Action',
-      },
-    },
   },
 };
 
 export const Basic = (args) => <ToastManager {...args} />;
+
 Basic.args = {
   items: [
     { children: 'SnackBar Message', useDefaultIcon: true, color: 'primary' },

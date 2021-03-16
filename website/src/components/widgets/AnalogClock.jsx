@@ -9,13 +9,6 @@ const THEME = {
   RED: 'red-clock',
 };
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
 const AnalogClockComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -83,7 +76,6 @@ const AnalogClock = React.forwardRef((props) => (
 
 AnalogClock.propTypes = {
   id: PropTypes.string,
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
   theme: PropTypes.oneOf(Object.values(THEME)),
   title: PropTypes.string,
   className: PropTypes.string,
@@ -93,7 +85,6 @@ AnalogClock.propTypes = {
 AnalogClock.defaultProps = {
   title: 'AnalogClock Text',
   theme: THEME.CLASSIC,
-  shadow: SHADOW.NONE,
   children: 'AnalogClock Message',
   className: '',
 };

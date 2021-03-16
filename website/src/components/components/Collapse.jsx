@@ -10,6 +10,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -62,7 +63,7 @@ Collapse.propTypes = {
 };
 
 Collapse.defaultProps = {
-  color: COLOR.LIGHT,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
   className: '',

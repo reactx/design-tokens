@@ -11,6 +11,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -62,7 +63,7 @@ InfoCard.propTypes = {
 };
 
 InfoCard.defaultProps = {
-  color: COLOR.PRIMARY,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
   outline: false,

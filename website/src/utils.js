@@ -59,6 +59,7 @@ const COLOR = {
   DARK: 'dark',
   LIGHT: 'light',
   NONE: 'none',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -126,13 +127,17 @@ export const generateClass = (prop, baseName) => {
     classList.push(baseName + '-size-' + prop.size);
   }
   //BACKGROUND
-  if (prop.background && prop.background !== COLOR.LIGHT) {
+  if (prop.background && prop.background !== COLOR.NORMAL) {
     classList.push(baseName + '-background-' + prop.background);
   }
   //OUTLINE AND COLOR
   if (prop.outline && prop.color) {
     classList.push('outline reactx-color-' + prop.color);
-  } else if (prop.color && prop.color !== COLOR.NONE) {
+  } else if (
+    prop.color &&
+    prop.color !== COLOR.NONE &&
+    prop.color !== COLOR.NORMAL
+  ) {
     classList.push('reactx-' + baseName + '-' + prop.color);
   }
   //VALIDATION
