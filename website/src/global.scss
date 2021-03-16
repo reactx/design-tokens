@@ -16,6 +16,7 @@
 
 body.sb-show-main.sb-main-padded {
   padding: 0;
+  width: 100%;
 }
 
 .reactx-column {
@@ -55,4 +56,10 @@ body.sb-show-main.sb-main-padded {
   .reactx-column {
     border: 0px;
   }
+}
+
+.reactx-modal-container,
+.reactx-toast-container,
+.reactx-tooltip {
+  position: absolute;
 }

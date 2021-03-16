@@ -1,110 +1,131 @@
-  .reactx-selectbox {
-    cursor: pointer;
-    transition: $standard-animation;
-    padding: 0 $half-size-padding;
-    color: $foreground-color;
-    position: relative;
-    line-height: 1.5em;
-    appearance: none;
-    cursor: pointer;
-    display: block;
-    outline: none;
-    width: 100%;
+.reactx-selectbox {
+  cursor: pointer;
+  transition: $standard-animation;
+  padding: 0 $half-size-padding;
+  color: $foreground-color;
+  position: relative;
+  line-height: 1.5em;
+  appearance: none;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  width: 100%;
 
-    background: {
-      color: var(--reactx-backdrop-9);
-      clip: padding-box;
+  background: {
+    color: $white-200;
+    clip: padding-box;
+  }
+
+  min: {
+    height: 2em;
+    width: 0;
+  }
+
+  border: $standard-border {
+    width: $standard-border-size;
+    radius: $standard-radius;
+    color: $gray-100;
+  }
+
+  .selectbox {
+    &-value {
+      display: none
     }
 
-    min: {
-      height: 2em;
-      width: 0;
+    &-item {
+      padding: $standard-padding;
+      align-items: center;
+      display: flex;
     }
 
-    border: $standard-border {
-      width: $standard-border-size;
-      radius: $standard-radius;
-      color: $gray-100;
+    &-arrow {
+      align-items: center;
+      display: flex;
     }
 
-    .selectbox {
-      &-value {
-        display: none
+    &-selected {
+      background-color: var(--reactx-dark-backdrop-1);
+      padding: $half-size-padding $double-size-padding;
+    }
+
+    &-dropdown {
+      background-color: var(--reactx-backdrop-color);
+      box-shadow: $medium-shadow;
+      backdrop-filter: $backdrop;
+      position: absolute;
+      max-height: 50vh;
+      min-width: 150px;
+      overflow: auto;
+      display: none;
+      height: auto;
+      width: 100%;
+      right: 0;
+      left: 0;
+
+      border: $standard-border {
+        radius: $standard-radius;
+        color: $gray-100;
       }
 
-      &-item {
-        padding: $standard-padding;
-        align-items: center;
-        display: flex;
+      .selectbox-selected:hover,
+      .selectbox-item:hover {
+        background: var(--reactx-dark-backdrop-1);
       }
-
-      &-arrow {
-        align-items: center;
-        display: flex;
-      }
-
-      &-selected {
-        background-color: var(--reactx-dark-backdrop-1);
-        padding: $half-size-padding $double-size-padding;
-      }
-
-      &-dropdown {
-        background-color: var(--reactx-backdrop-color);
-        box-shadow: $medium-shadow;
-        backdrop-filter: $backdrop;
-        position: absolute;
-        max-height: 50vh;
-        min-width: 150px;
-        overflow: auto;
-        display: none;
-        height: auto;
-        width: 100%;
-        right: 0;
-        left: 0;
-
-        border: $standard-border {
-          color: var(--reactx-dark-backdrop-3);
-          radius: $standard-radius;
-        }
-
-        .selectbox-selected:hover,
-        .selectbox-item:hover {
-          background: var(--reactx-dark-backdrop-1);
-        }
-      }
-    }
-
-    &._active {
-      .selectbox-dropdown {
-        display: block;
-      }
-    }
-
-    &.selectbox-size-tiny {
-      padding: 0 ($half-size-padding*0.75);
-      font-size: $font-size-sm*0.75;
-    }
-
-    &.selectbox-size-small {
-      padding: 0 ($half-size-padding*0.9);
-      font-size: $font-size-sm*0.9;
-    }
-
-    &.selectbox-size-large {
-      padding: $half-size-padding $standard-padding;
-      font-size: $h4-font-size;
-    }
-
-    &.selectbox-size-extra {
-      padding: $half-size-padding $standard-padding;
-      font-size: $h2-font-size;
-    }
-
-    &.reactx-input-valid {
-      border: 1px solid $green;
-    }
-
-    &.reactx-input-invalid {
-      border: 1px solid $red;
     }
   }
+
+  &._active {
+    .selectbox-dropdown {
+      display: block;
+    }
+  }
+
+  &.selectbox-size-tiny {
+    padding: 0 ($half-size-padding*0.75);
+    font-size: $font-size-sm*0.75;
+  }
+
+  &.selectbox-size-small {
+    padding: 0 ($half-size-padding*0.9);
+    font-size: $font-size-sm*0.9;
+  }
+
+  &.selectbox-size-large {
+    padding: $half-size-padding $standard-padding;
+    font-size: $h4-font-size;
+  }
+
+  &.selectbox-size-extra {
+    padding: $half-size-padding $standard-padding;
+    font-size: $h2-font-size;
+  }
+
+  &.reactx-input-valid {
+    border: 1px solid $green;
+  }
+
+  &.reactx-input-invalid {
+    border: 1px solid $red;
+  }
+}
+
+.reactx-dark {
+  .reactx-selectbox {
+    background: {
+      color: $dark-background-color;
+      image: $gradient-dark;
+    }
+
+    color:$dark-font-color;
+    border-color: $dark-border-color;
+  }
+
+  .selectbox-dropdown {
+    background-color: $dark-background-color;
+    border-color: $dark-border-color;
+
+    .selectbox-item:hover {
+      background-color: $gray-500;
+    }
+  }
+}

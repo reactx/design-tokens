@@ -23,6 +23,7 @@ const ICON = {
   LIGHT: 'Feedback',
   WARNING: 'Error',
   INFO: 'Info',
+  NORMAL: 'Ringer',
 };
 
 const RADIUS = {

@@ -170,10 +170,10 @@
 .reactx-dark {
   .modal-wrapper {
     background: {
-      color: $gray-600;
+      color: $dark-background-color;
       image: $gradient-dark;
     }
 
-    color:$gray-50;
+    color:$dark-font-color;
   }
 }

@@ -95,6 +95,18 @@ textarea.reactx-input {
 
 .reactx-dark {
   .reactx-input {
-    background-color: $gray-900;
+    background-color: $dark-background-color;
+    border-color: $dark-border-color;
+    color: $dark-font-color;
+
+    &::file-selector-button {
+
+      background: {
+        color: $dark-background-color;
+        image: $gradient-dark;
+      }
+
+      color:$dark-font-color;
+    }
   }
 }

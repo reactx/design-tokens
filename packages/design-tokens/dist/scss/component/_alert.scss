@@ -3,9 +3,13 @@
   margin-bottom: $standard-margin;
   padding: $double-size-padding;
   border-radius: $half-radius;
-  background-image: $gradient;
   position: relative;
   display: block;
+
+  background: {
+    color: $white-100;
+    image: $gradient;
+  }
 
   &.outline {
     border: 1px solid
@@ -17,6 +21,11 @@
 
 .reactx-dark {
   .reactx-alert {
-    background-color: $white;
+    background: {
+      color: $dark-background-color;
+      image: $gradient-dark;
+    }
+
+    color:$dark-font-color;
   }
 }

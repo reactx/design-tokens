@@ -150,7 +150,13 @@
 
 .reactx-dark {
   .reactx-input-container {
-    background-color: $gray-900;
+    background: {
+      color: $dark-background-color;
+      image: $gradient-dark;
+    }
+
+    color:$dark-font-color;
+    border-color: $dark-border-color;
   }
 
   .control-append,
@@ -160,4 +166,5 @@
       color: $gray-700;
     }
   }
+
 }

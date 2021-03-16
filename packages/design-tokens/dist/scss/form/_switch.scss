@@ -51,7 +51,7 @@
     &:before {
       box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.5);
       transition: $standard-animation;
-      background-color: $white-200;
+      background-color: $white-100;
       position: absolute;
       height: 16px;
       content: "";
@@ -157,6 +157,19 @@
 
     input:checked+.reactx-slider:before {
       transform: translateX(28px);
+    }
+  }
+}
+
+.reactx-dark {
+  .reactx-slider {
+    background: {
+      color: $dark-background-color;
+      image: $gradient-dark;
+    }
+
+    &:before {
+      background-color: $gray-50;
     }
   }
 }
