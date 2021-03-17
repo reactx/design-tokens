@@ -1,17 +1,19 @@
 .reactx-badge {
   border-radius: $double-size-radius;
   transition: $standard-animation;
-  @include flex-position-center;
-  background-color: $gray-100;
-  background-image: $gradient;
-  padding: $standard-padding;
+  @include flex-position-center(inline-flex);
+  padding: $half-size-padding $standard-padding;
   font-size: $font-size-sm;
-  display: inline-flex;
   white-space: nowrap;
-  line-height: 1;
+  line-height: 1em;
+
+  background: {
+    color: $gray-100;
+    image: $gradient;
+  }
 
   min: {
-    @include width-height(1.1em);
+    @include width-height(1.5em);
   }
 
   &.outline {

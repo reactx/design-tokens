@@ -59,22 +59,11 @@
 
 .reactx-dark {
   .reactx-collapse {
-    background: {
-      color: $dark-background-color;
-      image: $gradient-dark;
-    }
-
-    color:$dark-font-color;
+    background-color: $dark-background-color;
+    color: $dark-font-color;
   }
 
-  .collapse {
-    &-title {
-      background-color: rgba(255, 255, 255, 0.06);
-      background-image: $gradient-dark;
-
-      &:hover {
-        background-color: rgba(180, 180, 180, 0.06);
-      }
-    }
+  .collapse-title:hover {
+    background-color: rgba(180, 180, 180, 0.03);
   }
 }
