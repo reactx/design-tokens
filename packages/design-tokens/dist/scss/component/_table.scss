@@ -62,11 +62,11 @@
 .reactx-dark {
   .reactx-table {
     background: {
-      color: $gray-600;
+      color: $dark-background-color;
       image: $gradient-dark;
     }
 
+    color:$dark-font-color;
     border: 1px solid $gray-900;
-    color:$gray-50;
   }
 }

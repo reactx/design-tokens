@@ -19,6 +19,7 @@
     background-color: rgba(0, 0, 0, 0.06);
     transition: $standard-animation;
     padding: $standard-padding;
+    cursor: pointer;
 
     &::before {
       padding: 0 $standard-padding;
@@ -58,20 +59,11 @@
 
 .reactx-dark {
   .reactx-collapse {
-    background: {
-      color: $gray-700;
-    }
-
-    color:$gray-50;
+    background-color: $dark-background-color;
+    color: $dark-font-color;
   }
 
-  .collapse {
-    &-title {
-      background-color: rgba(255, 255, 255, 0.06);
-    }
-
-    &-data {
-      background-color: rgba(255, 255, 255, 0.11);
-    }
+  .collapse-title:hover {
+    background-color: rgba(180, 180, 180, 0.03);
   }
 }

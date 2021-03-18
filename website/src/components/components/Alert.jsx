@@ -10,6 +10,7 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
+  NORMAL: 'normal',
 };
 
 const RADIUS = {
@@ -54,8 +55,7 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
-  title: 'Alert Text',
-  color: COLOR.PRIMARY,
+  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
   outline: false,

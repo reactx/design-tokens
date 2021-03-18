@@ -14,7 +14,7 @@
   }
 
   &.outline {
-    border: 1px solid;
+    border: 1px solid $gray-100;
   }
 
   &.radius-pill {
@@ -44,14 +44,16 @@
 }
 
 @include colorsLight(info-card, 'background-color');
+@include colors(color, 'border-color');
 
 .reactx-dark {
   .reactx-info-card {
     background: {
-      color: $gray-700;
+      color: $dark-background-color;
       image: $gradient-dark;
     }
 
-    color: $gray-50;
+    color:$dark-font-color;
+    border-color:$dark-border-color;
   }
 }

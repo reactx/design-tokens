@@ -122,3 +122,21 @@
     height: 100%;
   }
 }
+
+.reactx-dark {
+  .tab-container {
+    background-color: $dark-background-color;
+  }
+
+  .tab-header-item {
+    background-color: $dark-background-color;
+
+    &:hover {
+      background-color: $gray-800;
+    }
+  }
+
+  .tab-content {
+    background-color: $dark-background-color;
+  }
+}

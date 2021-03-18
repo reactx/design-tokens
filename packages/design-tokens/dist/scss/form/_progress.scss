@@ -113,7 +113,11 @@ $colors:primary danger secondary success info warning light dark;
 
 .reactx-dark {
   .reactx-progress {
-    background-color: $gray-900;
-    border: 1px solid $gray-500;
+    background: {
+      color: $dark-background-color;
+      image: $gradient-dark;
+    }
+
+    border-color: $dark-border-color;
   }
 }

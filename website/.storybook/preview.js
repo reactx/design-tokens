@@ -50,6 +50,7 @@ const ThemeStack = styled.div(
   },
   ({ theme }) => ({
     background: theme.background.app,
+    color: theme.color.defaultText,
   }),
 );
 
