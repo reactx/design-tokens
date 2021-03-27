@@ -10,6 +10,12 @@ $pdDirection: (t: '-top', l: '-left', r: '-right', b: '-bottom');
         $varDirLtr:#{map-get($pdDirection, str-slice($pmItem,2,-1))};
         #{$varPOrM}#{$varDirLtr}: $i#{'em'} !important;
       }
+
+      .#{$pmItem}-#{$i} {
+        $varPOrM:#{map-get($mp, str-slice($pmItem,0,1))};
+        $varDirLtr:#{map-get($pdDirection, str-slice($pmItem,2,-1))};
+        #{$varPOrM}#{$varDirLtr}: $i#{'em'} !important;
+      }
     }
   }
 }
@@ -28,6 +34,22 @@ $pdDirection: (t: '-top', l: '-left', r: '-right', b: '-bottom');
   }
 
   .reactx-my-#{$i} {
+    margin: $i#{'em'} 0 !important;
+  }
+
+  .px-#{$i} {
+    padding: 0 $i#{'em'} !important;
+  }
+
+  .py-#{$i} {
+    padding: $i#{'em'} 0 !important;
+  }
+
+  .mx-#{$i} {
+    margin: 0 $i#{'em'} !important;
+  }
+
+  .my-#{$i} {
     margin: $i#{'em'} 0 !important;
   }
 }

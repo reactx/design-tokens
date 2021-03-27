@@ -16,7 +16,8 @@ $extra-size:128px;
   cursor: default;
   padding: 0;
 
-  background: $white-300 {
+  background: {
+    color: $white-100;
     image: $gradient;
   }
 

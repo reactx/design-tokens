@@ -66,7 +66,14 @@ export const All = (args) => (
   <>
     <div>There are {icons.length} icons</div>
     {icons.map((key) => (
-      <FluentIcon {...args} icon={key} key={key} title={key} />
+      <div className="p-1 icon-preview">
+        <i
+          className={'icon-size-extra-large reactx-icon nf-icon-' + key}
+          key={key}
+          title={key}
+        />
+        <span>{key}</span>
+      </div>
     ))}
   </>
 );

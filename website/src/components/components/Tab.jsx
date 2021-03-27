@@ -1,7 +1,6 @@
 import React, { useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
-import { FluentIcon } from './FluentIcon';
 
 const TabComponent = (props) => {
   const parentProps = { ...props };
@@ -21,11 +20,8 @@ const TabComponent = (props) => {
       <div className="tab-container">
         {tabsRef.current?.scrollWidth !== tabsRef.current?.offsetWidth && (
           <div className="tab-action">
-            <button
-              className="reactx-btn reactx-p-0"
-              onClick={() => scrollTabs('left')}
-            >
-              <FluentIcon icon="ChevronLeft" iconSize="small" />
+            <button className="reactx-btn" onClick={() => scrollTabs('left')}>
+              <i className="reactx-icon nf-icon-ChevronLeft" />
             </button>
           </div>
         )}
@@ -52,7 +48,7 @@ const TabComponent = (props) => {
                   onClick={() => props.selectedItem(item)}
                 >
                   {item.default && (
-                    <FluentIcon icon="FavoriteStar" iconSize="tiny" />
+                    <i className="reactx-icon nf-icon-FavoriteStar" />
                   )}
                   {item.name || item.displayName}
                 </span>
@@ -63,7 +59,7 @@ const TabComponent = (props) => {
                     aria-label="بستن تب"
                     onClick={() => props.deleteTabAction(item.tabId)}
                   >
-                    <FluentIcon icon="ChromeClose" iconSize="tiny" />
+                    <i className="reactx-icon nf-icon-ChromeClose" />
                   </span>
                 )}
               </div>
@@ -73,19 +69,19 @@ const TabComponent = (props) => {
           <div className="tab-action">
             {tabsRef.current?.scrollWidth !== tabsRef.current?.offsetWidth && (
               <button
-                className="reactx-btn reactx-p-0"
+                className="reactx-btn"
                 onClick={() => scrollTabs('right')}
               >
-                <FluentIcon icon="ChevronRight" iconSize="small" />
+                <i className="reactx-icon nf-icon-ChevronRight" />
               </button>
             )}
             <button
-              className="reactx-btn reactx-p-0"
+              className="reactx-btn"
               data-tooltip="تب جدید"
               aria-label="تب جدید"
               onClick={() => props.addTabAction(true)}
             >
-              <FluentIcon icon="CalculatorAddition" shadowOnHover="small" />
+              <i className="reactx-icon nf-icon-CalculatorAddition" />
             </button>
           </div>
         )}

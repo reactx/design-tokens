@@ -104,9 +104,8 @@ Pagination.propTypes = {
 
 Pagination.defaultProps = {
   radius: RADIUS.NORMAL,
-  disabled: false,
-  className: '',
   size: SIZE.MEDIUM,
+  disabled: false,
 };
 
 export { Pagination };

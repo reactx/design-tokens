@@ -1,6 +1,7 @@
 .reactx-collapse {
   transition: $standard-animation;
   border-radius: $standard-radius;
+  background-color: $white-100;
   color: $gray-900;
   overflow: hidden;
 
@@ -16,7 +17,7 @@
 .collapse {
   &-title {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: rgba(0, 0, 0, 0.03);
     transition: $standard-animation;
     padding: $standard-padding;
     cursor: pointer;

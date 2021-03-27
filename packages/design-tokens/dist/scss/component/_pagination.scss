@@ -42,6 +42,7 @@
 .pagination {
   &-item {
     border-radius: $standard-radius;
+    transition: $standard-animation;
     @include flex-position-center;
     margin: 0 $half-size-margin;
     @include width-height(2em);
@@ -52,13 +53,17 @@
     padding: 0;
 
     background: {
-      color: $gray-50;
+      color: $white-100;
       image: $gradient;
     }
 
     &.active {
       background-color: var(--reactx-primary) !important;
-      color: white;
+      color: $white-100;
+    }
+
+    &:hover {
+      filter: contrast(0.8);
     }
   }
 

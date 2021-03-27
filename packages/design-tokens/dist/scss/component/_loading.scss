@@ -7,7 +7,6 @@ $tiny-size:14px;
   background: var(--reactx-backdrop-color);
   @include flex-position-center;
   @include width-height(100%);
-  flex-direction: column;
   position: absolute;
   z-index: -1;
   opacity: 0;

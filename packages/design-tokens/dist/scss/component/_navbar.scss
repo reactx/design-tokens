@@ -1,11 +1,11 @@
 .reactx-navbar {
   justify-content: space-between;
-  padding: 0 $standard-padding;
+  padding: $standard-padding $double-size-padding;
   align-items: center;
   display: flex;
 
   background: {
-    color: $white-200;
+    color: $white-100;
     image: $gradient;
   }
 
