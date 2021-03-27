@@ -18,34 +18,36 @@
 
   font: {
     family: 'FabricMDL2Icons';
-    size: $h4-font-size;
     weight: normal;
     style: normal;
+    size: 1em;
   }
 }
 
-.icon-size-extra-large {
-  font-size: $h2-font-size;
-}
+.icon-size {
+  &-extra-large {
+    font-size: $h1-font-size;
+  }
 
-.icon-size-extra {
-  font-size: $h3-font-size;
-}
+  &-extra {
+    font-size: $h2-font-size;
+  }
 
-.icon-size-large {
-  font-size: $h4-font-size;
-}
+  &-large {
+    font-size: $h3-font-size;
+  }
 
-.icon-size-medium {
-  font-size: $h5-font-size;
-}
+  &-medium {
+    font-size: $h4-font-size;
+  }
 
-.icon-size-small {
-  font-size: $h6-font-size;
-}
+  &-small {
+    font-size: $h5-font-size;
+  }
 
-.icon-size-tiny {
-  font-size: $h6-font-size * 0.75;
+  &-tiny {
+    font-size: $h6-font-size;
+  }
 }
 
 .nf-icon-12PointStar:before {

@@ -1,13 +1,13 @@
 .reactx-table {
   transition: $standard-animation;
   margin: $double-size-margin 0;
-  background-color: $white-200;
+  background-color: $white-100;
   flex-direction: column;
   overflow: hidden;
   display: flex;
   width: 100%;
 
-  border: 1px solid $gray-50 {
+  border: 1px solid $gray-100 {
     radius: $standard-radius;
   }
 
@@ -35,7 +35,7 @@
 
   .table-header {
     background-color: rgba(0, 0, 0, .09);
-    background-image: $gradient;
+    border-bottom: 1px solid $gray-100;
     display: flex;
     width: 100%;
 
@@ -54,19 +54,29 @@
   .table-footer {
     background-color: rgba(0, 0, 0, .09);
   }
-
 }
 
 @include colors(table, 'background-color');
 
 .reactx-dark {
   .reactx-table {
-    background: {
-      color: $dark-background-color;
-      image: $gradient-dark;
+    background-color: $dark-background-color;
+    border: 1px solid $gray-900;
+    color: $dark-font-color;
+
+    .table-row {
+      &:nth-child(even) {
+        background-color: rgba(250, 250, 250, 0.03);
+      }
+
+      &:hover {
+        background-color: rgba(250, 250, 250, 0.06);
+      }
     }
 
-    color:$dark-font-color;
-    border: 1px solid $gray-900;
+    .table-header {
+      background-color: rgba(0, 0, 0, 0.25);
+      border-bottom: 1px solid $gray-900;
+    }
   }
 }

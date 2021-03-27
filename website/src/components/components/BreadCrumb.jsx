@@ -10,7 +10,6 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
-  NONE: 'none',
   NORMAL: 'normal',
 };
 

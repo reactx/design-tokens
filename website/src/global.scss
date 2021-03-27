@@ -63,3 +63,24 @@ body.sb-show-main.sb-main-padded {
 .reactx-tooltip {
   position: absolute;
 }
+
+.icon-preview {
+  background-color: #eaeaea;
+  justify-content: center;
+  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  margin: 1px;
+
+  span {
+    user-select: text;
+    margin-top: 10px;
+    font-size: 9px;
+  }
+
+  &:hover {
+    background-color: #cacaca;
+  }
+}

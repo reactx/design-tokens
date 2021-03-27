@@ -1,4 +1,5 @@
 .reactx-info-card {
+  transition: $standard-animation;
   border-radius: $standard-radius;
   padding: $standard-padding;
   font-size: $font-size-base;
@@ -9,12 +10,12 @@
   display: flex;
 
   background: {
-    color: $white-200;
+    color: $white-100;
     image: $gradient;
   }
 
   &.outline {
-    border: 1px solid $gray-100;
+    border: 1px solid $white-300;
   }
 
   &.radius-pill {

@@ -16,10 +16,9 @@
     min-width: 20vw;
     display: none;
     width: auto;
-    left: 25px;
 
     background: {
-      color: $white-200;
+      color: $white-100;
       image: $gradient;
     }
 
@@ -64,7 +63,7 @@
     }
 
     &.modal-full {
-      background-color: $white-200;
+      background-color: $white-100;
       min-width: 50vw;
       bottom: unset;
       right: unset;

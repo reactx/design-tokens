@@ -7,13 +7,16 @@
   }
 
   .tab-container {
-    background-color: $white-200;
+    background-color: $white-100;
     box-sizing: border-box;
     align-items: center;
     list-style: none;
     min-height: 28px;
     display: flex;
-    margin: 0;
+
+    margin: 0 {
+      bottom: -1px;
+    }
 
     padding: $half-size-padding {
       bottom: 0;
@@ -43,8 +46,7 @@
     transition: $standard-animation;
     @include flex-position-center;
     padding: 0 $standard-padding;
-    background-color: $gray-100;
-    background-image: $gradient;
+    background-color: $white-300;
     min-width: min-content;
     max-width: 200px;
     cursor: pointer;
@@ -57,7 +59,7 @@
     }
 
     &:hover {
-      background-color: $gray-300;
+      filter: contrast(0.8);
 
       .tab-header-close-btn {
         opacity: 1;
@@ -110,11 +112,15 @@
         color: var(--reactx-light);
       }
     }
+
+    i {
+      font-size: $font-size-sm*0.85;
+    }
   }
 
   .tab-content {
     border-top: 2px solid $primary;
-    background-color: $gray-50;
+    background-color: $white-300;
     padding: $standard-padding;
     position: relative;
     overflow: hidden;
@@ -130,10 +136,6 @@
 
   .tab-header-item {
     background-color: $dark-background-color;
-
-    &:hover {
-      background-color: $gray-800;
-    }
   }
 
   .tab-content {

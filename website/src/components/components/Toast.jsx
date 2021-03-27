@@ -51,14 +51,12 @@ const ToastComponent = (props) => {
       {props.header && (
         <div className="toast-header">
           <div>{props.header}</div>
-          <div>
-            <FluentIcon
-              icon="ChromeClose"
-              radius="rounded"
-              iconSize="tiny"
-              onClick={props.closeAction}
-            />
-          </div>
+          <FluentIcon
+            icon="ChromeClose"
+            radius="rounded"
+            iconSize="tiny"
+            onClick={props.closeAction}
+          />
         </div>
       )}
       <div className="toast-body">

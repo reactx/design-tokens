@@ -9,12 +9,12 @@
   display: flex;
   min-width: 0;
 
-  border: 1px solid rgba(0, 0, 0, .03) {
+  border: 1px solid rgba(0, 0, 0, 0.06) {
     radius: $standard-radius;
   }
 
   background: {
-    color: $white-200;
+    color: $white-100;
     clip: border-box;
     image: $gradient;
   }
@@ -27,7 +27,7 @@
 .card {
   &-header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: rgba(0, 0, 0, .03);
+    background-color: rgba(0, 0, 0, 0.03);
     padding: $standard-padding;
     align-items: center;
     display: flex;
@@ -41,7 +41,7 @@
 
   &-footer {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: rgba(0, 0, 0, .03);
+    background-color: rgba(0, 0, 0, 0.03);
     padding: $standard-padding;
   }
 
