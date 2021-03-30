@@ -8,6 +8,7 @@ const delList = [
   'username',
   'itemRadius',
   'formControlStyle',
+  'subChildren',
   'position',
   'closeAction',
   'like',

@@ -1,0 +1,71 @@
+.reactx-float-action {
+  flex-direction: column-reverse;
+  padding: $standard-padding;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  bottom: 10px;
+  right: 10px;
+
+  .main-action,
+  .sub-action-item {
+    transition: $standard-animation;
+    margin-bottom: $standard-margin;
+    border-radius: $round-radius;
+    padding: $standard-padding;
+    box-shadow: $small-shadow;
+
+    background: {
+      color: $white-200;
+      image: $gradient;
+    }
+
+    &:hover {
+      background-color: $gray-50;
+      box-shadow: $medium-shadow;
+    }
+  }
+
+  .sub-action {
+    display: none;
+  }
+
+  &:hover {
+    .sub-action {
+      flex-direction: column;
+      display: flex;
+    }
+  }
+}
+
+.reactx-float-action[direction="horizontal"] {
+  flex-direction: row-reverse;
+
+  &:hover {
+    .sub-action {
+      flex-direction: row;
+
+      &-item {
+        margin-right: $standard-margin;
+      }
+    }
+  }
+}
+
+.reactx-dark {
+
+  .main-action,
+  .sub-action-item {
+    background: {
+      color: $dark-background-color;
+      image: $gradient-dark;
+    }
+
+    &:hover {
+      background: {
+        image: $gradient-dark;
+        color: $gray-500;
+      }
+    }
+  }
+}
