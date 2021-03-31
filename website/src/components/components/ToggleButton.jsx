@@ -51,7 +51,7 @@ const ToggleButtonComponent = (props) => {
         props.onClick(!toggle);
       }}
     >
-      {props.toggleChildren && toggle ? props.children : props.toggleChildren}
+      {props.toggleChildren && toggle ? props.toggleChildren : props.children}
     </button>
   );
 };

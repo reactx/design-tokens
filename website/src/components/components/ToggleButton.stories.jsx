@@ -16,6 +16,11 @@ export default {
         category: 'Attribute',
       },
     },
+    toggleChildren: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     title: {
       control: 'text',
       table: {
@@ -76,7 +81,79 @@ export default {
 
 export const Basic = (args) => <ToggleButton {...args} />;
 Basic.args = {
-  children: 'ToggleBtn Checked',
-  toggleChildren: 'ToggleBtn',
+  children: 'ToggleBtn',
+  toggleChildren: 'ToggleBtn Checked',
   // onClick: (val) => alert(val),
 };
+export const Compare = (args) => (
+  <>
+    <div className="mb-1">
+      <ToggleButton
+        {...args}
+        toggleChildren={'ToggleBtn Checked'}
+        color="danger"
+      >
+        ToggleBtn
+      </ToggleButton>
+      <ToggleButton
+        {...args}
+        toggleChildren={'ToggleBtn Checked'}
+        color="danger"
+        toggle={true}
+      >
+        ToggleBtn
+      </ToggleButton>
+    </div>
+    <div className="mb-1">
+      <ToggleButton
+        {...args}
+        toggleChildren={'ToggleBtn Checked'}
+        color="primary"
+      >
+        ToggleBtn
+      </ToggleButton>
+      <ToggleButton
+        {...args}
+        toggleChildren={'ToggleBtn Checked'}
+        color="primary"
+        toggle={true}
+      >
+        ToggleBtn
+      </ToggleButton>
+    </div>
+    <div className="mb-1">
+      <ToggleButton
+        {...args}
+        toggleChildren={'ToggleBtn Checked'}
+        color="warning"
+      >
+        ToggleBtn
+      </ToggleButton>
+      <ToggleButton
+        {...args}
+        toggleChildren={'ToggleBtn Checked'}
+        color="warning"
+        toggle={true}
+      >
+        ToggleBtn
+      </ToggleButton>
+    </div>
+    <div className="mb-1">
+      <ToggleButton
+        {...args}
+        toggleChildren={'ToggleBtn Checked'}
+        color="success"
+      >
+        ToggleBtn
+      </ToggleButton>
+      <ToggleButton
+        {...args}
+        toggleChildren={'ToggleBtn Checked'}
+        color="success"
+        toggle={true}
+      >
+        ToggleBtn
+      </ToggleButton>
+    </div>
+  </>
+);
