@@ -12,8 +12,8 @@
   .sub-action-item {
     transition: $standard-animation;
     margin-bottom: $standard-margin;
-    border-radius: $round-radius;
     padding: $double-size-padding;
+    border-radius: $round-radius;
     box-shadow: $small-shadow;
 
     background: {
@@ -87,8 +87,8 @@
       flex-direction: row;
 
       &-item {
-        margin-right: 0;
         margin-left: $standard-margin;
+        margin-right: 0;
       }
     }
   }

@@ -52,6 +52,10 @@
       font-size: $h2-font-size;
     }
   }
+
+  &[data-toggle="true"] {
+    filter: saturate(1.5);
+  }
 }
 
 @include colors(btn, 'background-color');
