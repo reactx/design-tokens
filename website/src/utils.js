@@ -9,7 +9,6 @@ const delList = [
   'itemRadius',
   'formControlStyle',
   'subChildren',
-  'position',
   'closeAction',
   'like',
   'isReplayed',

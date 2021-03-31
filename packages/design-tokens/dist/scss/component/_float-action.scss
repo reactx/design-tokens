@@ -1,6 +1,7 @@
 .reactx-float-action {
   flex-direction: column-reverse;
   padding: $standard-padding;
+  align-items: flex-end;
   position: absolute;
   cursor: pointer;
   display: flex;
@@ -33,8 +34,34 @@
   &:hover {
     .sub-action {
       flex-direction: column;
+      align-items: flex-end;
       display: flex;
     }
+  }
+}
+
+.reactx-float-action[float="left"] {
+  align-items: flex-start;
+  right: auto;
+  left: 10px;
+
+  .sub-action {
+    align-items: flex-start;
+  }
+}
+
+.reactx-float-action[float="center"] {
+  right: 45%;
+  left: auto;
+}
+
+.reactx-float-action[position="top"] {
+  flex-direction: column;
+  bottom: auto;
+  top: 10px;
+
+  .sub-action {
+    flex-direction: column;
   }
 }
 
@@ -50,11 +77,6 @@
       }
     }
   }
-}
-
-.reactx-float-action[float="left"] {
-  right: auto;
-  left: 10px;
 }
 
 .reactx-float-action[float="left"][direction="horizontal"] {

@@ -2,6 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
+const DIRECTION = {
+  VERTICAL: 'vertical',
+  HORIZONTAL: 'horizontal',
+};
+
+const FLOAT = {
+  RIGHT: 'right',
+  LEFT: 'left',
+  CENTER: 'center',
+};
+
+const POSITION = {
+  TOP: 'top',
+  BOTTOM: 'bottom',
+};
+
 const FloatActionComponent = (props) => {
   const parentProps = { ...props };
   delete parentProps.type;
@@ -36,8 +52,9 @@ const FloatAction = React.forwardRef((props) => (
 
 FloatAction.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-  direction: PropTypes.oneOf(['vertical', 'horizontal']),
-  float: PropTypes.oneOf(['right', 'left']),
+  direction: PropTypes.oneOf(Object.values(DIRECTION)),
+  position: PropTypes.oneOf(Object.values(POSITION)),
+  float: PropTypes.oneOf(Object.values(FLOAT)),
   subChildren: PropTypes.array,
   className: PropTypes.string,
   onClick: PropTypes.func,
@@ -45,8 +62,9 @@ FloatAction.propTypes = {
 };
 
 FloatAction.defaultProps = {
-  direction: 'vertical',
-  float: 'right',
+  direction: DIRECTION.VERTICAL,
+  position: POSITION.BOTTOM,
+  float: FLOAT.RIGHT,
 };
 
 export { FloatAction };

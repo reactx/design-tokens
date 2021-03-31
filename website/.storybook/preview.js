@@ -46,7 +46,7 @@ const ThemeStack = styled.div(
   {
     padding: 10,
     position: 'relative',
-    minHeight: 'calc(50vh - 15px)',
+    minHeight: '50vh',
   },
   ({ theme }) => ({
     background: theme.background.app,

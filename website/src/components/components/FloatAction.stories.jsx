@@ -38,6 +38,12 @@ export default {
         category: 'Style',
       },
     },
+    position: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
     onClick: {
       table: {
         category: 'Action',
@@ -52,5 +58,6 @@ Basic.args = {
   subChildren: [
     { data: <i className="reactx-icon nf-icon-AddFriend" />, props: {} },
     { data: <i className="reactx-icon nf-icon-AddField" />, props: {} },
+    { data: <i className="reactx-icon nf-icon-AddHome" />, props: {} },
   ],
 };
