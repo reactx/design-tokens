@@ -32,6 +32,12 @@ export default {
         category: 'Style',
       },
     },
+    float: {
+      control: 'inline-radio',
+      table: {
+        category: 'Style',
+      },
+    },
     onClick: {
       table: {
         category: 'Action',

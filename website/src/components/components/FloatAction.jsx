@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { cleanProps, generateClass } from '../../utils';
+import { cleanProps } from '../../utils';
 
 const FloatActionComponent = (props) => {
   const parentProps = { ...props };
@@ -37,6 +37,7 @@ const FloatAction = React.forwardRef((props) => (
 FloatAction.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   direction: PropTypes.oneOf(['vertical', 'horizontal']),
+  float: PropTypes.oneOf(['right', 'left']),
   subChildren: PropTypes.array,
   className: PropTypes.string,
   onClick: PropTypes.func,
@@ -45,6 +46,7 @@ FloatAction.propTypes = {
 
 FloatAction.defaultProps = {
   direction: 'vertical',
+  float: 'right',
 };
 
 export { FloatAction };

@@ -12,7 +12,7 @@
     transition: $standard-animation;
     margin-bottom: $standard-margin;
     border-radius: $round-radius;
-    padding: $standard-padding;
+    padding: $double-size-padding;
     box-shadow: $small-shadow;
 
     background: {
@@ -47,6 +47,26 @@
 
       &-item {
         margin-right: $standard-margin;
+      }
+    }
+  }
+}
+
+.reactx-float-action[float="left"] {
+  right: auto;
+  left: 10px;
+}
+
+.reactx-float-action[float="left"][direction="horizontal"] {
+  flex-direction: row;
+
+  &:hover {
+    .sub-action {
+      flex-direction: row;
+
+      &-item {
+        margin-right: 0;
+        margin-left: $standard-margin;
       }
     }
   }
