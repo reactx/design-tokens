@@ -22,13 +22,13 @@
 
 .comment {
   &-avatar {
-    border-right: 1px solid rgba(0, 0, 0, 0.09);
+    border-right: 1px solid $black-op-09;
     @include flex-position-center;
     flex: 0 1 100px;
   }
 
   &-body {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: $black-op-03;
     padding: $standard-padding;
     flex-direction: column;
     flex: 1 1 auto;
@@ -36,7 +36,7 @@
   }
 
   &-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    border-bottom: 1px solid $black-op-09;
     display: flex;
   }
 

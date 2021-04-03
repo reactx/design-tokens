@@ -1,8 +1,8 @@
 .reactx-badge {
+  padding: $half-size-padding $standard-padding;
+  @include flex-position-center(inline-flex);
   border-radius: $double-size-radius;
   transition: $standard-animation;
-  @include flex-position-center(inline-flex);
-  padding: $half-size-padding $standard-padding;
   font-size: $font-size-sm;
   white-space: nowrap;
   line-height: 1em;

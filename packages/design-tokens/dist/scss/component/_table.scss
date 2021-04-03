@@ -17,7 +17,7 @@
     width: 100%;
 
     &:nth-child(even) {
-      background-color: rgba(0, 0, 0, .03);
+      background-color: $black-op-03;
     }
 
     .table-row-item {
@@ -29,13 +29,13 @@
     }
 
     &:hover {
-      background-color: rgba(0, 0, 0, .06);
+      background-color: $black-op-06;
     }
   }
 
   .table-header {
-    background-color: rgba(0, 0, 0, .09);
     border-bottom: 1px solid $gray-100;
+    background-color: $black-op-09;
     display: flex;
     width: 100%;
 
@@ -52,7 +52,7 @@
   .table-body {}
 
   .table-footer {
-    background-color: rgba(0, 0, 0, .09);
+    background-color: $black-op-09;
   }
 }
 
@@ -66,17 +66,17 @@
 
     .table-row {
       &:nth-child(even) {
-        background-color: rgba(250, 250, 250, 0.03);
+        background-color: $white-op-03;
       }
 
       &:hover {
-        background-color: rgba(250, 250, 250, 0.06);
+        background-color: $white-op-06;
       }
     }
 
     .table-header {
-      background-color: rgba(0, 0, 0, 0.25);
       border-bottom: 1px solid $gray-900;
+      background-color: $black-op-3;
     }
   }
 }

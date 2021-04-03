@@ -7,8 +7,8 @@
   .clock {
     &-face {
       background: radial-gradient(ellipse at center, $gray-200 0%, $gray-50 70%);
-      box-shadow: inset 4px 4px 10px 0 rgba(0, 0, 0, 0.4);
-      filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+      box-shadow: inset 4px 4px 10px 0 $black-op-3;
+      filter: drop-shadow(4px 4px 4px $black-op-3);
       @include flex-position-center;
       @include width-height(100%);
       backdrop-filter: $backdrop;
@@ -44,7 +44,7 @@
       .clock-hand-hour,
       .clock-hand-minute,
       .clock-hand-second {
-        filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(1px 0px 1px $black-op-6);
 
         border: {
           top-right-radius: 50%;
@@ -80,7 +80,7 @@
       }
 
       .clock-center-circle {
-        filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(1px 0px 1px $black-op-6);
         background: $foreground-color;
         border-radius: $round-radius;
         @include width-height(20px);

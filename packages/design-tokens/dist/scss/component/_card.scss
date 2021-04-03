@@ -9,7 +9,7 @@
   display: flex;
   min-width: 0;
 
-  border: 1px solid rgba(0, 0, 0, 0.06) {
+  border: 1px solid $black-op-06 {
     radius: $standard-radius;
   }
 
@@ -26,8 +26,8 @@
 
 .card {
   &-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid $black-op-06;
+    background-color: $black-op-03;
     padding: $standard-padding;
     align-items: center;
     display: flex;
@@ -40,8 +40,8 @@
   }
 
   &-footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid $black-op-06;
+    background-color: $black-op-03;
     padding: $standard-padding;
   }
 

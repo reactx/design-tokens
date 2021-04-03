@@ -44,7 +44,7 @@
     }
 
     &-selected {
-      background-color: var(--reactx-dark-backdrop-1);
+      background-color: $gray-200;
       padding: $half-size-padding $double-size-padding;
     }
 
@@ -69,7 +69,7 @@
 
       .selectbox-selected:hover,
       .selectbox-item:hover {
-        background: var(--reactx-dark-backdrop-1);
+        background: $gray-200;
       }
     }
   }

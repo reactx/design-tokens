@@ -74,8 +74,8 @@
 }
 
 .reactx-input-container {
-  background-color: var(--reactx-backdrop-9);
   transition: $standard-animation;
+  background-color: $white;
   box-sizing: border-box;
   grid-area: input;
   overflow: hidden;

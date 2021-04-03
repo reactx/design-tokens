@@ -94,9 +94,9 @@
 
   &-header {
     padding: $standard-padding $double-size-padding;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid $black-op-06;
     margin-bottom: $standard-margin;
+    background-color: $black-op-03;
     vertical-align: middle;
     line-height: 25px;
     flex: 0 1 auto;
@@ -150,8 +150,8 @@
 
   &-footer {
     padding: $standard-padding $double-size-padding;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: rgba(0, 0, 0, .03);
+    border-top: 1px solid $black-op-06;
+    background-color: $black-op-03;
     justify-content: flex-end;
     align-items: center;
     display: flex;

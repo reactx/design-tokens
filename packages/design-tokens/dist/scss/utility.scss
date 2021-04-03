@@ -29,14 +29,6 @@
   backdrop-filter: $backdrop;
 }
 
-.reactx-medium-back-blur {
-  background-color: var(--reactx-backdrop-7) !important;
-}
-
-.reactx-light-back-blur {
-  background-color: var(--reactx-backdrop-3) !important;
-}
-
 /* reactx Background and Color */
 // reactx-bg-*
 @include colors(bg, 'background-color');

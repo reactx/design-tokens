@@ -1,6 +1,5 @@
 .reactx-tooltip {
   animation: fadeInTooltip 0.3s ease-in;
-  color: var(--reactx-backdrop-9);
   border-radius: $standard-radius;
   padding: $standard-padding;
   font-size: $font-size-sm;
@@ -8,6 +7,7 @@
   max-width: 150px;
   position: fixed;
   z-index: 9999;
+  color: $white;
   opacity: 0;
   left: 0px;
   top: 0px;
