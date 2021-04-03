@@ -16,9 +16,9 @@
 
 .collapse {
   &-title {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid $black-op-06;
     transition: $standard-animation;
+    background-color: $black-op-03;
     padding: $standard-padding;
     cursor: pointer;
 
@@ -33,13 +33,13 @@
     }
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.09);
+      background-color: $black-op-09;
     }
   }
 
   &-data {
-    background-color: rgba(255, 255, 255, 0.11);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid $black-op-06;
+    background-color: $white-op-3;
     padding: $standard-padding;
     min-height: 3em;
     display: none;
@@ -54,8 +54,8 @@
 @include colorsLight(collapse, 'background-color');
 
 .reactx-accordion {
-  overflow: hidden;
   border-radius: $standard-radius;
+  overflow: hidden;
 }
 
 .reactx-dark {
@@ -65,6 +65,6 @@
   }
 
   .collapse-title:hover {
-    background-color: rgba(180, 180, 180, 0.03);
+    background-color: $black-op-3;
   }
 }

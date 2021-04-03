@@ -51,7 +51,7 @@
     }
 
     &:before {
-      box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 1px 1px -1px $black-op-6;
       transition: $standard-animation;
       background-color: $white-100;
       position: absolute;
@@ -104,7 +104,7 @@
   }
 
   input:focus+.reactx-slider {
-    box-shadow: 0 0 1px var(--reactx-backdrop-7);
+    box-shadow: 0 0 1px $gray-50;
   }
 
   input:checked+.reactx-slider:before {

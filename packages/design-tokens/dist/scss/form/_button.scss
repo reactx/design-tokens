@@ -20,7 +20,7 @@
   }
 
   &:hover {
-    background-color: var(--reactx-backdrop-3);
+    background-color: $white-200;
   }
 
   border: none {
@@ -51,6 +51,10 @@
       padding: $double-size-padding;
       font-size: $h2-font-size;
     }
+  }
+
+  &[data-toggle="true"] {
+    filter: saturate(1.5);
   }
 }
 

@@ -146,8 +146,8 @@ $tiny-size:14px;
 
     &:after {
       background-color: var(--reactx-primary);
+      border-radius: $round-radius;
       @include width-height(8px);
-      border-radius: 50%;
       position: absolute;
       content: '';
     }
@@ -217,7 +217,7 @@ $tiny-size:14px;
 .reactx-dark {
   .reactx-loading {
     background: {
-      color: colorOpacity($gray-700, 0.7);
+      color: $black-op-6;
     }
   }
 }

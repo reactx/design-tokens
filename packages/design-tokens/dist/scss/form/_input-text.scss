@@ -11,8 +11,8 @@
   width: 100%;
 
   background: {
-    color: var(--reactx-backdrop-9);
     clip: padding-box;
+    color: $white;
   }
 
   min: {
@@ -100,13 +100,13 @@ textarea.reactx-input {
     color: $dark-font-color;
 
     &::file-selector-button {
+      color: $dark-font-color;
 
       background: {
         color: $dark-background-color;
         image: $gradient-dark;
       }
 
-      color:$dark-font-color;
     }
   }
 }

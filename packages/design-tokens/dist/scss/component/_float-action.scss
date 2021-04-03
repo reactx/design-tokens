@@ -1,0 +1,115 @@
+.reactx-float-action {
+  flex-direction: column-reverse;
+  padding: $standard-padding;
+  align-items: flex-end;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  bottom: 10px;
+  right: 10px;
+
+  .main-action,
+  .sub-action-item {
+    transition: $standard-animation;
+    margin-bottom: $standard-margin;
+    padding: $double-size-padding;
+    border-radius: $round-radius;
+    box-shadow: $small-shadow;
+
+    background: {
+      color: $white-200;
+      image: $gradient;
+    }
+
+    &:hover {
+      background-color: $gray-50;
+      box-shadow: $medium-shadow;
+    }
+  }
+
+  .sub-action {
+    display: none;
+  }
+
+  &:hover {
+    .sub-action {
+      flex-direction: column;
+      align-items: flex-end;
+      display: flex;
+    }
+  }
+}
+
+.reactx-float-action[float="left"] {
+  align-items: flex-start;
+  right: auto;
+  left: 10px;
+
+  .sub-action {
+    align-items: flex-start;
+  }
+}
+
+.reactx-float-action[float="center"] {
+  right: 45%;
+  left: auto;
+}
+
+.reactx-float-action[position="top"] {
+  flex-direction: column;
+  bottom: auto;
+  top: 10px;
+
+  .sub-action {
+    flex-direction: column;
+  }
+}
+
+.reactx-float-action[direction="horizontal"] {
+  flex-direction: row-reverse;
+
+  &:hover {
+    .sub-action {
+      flex-direction: row;
+
+      &-item {
+        margin-right: $standard-margin;
+      }
+    }
+  }
+}
+
+.reactx-float-action[float="left"][direction="horizontal"] {
+  flex-direction: row;
+
+  &:hover {
+    .sub-action {
+      flex-direction: row;
+
+      &-item {
+        margin: {
+          left: $standard-margin;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.reactx-dark {
+
+  .main-action,
+  .sub-action-item {
+    background: {
+      color: $dark-background-color;
+      image: $gradient-dark;
+    }
+
+    &:hover {
+      background: {
+        image: $gradient-dark;
+        color: $gray-500;
+      }
+    }
+  }
+}

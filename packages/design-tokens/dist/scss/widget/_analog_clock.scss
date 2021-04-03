@@ -7,22 +7,22 @@
   .clock {
     &-face {
       background: radial-gradient(ellipse at center, $gray-200 0%, $gray-50 70%);
-      box-shadow: inset 4px 4px 10px 0 rgba(0, 0, 0, 0.4);
-      filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+      box-shadow: inset 4px 4px 10px 0 $black-op-3;
+      filter: drop-shadow(4px 4px 4px $black-op-3);
       @include flex-position-center;
       @include width-height(100%);
       backdrop-filter: $backdrop;
       position: relative;
 
       border: 8px solid $foreground-color {
-        radius: 50%;
+        radius: $round-radius;
       }
 
       &:before {
         background: linear-gradient(45deg, transparent 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, transparent 100%);
         @include width-height(100%);
         position: absolute;
-        border-radius: 50%;
+        border-radius: $round-radius;
         opacity: 0.3;
         content: "";
         z-index: 1;
@@ -44,11 +44,11 @@
       .clock-hand-hour,
       .clock-hand-minute,
       .clock-hand-second {
-        filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(1px 0px 1px $black-op-6);
 
         border: {
-          top-right-radius: 50%;
-          top-left-radius: 50%;
+          top-right-radius: $round-radius;
+          top-left-radius: $round-radius;
         }
       }
 
@@ -80,7 +80,7 @@
       }
 
       .clock-center-circle {
-        filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(1px 0px 1px $black-op-6);
         background: $foreground-color;
         border-radius: $round-radius;
         @include width-height(20px);
