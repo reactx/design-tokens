@@ -87,8 +87,10 @@
       flex-direction: row;
 
       &-item {
-        margin-left: $standard-margin;
-        margin-right: 0;
+        margin: {
+          left: $standard-margin;
+          right: 0;
+        }
       }
     }
   }

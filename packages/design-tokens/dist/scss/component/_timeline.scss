@@ -17,10 +17,10 @@
     flex: 0 1 100px;
 
     &:before {
+      border-radius: $round-radius;
       border: 2px solid $white;
       background: $primary;
       position: absolute;
-      border-radius: 50%;
       height: 10px;
       content: '';
       width: 10px;

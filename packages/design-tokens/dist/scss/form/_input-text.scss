@@ -100,13 +100,13 @@ textarea.reactx-input {
     color: $dark-font-color;
 
     &::file-selector-button {
+      color: $dark-font-color;
 
       background: {
         color: $dark-background-color;
         image: $gradient-dark;
       }
 
-      color:$dark-font-color;
     }
   }
 }

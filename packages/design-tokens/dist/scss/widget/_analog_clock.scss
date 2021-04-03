@@ -15,14 +15,14 @@
       position: relative;
 
       border: 8px solid $foreground-color {
-        radius: 50%;
+        radius: $round-radius;
       }
 
       &:before {
         background: linear-gradient(45deg, transparent 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, transparent 100%);
         @include width-height(100%);
         position: absolute;
-        border-radius: 50%;
+        border-radius: $round-radius;
         opacity: 0.3;
         content: "";
         z-index: 1;
@@ -47,8 +47,8 @@
         filter: drop-shadow(1px 0px 1px $black-op-6);
 
         border: {
-          top-right-radius: 50%;
-          top-left-radius: 50%;
+          top-right-radius: $round-radius;
+          top-left-radius: $round-radius;
         }
       }
 
