@@ -28,23 +28,20 @@ const AgGridComponent = (props) => {
   }, [gridRef.current]);
 
   return (
-    <div className="ag-theme-alpine reactx-h-100">
-      <AgGridReact
-        ref={gridRef}
-        {...parentProps}
-        className={
-          'ag-theme-alpine ' + (props.className ? props.className : '')
-        }
-      >
-        {props.columns.map((item, index) => (
-          <AgGridColumn
-            field={item.title}
-            key={index}
-            sortable={item.sortable}
-          />
-        ))}
-      </AgGridReact>
-    </div>
+    <AgGridReact
+      ref={gridRef}
+      {...parentProps}
+      className={'ag-theme-alpine ' + (props.className ? props.className : '')}
+    >
+      {props.columns.map((item, index) => (
+        <AgGridColumn
+          field={item.title}
+          key={index}
+          sortable={item.sortable}
+          filter={item.filter}
+        />
+      ))}
+    </AgGridReact>
   );
 };
 

@@ -7,3 +7,98 @@ body,
 #root>div {
   height: 50vh;
 }
+
+.ag-theme-alpine {
+  ::-webkit-scrollbar {
+    background: $gray-100;
+    height: 7px;
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 1px solid $gray-300;
+    background: $gray-500;
+    cursor: pointer;
+  }
+
+  .ag-root-wrapper,
+  .ag-menu,
+  .ag-menu-separator-part:after {
+    border-color: $gray-50 !important;
+  }
+
+  .ag-header,
+  .ag-tabs-header {
+    border-bottom-color: $gray-100 !important;
+  }
+}
+
+.reactx-dark {
+  .ag-theme-alpine {
+    color: $white-100;
+
+    .ag-menu-option-active,
+    .ag-compact-menu-option-active {
+      background-color: $black-op-3;
+    }
+
+    .ag-root-wrapper {
+      background-color: $gray-500;
+      border-color: $gray-600 !important;
+    }
+
+    .ag-header {
+      border-bottom-color: $gray-700;
+      background-color: $gray-800;
+    }
+
+    .ag-filter-toolpanel-header,
+    .ag-filter-toolpanel-search,
+    .ag-status-bar,
+    .ag-header-row,
+    .ag-panel-title-bar-title,
+    .ag-multi-filter-group-title-bar {
+      color: $white-100;
+    }
+
+    .ag-menu {
+      background-color: $gray-600;
+      border-color: $gray-700;
+    }
+
+    .ag-popup-child:not(.ag-tooltip-custom) {
+      box-shadow: none;
+    }
+
+    .ag-tabs-header {
+      border-bottom-color: $gray-700;
+    }
+
+    .ag-menu-header {
+      background-color: $gray-700;
+      color: $white-100;
+    }
+
+    .ag-menu-separator-part:after {
+      border-top-color: $gray-700;
+    }
+
+    .ag-row {
+      background-color: $gray-500;
+      border-color: $gray-600;
+      color: $white-100;
+    }
+
+    .ag-header-icon {
+      color: $white-100;
+    }
+
+    .ag-row-odd {
+      background-color: $black-op-09;
+    }
+
+    .ag-row-hover {
+      background-color: $gray-600;
+    }
+  }
+}
