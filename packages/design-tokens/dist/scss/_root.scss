@@ -11,7 +11,7 @@
   @include darkAndLightColor('info', $teal);
   @include darkAndLightColor('blue', $blue);
   @include darkAndLightColor('red', $red);
-  --reactx-backdrop-color: $white-op-6;
+  --reactx-backdrop-color: #{$white-op-6};
 }
 
 //TODO: Light and Dark mode

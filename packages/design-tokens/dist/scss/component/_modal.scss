@@ -82,6 +82,19 @@
       }
     }
 
+    &.modal-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45vh;
+      border-radius: 0;
+      animation-timing-function: ease-in-out;
+      animation-name: fadeInUp;
+      animation-duration: 0.2s;
+    }
+
+
   }
 
   &-title {

@@ -42,6 +42,11 @@ export default {
         category: 'Attribute',
       },
     },
+    letterCount: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     color: {
       control: 'inline-radio',
       table: {

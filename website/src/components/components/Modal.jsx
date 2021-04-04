@@ -33,6 +33,7 @@ const TYPE = {
   FULL: 'full',
   LEFT: 'left',
   RIGHT: 'right',
+  BOTTOM: 'bottom',
 };
 
 const ModalComponent = (props) => {
