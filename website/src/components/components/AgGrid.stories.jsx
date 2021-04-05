@@ -97,6 +97,7 @@ export default {
       },
     },
     rowSelection: {
+      control: 'inline-radio',
       table: {
         category: 'Attribute',
       },
@@ -143,8 +144,8 @@ Basic.args = {
     { make: 'BMW', model: 'M3', price: 85000 },
   ],
   columns: [
-    { title: 'make', sortable: true, filter: true },
-    { title: 'model', sortable: false, filter: true },
-    { title: 'price', sortable: true, filter: false },
+    { field: 'make', sortable: true, filter: true },
+    { field: 'model', headerName: 'model name', sortable: false, filter: true },
+    { field: 'price', sortable: true, filter: false },
   ],
 };

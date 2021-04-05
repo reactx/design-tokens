@@ -5,10 +5,16 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import * as agGridEnterprise from 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css';
 
 agGridEnterprise.LicenseManager.setLicenseKey(
   'DownloadDevTools_COM_NDEwMjM0NTgwMDAwMA==59158b5225400879a12a96634544f5b6',
 );
+
+const ROW_SELECTION = {
+  SINGLE: 'single',
+  MULTIPLE: 'multiple',
+};
 
 const AgGridComponent = (props) => {
   const parentProps = { ...props };
@@ -35,8 +41,9 @@ const AgGridComponent = (props) => {
     >
       {props.columns.map((item, index) => (
         <AgGridColumn
-          field={item.title}
           key={index}
+          field={item.field}
+          headerName={item.headerName || item.field}
           sortable={item.sortable}
           filter={item.filter}
         />
@@ -62,32 +69,25 @@ AgGrid.propTypes = {
   suppressContextMenu: PropTypes.bool,
   paginationAutoPageSize: PropTypes.bool,
   paginationPageSize: PropTypes.number,
-  onSelectionChanged: PropTypes.func,
-  onGridReady: PropTypes.func,
-  onPaginationChanged: PropTypes.func,
-  onRowDoubleClicked: PropTypes.func,
-  onRowSelected: PropTypes.func,
-  onCellClicked: PropTypes.func,
   rowData: PropTypes.any,
   columns: PropTypes.array,
   cacheBlockSize: PropTypes.any,
   statusBar: PropTypes.any,
   rowModelType: PropTypes.any,
   rowClassRules: PropTypes.any,
-  rowSelection: PropTypes.string,
+  rowSelection: PropTypes.oneOf(Object.values(ROW_SELECTION)),
+  //Action
+  onSelectionChanged: PropTypes.func,
+  onGridReady: PropTypes.func,
+  onPaginationChanged: PropTypes.func,
+  onRowDoubleClicked: PropTypes.func,
+  onRowSelected: PropTypes.func,
+  onCellClicked: PropTypes.func,
 };
 
 AgGrid.defaultProps = {
-  enableRtl: false,
-  paginationAutoPageSize: false,
-  suppressContextMenu: false,
-  pagination: false,
-  animateRows: false,
-  suppressMovableColumns: false,
-  suppressCellSelection: false,
-  className: '',
   paginationPageSize: 25,
-  rowSelection: 'single',
+  rowSelection: ROW_SELECTION.SINGLE,
 };
 
 export { AgGrid };

@@ -35,10 +35,16 @@ $white-op-9:rgba(255, 255, 255, 0.9);
 $white-op-6:rgba(255, 255, 255, 0.6);
 $white-op-3:rgba(255, 255, 255, 0.3);
 
+$ag-blue-1:rgba(33, 150, 243, 0.1);
+$ag-blue-3:rgba(33, 150, 243, 0.3);
+$ag-blue-4:rgba(33, 150, 243, 0.4);
+$ag-blue-6:rgba(33, 150, 243, 0.6);
+
 $danger:$red;
 $primary:$blue;
+$success:$green;
 $secondary:$gray-600;
-$foreground-color: $gray-900;
+$foreground-color:$gray-900;
 
 // dark
 $dark-font-color:$gray-50;
