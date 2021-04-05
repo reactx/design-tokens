@@ -1,18 +1,17 @@
 // stylelint-disable no-duplicate-selectors
 @import '~@dtcg/design-tokens/dist';
 
-// body.sb-show-main.sb-main-padded {
-//   padding: 0;
-// }
+::-webkit-scrollbar {
+  background: $gray-100;
+  height: 7px;
+  width: 7px;
+}
 
-// .reactx-full-screen {
-//   height: 100vh;
-//   padding: 16px;
-
-//   &.darkTheme {
-//     background-color: #1F2937;
-//   }
-// }
+::-webkit-scrollbar-thumb {
+  border: 1px solid $gray-300;
+  background: $gray-500;
+  cursor: pointer;
+}
 
 body.sb-show-main.sb-main-padded {
   padding: 0;
@@ -83,4 +82,8 @@ body.sb-show-main.sb-main-padded {
   &:hover {
     background-color: #cacaca;
   }
+}
+
+.reactx-btm-navigation {
+  position: absolute;
 }

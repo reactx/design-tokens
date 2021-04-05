@@ -1,9 +1,9 @@
 import React from 'react';
-import { Avatar } from './Avatar';
+import { BottomNavigation } from './BottomNavigation';
 
 export default {
-  title: 'Components/Avatar',
-  component: Avatar,
+  title: 'Components/Bottom Navigation',
+  component: BottomNavigation,
   argTypes: {
     id: {
       control: 'text',
@@ -11,38 +11,17 @@ export default {
         category: 'Attribute',
       },
     },
-    username: {
+    items: {
       table: {
         category: 'Attribute',
       },
     },
-    src: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    title: {
-      control: 'text',
-      table: {
-        category: 'Attribute',
-      },
-    },
-    disabled: {
+    default: {
       table: {
         category: 'Attribute',
       },
     },
     className: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    loading: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    letterCount: {
       table: {
         category: 'Attribute',
       },
@@ -59,19 +38,8 @@ export default {
         category: 'Style',
       },
     },
-    size: {
-      control: 'inline-radio',
-      table: {
-        category: 'Style',
-      },
-    },
     shadow: {
       control: 'inline-radio',
-      table: {
-        category: 'Style',
-      },
-    },
-    outline: {
       table: {
         category: 'Style',
       },
@@ -84,5 +52,35 @@ export default {
   },
 };
 
-export const Basic = (args) => <Avatar {...args} />;
-Basic.args = { username: 'reactx' };
+export const Basic = (args) => <BottomNavigation {...args} />;
+Basic.args = {
+  items: [
+    {
+      id: 1,
+      title: 'Item 1',
+      icon: 'AutoRacing',
+    },
+    {
+      id: 2,
+      title: 'Item 2',
+      icon: 'Cloudy',
+    },
+    {
+      id: 3,
+      title: 'Item 3',
+      icon: 'Calories',
+    },
+    {
+      id: 4,
+      title: 'Item 4',
+      icon: 'Camera',
+    },
+    {
+      id: 5,
+      title: 'Item 5',
+      icon: 'CoffeeScript',
+    },
+  ],
+  default: 3,
+  onClick: (val) => console.log(val + ' selected'),
+};

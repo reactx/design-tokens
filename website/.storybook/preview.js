@@ -21,7 +21,7 @@ const ThemeBlock = styled.div(
     left: 0,
     right: '50vw',
     width: '50vw',
-    height: '100vh',
+    height: '100vh !important',
     bottom: 0,
     overflow: 'auto',
     padding: 10,

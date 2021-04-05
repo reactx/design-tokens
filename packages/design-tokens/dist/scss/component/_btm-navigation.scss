@@ -1,0 +1,68 @@
+.reactx-btm-navigation {
+  transition: $standard-animation;
+  justify-content: space-around;
+  backdrop-filter: $backdrop;
+  align-items: center;
+  padding: 5px 10px;
+  position: fixed;
+  display: flex;
+  height: 60px;
+  margin: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background: {
+    image: $gradient;
+    color: $white-op-6;
+  }
+
+  .btm-nav-item {
+    border-radius: $standard-radius;
+    justify-content: space-around;
+    margin: 0 $half-size-margin;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    &:hover {
+      background-color: $black-op-09;
+      cursor: pointer;
+    }
+
+    &.active {
+      background-color: $black-op-3;
+    }
+  }
+
+  .btm-nav-title {
+    font-size: 0.65em;
+  }
+
+  .btm-nav-icon {
+    font-size: 1.35em;
+  }
+}
+
+.reactx-dark {
+  .reactx-btm-navigation {
+    background: {
+      image: $gradient-dark;
+      color: $black-op-6;
+    }
+
+    .btm-nav-item {
+      &:hover {
+        background-color: $white-op-09;
+      }
+
+      &.active {
+        background-color: $white-op-3;
+      }
+    }
+  }
+}
+
+@include colors(btm-navigation, 'background-color');
