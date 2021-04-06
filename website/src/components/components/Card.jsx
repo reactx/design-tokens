@@ -54,7 +54,6 @@ Card.propTypes = {
   outline: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 Card.defaultProps = {

@@ -45,7 +45,6 @@ Navbar.propTypes = {
   menu: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   disabled: PropTypes.bool,
   className: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 Navbar.defaultProps = {
@@ -54,7 +53,6 @@ Navbar.defaultProps = {
   shadow: SHADOW.NONE,
   outline: false,
   disabled: false,
-  className: '',
 };
 
 export { Navbar };

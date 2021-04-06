@@ -74,7 +74,6 @@ Loading.propTypes = {
   color: PropTypes.oneOf(Object.values(COLOR)),
   text: PropTypes.string,
   className: PropTypes.string,
-  onClick: PropTypes.func,
   enabled: PropTypes.bool,
 };
 

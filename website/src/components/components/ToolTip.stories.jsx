@@ -11,6 +11,11 @@ export default {
         category: 'Attribute',
       },
     },
+    active: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     children: {
       table: {
         category: 'Attribute',
@@ -19,6 +24,11 @@ export default {
     className: {
       table: {
         category: 'Attribute',
+      },
+    },
+    style: {
+      table: {
+        category: 'Style',
       },
     },
     color: {

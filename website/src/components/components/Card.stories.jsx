@@ -65,11 +65,6 @@ export default {
         category: 'Style',
       },
     },
-    onClick: {
-      table: {
-        category: 'Action',
-      },
-    },
   },
 };
 

@@ -39,15 +39,16 @@ const BottomNavigationComponent = (props) => {
         <div
           key={index}
           className={'btm-nav-item' + (active === item.id ? ' active' : '')}
+          title={item.title}
           onClick={() => {
             setActive(item.id);
             props.onClick(item.id);
           }}
         >
           <div className="btm-nav-icon">
-            <i className={'reactx-icon nf-icon-' + item.icon}></i>
+            <i className={'reactx-icon nf-icon-' + item.icon} />
           </div>
-          <div className="btm-nav-title">{item.title}</div>
+          {props.label && <div className="btm-nav-title">{item.title}</div>}
         </div>
       ))}
     </div>
@@ -66,6 +67,7 @@ BottomNavigation.propTypes = {
   default: PropTypes.string,
   onClick: PropTypes.func,
   items: PropTypes.array,
+  label: PropTypes.bool,
   id: PropTypes.string,
 };
 
