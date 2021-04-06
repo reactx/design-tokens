@@ -1,7 +1,4 @@
 import React, { Fragment, useEffect } from 'react';
-import { addDecorator, addParameters } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { withCssResources } from '@storybook/addon-cssresources';
 import '../src/global.scss';
 import {
@@ -58,7 +55,7 @@ const ThemeDef = styled.div({
   padding: 10,
 });
 
-addDecorator(withA11y);
+// addDecorator(withA11y);
 
 const ThemedSetRoot = () => {
   const theme = useTheme();
@@ -147,27 +144,6 @@ export const decorators = [
     }
   },
 ];
-
-export const parameters = {
-  exportedParameter: 'exportedParameter',
-  a11y: {
-    config: {},
-    options: {
-      checks: { 'color-contrast': { options: { noScroll: true } } },
-      restoreScroll: true,
-    },
-  },
-  options: {
-    storySort: (a, b) =>
-      a[1].kind === b[1].kind
-        ? 0
-        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
-  },
-  docs: {
-    theme: themes.light,
-    page: () => <DocsPage subtitleSlot={({ kind }) => `Subtitle: ${kind}`} />,
-  },
-};
 
 export const globalTypes = {
   theme: {

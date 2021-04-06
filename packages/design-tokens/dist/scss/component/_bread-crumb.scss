@@ -1,7 +1,7 @@
 .reactx-breadcrumb {
+  padding: $half-size-padding $standard-padding;
   transition: $standard-animation;
   border-radius: $standard-radius;
-  padding: $standard-padding;
   font-size: $h6-font-size;
   flex-direction: row;
   align-items: center;
@@ -34,7 +34,9 @@
   }
 
   &-item {
+    border-radius: $standard-radius;
     @include flex-position-center;
+    padding: $standard-padding;
     max-width: 150px;
     overflow: hidden;
     font-size: 1em;
@@ -57,6 +59,15 @@
       padding: 0px;
       content: "";
     }
+
+    &:hover {
+      background-color: $black-op-06;
+    }
+
+    &.active {
+      background-color: $primary;
+      color: $white;
+    }
   }
 }
 
@@ -64,11 +75,16 @@
 
 .reactx-dark {
   .reactx-breadcrumb {
+    color: $dark-font-color;
+
     background: {
       color: $dark-background-color;
       image: $gradient-dark;
     }
 
-    color:$dark-font-color;
+    .breadcrumb-item:hover {
+      background-color: $white-op-3;
+
+    }
   }
 }

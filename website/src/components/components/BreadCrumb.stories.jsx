@@ -45,6 +45,11 @@ export default {
         category: 'Style',
       },
     },
+    onClick: {
+      table: {
+        category: 'Action',
+      },
+    },
   },
 };
 
@@ -55,4 +60,5 @@ Basic.args = {
     { title: 'item 2', id: 2, data: 'value' },
     { title: 'item 3', id: 3, data: 'value' },
   ],
+  onClick: (item) => alert(item.id),
 };

@@ -39,12 +39,16 @@ const SIZE = {
 const BreadCrumbComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
-
+  delete parentProps.onClick;
   return (
     <div {...parentProps} className={generateClass(props, 'breadcrumb')}>
       {props.items.map((item, index) => {
         return (
-          <div className="breadcrumb-item" key={index}>
+          <div
+            className="breadcrumb-item"
+            key={index}
+            onClick={() => props.onClick(item)}
+          >
             <span title={item.title}>{item.title}</span>
           </div>
         );
@@ -65,6 +69,7 @@ BreadCrumb.propTypes = {
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   className: PropTypes.string,
   items: PropTypes.array,
+  onClick: PropTypes.func,
 };
 
 BreadCrumb.defaultProps = {
