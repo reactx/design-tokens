@@ -4,7 +4,7 @@
 
   .reactx-checkbox-check {
     transition: $standard-animation;
-    margin-right: $standard-padding;
+    margin: 0 $standard-padding;
     @include width-height(1em);
     position: relative;
     display: block;

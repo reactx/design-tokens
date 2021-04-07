@@ -36,7 +36,6 @@ const CollapseComponent = (props) => {
   cleanProps(parentProps);
 
   const clickAction = () => {
-    debugger;
     if (!props.accordionMode) {
       setOpen(!open);
     }
