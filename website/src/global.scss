@@ -18,6 +18,11 @@ body.sb-show-main.sb-main-padded {
   width: 100%;
 }
 
+.reactx-rtl {
+  direction: rtl;
+  text-align: right;
+}
+
 .reactx-column {
   border: 1px solid #ccc;
   justify-content: center;
@@ -35,7 +40,6 @@ body.sb-show-main.sb-main-padded {
 }
 
 .reactx-pallet {
-
   .reactx-column {
     border-width: 0;
     font-size: 0;
@@ -45,7 +49,7 @@ body.sb-show-main.sb-main-padded {
     user-select: all;
   }
 
-  .reactx-column:Hover {
+  .reactx-column:hover {
     font-size: 1em;
     color: #fff;
   }
