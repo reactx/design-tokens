@@ -42,6 +42,7 @@ const AccordionComponent = (props) => {
           id={item.id}
           head={item.head}
           radius="none"
+          accordionMode={true}
           open={item.id === active}
           color={props.color}
           onClick={(id) => {
@@ -60,20 +61,19 @@ const Accordion = React.forwardRef((props) => (
 ));
 
 Accordion.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
   radius: PropTypes.oneOf(Object.values(RADIUS)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  items: PropTypes.array,
-  default: PropTypes.string,
+  color: PropTypes.oneOf(Object.values(COLOR)),
   className: PropTypes.string,
+  default: PropTypes.string,
+  items: PropTypes.array,
+  id: PropTypes.string,
 };
 
 Accordion.defaultProps = {
-  color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
+  color: COLOR.NORMAL,
   shadow: SHADOW.NONE,
-  className: '',
 };
 
 export { Accordion };

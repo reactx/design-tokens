@@ -38,6 +38,7 @@
 
   &-item {
     border-radius: $standard-radius;
+    transition: $standard-animation;
     @include flex-position-center;
     padding: $standard-padding;
     max-width: 150px;
