@@ -75,11 +75,11 @@
 
 .reactx-dark {
   .reactx-card {
+    color: $dark-font-color;
+
     background: {
       color: $dark-background-color;
       image: $gradient-dark;
     }
-
-    color:$dark-font-color;
   }
 }
