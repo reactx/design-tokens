@@ -1,0 +1,87 @@
+.react-contextmenu {
+  transition: opacity 250ms ease !important;
+  margin: $half-size-margin 0 0;
+  padding: $standard-padding;
+  background-clip: padding-box;
+  background-color: $white-100;
+  pointer-events: none;
+  direction: inherit;
+  opacity: 0;
+
+  &--visible {
+    pointer-events: auto;
+    z-index: 9999;
+    opacity: 1;
+  }
+
+  &-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: inherit;
+    white-space: nowrap;
+
+    & > .reactx-menu-item-title {
+      padding: $standard-padding;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .reactx-menu-short-key {
+      color: $gray-300;
+      padding: 0 $double-size-padding;
+      font-size: $font-size-sm;
+    }
+
+    i {
+      color: $blue;
+      margin: 0 2px;
+      width: 20px;
+    }
+
+    &:hover {
+      background-color: $white-300 !important;
+      cursor: pointer;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      i {
+        filter: grayscale(1);
+      }
+    }
+
+    &.react-contextmenu-item--active,
+    &.react-contextmenu-item--selected {
+      background-color: $white-300;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &.react-contextmenu-item--disabled,
+    &.react-contextmenu-item--disabled:hover {
+      background-color: transparent;
+      opacity: 0.5;
+
+      i {
+        background-color: transparent;
+        filter: grayscale(1);
+      }
+    }
+
+    &--divider {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      margin-bottom: $half-size-margin;
+      padding: $half-size-padding 0;
+      cursor: inherit;
+
+      &:hover {
+        border-color: rgba(0, 0, 0, 0.15);
+        background-color: transparent;
+      }
+    }
+  }
+}
