@@ -2,9 +2,12 @@
   transition: $standard-animation;
   margin-bottom: $standard-margin;
   padding: $double-size-padding;
-  border-radius: $half-radius;
   position: relative;
   display: block;
+
+  border: 1px solid $black-op-09 {
+    radius: $half-radius;
+  }
 
   background: {
     color: $white-100;

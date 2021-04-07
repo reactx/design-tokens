@@ -9,7 +9,7 @@
   display: flex;
   min-width: 0;
 
-  border: 1px solid $black-op-06 {
+  border: 1px solid $black-op-09 {
     radius: $standard-radius;
   }
 
@@ -26,7 +26,7 @@
 
 .card {
   &-header {
-    border-bottom: 1px solid $black-op-06;
+    border-bottom: 1px solid $black-op-09;
     background-color: $black-op-03;
     padding: $standard-padding;
     align-items: center;
@@ -40,7 +40,7 @@
   }
 
   &-footer {
-    border-top: 1px solid $black-op-06;
+    border-top: 1px solid $black-op-09;
     background-color: $black-op-03;
     padding: $standard-padding;
   }
@@ -63,6 +63,11 @@
       color: $primary;
       font-size: 48px;
     }
+  }
+
+  &-title {
+    margin: $half-size-margin 0;
+    font-weight: bold;
   }
 }
 

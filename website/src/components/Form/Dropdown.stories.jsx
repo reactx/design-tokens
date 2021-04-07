@@ -1,9 +1,9 @@
 import React from 'react';
-import { SelectBox } from './SelectBox';
+import { Dropdown } from './Dropdown';
 
 export default {
-  title: 'Form/SelectBox',
-  component: SelectBox,
+  title: 'Form/Dropdown',
+  component: Dropdown,
   argTypes: {
     id: {
       control: 'text',
@@ -21,7 +21,17 @@ export default {
         category: 'Attribute',
       },
     },
+    title: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     disabled: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    readOnly: {
       table: {
         category: 'Attribute',
       },
@@ -41,17 +51,7 @@ export default {
         category: 'Attribute',
       },
     },
-    defaultText: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    multiple: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    title: {
+    fixIcon: {
       table: {
         category: 'Attribute',
       },
@@ -88,12 +88,18 @@ export default {
   },
 };
 
-export const Basic = (args) => <SelectBox {...args} />;
+export const Basic = (args) => <Dropdown {...args} />;
 Basic.args = {
   items: [
-    { name: 'item 1', value: '1' },
-    { name: 'item 2', value: '2' },
-    { name: 'item 3', value: '3' },
-    { name: 'item 4', value: '4' },
+    { name: 'item 1', value: 'value' },
+    { name: 'item 2', value: 'value' },
   ],
+};
+export const WithFixIcon = (args) => <Dropdown {...args} />;
+WithFixIcon.args = {
+  items: [
+    { name: 'item 1', value: 'value' },
+    { name: 'item 2', value: 'value' },
+  ],
+  fixIcon: 'BorderAll',
 };

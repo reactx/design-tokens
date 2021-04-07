@@ -1,11 +1,14 @@
 .reactx-badge {
   padding: $half-size-padding $standard-padding;
   @include flex-position-center(inline-flex);
-  border-radius: $double-size-radius;
   transition: $standard-animation;
   font-size: $font-size-sm;
   white-space: nowrap;
   line-height: 1em;
+
+  border: 1px solid $black-op-09 {
+    radius: $double-size-radius;
+  }
 
   background: {
     color: $white-100;

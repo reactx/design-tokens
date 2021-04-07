@@ -1,19 +1,23 @@
 .reactx-selectbox {
-  cursor: pointer;
   transition: $standard-animation;
-  padding: 0 $half-size-padding;
+  padding: 0 $standard-padding;
+  font-size: $font-size-base;
   color: $foreground-color;
-  position: relative;
-  line-height: 1.5em;
   appearance: none;
+  line-height: 2em;
   cursor: pointer;
   display: block;
   outline: none;
   width: 100%;
 
+
   background: {
-    color: $white-100;
     clip: padding-box;
+    color: $white;
+    repeat: no-repeat;
+    position: right .75rem center;
+    size: 16px 12px;
+    image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
   }
 
   min: {
@@ -22,110 +26,61 @@
   }
 
   border: $standard-border {
-    width: $standard-border-size;
     radius: $standard-radius;
     color: $gray-100;
   }
 
-  .selectbox {
-    &-value {
-      display: none
-    }
-
-    &-item {
-      padding: $standard-padding;
-      align-items: center;
-      display: flex;
-    }
-
-    &-arrow {
-      align-items: center;
-      display: flex;
-    }
-
-    &-selected {
-      padding: $half-size-padding $double-size-padding;
-      background-color: $gray-200;
-    }
-
-    &-dropdown {
-      background-color: var(--reactx-backdrop-color);
-      box-shadow: $medium-shadow;
-      backdrop-filter: $backdrop;
-      position: absolute;
-      max-height: 50vh;
-      min-width: 150px;
-      overflow: auto;
-      display: none;
-      height: auto;
-      width: 100%;
-      right: 0;
-      left: 0;
-
-      border: $standard-border {
-        radius: $standard-radius;
-        color: $gray-100;
-      }
-
-      .selectbox-selected:hover,
-      .selectbox-item:hover {
-        background: $gray-200;
-      }
+  &:focus {
+    border: $standard-border {
+      color: var(--reactx-primary);
     }
   }
 
-  &._active {
-    .selectbox-dropdown {
-      display: block;
-    }
+  &-valid {
+    border: 1px solid $green !important;
   }
 
-  &.selectbox-size-tiny {
+  &-invalid {
+    border: 1px solid $red !important;
+  }
+
+  &[multiple] {
+    background-image: none !important;
+    overflow: auto;
+  }
+}
+
+.selectbox-size {
+  &-tiny {
     padding: 0 ($half-size-padding*0.75);
     font-size: $font-size-sm*0.75;
   }
 
-  &.selectbox-size-small {
+  &-small {
     padding: 0 ($half-size-padding*0.9);
     font-size: $font-size-sm*0.9;
   }
 
-  &.selectbox-size-large {
+  &-large {
     padding: $half-size-padding $standard-padding;
     font-size: $h4-font-size;
   }
 
-  &.selectbox-size-extra {
+  &-extra {
     padding: $half-size-padding $standard-padding;
     font-size: $h2-font-size;
-  }
-
-  &.reactx-input-valid {
-    border: 1px solid $green;
-  }
-
-  &.reactx-input-invalid {
-    border: 1px solid $red;
   }
 }
 
 .reactx-dark {
+
   .reactx-selectbox {
-    background: {
-      color: $dark-background-color;
-      image: $gradient-dark;
-    }
-
-    color:$dark-font-color;
-    border-color: $dark-border-color;
-  }
-
-  .selectbox-dropdown {
     background-color: $dark-background-color;
     border-color: $dark-border-color;
+    color: $dark-font-color;
 
-    .selectbox-item:hover {
-      background-color: $gray-500;
+    background: {
+      image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
     }
   }
 }

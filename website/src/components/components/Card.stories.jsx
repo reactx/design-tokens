@@ -26,7 +26,7 @@ export default {
         category: 'Attribute',
       },
     },
-    title: {
+    cardTitle: {
       control: 'text',
       table: {
         category: 'Attribute',

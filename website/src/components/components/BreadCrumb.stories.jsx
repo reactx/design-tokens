@@ -21,6 +21,11 @@ export default {
         category: 'Attribute',
       },
     },
+    icon: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     color: {
       control: 'inline-radio',
       table: {

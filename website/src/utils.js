@@ -10,6 +10,7 @@ const delList = [
   'formControlStyle',
   'subChildren',
   'toggleChildren',
+  'defaultText',
   'closeAction',
   'like',
   'isReplayed',
@@ -143,7 +144,7 @@ export const generateClass = (prop, baseName) => {
   }
   //VALIDATION
   if (prop.validationStates && prop.validationStates !== 'none') {
-    classList.push('reactx-input-' + prop.validationStates);
+    classList.push('reactx-' + baseName + '-' + prop.validationStates);
   }
   //THEME
   if (prop.theme) {

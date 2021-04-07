@@ -44,13 +44,18 @@ const BreadCrumbComponent = (props) => {
     <div {...parentProps} className={generateClass(props, 'breadcrumb')}>
       {props.items.map((item, index) => {
         return (
-          <div
-            className="breadcrumb-item"
-            key={index}
-            onClick={() => props.onClick(item)}
-          >
-            <span title={item.title}>{item.title}</span>
-          </div>
+          <>
+            {index !== 0 && (
+              <i className={'reactx-icon nf-icon-' + props.icon} />
+            )}
+            <div
+              className="breadcrumb-item"
+              key={index}
+              onClick={() => props.onClick(item)}
+            >
+              <span title={item.title}>{item.title}</span>
+            </div>
+          </>
         );
       })}
     </div>
@@ -68,6 +73,7 @@ BreadCrumb.propTypes = {
   size: PropTypes.oneOf(Object.values(SIZE)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   className: PropTypes.string,
+  icon: PropTypes.string,
   items: PropTypes.array,
   onClick: PropTypes.func,
 };
@@ -77,7 +83,7 @@ BreadCrumb.defaultProps = {
   radius: RADIUS.NORMAL,
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
-  className: '',
+  icon: 'ChevronRight',
 };
 
 export { BreadCrumb };

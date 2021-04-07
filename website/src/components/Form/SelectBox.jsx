@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
-import { FluentIcon } from '../components/FluentIcon';
 
 const SHADOW = {
   NONE: 'none',
@@ -33,103 +32,26 @@ const SIZE = {
 };
 
 const SelectBoxComponent = (props) => {
-  const [isOpen, SetOpen] = useState(false);
-  const [selectItem, setSelectItem] = useState(
-    props.defaultValue || props.items[0] || {},
-  );
   const selectboxRef = useRef(null);
   const parentProps = { ...props };
   cleanProps(parentProps);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        selectboxRef.current &&
-        !selectboxRef.current.contains(event.target)
-      ) {
-        SetOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [selectboxRef]);
-
-  const renderItem = (item) => {
-    return (
-      <div
-        className={
-          'selectbox-item ' +
-          (item.value === props.defaultValue?.value
-            ? ' selectbox-selected'
-            : '')
-        }
-        onClick={(e) => {
-          if (props.onChange) props.onChange(item);
-          SetOpen(false);
-          setSelectItem(item);
-          e.stopPropagation();
-        }}
-      >
-        <span className="selectbox-value">{item.value}</span>
-        <span className="selectbox-name">{item.name}</span>
-      </div>
-    );
-  };
-
   return (
-    <div
+    <select
       ref={selectboxRef}
       {...parentProps}
-      className={generateClass(props, 'selectbox') + (isOpen ? ' _active' : '')}
-      onClick={() => {
-        !props.disabled && SetOpen(!isOpen);
-      }}
+      className={generateClass(props, 'selectbox')}
     >
-      <div className="selectbox-item">
-        {props.fixIcon ? (
-          <>
-            {typeof props.fixIcon === 'string' ? (
-              <FluentIcon
-                icon={props.fixIcon}
-                className="reactx-p-0"
-                iconSize={props.size}
-              />
-            ) : (
-              <>{props.fixIcon}</>
-            )}
-          </>
-        ) : (
-          <>
-            <span className="selectbox-arrow">
-              {isOpen ? (
-                <FluentIcon
-                  icon="ChevronFold10"
-                  iconSize={props.size}
-                  className="reactx-p-0"
-                />
-              ) : (
-                <FluentIcon
-                  icon="ChevronUnfold10"
-                  iconSize={props.size}
-                  className="reactx-p-0"
-                />
-              )}
-            </span>
-            <span className="selectbox-value">{selectItem.value}</span>
-            <span className="selectbox-name">{selectItem.name}</span>
-          </>
-        )}
-      </div>
-      <div className="selectbox-dropdown">
-        {props.items &&
-          props.items.map((item, index) => {
-            if (item.value === 'separator') return <hr key={index} />;
-            return renderItem(item);
-          })}
-      </div>
-    </div>
+      <option value="" className="selectbox-item">
+        {props.defaultText}
+      </option>
+      {props.items &&
+        props.items.map((item, index) => (
+          <option key={index} value={item.value} className="selectbox-item">
+            {item.name}
+          </option>
+        ))}
+    </select>
   );
 };
 
@@ -143,16 +65,16 @@ SelectBox.propTypes = {
   size: PropTypes.oneOf(Object.values(SIZE)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
-  fixIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   title: PropTypes.string,
   disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
   required: PropTypes.bool,
   autoFocus: PropTypes.bool,
+  multiple: PropTypes.bool,
   className: PropTypes.string,
   onChange: PropTypes.func,
   defaultValue: PropTypes.string,
   items: PropTypes.array,
+  defaultText: PropTypes.string,
 };
 
 SelectBox.defaultProps = {
@@ -160,11 +82,7 @@ SelectBox.defaultProps = {
   size: SIZE.MEDIUM,
   shadow: SHADOW.NONE,
   validationStates: VALIDATION.NONE,
-  disabled: false,
-  readOnly: false,
-  required: false,
-  autoFocus: false,
-  className: '',
+  defaultText: '--Please choose an option--',
 };
 
 export { SelectBox };
