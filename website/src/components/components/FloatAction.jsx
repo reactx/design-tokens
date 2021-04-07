@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
@@ -19,23 +19,37 @@ const POSITION = {
 };
 
 const FloatActionComponent = (props) => {
+  const [toggle, setToggle] = useState(false);
   const parentProps = { ...props };
   delete parentProps.type;
   cleanProps(parentProps);
+  delete parentProps.onClick;
 
   return (
     <div
       {...parentProps}
       className={
-        'reactx-float-action ' + (props.className ? props.className : '')
+        'reactx-float-action' +
+        (toggle ? ' toggle' : '') +
+        (props.className ? ' ' + props.className : '')
       }
     >
-      <div className="main-action">{props.children}</div>
+      <div className="main-action" onClick={() => setToggle(!toggle)}>
+        {props.children}
+      </div>
       <div className="sub-action">
         {props.subChildren.length !== 0 && (
           <>
             {props.subChildren.map((item, index) => (
-              <div className="sub-action-item" key={index} {...item.props}>
+              <div
+                {...item.props}
+                className={
+                  'sub-action-item ' +
+                  (item.props.className ? item.props.className : '')
+                }
+                onClick={() => props.onClick(item)}
+                key={index}
+              >
                 {item.data}
               </div>
             ))}

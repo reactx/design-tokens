@@ -17,7 +17,7 @@ module.exports = {
       },
     },
     '@storybook/addon-docs/register',
-    '@storybook/addon-actions',
+    // '@storybook/addon-actions',
     '@storybook/addon-storysource',
     // '@storybook/addon-a11y',
     '@whitespace/storybook-addon-html',
