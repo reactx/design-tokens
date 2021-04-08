@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
-import { Collapse } from './Collapse';
 
 const COLOR = {
   PRIMARY: 'primary',
@@ -11,7 +10,6 @@ const COLOR = {
   INFO: 'info',
   DARK: 'dark',
   LIGHT: 'light',
-  LIGHT: 'light',
   NORMAL: 'normal',
 };
 
@@ -20,6 +18,7 @@ const RADIUS = {
   SMALL: 'small',
   NORMAL: 'normal',
   CURVE: 'curve',
+  PILL: 'pill',
 };
 
 const SHADOW = {
@@ -29,51 +28,42 @@ const SHADOW = {
   LARGE: 'large',
 };
 
-const AccordionComponent = (props) => {
-  const [active, setActive] = useState(props.default || null);
+const ListComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
+  delete parentProps.onClick;
 
   return (
-    <div {...parentProps} className={generateClass(props, 'accordion')}>
+    <ul {...parentProps} className={generateClass(props, 'list')}>
       {props.items.map((item, index) => (
-        <Collapse
+        <li
           key={index}
           id={item.id}
-          head={item.head}
-          radius="none"
-          accordionMode={true}
-          open={item.id === active}
-          color={props.color}
-          onClick={(id) => {
-            active === id ? setActive(null) : setActive(id);
-          }}
+          className="list-item"
+          onClick={() => props.onClick(item)}
         >
-          {item.children}
-        </Collapse>
+          {item.data}
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
-const Accordion = React.forwardRef((props) => (
-  <AccordionComponent {...props} />
-));
+const List = React.forwardRef((props) => <ListComponent {...props} />);
 
-Accordion.propTypes = {
+List.propTypes = {
   radius: PropTypes.oneOf(Object.values(RADIUS)),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   color: PropTypes.oneOf(Object.values(COLOR)),
   className: PropTypes.string,
-  default: PropTypes.string,
-  items: PropTypes.array,
+  onClick: PropTypes.func,
   id: PropTypes.string,
 };
 
-Accordion.defaultProps = {
+List.defaultProps = {
   radius: RADIUS.NORMAL,
-  color: COLOR.NORMAL,
   shadow: SHADOW.NONE,
+  color: COLOR.NORMAL,
 };
 
-export { Accordion };
+export { List };

@@ -1,0 +1,37 @@
+.reactx-list {
+  background-color: $white;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  border: 1px solid $black-op-09 {
+    radius: $standard-radius;
+  }
+
+  .list-item {
+    padding: $standard-padding $double-size-padding;
+    border-bottom: 1px solid $black-op-09;
+
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $black-op-03;
+    }
+  }
+}
+
+@include colors(list, 'background-color');
+
+.reactx-dark {
+  .reactx-list {
+    background-color: $dark-background-color;
+    color: $dark-font-color;
+
+    .list-item:hover {
+      background-color: $black-op-09;
+    }
+  }
+}

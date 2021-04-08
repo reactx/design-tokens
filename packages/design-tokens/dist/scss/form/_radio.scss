@@ -1,46 +1,50 @@
 .reactx-radio {
+  @include flex-position-center(inline-flex);
   transition: $standard-animation;
-  display: none;
 
-  &+.radio-title {
+  .radio {
     @include flex-position-center(inline-flex);
-    transition: $standard-animation;
+    padding: 0 $standard-padding;
 
-    &:before {
-      @include flex-position-center(inline-flex);
-      letter-spacing: $standard-padding;
-      font-family: 'FabricMDL2Icons';
-      content: "\ECCA";
-    }
-  }
+    .reactx-radio-check {
+      transition: $standard-animation;
+      @include width-height(1em);
+      position: relative;
+      display: block;
 
-  &:checked {
-    &+.radio-title:before {
-      content: "\ECCB";
+      border: 2px solid $black {
+        radius: $round-radius;
+      }
+
+      &.on {
+        border-color: $primary;
+
+        &::before {
+          border-radius: $round-radius;
+          @include width-height(0.5em);
+          background-color: $primary;
+          left: calc(50% - 0.25em);
+          top: calc(50% - 0.25em);
+          position: absolute;
+          content: '';
+        }
+      }
     }
   }
 
   &.radio-size-small {
-    &+.radio-title {
-      font-size: $font-size-sm;
-    }
+    font-size: $font-size-sm;
   }
 
   &.radio-size-medium {
-    &+.radio-title {
-      font-size: $h6-font-size;
-    }
+    font-size: $h6-font-size;
   }
 
   &.radio-size-large {
-    &+.radio-title {
-      font-size: $h4-font-size;
-    }
+    font-size: $h4-font-size;
   }
 
   &.radio-size-extra {
-    &+.radio-title {
-      font-size: $h2-font-size;
-    }
+    font-size: $h2-font-size;
   }
 }

@@ -22,7 +22,6 @@
 
   border: $standard-border {
     radius: $standard-radius;
-    color: $gray-100;
   }
 
   &:focus {
@@ -59,11 +58,21 @@
   }
 
   &-valid {
-    border: 1px solid $green;
+    border: 1px solid $green !important;
+
+    &::file-selector-button {
+      background-color: $green;
+      color: $white;
+    }
   }
 
   &-invalid {
-    border: 1px solid $red;
+    border: 1px solid $red !important;
+
+    &::file-selector-button {
+      background-color: $red;
+      color: $white;
+    }
   }
 }
 

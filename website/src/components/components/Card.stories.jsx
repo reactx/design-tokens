@@ -26,7 +26,7 @@ export default {
         category: 'Attribute',
       },
     },
-    title: {
+    cardTitle: {
       control: 'text',
       table: {
         category: 'Attribute',
@@ -63,11 +63,6 @@ export default {
     outline: {
       table: {
         category: 'Style',
-      },
-    },
-    onClick: {
-      table: {
-        category: 'Action',
       },
     },
   },

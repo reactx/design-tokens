@@ -1,6 +1,5 @@
 .reactx-breadcrumb {
   transition: $standard-animation;
-  border-radius: $standard-radius;
   padding: $standard-padding;
   font-size: $h6-font-size;
   flex-direction: row;
@@ -8,7 +7,11 @@
   user-select: none;
   color: $gray-900;
   display: flex;
-  height: 2em;
+  height: 2.5em;
+
+  border: 1px solid $black-op-09 {
+    radius: $standard-radius;
+  }
 
   background: {
     color: $white-100;
@@ -34,7 +37,10 @@
   }
 
   &-item {
+    border-radius: $standard-radius;
+    transition: $standard-animation;
     @include flex-position-center;
+    padding: $standard-padding;
     max-width: 150px;
     overflow: hidden;
     font-size: 1em;
@@ -46,16 +52,13 @@
       overflow: hidden;
     }
 
-    &:before {
-      font-family: "FabricMDL2Icons";
-      padding: 0 $standard-padding;
-      content: "\E76C";
-      z-index: 1;
+    &:hover {
+      background-color: $black-op-06;
     }
 
-    &:first-child:before {
-      padding: 0px;
-      content: "";
+    &.active {
+      background-color: $primary;
+      color: $white;
     }
   }
 }
@@ -64,11 +67,15 @@
 
 .reactx-dark {
   .reactx-breadcrumb {
+    color: $dark-font-color;
+
     background: {
       color: $dark-background-color;
       image: $gradient-dark;
     }
 
-    color:$dark-font-color;
+    .breadcrumb-item:hover {
+      background-color: $white-op-3;
+    }
   }
 }

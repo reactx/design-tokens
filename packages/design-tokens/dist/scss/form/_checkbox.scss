@@ -1,48 +1,59 @@
 .reactx-checkbox {
+  @include flex-position-center(inline-flex);
   transition: $standard-animation;
-  display: none;
 
-  &+.checkbox-title {
-    @include flex-position-center(inline-flex);
+  .reactx-checkbox-check {
     transition: $standard-animation;
+    margin: 0 $standard-padding;
+    @include width-height(1em);
+    position: relative;
+    display: block;
 
-    &:before {
-      @include flex-position-center(inline-flex);
-      letter-spacing: $standard-padding;
-      font-family: 'FabricMDL2Icons';
-      content: "\E739";
+    border: 2px solid $black {
+      radius: $standard-radius;
     }
-  }
 
-  &:checked {
-    &+.checkbox-title:before {
-      content: "\E73A";
+    &.on {
+      border-color: $primary;
+
+      &::before {
+
+        left: calc(50% - 0.17em);
+        transform: rotate(45deg);
+        top: calc(50% - 0.5em);
+        position: absolute;
+        height: 0.75em;
+        width: 0.35em;
+        content: '';
+
+        border: {
+          bottom: 2px solid $primary;
+          right: 2px solid $primary;
+        }
+      }
     }
   }
 
   &.checkbox-size {
     &-small {
-      &+.checkbox-title {
-        font-size: $font-size-sm;
+      font-size: $font-size-sm;
+
+      .reactx-checkbox-check,
+      .reactx-checkbox-check.on::before {
+        border-width: 1px;
       }
     }
 
     &-medium {
-      &+.checkbox-title {
-        font-size: $h6-font-size;
-      }
+      font-size: $h6-font-size;
     }
 
     &-large {
-      &+.checkbox-title {
-        font-size: $h4-font-size;
-      }
+      font-size: $h4-font-size;
     }
 
     &-extra {
-      &+.checkbox-title {
-        font-size: $h2-font-size;
-      }
+      font-size: $h2-font-size;
     }
   }
 }

@@ -12,18 +12,26 @@ const SIZE = {
 const RadioComponent = (props) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
+  delete parentProps.checked;
+  delete parentProps.onChange;
 
   return (
-    <>
-      <input
-        {...parentProps}
-        type="radio"
-        className={generateClass(props, 'radio')}
-      />
+    <div
+      {...parentProps}
+      className={
+        generateClass(props, 'radio') + (props.checked ? ' checked' : '')
+      }
+      onClick={() => {
+        props.onChange(!check);
+      }}
+    >
+      <div className="radio">
+        <i className={'reactx-radio-check ' + (props.checked ? 'on' : '')} />
+      </div>
       <label htmlFor={props.id} className="radio-title">
         {props.label}
       </label>
-    </>
+    </div>
   );
 };
 

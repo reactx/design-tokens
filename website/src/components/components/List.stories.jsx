@@ -1,9 +1,9 @@
 import React from 'react';
-import { ToolTip } from './ToolTip';
+import { List } from './List';
 
 export default {
-  title: 'Components/ToolTip',
-  component: ToolTip,
+  title: 'Components/List',
+  component: List,
   argTypes: {
     id: {
       control: 'text',
@@ -11,12 +11,7 @@ export default {
         category: 'Attribute',
       },
     },
-    active: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    children: {
+    items: {
       table: {
         category: 'Attribute',
       },
@@ -24,11 +19,6 @@ export default {
     className: {
       table: {
         category: 'Attribute',
-      },
-    },
-    style: {
-      table: {
-        category: 'Style',
       },
     },
     color: {
@@ -49,18 +39,20 @@ export default {
         category: 'Style',
       },
     },
-    size: {
-      control: 'inline-radio',
+    onClick: {
       table: {
-        category: 'Style',
+        category: 'Action',
       },
     },
   },
 };
 
-export const Basic = (args) => <ToolTip {...args} />;
+export const Basic = (args) => <List {...args} />;
 Basic.args = {
-  active: true,
-  style: { top: '10px', left: '10px' },
-  children: 'Tooltip text',
+  items: [
+    { id: 1, data: 'item 1', props: {} },
+    { id: 2, data: 'item 2', props: {} },
+    { id: 3, data: 'item 3', props: {} },
+  ],
+  onClick: (item) => alert(item.id),
 };

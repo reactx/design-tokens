@@ -46,6 +46,11 @@ export default {
         category: 'Attribute',
       },
     },
+    label: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     radius: {
       control: 'inline-radio',
       table: {
@@ -79,4 +84,4 @@ export default {
 };
 
 export const Basic = (args) => <FileInput {...args} />;
-Basic.args = { label: 'Input Text' };
+Basic.args = { label: 'File Input' };

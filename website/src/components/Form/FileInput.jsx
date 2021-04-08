@@ -45,11 +45,17 @@ const FileInputComponent = (props) => {
   cleanProps(parentProps);
 
   return (
-    <input
-      {...parentProps}
-      type="file"
-      className={generateClass(props, 'input')}
-    />
+    <div className="reactx-form-control">
+      <label htmlFor={props.id} className="control-label">
+        {props.label}
+        {props.required && <span className="reactx-color-danger">*</span>}
+      </label>
+      <input
+        {...parentProps}
+        type="file"
+        className={generateClass(props, 'input')}
+      />
+    </div>
   );
 };
 
@@ -64,6 +70,7 @@ FileInput.propTypes = {
   validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
   format: PropTypes.oneOf(Object.values(FORMAT)),
   title: PropTypes.string,
+  label: PropTypes.string,
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,
   required: PropTypes.bool,
@@ -78,11 +85,6 @@ FileInput.defaultProps = {
   shadow: SHADOW.NONE,
   validationStates: VALIDATION.NONE,
   format: FORMAT.ALL,
-  disabled: false,
-  multiple: false,
-  required: false,
-  autoFocus: false,
-  className: '',
 };
 
 export { FileInput };

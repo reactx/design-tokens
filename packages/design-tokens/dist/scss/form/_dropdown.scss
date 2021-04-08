@@ -1,0 +1,130 @@
+.reactx-dropdown {
+  transition: $standard-animation;
+  font-size: $font-size-base;
+  color: $foreground-color;
+  position: relative;
+  line-height: 2em;
+  appearance: none;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  width: 100%;
+
+  background: {
+    clip: padding-box;
+    color: $white;
+  }
+
+  min: {
+    height: 2em;
+    width: 0;
+  }
+
+  border: $standard-border {
+    width: $standard-border-size;
+    radius: $standard-radius;
+  }
+
+  .dropdown {
+    &-value {
+      display: none
+    }
+
+    &-item {
+      padding: 0 $standard-padding;
+      align-items: center;
+      display: flex;
+      height: 100%;
+    }
+
+    &-arrow {
+      align-items: center;
+      display: flex;
+    }
+
+    &-selected {
+      padding: $half-size-padding $double-size-padding;
+      background-color: $gray-200;
+    }
+
+    &-dropdown {
+      background-color: var(--reactx-backdrop-color);
+      box-shadow: $medium-shadow;
+      backdrop-filter: $backdrop;
+      position: absolute;
+      max-height: 50vh;
+      min-width: 150px;
+      overflow: auto;
+      display: none;
+      height: auto;
+      width: 100%;
+      right: 0;
+      left: 0;
+
+      border: $standard-border {
+        radius: $standard-radius;
+        color: $gray-100;
+      }
+
+      .dropdown-selected:hover,
+      .dropdown-item:hover {
+        background: $gray-200;
+      }
+    }
+  }
+
+  &._active {
+    .dropdown-dropdown {
+      display: block;
+    }
+  }
+
+  &.dropdown-size-tiny {
+    padding: 0 ($half-size-padding*0.75);
+    font-size: $font-size-sm*0.75;
+  }
+
+  &.dropdown-size-small {
+    padding: 0 ($half-size-padding*0.9);
+    font-size: $font-size-sm*0.9;
+  }
+
+  &.dropdown-size-large {
+    padding: $half-size-padding $standard-padding;
+    font-size: $h4-font-size;
+  }
+
+  &.dropdown-size-extra {
+    padding: $half-size-padding $standard-padding;
+    font-size: $h2-font-size;
+  }
+
+  &.reactx-input-valid {
+    border: 1px solid $green;
+  }
+
+  &.reactx-input-invalid {
+    border: 1px solid $red;
+  }
+}
+
+.reactx-dark {
+  .reactx-dropdown {
+    background: {
+      color: $dark-background-color;
+      image: $gradient-dark;
+    }
+
+    color:$dark-font-color;
+    border-color: $dark-border-color;
+  }
+
+  .dropdown-dropdown {
+    background-color: $dark-background-color;
+    border-color: $dark-border-color;
+
+    .dropdown-item:hover {
+      background-color: $gray-500;
+    }
+  }
+}

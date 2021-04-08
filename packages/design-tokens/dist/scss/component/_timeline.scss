@@ -63,3 +63,15 @@
     color:$dark-font-color;
   }
 }
+
+.reactx-rtl {
+  .timeline-item {
+    border-right: 2px solid #0078d4;
+    border-left: none;
+  }
+
+  .timeline-date:before {
+    right: -6px;
+    left: auto;
+  }
+}

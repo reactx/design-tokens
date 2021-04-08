@@ -44,6 +44,11 @@ export default {
         category: 'Style',
       },
     },
+    label: {
+      table: {
+        category: 'Style',
+      },
+    },
     onClick: {
       table: {
         category: 'Action',

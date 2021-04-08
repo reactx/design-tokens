@@ -41,7 +41,6 @@
 
 .pagination {
   &-item {
-    border-radius: $standard-radius;
     transition: $standard-animation;
     @include flex-position-center;
     margin: 0 $half-size-margin;
@@ -51,6 +50,10 @@
     line-height: 2em;
     cursor: default;
     padding: 0;
+
+    border: 1px solid $black-op-09 {
+      radius: $standard-radius;
+    }
 
     background: {
       color: $white-100;

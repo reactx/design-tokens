@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
@@ -10,20 +10,29 @@ const SIZE = {
 };
 
 const CheckBoxComponent = (props) => {
+  const [check, setCheck] = useState(props.checked || false);
   const parentProps = { ...props };
   cleanProps(parentProps);
+  delete parentProps.check;
+  delete parentProps.onChange;
 
   return (
-    <>
-      <input
-        {...parentProps}
-        type="checkbox"
-        className={generateClass(props, 'checkbox')}
-      />
+    <div
+      {...parentProps}
+      checked={check}
+      className={generateClass(props, 'checkbox') + (check ? ' checked' : '')}
+      onClick={() => {
+        setCheck(!check);
+        props.onChange(!check);
+      }}
+    >
+      <div className="checkbox">
+        <i className={'reactx-checkbox-check ' + (check ? 'on' : '')} />
+      </div>
       <label htmlFor={props.id} className="checkbox-title">
         {props.label}
       </label>
-    </>
+    </div>
   );
 };
 

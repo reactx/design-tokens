@@ -1,31 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { cleanProps } from '../../utils';
 
 const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
   MEDIUM: 'medium',
+  SMALL: 'small',
   LARGE: 'large',
+  NONE: 'none',
 };
 
 const SIZE = {
-  SMALL: 'small',
   MEDIUM: 'medium',
+  SMALL: 'small',
   LARGE: 'large',
   EXTRA: 'extra',
 };
 
 const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
   NORMAL: 'normal',
+  SMALL: 'small',
   CURVE: 'curve',
+  NONE: 'none',
 };
 
 const SwitchComponent = (props) => {
+  const [active, setActive] = useState(props.checked);
   const parentProps = { ...props };
   cleanProps(parentProps);
+  delete parentProps.checked;
 
   return (
     <div className="reactx-switch-container">
@@ -37,7 +39,12 @@ const SwitchComponent = (props) => {
         }
         disabled={props.disabled}
       >
-        <input {...parentProps} type="checkbox" />
+        <input
+          {...parentProps}
+          checked={active}
+          type="checkbox"
+          onChange={() => setActive(!active)}
+        />
         <span
           className={
             'reactx-slider ' +
@@ -56,27 +63,23 @@ const SwitchComponent = (props) => {
 const Switch = React.forwardRef((props) => <SwitchComponent {...props} />);
 
 Switch.propTypes = {
-  id: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(SIZE)),
+  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   shadow: PropTypes.oneOf(Object.values(SHADOW)),
   radius: PropTypes.oneOf(Object.values(RADIUS)),
-  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  size: PropTypes.oneOf(Object.values(SIZE)),
+  className: PropTypes.string,
+  autoFocus: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
   checked: PropTypes.bool,
   title: PropTypes.string,
-  disabled: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
+  id: PropTypes.string,
 };
 
 Switch.defaultProps = {
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
   radius: RADIUS.NORMAL,
-  checked: false,
-  disabled: false,
-  readOnly: false,
-  autoFocus: false,
+  shadow: SHADOW.NONE,
+  size: SIZE.MEDIUM,
 };
 
 export { Switch };

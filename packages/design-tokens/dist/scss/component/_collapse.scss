@@ -16,7 +16,6 @@
 
 .collapse {
   &-title {
-    border-bottom: 1px solid $black-op-06;
     transition: $standard-animation;
     background-color: $black-op-03;
     padding: $standard-padding;
@@ -38,8 +37,7 @@
   }
 
   &-data {
-    border: 1px solid $black-op-06;
-    background-color: $white-op-3;
+    background-color: $white-op-06;
     padding: $standard-padding;
     min-height: 3em;
     display: none;
@@ -47,6 +45,7 @@
 
     &.collapsed {
       display: block;
+      border-bottom: 1px solid $black-op-09;
     }
   }
 }
@@ -55,7 +54,23 @@
 
 .reactx-accordion {
   border-radius: $standard-radius;
+  border: 1px solid $black-op-09;
   overflow: hidden;
+
+  .reactx-collapse .collapse-title {
+    border-bottom: 1px solid $black-op-09;
+  }
+
+  .reactx-collapse:nth-last-child(1) {
+    .collapse-title {
+      border-bottom: none;
+    }
+
+    .collapsed {
+      border-top: 1px solid $black-op-09;
+      border-bottom: none;
+    }
+  }
 }
 
 .reactx-dark {
@@ -66,5 +81,37 @@
 
   .collapse-title:hover {
     background-color: $black-op-3;
+  }
+}
+
+.reactx-rtl {
+  .reactx-collapse[open] {
+    .collapse-title {
+      &::before {
+        content: ''
+      }
+
+      &::after {
+        content: '\E70E';
+      }
+    }
+  }
+
+  .collapse-title {
+
+    &::before {
+      content: ''
+    }
+
+    &::after {
+      padding: 0 $standard-padding;
+      content: '\E70D';
+
+      font: {
+        family: 'FabricMDL2Icons';
+        size: $font-size-sm;
+      }
+    }
+
   }
 }

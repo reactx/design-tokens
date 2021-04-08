@@ -7,7 +7,6 @@ $extra-size:128px;
 .reactx-avatar {
   @include width-height($medium-size);
   transition: $standard-animation;
-  border-radius: $round-radius;
   font-size: $h3-font-size;
   display: inline-flex;
   position: relative;
@@ -15,6 +14,10 @@ $extra-size:128px;
   color: $gray-900;
   cursor: default;
   padding: 0;
+
+  border: 1px solid $black-op-09 {
+    radius: $round-radius;
+  }
 
   background: {
     color: $white-100;

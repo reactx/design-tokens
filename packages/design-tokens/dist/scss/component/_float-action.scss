@@ -21,7 +21,15 @@
       image: $gradient;
     }
 
-    &:hover {
+    &:hover,
+    &.toggle {
+      background-color: $gray-50;
+      box-shadow: $medium-shadow;
+    }
+  }
+
+  &.toggle {
+    .main-action {
       background-color: $gray-50;
       box-shadow: $medium-shadow;
     }
@@ -31,7 +39,8 @@
     display: none;
   }
 
-  &:hover {
+  &:hover,
+  &.toggle {
     .sub-action {
       flex-direction: column;
       align-items: flex-end;
@@ -68,7 +77,8 @@
 .reactx-float-action[direction="horizontal"] {
   flex-direction: row-reverse;
 
-  &:hover {
+  &:hover,
+  &.toggle {
     .sub-action {
       flex-direction: row;
 
@@ -82,7 +92,8 @@
 .reactx-float-action[float="left"][direction="horizontal"] {
   flex-direction: row;
 
-  &:hover {
+  &:hover,
+  &.toggle {
     .sub-action {
       flex-direction: row;
 
@@ -105,7 +116,8 @@
       image: $gradient-dark;
     }
 
-    &:hover {
+    &:hover,
+    &.toggle {
       background: {
         image: $gradient-dark;
         color: $gray-500;

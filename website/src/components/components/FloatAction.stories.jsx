@@ -56,8 +56,18 @@ export const Basic = (args) => <FloatAction {...args} />;
 Basic.args = {
   children: <i className="reactx-icon nf-icon-Add" />,
   subChildren: [
-    { data: <i className="reactx-icon nf-icon-AddFriend" />, props: {} },
-    { data: <i className="reactx-icon nf-icon-AddField" />, props: {} },
-    { data: <i className="reactx-icon nf-icon-AddHome" />, props: {} },
+    {
+      data: <i className="reactx-icon nf-icon-AddFriend" />,
+      props: { id: 1, className: 'reactx-bg-primary' },
+    },
+    {
+      data: <i className="reactx-icon nf-icon-AddField" />,
+      props: { id: 2, className: 'reactx-bg-success' },
+    },
+    {
+      data: <i className="reactx-icon nf-icon-AddHome" />,
+      props: { id: 3, className: 'reactx-bg-danger' },
+    },
   ],
+  onClick: (item) => alert(item.props.id),
 };

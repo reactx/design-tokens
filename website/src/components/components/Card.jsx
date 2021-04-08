@@ -34,7 +34,10 @@ const CardComponent = (props) => {
   return (
     <div {...parentProps} className={generateClass(props, 'card')}>
       {props.header && <div className="card-header">{props.header}</div>}
-      <div className="card-body">{props.children}</div>
+      <div className="card-body">
+        {props.cardTitle && <h5 className="card-title">{props.cardTitle}</h5>}
+        {props.children}
+      </div>
       {props.footer && <div className="card-footer">{props.footer}</div>}
     </div>
   );
@@ -50,20 +53,16 @@ Card.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
   header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   footer: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  title: PropTypes.string,
+  cardTitle: PropTypes.string,
   outline: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 Card.defaultProps = {
   color: COLOR.NORMAL,
   radius: RADIUS.NORMAL,
   shadow: SHADOW.NONE,
-  outline: false,
-  disabled: false,
-  className: '',
 };
 
 export { Card };

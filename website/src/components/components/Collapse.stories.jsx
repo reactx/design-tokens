@@ -42,6 +42,11 @@ export default {
         category: 'Attribute',
       },
     },
+    accordionMode: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     color: {
       control: 'inline-radio',
       table: {

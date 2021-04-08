@@ -4,7 +4,7 @@ $small-size:20px;
 $tiny-size:14px;
 
 .reactx-loading {
-  background: var(--reactx-backdrop-color);
+  background: $white-op-9;
   @include flex-position-center;
   @include width-height(100%);
   position: absolute;
@@ -216,8 +216,7 @@ $tiny-size:14px;
 
 .reactx-dark {
   .reactx-loading {
-    background: {
-      color: $black-op-6;
-    }
+    background-color: $black-op-9;
+
   }
 }
