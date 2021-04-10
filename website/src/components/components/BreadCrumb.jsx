@@ -41,7 +41,7 @@ const BreadCrumbComponent = (props) => {
   cleanProps(parentProps);
   delete parentProps.onClick;
   return (
-    <div {...parentProps} className={generateClass(props, 'breadcrumb')}>
+    <div {...parentProps} className={generateClass(props, 'breadcrumb') + (props.stepMode ? " step" : "")}>
       {props.items.map((item, index) => {
         return (
           <>
@@ -49,11 +49,14 @@ const BreadCrumbComponent = (props) => {
               <i className={'reactx-icon nf-icon-' + props.icon} />
             )}
             <div
-              className="breadcrumb-item"
+              className={"breadcrumb-item" + (item.active ? " active" : "")}
               key={index}
               onClick={() => props.onClick(item)}
             >
-              <span title={item.title}>{item.title}</span>
+              {props.itemIcon && <span className="bread-icon">
+                <i className={"reactx-icon nf-icon-" + item.icon} />
+              </span>}
+              <span className="bread-title" title={item.title}>{item.title}</span>
             </div>
           </>
         );
@@ -76,6 +79,8 @@ BreadCrumb.propTypes = {
   icon: PropTypes.string,
   items: PropTypes.array,
   onClick: PropTypes.func,
+  stepMode: PropTypes.bool,
+  itemIcon: PropTypes.bool,
 };
 
 BreadCrumb.defaultProps = {

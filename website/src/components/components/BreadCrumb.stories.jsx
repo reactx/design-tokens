@@ -26,6 +26,16 @@ export default {
         category: 'Attribute',
       },
     },
+    stepMode: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    itemIcon: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     color: {
       control: 'inline-radio',
       table: {
@@ -61,9 +71,9 @@ export default {
 export const Basic = (args) => <BreadCrumb {...args} />;
 Basic.args = {
   items: [
-    { title: 'item 1', id: 1, data: 'value' },
-    { title: 'item 2', id: 2, data: 'value' },
-    { title: 'item 3', id: 3, data: 'value' },
+    { id: 1, title: 'item 1', icon: "Bullseye", data: 'value' },
+    { id: 2, title: 'item 2', icon: "BullseyeTarget", data: 'value', active: true },
+    { id: 3, title: 'item 3', icon: "BullseyeTargetEdit", data: 'value' },
   ],
   onClick: (item) => alert(item.id),
 };

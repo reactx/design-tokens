@@ -5,9 +5,21 @@
   flex-direction: row;
   align-items: center;
   user-select: none;
+  min-height: 2.5em;
   color: $gray-900;
   display: flex;
-  height: 2.5em;
+
+  .bread-icon {
+    font-size: 1.5em;
+  }
+
+  &.step {
+    justify-content: space-around;
+
+    .breadcrumb-item {
+      @include width-height(100%);
+    }
+  }
 
   border: 1px solid $black-op-09 {
     radius: $standard-radius;
@@ -21,7 +33,7 @@
 
 .breadcrumb {
   &-size-tiny {
-    font-size: $font-size-sm*0.85;
+    font-size: $font-size-sm * 0.85;
   }
 
   &-size-small {
@@ -37,11 +49,11 @@
   }
 
   &-item {
+    padding: $half-size-padding $standard-padding;
     border-radius: $standard-radius;
     transition: $standard-animation;
     @include flex-position-center;
-    padding: $standard-padding;
-    max-width: 150px;
+    flex-direction: column;
     overflow: hidden;
     font-size: 1em;
     height: 100%;
@@ -53,12 +65,34 @@
     }
 
     &:hover {
-      background-color: $black-op-06;
+      background-color: $black-op-6;
     }
 
     &.active {
-      background-color: $primary;
-      color: $white;
+      background-color: $black-op-6;
+    }
+  }
+}
+
+.radius {
+  &-pill {
+    .breadcrumb-item {
+      border-radius: $pill-radius !important;
+    }
+  }
+  &-small {
+    .breadcrumb-item {
+      border-radius: $half-radius !important;
+    }
+  }
+  &-none {
+    .breadcrumb-item {
+      border-radius: 0 !important;
+    }
+  }
+  &-curve {
+    .breadcrumb-item {
+      border-radius: $double-size-radius !important;
     }
   }
 }
@@ -75,7 +109,13 @@
     }
 
     .breadcrumb-item:hover {
-      background-color: $white-op-3;
+      background-color: $white-op-6;
+      color: $black-op-9;
+    }
+
+    .active {
+      background-color: $white-op-6;
+      color: $black-op-9;
     }
   }
 }
