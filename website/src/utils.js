@@ -5,6 +5,7 @@ const delList = [
   'modalType',
   'iconSize',
   'children',
+  'stepMode',
   'username',
   'itemRadius',
   'formControlStyle',
