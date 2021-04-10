@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes,{InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
 const SIZE = {
@@ -9,34 +9,37 @@ const SIZE = {
   EXTRA: 'extra',
 };
 
-const CheckBoxComponent = (props) => {
+const CheckBoxComponent = (props: InferProps<typeof CheckBox.propTypes>) => {
   const [check, setCheck] = useState(props.checked || false);
   const parentProps = { ...props };
   cleanProps(parentProps);
-  delete parentProps.check;
+  delete parentProps.checked;
   delete parentProps.onChange;
 
   return (
     <div
-      {...parentProps}
-      checked={check}
+
+      id={parentProps.id!}
       className={generateClass(props, 'checkbox') + (check ? ' checked' : '')}
       onClick={() => {
         setCheck(!check);
+        if(props.onChange)
         props.onChange(!check);
       }}
     >
       <div className="checkbox">
         <i className={'reactx-checkbox-check ' + (check ? 'on' : '')} />
       </div>
-      <label htmlFor={props.id} className="checkbox-title">
+      <label htmlFor={props.id!} className="checkbox-title">
         {props.label}
       </label>
     </div>
   );
 };
 
-const CheckBox = React.forwardRef((props) => <CheckBoxComponent {...props} />);
+const CheckBox = ()=>{
+  return React.forwardRef((props) => <CheckBoxComponent {...props} />)
+};
 
 CheckBox.propTypes = {
   id: PropTypes.string,
