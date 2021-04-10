@@ -163,11 +163,11 @@ const CalendarComponent = (props) => {
           className={
             generateClass(props, 'datepicker') +
             ' ' +
-            props.color +
+            (props.color ? props.color : '') +
             ' ' +
-            props.background +
+            (props.background ? props.background : '') +
             ' ' +
-            props.layout
+            (props.layout ? props.layout : '')
           }
           {...parentProps}
           {...picker}
@@ -264,6 +264,7 @@ Datepicker.defaultProps = {
   type: TYPES.INPUT,
   mode: MODE.SINGLE,
   numberOfMonths: '1',
+  layout: 'default',
   otherPickers: OTHERPICKERS.DISABLE,
   zIndex: 100,
   scrollSensitive: true,

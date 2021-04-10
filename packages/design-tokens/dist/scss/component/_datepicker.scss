@@ -1,0 +1,32 @@
+.rmdp-container {
+  width: 100%;
+  .rmdp-input {
+    transition: $standard-animation;
+    padding: 0 $half-size-padding;
+    font-size: $font-size-base;
+    color: $foreground-color;
+    appearance: none;
+    line-height: 2em;
+    cursor: pointer;
+    display: block;
+    outline: none;
+    width: 100%;
+    background: {
+      clip: padding-box;
+      color: $white;
+    }
+    min: {
+      height: 2em;
+      width: 0;
+    }
+    border: $standard-border {
+      radius: $standard-radius;
+      color: $gray-100;
+    }
+    &:focus {
+      border: $standard-border {
+        color: var(--reactx-primary);
+      }
+    }
+  }
+}
