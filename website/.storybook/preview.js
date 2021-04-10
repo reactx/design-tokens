@@ -135,7 +135,7 @@ export const decorators = [
           <ThemeProvider theme={convert(themes[theme])}>
             <Global styles={createReset} />
             <ThemedSetRoot />
-            <ThemeDef className={'reactx-rtl reactx-' + theme}>
+            <ThemeDef className={'reactx-' + theme}>
               <StoryFn />
             </ThemeDef>
           </ThemeProvider>
