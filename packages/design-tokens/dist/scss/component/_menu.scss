@@ -1,12 +1,13 @@
 .react-contextmenu {
   transition: opacity 250ms ease !important;
-  margin: $half-size-margin 0 0;
+  margin: $standard-margin 0 0;
   padding: $standard-padding;
   background-clip: padding-box;
   background-color: $white-100;
   pointer-events: none;
   direction: inherit;
   opacity: 0;
+  cursor: pointer;
 
   &--visible {
     pointer-events: auto;
@@ -42,7 +43,6 @@
 
     &:hover {
       background-color: $white-300 !important;
-      cursor: pointer;
     }
 
     &[disabled] {
@@ -58,7 +58,6 @@
     &.react-contextmenu-item--selected {
       background-color: $white-300;
       text-decoration: none;
-      cursor: pointer;
     }
 
     &.react-contextmenu-item--disabled,
@@ -73,15 +72,7 @@
     }
 
     &--divider {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-      margin-bottom: $half-size-margin;
-      padding: $half-size-padding 0;
-      cursor: inherit;
-
-      &:hover {
-        border-color: rgba(0, 0, 0, 0.15);
-        background-color: transparent;
-      }
+      border-bottom: 1px solid $gray-100;
     }
   }
 }

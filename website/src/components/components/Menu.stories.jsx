@@ -17,12 +17,6 @@ export default {
         category: 'Attribute',
       },
     },
-    name: {
-      control: 'text',
-      table: {
-        category: 'Attribute',
-      },
-    },
     items: {
       table: {
         category: 'Attribute',
