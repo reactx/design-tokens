@@ -38,7 +38,7 @@ module.exports = ({ config }) => {
   // Run `source-loader` on story files to show their source code
   // automatically in `DocsPage` or the `Source` doc block.
   config.module.rules.push({
-    test: /\.stories\.jsx?$/,
+    test: /\.stories\.tsx?$/,
     loader: require.resolve('@storybook/source-loader'),
     exclude: [/node_modules/],
     enforce: 'pre',
