@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { InferProps }  from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-export interface IDropdownComp  {
+export type IDropdownComp = {
   id?: string,
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
@@ -16,19 +15,19 @@ export interface IDropdownComp  {
   autoFocus?: boolean,
   className?: string,
   onChange?: (item: IDropdownItem) => void,
-  defaultValue?: string,
+  defaultValue?: IDropdownItem,
   items?: Array<IDropdownItem>,
 }
 
- export interface IDropdownItem  {
+ export type IDropdownItem =  {
    name: string,
    value: string
  }
 
-const DropdownComponent = (props: InferProps<IDropdownComp>) => {
+const DropdownComponent = (props: IDropdownComp) => {
   const [isOpen, SetOpen] = useState(false);
-  const [selectItem, setSelectItem] = useState(
-    props.defaultValue || props.items[0] || {},
+  const [selectItem, setSelectItem] = useState<IDropdownItem | undefined>(
+    props.defaultValue || (props.items && props.items[0]),
   );
   const dropdownRef = useRef<HTMLDivElement>(null);
   const parentProps = { ...props };
@@ -94,8 +93,8 @@ const DropdownComponent = (props: InferProps<IDropdownComp>) => {
                 }
               />
             </span>
-            <span className="dropdown-value">{selectItem.value}</span>
-            <span className="dropdown-name">{selectItem.name}</span>
+              <span className="dropdown-value">{selectItem ? selectItem.value : ''}</span>
+              <span className="dropdown-name">{selectItem ? selectItem.name : ''}</span>
           </>
         )}
       </div>

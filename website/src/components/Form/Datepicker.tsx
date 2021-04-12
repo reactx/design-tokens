@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 import DatePicker, { Calendar, DateObject } from "react-multi-date-picker"
 import 'react-multi-date-picker/styles/layouts/prime.css';
@@ -14,7 +13,7 @@ import 'react-multi-date-picker/styles/backgrounds/bg-gray.css';
 import 'react-multi-date-picker/styles/backgrounds/bg-brown.css';
 import DatePanel from 'react-multi-date-picker/plugins/date_panel';
 
-export interface IDatepickerComp {
+export type IDatepickerComp ={
   id?: string,
   className?: string,
   calendar?: 'gregorian' |
@@ -33,7 +32,7 @@ export interface IDatepickerComp {
   mode?: 'single' |
   'multiple' |
   'range',
-  numberOfMonths?: 1 | 2 | 3,
+  numberOfMonths?: "1" | "2" | "3",
   otherPickers?: 'disable' |
   'timePicker' |
   'onlyTimePicker' |
@@ -93,7 +92,7 @@ export interface IDatepickerComp {
   onPositionChange?: (data: object) => void,
 };
 
-const CalendarComponent = (props: InferProps<IDatepickerComp> ) => {
+const CalendarComponent = (props: IDatepickerComp ) => {
   const [value, setValue] = useState<Date | DateObject | DateObject[]>(new Date());
   const [picker, setPicker] = useState<Object>({});
   const [mode, setMode] = useState<Object>({});
@@ -218,7 +217,7 @@ Datepicker.defaultProps = {
   calendar: 'gregorian',
   type: 'input',
   mode: 'single',
-  numberOfMonths: 1,
+  numberOfMonths: "1",
   layout: 'default',
   otherPickers: 'disable',
   zIndex: 100,

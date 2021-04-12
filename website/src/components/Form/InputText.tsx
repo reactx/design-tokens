@@ -1,10 +1,9 @@
 import React from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
 const randomNumber = 'input-' + Math.ceil(Math.random() * 1000);
 
-export interface IInputTextComp  {
+export type IInputTextComp = {
   id?: string,
   type?: 'text' | 'email' | 'password' | 'tel' | 'url' | 'search' |
   'color' | 'hidden' | 'number' | 'date' | 'datetime-local' | 'time' | 'month' | 'week',
@@ -34,7 +33,7 @@ export interface IInputTextComp  {
   multiLine?: boolean,
 };
 
-const InputTextComponent = (props: InferProps<IInputTextComp>) => {
+const InputTextComponent = (props: IInputTextComp) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 

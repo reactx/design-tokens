@@ -1,8 +1,7 @@
 import React from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps } from '../../utils';
 
-export interface IColumnComp {
+export type IColumnComp = {
   id?: string,
   children: string | React.ReactNode, 
   size?: '1' |
@@ -48,7 +47,7 @@ export interface IColumnComp {
 };
 
 
-const ColumnComponent = (props: InferProps<IColumnComp>) => {
+const ColumnComponent = (props: IColumnComp) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 

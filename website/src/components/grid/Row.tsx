@@ -1,8 +1,7 @@
 import React from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps } from '../../utils';
 
-export interface IRowComp  {
+export type IRowComp = {
   id?: string,
   children?:  string | React.ReactNode,
   className?: string,
@@ -19,7 +18,7 @@ export interface IRowComp  {
   'end'
 };
 
-const RowComponent = (props: InferProps<IRowComp>) => {
+const RowComponent = (props: IRowComp) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 

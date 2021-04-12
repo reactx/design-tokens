@@ -1,8 +1,7 @@
 import React, { useState} from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-export interface ICheckBoxComp {
+export type ICheckBoxComp ={
   id?: string,
   size?: 'small' | 'medium' | 'large' | 'extra',
   label?: string | React.ReactNode,
@@ -13,7 +12,7 @@ export interface ICheckBoxComp {
   onChange?: (check : boolean) => void,
 };
 
-const CheckBoxComponent = (props: InferProps<ICheckBoxComp>) => {
+const CheckBoxComponent = (props: ICheckBoxComp) => {
   const [check, setCheck] = useState(props.checked || false);
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -44,6 +43,7 @@ const CheckBoxComponent = (props: InferProps<ICheckBoxComp>) => {
 const CheckBox = React.forwardRef((props: ICheckBoxComp) => (
   <CheckBoxComponent {...props} />
 ));
+
 CheckBox.defaultProps = {
   size: 'medium',
   checked: false,

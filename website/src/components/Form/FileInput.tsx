@@ -2,7 +2,7 @@ import React from 'react';
 import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-export interface IFileInpuComp {
+export type IFileInpuComp = {
   id?: string,
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
   size?: 'small' | 'medium' | 'large' | 'extra',

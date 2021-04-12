@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps } from '../../utils';
 
-export interface ISwitchComp {
+export type ISwitchComp = {
   label?: string | React.ReactNode;
   shadow?: 'none'|'small' | 'medium'| 'large';
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill';
@@ -16,7 +15,7 @@ export interface ISwitchComp {
   id?: string;
 };
 
-const SwitchComponent = (props: InferProps<ISwitchComp>) => {
+const SwitchComponent = (props: ISwitchComp) => {
   const [active, setActive] = useState(props.checked);
   const parentProps = { ...props };
   cleanProps(parentProps);

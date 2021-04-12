@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-export interface ISelectBoxComp  {
+export type ISelectBoxComp = {
   id?: string,
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
@@ -20,7 +19,7 @@ export interface ISelectBoxComp  {
   defaultText?: string,
 };
 
-const SelectBoxComponent = (props: InferProps<ISelectBoxComp>) => {
+const SelectBoxComponent = (props: ISelectBoxComp) => {
   const selectboxRef = useRef(null);
   const parentProps = { ...props };
   cleanProps(parentProps);

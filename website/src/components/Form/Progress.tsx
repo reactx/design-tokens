@@ -1,8 +1,7 @@
 import React from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-export interface IProgressComp  {
+export type IProgressComp = {
   id?: string,
   showLabel?: boolean,
   striped?: boolean,
@@ -17,12 +16,12 @@ export interface IProgressComp  {
   className?: string,
 };
 
-const ProgressComponent = (props: InferProps<IProgressComp>) => {
+const ProgressComponent = (props: IProgressComp) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
   const calcPosition = () => {
-    let one = props.max / 100;
-    let result = Math.ceil(props.value / one);
+    let one = props.max ?  props.max / 100 : 0;
+    let result = props.value ? Math.ceil(props.value / one) : 0;
     return result + '%';
   };
 

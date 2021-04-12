@@ -3,7 +3,7 @@ import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 import { FluentIcon } from '../components/FluentIcon';
 
- export interface IRatingComp  {
+export type IRatingComp = {
   id?: string,
   color?: 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light',
   shape?: 'Star' | 'Heart',
@@ -15,7 +15,7 @@ import { FluentIcon } from '../components/FluentIcon';
   value?: number,
 };
 
-const RatingComponent = (props: InferProps<IRatingComp>) => {
+const RatingComponent = (props: IRatingComp) => {
   const [value, setValue] = useState(props.value || 1);
   const [ratingList, setRatingList] = useState<string[]>([]);
   const parentProps = { ...props };
@@ -23,14 +23,14 @@ const RatingComponent = (props: InferProps<IRatingComp>) => {
 
   const clickFun = (index: number) => {
     setValue(index);
-    props.onClick(index);
+    props.onClick && props.onClick(index);
   };
 
   useEffect(() => {
     if (props.shape && value) {
       let shape: string =  props.shape ==='Star' ? 'FavoriteStar' : 'Heart';
       let list = [];
-      let fill = props.count - value;
+      let fill = props.count ? (props.count - value) : 0;
       for (let i = 0; i < value; i++) 
         list.push(shape + 'Fill');
       for (let i = 0; i < fill; i++) 

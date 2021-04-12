@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 import * as uuid from 'uuid';
 
-export interface IAnalogClockComp {
+export type IAnalogClockComp = {
   id?: string,
   theme?: 'classic-clock' |
   'white-clock' |
@@ -11,15 +10,14 @@ export interface IAnalogClockComp {
   title?: string,
   className?: string,
   onClick?: (e: MouseEvent) => void,
-
 };
 
 
-const AnalogClockComponent = (props: InferProps<IAnalogClockComp>) => {
+const AnalogClockComponent = (props:IAnalogClockComp) => {
+  const [id, setId] = useState(uuid.v4());
   const parentProps = { ...props };
   cleanProps(parentProps);
   
-  const [id, setId] = useState(uuid.v4());
 
   const setClockHands = () => {
     let secondElm = document.querySelector('#c' + id + ' .clock-hand-second'); 

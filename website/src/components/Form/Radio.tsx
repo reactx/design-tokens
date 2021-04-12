@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-export interface IRadioComp  {
+export type IRadioComp = {
   id?: string,
   size?: 'small' | 'medium' | 'large' | 'extra',
   label?: string| React.ReactNode, 
@@ -14,7 +13,7 @@ export interface IRadioComp  {
 };
 
 
-const RadioComponent = (props: InferProps<IRadioComp>) => {
+const RadioComponent = (props: IRadioComp) => {
   const [check, setCheck] = useState(props.checked || false);
   const parentProps = { ...props };
   cleanProps(parentProps);

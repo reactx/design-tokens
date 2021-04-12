@@ -1,10 +1,9 @@
 import React from 'react';
-import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
 const randomNumber = 'range-' + Math.ceil(Math.random() * 1000);
 
-export interface IRangeComp  {
+export type IRangeComp = {
   id?: string,
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
   formControlStyle?: 'normal' | 'inline',
@@ -22,7 +21,7 @@ export interface IRangeComp  {
 };
 
 
-const RangeComponent = (props: InferProps<IRangeComp>) => {
+const RangeComponent = (props:IRangeComp) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
