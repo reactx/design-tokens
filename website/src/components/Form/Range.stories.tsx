@@ -1,5 +1,5 @@
 import React from 'react';
-import { Range, IRangeComp} from './Range';
+import { Range, rangeProps} from './Range';
 
 export default {
   title: 'Form/Range',
@@ -81,5 +81,5 @@ export default {
   },
 };
 
-export const Basic = (args: IRangeComp) => <Range {...args} />;
+export const Basic = (args: rangeProps) => <Range {...args} />;
 Basic.args = { label: 'Range Label' };

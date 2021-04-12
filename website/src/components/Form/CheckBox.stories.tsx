@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckBox, ICheckBoxComp} from './CheckBox';
+import { CheckBox, checkBoxProps} from './CheckBox';
 
 export default {
   title: 'Form/CheckBox',
@@ -55,5 +55,5 @@ export default {
   },
 };
 
-export const Basic = (args: ICheckBoxComp) => <CheckBox {...args} />;
+export const Basic = (args: checkBoxProps) => <CheckBox {...args} />;
 Basic.args = { label: 'Checkbox Text', onChange: (val: boolean) => console.log(val) };

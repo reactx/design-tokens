@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileInput, IFileInpuComp } from './FileInput';
+import { FileInput, fileInputProps } from './FileInput';
 
 export default {
   title: 'Form/File Input',
@@ -83,5 +83,5 @@ export default {
   },
 };
 
-export const Basic = (args: IFileInpuComp) => <FileInput {...args} />;
+export const Basic = (args: fileInputProps) => <FileInput {...args} />;
 Basic.args = { label: 'File Input' };

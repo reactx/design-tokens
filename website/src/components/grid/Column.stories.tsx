@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column } from './Column';
+import { Column, columnProps } from './Column';
 
 export default {
   title: 'Grid System/Column',
@@ -39,7 +39,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <Column {...args} />;
+export const Basic = (args: columnProps) => <Column {...args} />;
 Basic.args = { children: 'col-12' };
 export const MultiCol = () => (
   <>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputText, IInputTextComp } from './InputText';
+import { InputText, inputTextProps } from './InputText';
 
 export default {
   title: 'Form/Input Text',
@@ -144,16 +144,16 @@ export default {
   },
 };
 
-export const Basic = (args: IInputTextComp) => <InputText {...args} />;
+export const Basic = (args: inputTextProps) => <InputText {...args} />;
 Basic.args = { validMessage: 'is Valid', invalidMessage: 'is Invalid' };
-export const WithDescription = (args: IInputTextComp) => <InputText {...args} />;
+export const WithDescription = (args: inputTextProps) => <InputText {...args} />;
 WithDescription.args = {
   label: 'Input Text',
   validMessage: 'is Valid',
   invalidMessage: 'is Invalid',
   description: 'Description text',
 };
-export const WithAppendPrepend = (args: IInputTextComp) => <InputText {...args} />;
+export const WithAppendPrepend = (args: inputTextProps) => <InputText {...args} />;
 WithAppendPrepend.args = {
   label: 'Input Text',
   validMessage: 'is Valid',
@@ -161,7 +161,7 @@ WithAppendPrepend.args = {
   prepend: 'Email',
   append: 'Cancel',
 };
-export const TextArea = (args: IInputTextComp) => <InputText {...args} />;
+export const TextArea = (args: inputTextProps) => <InputText {...args} />;
 TextArea.args = {
   label: 'Input Text',
   multiLine: true,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, ISwitchComp } from './Switch';
+import { Switch, switchProps } from './Switch';
 
 export default {
   title: 'Form/Switch',
@@ -67,5 +67,5 @@ export default {
   },
 };
 
-export const Basic = (args: ISwitchComp) => <Switch {...args} />;
+export const Basic = (args: switchProps) => <Switch {...args} />;
 Basic.args = { label: 'switch Text' };
