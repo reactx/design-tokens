@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 import * as uuid from 'uuid';
 
-const THEME = {
-  CLASSIC: 'classic-clock',
-  WHITE: 'white-clock',
-  RED: 'red-clock',
+export interface IAnalogClockComp {
+  id?: string,
+  theme?: 'classic-clock' |
+  'white-clock' |
+  'red-clock',
+  title?: string,
+  className?: string,
+  onClick?: (e: MouseEvent) => void,
+
 };
 
-const AnalogClockComponent = (props) => {
+
+const AnalogClockComponent = (props: InferProps<IAnalogClockComp>) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
-
+  
   const [id, setId] = useState(uuid.v4());
 
   const setClockHands = () => {
-    let secondElm = document.querySelector('#c' + id + ' .clock-hand-second');
+    let secondElm = document.querySelector('#c' + id + ' .clock-hand-second'); 
     let minuteElm = document.querySelector('#c' + id + ' .clock-hand-minute');
     let hourElm = document.querySelector('#c' + id + ' .clock-hand-hour');
 
@@ -63,30 +69,16 @@ const AnalogClockComponent = (props) => {
       </div>
     </div>
   );
-  // return (
-  //   <div {...parentProps} className={generateClass(props, 'analog-clock')}>
-  //     {props.children}
-  //   </div>
-  // );
 };
 
-const AnalogClock = React.forwardRef((props) => (
+const AnalogClock = React.forwardRef((props: IAnalogClockComp) => (
   <AnalogClockComponent {...props} />
 ));
 
-AnalogClock.propTypes = {
-  id: PropTypes.string,
-  theme: PropTypes.oneOf(Object.values(THEME)),
-  title: PropTypes.string,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
 
 AnalogClock.defaultProps = {
   title: 'AnalogClock Text',
-  theme: THEME.CLASSIC,
-  children: 'AnalogClock Message',
+  theme: 'classic-clock',
   className: '',
 };
-
 export { AnalogClock };

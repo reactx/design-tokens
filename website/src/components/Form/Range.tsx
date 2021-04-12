@@ -1,23 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
 const randomNumber = 'range-' + Math.ceil(Math.random() * 1000);
 
-const CONTROL_STYLE = {
-  NORMAL: 'normal',
-  INLINE: 'inline',
+export interface IRangeComp  {
+  id?: string,
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
+  formControlStyle?: 'normal' | 'inline',
+  label?: string,
+  value?: string,
+  title?: string,
+  disabled?: boolean,
+  required?: boolean,
+  autoFocus?: boolean,
+  className?: string,
+  min?: number,
+  max?: number,
+  step?: number,
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
 };
 
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
 
-const RangeComponent = (props) => {
+const RangeComponent = (props: InferProps<IRangeComp>) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -25,10 +30,10 @@ const RangeComponent = (props) => {
     <div
       className={
         'reactx-form-control' +
-        (props.formControlStyle !== CONTROL_STYLE.NORMAL
+        (props.formControlStyle !== 'normal'
           ? ' form-range-' + props.formControlStyle
           : '') +
-        (props.size !== SIZE.MEDIUM ? ' range-size-' + props.size : '')
+        (props.size !== 'medium' ? ' range-size-' + props.size : '')
       }
     >
       {props.label && (
@@ -52,29 +57,12 @@ const RangeComponent = (props) => {
   );
 };
 
-const Range = React.forwardRef((props) => <RangeComponent {...props} />);
-
-Range.propTypes = {
-  id: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  formControlStyle: PropTypes.oneOf(Object.values(CONTROL_STYLE)),
-  label: PropTypes.string,
-  value: PropTypes.string,
-  title: PropTypes.string,
-  disabled: PropTypes.bool,
-  required: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  className: PropTypes.string,
-  min: PropTypes.number,
-  max: PropTypes.number,
-  step: PropTypes.number,
-  onChange: PropTypes.func,
-};
+const Range = React.forwardRef((props: IRangeComp) => <RangeComponent {...props} />);
 
 Range.defaultProps = {
   id: randomNumber,
-  size: SIZE.MEDIUM,
-  formControlStyle: CONTROL_STYLE.NORMAL,
+  size: 'medium',
+  formControlStyle: 'normal',
   min: 0,
   max: 100,
   step: 1,

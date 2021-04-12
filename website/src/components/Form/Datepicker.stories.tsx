@@ -1,5 +1,5 @@
 import React from 'react';
-import { Datepicker } from './Datepicker';
+import { Datepicker, IDatepickerComp } from './Datepicker';
 
 export default {
   title: 'Components/Datepicker',
@@ -78,12 +78,6 @@ export default {
       },
     },
     months: {
-      control: 'text',
-      table: {
-        category: 'Attribute',
-      },
-    },
-    digits: {
       control: 'text',
       table: {
         category: 'Attribute',
@@ -249,8 +243,8 @@ export default {
   },
 };
 
-export const Basic = (args) => <Datepicker {...args} />;
-export const customButtons = (args) => <Datepicker {...args} />;
+export const Basic = (args: IDatepickerComp) => <Datepicker {...args} />;
+export const customButtons = (args: IDatepickerComp) => <Datepicker {...args} />;
 customButtons.args = {
   children: (
     <>

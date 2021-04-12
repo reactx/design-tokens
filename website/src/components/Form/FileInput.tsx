@@ -1,46 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
+export interface IFileInpuComp {
+  id?: string,
+  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
+  size?: 'small' | 'medium' | 'large' | 'extra',
+  shadow?: 'none' | 'small' | 'medium' | 'large',
+  validationStates?: 'none' |
+  'valid' |
+  'invalid',
+  format?: '*' |
+  'png|jpg|gif|jpeg|bmp' |
+  'docx|doc|xlsx|pdf|xls|ppt|pptx|rtf|txt|csv' |
+  'zip|rar|7zip|apk' |
+  'mp3|wav|wma' |
+  'mp4|mkv|wmv|avi' |
+  'ico',
+  title?: string,
+  label?: string,
+  disabled?: boolean,
+  multiple?: boolean,
+  required?: boolean,
+  autoFocus?: boolean,
+  className?: boolean,
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
+
 };
 
-const VALIDATION = {
-  NONE: 'none',
-  VALID: 'valid',
-  INVALID: 'invalid',
-};
-
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
-
-const SIZE = {
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const FORMAT = {
-  ALL: '*',
-  PICTURE: 'png|jpg|gif|jpeg|bmp',
-  DOCUMENT: 'docx|doc|xlsx|pdf|xls|ppt|pptx|rtf|txt|csv',
-  ARCHIVE: 'zip|rar|7zip|apk',
-  AUDIO: 'mp3|wav|wma',
-  VIDEO: 'mp4|mkv|wmv|avi',
-  ICON: 'ico',
-};
-
-const FileInputComponent = (props) => {
+const FileInputComponent = (props: InferProps<IFileInpuComp>) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -59,32 +47,17 @@ const FileInputComponent = (props) => {
   );
 };
 
-const FileInput = React.forwardRef((props) => (
+const FileInput = React.forwardRef((props: IFileInpuComp ) => (
   <FileInputComponent {...props} />
 ));
-FileInput.propTypes = {
-  id: PropTypes.string,
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
-  format: PropTypes.oneOf(Object.values(FORMAT)),
-  title: PropTypes.string,
-  label: PropTypes.string,
-  disabled: PropTypes.bool,
-  multiple: PropTypes.bool,
-  required: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
-};
+
 
 FileInput.defaultProps = {
-  radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
-  validationStates: VALIDATION.NONE,
-  format: FORMAT.ALL,
+  radius: 'normal',
+  size: 'medium',
+  shadow: 'none',
+  validationStates: 'none',
+  format: '*',
 };
 
 export { FileInput };

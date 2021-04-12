@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectBox } from './SelectBox';
+import { SelectBox, ISelectBoxComp } from './SelectBox';
 
 export default {
   title: 'Form/SelectBox',
@@ -88,7 +88,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <SelectBox {...args} />;
+export const Basic = (args: ISelectBoxComp) => <SelectBox {...args} />;
 Basic.args = {
   items: [
     { name: 'item 1', value: '1' },

@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
-import PropTypes,{InferProps } from 'prop-types';
+import React, { useState} from 'react';
+import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-const SIZE = {
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
+export interface ICheckBoxComp {
+  id?: string,
+  size?: 'small' | 'medium' | 'large' | 'extra',
+  label?: string | React.ReactNode,
+  checked?: boolean,
+  disabled?: boolean,
+  autoFocus?: boolean,
+  className?: string,
+  onChange?: (check : boolean) => void,
 };
 
-const CheckBoxComponent = (props: InferProps<typeof CheckBox.propTypes>) => {
+const CheckBoxComponent = (props: InferProps<ICheckBoxComp>) => {
   const [check, setCheck] = useState(props.checked || false);
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -18,7 +22,6 @@ const CheckBoxComponent = (props: InferProps<typeof CheckBox.propTypes>) => {
 
   return (
     <div
-
       id={parentProps.id!}
       className={generateClass(props, 'checkbox') + (check ? ' checked' : '')}
       onClick={() => {
@@ -37,27 +40,14 @@ const CheckBoxComponent = (props: InferProps<typeof CheckBox.propTypes>) => {
   );
 };
 
-const CheckBox = ()=>{
-  return React.forwardRef((props) => <CheckBoxComponent {...props} />)
-};
 
-CheckBox.propTypes = {
-  id: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  checked: PropTypes.bool,
-  disabled: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
-};
-
+const CheckBox = React.forwardRef((props: ICheckBoxComp) => (
+  <CheckBoxComponent {...props} />
+));
 CheckBox.defaultProps = {
-  size: SIZE.MEDIUM,
+  size: 'medium',
   checked: false,
   disabled: false,
-  readOnly: false,
   autoFocus: false,
 };
-
 export { CheckBox };

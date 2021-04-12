@@ -1,15 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-const SIZE = {
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
+export interface IRadioComp  {
+  id?: string,
+  size?: 'small' | 'medium' | 'large' | 'extra',
+  label?: string| React.ReactNode, 
+  checked?: boolean,
+  disabled?: boolean,
+  autoFocus?: boolean,
+  className?: string,
+  onChange?: (check: boolean) => void,
 };
 
-const RadioComponent = (props) => {
+
+const RadioComponent = (props: InferProps<IRadioComp>) => {
+  const [check, setCheck] = useState(props.checked || false);
   const parentProps = { ...props };
   cleanProps(parentProps);
   delete parentProps.checked;
@@ -22,11 +28,13 @@ const RadioComponent = (props) => {
         generateClass(props, 'radio') + (props.checked ? ' checked' : '')
       }
       onClick={() => {
-        props.onChange(!check);
+        setCheck(!check);
+        if (props.onChange)
+          props.onChange(!check);
       }}
     >
       <div className="radio">
-        <i className={'reactx-radio-check ' + (props.checked ? 'on' : '')} />
+        <i className={'reactx-radio-check ' + (check ? 'on' : '')} />
       </div>
       <label htmlFor={props.id} className="radio-title">
         {props.label}
@@ -35,24 +43,12 @@ const RadioComponent = (props) => {
   );
 };
 
-const Radio = React.forwardRef((props) => <RadioComponent {...props} />);
-
-Radio.propTypes = {
-  id: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  checked: PropTypes.bool,
-  disabled: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
-};
+const Radio = React.forwardRef((props: IRadioComp) => <RadioComponent {...props} />);
 
 Radio.defaultProps = {
-  size: SIZE.MEDIUM,
+  size: 'medium',
   checked: false,
   disabled: false,
-  readOnly: false,
   autoFocus: false,
 };
 

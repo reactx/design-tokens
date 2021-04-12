@@ -1,37 +1,26 @@
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
+export interface ISelectBoxComp  {
+  id?: string,
+  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
+  shadow?: 'none' | 'small' | 'medium' | 'large',
+  validationStates?: 'none' | 'valid' | 'invalid',
+  title?: string,
+  disabled?: boolean,
+  required?: boolean,
+  autoFocus?: boolean,
+  multiple?: boolean,
+  className?: string,
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void,
+  defaultValue?: string,
+  items?: Array<any>,
+  defaultText?: string,
 };
 
-const VALIDATION = {
-  NONE: 'none',
-  VALID: 'valid',
-  INVALID: 'invalid',
-};
-
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
-
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const SelectBoxComponent = (props) => {
+const SelectBoxComponent = (props: InferProps<ISelectBoxComp>) => {
   const selectboxRef = useRef(null);
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -46,7 +35,7 @@ const SelectBoxComponent = (props) => {
         {props.defaultText}
       </option>
       {props.items &&
-        props.items.map((item, index) => (
+        props.items.map((item: any, index: number) => (
           <option key={index} value={item.value} className="selectbox-item">
             {item.name}
           </option>
@@ -55,33 +44,15 @@ const SelectBoxComponent = (props) => {
   );
 };
 
-const SelectBox = React.forwardRef((props) => (
+const SelectBox = React.forwardRef((props: ISelectBoxComp) => (
   <SelectBoxComponent {...props} />
 ));
 
-SelectBox.propTypes = {
-  id: PropTypes.string,
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
-  title: PropTypes.string,
-  disabled: PropTypes.bool,
-  required: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  multiple: PropTypes.bool,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
-  defaultValue: PropTypes.string,
-  items: PropTypes.array,
-  defaultText: PropTypes.string,
-};
-
 SelectBox.defaultProps = {
-  radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
-  validationStates: VALIDATION.NONE,
+  radius: 'normal',
+  size: 'medium',
+  shadow: 'none',
+  validationStates: 'none',
   defaultText: '--Please choose an option--',
 };
 

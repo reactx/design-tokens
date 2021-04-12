@@ -1,49 +1,42 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import { InferProps }  from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
-import { FluentIcon } from '../components/FluentIcon';
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
+export interface IDropdownComp  {
+  id?: string,
+  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
+  shadow?: 'none' | 'small' | 'medium' | 'large',
+  validationStates?: 'none' | 'valid' | 'invalid',
+  fixIcon?: string | React.ReactNode,
+  title?: string,
+  disabled?: boolean,
+  readOnly?: boolean,
+  required?: boolean,
+  autoFocus?: boolean,
+  className?: string,
+  onChange?: (item: IDropdownItem) => void,
+  defaultValue?: string,
+  items?: Array<IDropdownItem>,
+}
 
-const VALIDATION = {
-  NONE: 'none',
-  VALID: 'valid',
-  INVALID: 'invalid',
-};
+ export interface IDropdownItem  {
+   name: string,
+   value: string
+ }
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
-
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const DropdownComponent = (props) => {
+const DropdownComponent = (props: InferProps<IDropdownComp>) => {
   const [isOpen, SetOpen] = useState(false);
   const [selectItem, setSelectItem] = useState(
     props.defaultValue || props.items[0] || {},
   );
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: Event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         SetOpen(false);
       }
     };
@@ -53,7 +46,7 @@ const DropdownComponent = (props) => {
     };
   }, [dropdownRef]);
 
-  const renderItem = (item) => {
+  const renderItem = (item: IDropdownItem) => {
     return (
       <div
         className={
@@ -108,7 +101,7 @@ const DropdownComponent = (props) => {
       </div>
       <div className="dropdown-dropdown">
         {props.items &&
-          props.items.map((item, index) => {
+          props.items.map((item: IDropdownItem, index: number) => {
             if (item.value === 'separator') return <hr key={index} />;
             return renderItem(item);
           })}
@@ -117,31 +110,13 @@ const DropdownComponent = (props) => {
   );
 };
 
-const Dropdown = React.forwardRef((props) => <DropdownComponent {...props} />);
-
-Dropdown.propTypes = {
-  id: PropTypes.string,
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
-  fixIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  title: PropTypes.string,
-  disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  required: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
-  defaultValue: PropTypes.string,
-  items: PropTypes.array,
-};
+const Dropdown = React.forwardRef((props: IDropdownComp ) => <DropdownComponent {...props} />);
 
 Dropdown.defaultProps = {
-  radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
-  validationStates: VALIDATION.NONE,
+  radius: 'normal',
+  size: 'medium',
+  shadow: 'none',
+  validationStates: 'none',
 };
 
 export { Dropdown };

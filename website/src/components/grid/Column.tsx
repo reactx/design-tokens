@@ -1,24 +1,54 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { InferProps } from 'prop-types';
 import { cleanProps } from '../../utils';
 
-const SIZE = [
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '10',
-  '11',
-  '12',
-  'auto',
-];
+export interface IColumnComp {
+  id?: string,
+  children: string | React.ReactNode, 
+  size?: '1' |
+    '2' |
+    '3' |
+    '4' |
+    '5' |
+    '6' |
+    '7' |
+    '8' |
+    '9' |
+    '10' |
+    '11' |
+    '12' |
+    'auto' ,
+  sizeMd?: '1' |
+  '2' |
+  '3' |
+  '4' |
+  '5' |
+  '6' |
+  '7' |
+  '8' |
+  '9' |
+  '10' |
+  '11' |
+  '12' |
+  'auto' ,
+  sizeLg?: '1' |
+  '2' |
+  '3' |
+  '4' |
+  '5' |
+  '6' |
+  '7' |
+  '8' |
+  '9' |
+  '10' |
+  '11' |
+  '12' |
+  'auto' ,
+  className?: string,
+};
 
-const ColumnComponent = (props) => {
+
+const ColumnComponent = (props: InferProps<IColumnComp>) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -38,17 +68,7 @@ const ColumnComponent = (props) => {
   );
 };
 
-const Column = React.forwardRef((props) => <ColumnComponent {...props} />);
-
-Column.propTypes = {
-  id: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  size: PropTypes.oneOf(SIZE),
-  sizeMd: PropTypes.oneOf(SIZE),
-  sizeLg: PropTypes.oneOf(SIZE),
-  className: PropTypes.string,
-};
-
+const Column = React.forwardRef((props: IColumnComp) => <ColumnComponent {...props} />);
 Column.defaultProps = {
   className: '',
   size: '12',

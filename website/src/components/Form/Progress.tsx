@@ -1,41 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { InferProps } from 'prop-types';
 import { cleanProps, generateClass } from '../../utils';
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
+export interface IProgressComp  {
+  id?: string,
+  showLabel?: boolean,
+  striped?: boolean,
+  animation?: boolean,
+  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
+  shadow?: 'none' | 'small' | 'medium' | 'large',
+  color?: 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light',
+  value?: number,
+  max?: number,
+  title?: string,
+  className?: string,
 };
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-};
-
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
-
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const ProgressComponent = (props) => {
+const ProgressComponent = (props: InferProps<IProgressComp>) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
   const calcPosition = () => {
@@ -61,28 +43,13 @@ const ProgressComponent = (props) => {
   );
 };
 
-const Progress = React.forwardRef((props) => <ProgressComponent {...props} />);
-
-Progress.propTypes = {
-  id: PropTypes.string,
-  showLabel: PropTypes.bool,
-  striped: PropTypes.bool,
-  animation: PropTypes.bool,
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  value: PropTypes.number,
-  max: PropTypes.number,
-  title: PropTypes.string,
-  className: PropTypes.string,
-};
+const Progress = React.forwardRef((props: IProgressComp) => <ProgressComponent {...props} />);
 
 Progress.defaultProps = {
-  radius: RADIUS.NORMAL,
-  color: COLOR.PRIMARY,
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
+  radius: 'normal',
+  color: 'primary',
+  size: 'medium',
+  shadow: 'none',
   className: '',
   max: 100,
 };

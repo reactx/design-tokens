@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckBox } from './CheckBox';
+import { CheckBox, ICheckBoxComp} from './CheckBox';
 
 export default {
   title: 'Form/CheckBox',
@@ -47,8 +47,13 @@ export default {
         category: 'Action',
       },
     },
+    onClick: {
+      table: {
+        category: 'Action',
+      },
+    },
   },
 };
 
-export const Basic = (args) => <CheckBox {...args} />;
-Basic.args = { label: 'Checkbox Text', onChange: (val) => console.log(val) };
+export const Basic = (args: ICheckBoxComp) => <CheckBox {...args} />;
+Basic.args = { label: 'Checkbox Text', onChange: (val: boolean) => console.log(val) };
