@@ -179,7 +179,7 @@ const CalendarComponent = (props: InferProps<IDatepickerComp> ) => {
           weekDays={dayName}
           months={monthName}
           value={value}
-          onChange={(e) => { console.log('bbb', e); console.log('b5bb', typeof(e)); setValue(e);}}
+          onChange={(e) => setValue(e)}
         >
           {props.children}
         </DatePicker>
