@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import { cleanProps } from '../../utils';
 
-export type IColumnComp = {
+export type columnProps = {
   id?: string,
   children: string | React.ReactNode, 
   size?: '1' |
@@ -47,7 +47,7 @@ export type IColumnComp = {
 };
 
 
-const ColumnComponent = (props: IColumnComp) => {
+const ColumnComponent = (props: columnProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -67,7 +67,7 @@ const ColumnComponent = (props: IColumnComp) => {
   );
 };
 
-const Column = React.forwardRef((props: IColumnComp) => <ColumnComponent {...props} />);
+const Column: FC<columnProps> = React.forwardRef((props) => <ColumnComponent {...props} />);
 Column.defaultProps = {
   className: '',
   size: '12',

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 import { cleanProps } from '../../utils';
 
-export type ISwitchComp = {
+export type switchProps = {
   label?: string | React.ReactNode;
   shadow?: 'none'|'small' | 'medium'| 'large';
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill';
@@ -15,7 +15,7 @@ export type ISwitchComp = {
   id?: string;
 };
 
-const SwitchComponent = (props: ISwitchComp) => {
+const SwitchComponent = (props: switchProps) => {
   const [active, setActive] = useState(props.checked);
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -52,7 +52,7 @@ const SwitchComponent = (props: ISwitchComp) => {
   );
 };
 
-const Switch = React.forwardRef((props: ISwitchComp) => <SwitchComponent {...props}/>);
+const Switch: FC<switchProps> = React.forwardRef((props) => <SwitchComponent {...props}/>);
 
 Switch.defaultProps = {
   radius: 'normal',

@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-export type ISelectBoxComp = {
+export type selectBoxProps = {
   id?: string,
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
@@ -19,7 +19,7 @@ export type ISelectBoxComp = {
   defaultText?: string,
 };
 
-const SelectBoxComponent = (props: ISelectBoxComp) => {
+const SelectBoxComponent = (props: selectBoxProps) => {
   const selectboxRef = useRef(null);
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -43,7 +43,7 @@ const SelectBoxComponent = (props: ISelectBoxComp) => {
   );
 };
 
-const SelectBox = React.forwardRef((props: ISelectBoxComp) => (
+const SelectBox: FC<selectBoxProps> = React.forwardRef((props) => (
   <SelectBoxComponent {...props} />
 ));
 

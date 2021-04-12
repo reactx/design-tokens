@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-export type IRadioComp = {
+export type radioProps = {
   id?: string,
   size?: 'small' | 'medium' | 'large' | 'extra',
   label?: string| React.ReactNode, 
@@ -13,7 +13,7 @@ export type IRadioComp = {
 };
 
 
-const RadioComponent = (props: IRadioComp) => {
+const RadioComponent = (props: radioProps) => {
   const [check, setCheck] = useState(props.checked || false);
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -42,7 +42,7 @@ const RadioComponent = (props: IRadioComp) => {
   );
 };
 
-const Radio = React.forwardRef((props: IRadioComp) => <RadioComponent {...props} />);
+const Radio: FC<radioProps> = React.forwardRef((props) => <RadioComponent {...props} />);
 
 Radio.defaultProps = {
   size: 'medium',

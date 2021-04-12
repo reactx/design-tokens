@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import DatePicker, { Calendar, DateObject } from "react-multi-date-picker"
 import 'react-multi-date-picker/styles/layouts/prime.css';
@@ -13,7 +13,7 @@ import 'react-multi-date-picker/styles/backgrounds/bg-gray.css';
 import 'react-multi-date-picker/styles/backgrounds/bg-brown.css';
 import DatePanel from 'react-multi-date-picker/plugins/date_panel';
 
-export type IDatepickerComp ={
+export type datepickerProps ={
   id?: string,
   className?: string,
   calendar?: 'gregorian' |
@@ -92,7 +92,7 @@ export type IDatepickerComp ={
   onPositionChange?: (data: object) => void,
 };
 
-const CalendarComponent = (props: IDatepickerComp ) => {
+const CalendarComponent = (props: datepickerProps ) => {
   const [value, setValue] = useState<Date | DateObject | DateObject[]>(new Date());
   const [picker, setPicker] = useState<Object>({});
   const [mode, setMode] = useState<Object>({});
@@ -208,7 +208,7 @@ const CalendarComponent = (props: IDatepickerComp ) => {
   );
 };
 
-const Datepicker = React.forwardRef((props: IDatepickerComp) => (
+const Datepicker: FC<datepickerProps>= React.forwardRef((props) => (
   <CalendarComponent {...props} />
 ));
 

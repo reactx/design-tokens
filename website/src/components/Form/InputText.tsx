@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {FC} from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
 const randomNumber = 'input-' + Math.ceil(Math.random() * 1000);
 
-export type IInputTextComp = {
+export type inputTextProps = {
   id?: string,
   type?: 'text' | 'email' | 'password' | 'tel' | 'url' | 'search' |
   'color' | 'hidden' | 'number' | 'date' | 'datetime-local' | 'time' | 'month' | 'week',
@@ -33,7 +33,7 @@ export type IInputTextComp = {
   multiLine?: boolean,
 };
 
-const InputTextComponent = (props: IInputTextComp) => {
+const InputTextComponent = (props: inputTextProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -88,7 +88,7 @@ const InputTextComponent = (props: IInputTextComp) => {
   );
 };
 
-const InputText = React.forwardRef((props: IInputTextComp) => (
+const InputText: FC<inputTextProps> = React.forwardRef((props) => (
   <InputTextComponent {...props} />
 ));
 

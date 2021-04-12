@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {FC} from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
 const randomNumber = 'range-' + Math.ceil(Math.random() * 1000);
 
-export type IRangeComp = {
+export type rangeProps = {
   id?: string,
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
   formControlStyle?: 'normal' | 'inline',
@@ -21,7 +21,7 @@ export type IRangeComp = {
 };
 
 
-const RangeComponent = (props:IRangeComp) => {
+const RangeComponent = (props:rangeProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -56,7 +56,7 @@ const RangeComponent = (props:IRangeComp) => {
   );
 };
 
-const Range = React.forwardRef((props: IRangeComp) => <RangeComponent {...props} />);
+const Range: FC<rangeProps> = React.forwardRef((props) => <RangeComponent {...props} />);
 
 Range.defaultProps = {
   id: randomNumber,

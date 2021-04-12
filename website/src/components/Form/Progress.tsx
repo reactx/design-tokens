@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-export type IProgressComp = {
+export type progressProps = {
   id?: string,
   showLabel?: boolean,
   striped?: boolean,
@@ -16,7 +16,7 @@ export type IProgressComp = {
   className?: string,
 };
 
-const ProgressComponent = (props: IProgressComp) => {
+const ProgressComponent = (props: progressProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
   const calcPosition = () => {
@@ -42,7 +42,7 @@ const ProgressComponent = (props: IProgressComp) => {
   );
 };
 
-const Progress = React.forwardRef((props: IProgressComp) => <ProgressComponent {...props} />);
+const Progress: FC<progressProps> = React.forwardRef((props) => <ProgressComponent {...props} />);
 
 Progress.defaultProps = {
   radius: 'normal',

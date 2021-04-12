@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { InferProps } from 'prop-types';
+import React, { useState, useEffect, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import { FluentIcon } from '../components/FluentIcon';
 
-export type IRatingComp = {
+export type ratingProps = {
   id?: string,
   color?: 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light',
   shape?: 'Star' | 'Heart',
@@ -15,7 +14,7 @@ export type IRatingComp = {
   value?: number,
 };
 
-const RatingComponent = (props: IRatingComp) => {
+const RatingComponent = (props: ratingProps) => {
   const [value, setValue] = useState(props.value || 1);
   const [ratingList, setRatingList] = useState<string[]>([]);
   const parentProps = { ...props };
@@ -54,7 +53,7 @@ const RatingComponent = (props: IRatingComp) => {
   );
 };
 
-const Rating = React.forwardRef((props: IRatingComp) => <RatingComponent {...props} />);
+const Rating: FC<ratingProps>= React.forwardRef((props) => <RatingComponent {...props} />);
 
 Rating.defaultProps = {
   count: 5,

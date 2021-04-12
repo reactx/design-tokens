@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import { cleanProps } from '../../utils';
 
-export type IRowComp = {
+export type rowProps = {
   id?: string,
   children?:  string | React.ReactNode,
   className?: string,
@@ -18,7 +18,7 @@ export type IRowComp = {
   'end'
 };
 
-const RowComponent = (props: IRowComp) => {
+const RowComponent = (props: rowProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -37,7 +37,7 @@ const RowComponent = (props: IRowComp) => {
   );
 };
 
-const Row = React.forwardRef((props: IRowComp) => <RowComponent {...props} />);
+const Row: FC<rowProps> = React.forwardRef((props) => <RowComponent {...props} />);
 
 Row.defaultProps = {
   className: '',

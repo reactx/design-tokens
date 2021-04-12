@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import * as uuid from 'uuid';
 
-export type IAnalogClockComp = {
+export type analogClockProps = {
   id?: string,
   theme?: 'classic-clock' |
   'white-clock' |
@@ -13,7 +13,7 @@ export type IAnalogClockComp = {
 };
 
 
-const AnalogClockComponent = (props:IAnalogClockComp) => {
+const AnalogClockComponent = (props:analogClockProps) => {
   const [id, setId] = useState(uuid.v4());
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -69,7 +69,7 @@ const AnalogClockComponent = (props:IAnalogClockComp) => {
   );
 };
 
-const AnalogClock = React.forwardRef((props: IAnalogClockComp) => (
+const AnalogClock: FC<analogClockProps> = React.forwardRef((props) => (
   <AnalogClockComponent {...props} />
 ));
 

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-export type IDropdownComp = {
+export type dropdownProps = {
   id?: string,
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
@@ -14,19 +14,19 @@ export type IDropdownComp = {
   required?: boolean,
   autoFocus?: boolean,
   className?: string,
-  onChange?: (item: IDropdownItem) => void,
-  defaultValue?: IDropdownItem,
-  items?: Array<IDropdownItem>,
+  onChange?: (item: dropdownItemProps) => void,
+  defaultValue?: dropdownItemProps,
+  items?: Array<dropdownItemProps>,
 }
 
- export type IDropdownItem =  {
+export type dropdownItemProps =  {
    name: string,
    value: string
  }
 
-const DropdownComponent = (props: IDropdownComp) => {
+const DropdownComponent = (props: dropdownProps) => {
   const [isOpen, SetOpen] = useState(false);
-  const [selectItem, setSelectItem] = useState<IDropdownItem | undefined>(
+  const [selectItem, setSelectItem] = useState<dropdownItemProps | undefined>(
     props.defaultValue || (props.items && props.items[0]),
   );
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -45,7 +45,7 @@ const DropdownComponent = (props: IDropdownComp) => {
     };
   }, [dropdownRef]);
 
-  const renderItem = (item: IDropdownItem) => {
+  const renderItem = (item: dropdownItemProps) => {
     return (
       <div
         className={
@@ -100,7 +100,7 @@ const DropdownComponent = (props: IDropdownComp) => {
       </div>
       <div className="dropdown-dropdown">
         {props.items &&
-          props.items.map((item: IDropdownItem, index: number) => {
+          props.items.map((item: dropdownItemProps, index: number) => {
             if (item.value === 'separator') return <hr key={index} />;
             return renderItem(item);
           })}
@@ -109,7 +109,7 @@ const DropdownComponent = (props: IDropdownComp) => {
   );
 };
 
-const Dropdown = React.forwardRef((props: IDropdownComp ) => <DropdownComponent {...props} />);
+const Dropdown: FC<dropdownProps> = React.forwardRef((props) => <DropdownComponent {...props} />);
 
 Dropdown.defaultProps = {
   radius: 'normal',

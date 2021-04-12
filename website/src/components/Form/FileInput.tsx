@@ -1,8 +1,7 @@
-import React from 'react';
-import { InferProps } from 'prop-types';
+import React, { FC }  from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-export type IFileInpuComp = {
+export type fileInputProps = {
   id?: string,
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
   size?: 'small' | 'medium' | 'large' | 'extra',
@@ -28,7 +27,7 @@ export type IFileInpuComp = {
 
 };
 
-const FileInputComponent = (props: InferProps<IFileInpuComp>) => {
+const FileInputComponent = (props: fileInputProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -47,7 +46,7 @@ const FileInputComponent = (props: InferProps<IFileInpuComp>) => {
   );
 };
 
-const FileInput = React.forwardRef((props: IFileInpuComp ) => (
+const FileInput: FC<fileInputProps> = React.forwardRef((props) => (
   <FileInputComponent {...props} />
 ));
 
