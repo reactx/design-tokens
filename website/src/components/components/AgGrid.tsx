@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
-import { cleanProps, generateClass } from '../../utils';
+import React, { useRef, useEffect, FC } from 'react';
+import { cleanProps } from '../../utils';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import * as agGridEnterprise from 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -11,19 +10,50 @@ agGridEnterprise.LicenseManager.setLicenseKey(
   'DownloadDevTools_COM_NDEwMjM0NTgwMDAwMA==59158b5225400879a12a96634544f5b6',
 );
 
-const ROW_SELECTION = {
-  SINGLE: 'single',
-  MULTIPLE: 'multiple',
-};
+export type agGridProps = {
+  id?: string,
+  className?: string,
+  enableRtl?: boolean,
+  animateRows?: boolean,
+  pagination?: boolean,
+  enableRangeSelection?: boolean,
+  suppressMovableColumns?: boolean,
+  treeData?: boolean,
+  suppressCellSelection?: boolean,
+  suppressContextMenu?: boolean,
+  paginationAutoPageSize?: boolean,
+  paginationPageSize?: number,
+  rowData: any,
+  columns: Array<agGridItems>,
+  cacheBlockSize?: any,
+  statusBar?: any,
+  rowModelType?: any,
+  rowClassRules?: any,
+  rowSelection: "single" | "multiple",
+  //Action
+  onSelectionChanged?: () => void,
+  onGridReady?: () => void,
+  onPaginationChanged?: () => void,
+  onRowDoubleClicked?: () => void,
+  onRowSelected?: () => void,
+  onCellClicked?: () => void,
+}
 
-const AgGridComponent = (props) => {
+export type agGridItems = {
+  field: string,
+  headerName: string,
+  sortable: boolean,
+  filter: boolean,
+}
+
+const AgGridComponent = (props: agGridProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
   const gridRef = useRef(null);
 
   useEffect(() => {
     if (!gridRef.current) return;
-    const resize = (e) => {
+    const resize = (e: Event) => {
       gridRef.current.api.sizeColumnsToFit();
     };
 
@@ -39,7 +69,7 @@ const AgGridComponent = (props) => {
       {...parentProps}
       className={'ag-theme-alpine ' + (props.className ? props.className : '')}
     >
-      {props.columns.map((item, index) => (
+      {props.columns.map((item: agGridItems, index: number) => (
         <AgGridColumn
           key={index}
           field={item.field}
@@ -52,42 +82,10 @@ const AgGridComponent = (props) => {
   );
 };
 
-const AgGrid = React.forwardRef((props, ref) => (
-  <AgGridComponent ref={ref} {...props} />
-));
-
-AgGrid.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  enableRtl: PropTypes.bool,
-  animateRows: PropTypes.bool,
-  pagination: PropTypes.bool,
-  enableRangeSelection: PropTypes.bool,
-  suppressMovableColumns: PropTypes.bool,
-  treeData: PropTypes.bool,
-  suppressCellSelection: PropTypes.bool,
-  suppressContextMenu: PropTypes.bool,
-  paginationAutoPageSize: PropTypes.bool,
-  paginationPageSize: PropTypes.number,
-  rowData: PropTypes.any,
-  columns: PropTypes.array,
-  cacheBlockSize: PropTypes.any,
-  statusBar: PropTypes.any,
-  rowModelType: PropTypes.any,
-  rowClassRules: PropTypes.any,
-  rowSelection: PropTypes.oneOf(Object.values(ROW_SELECTION)),
-  //Action
-  onSelectionChanged: PropTypes.func,
-  onGridReady: PropTypes.func,
-  onPaginationChanged: PropTypes.func,
-  onRowDoubleClicked: PropTypes.func,
-  onRowSelected: PropTypes.func,
-  onCellClicked: PropTypes.func,
-};
+const AgGrid: FC<agGridProps> = React.forwardRef((props) => (<AgGridComponent {...props} />));
 
 AgGrid.defaultProps = {
   paginationPageSize: 25,
-  rowSelection: ROW_SELECTION.SINGLE,
-};
-
+  rowSelection: "single",
+}
 export { AgGrid };

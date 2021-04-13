@@ -2,7 +2,7 @@ import React from 'react';
 import { Datepicker, datepickerProps } from './Datepicker';
 
 export default {
-  title: 'Components/Datepicker',
+  title: 'Form/Datepicker',
   component: Datepicker,
   argTypes: {
     id: {

@@ -1,43 +1,34 @@
-import React, { useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { cleanProps } from '../../utils';
 
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
+export type loadingProps = {
+  id?: string,
+  size?: "tiny" | "small" | "medium" | "large" | "extra",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light",
+  text?: string,
+  className?: string,
+  enabled?: boolean,
 };
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-};
-
-const LoadingComponent = (props) => {
-  const [lastState, setLast] = useState(false);
-  const loadingRef = useRef(null);
+const LoadingComponent = (props: loadingProps) => {
+  const [lastState, setLast] = useState<boolean>(false);
+  const loadingRef = useRef<HTMLDivElement>(null);
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   useEffect(() => {
     if (!loadingRef.current) return;
-    if (props.enabled) {
+    if (loadingRef.current && props.enabled) {
       loadingRef.current.classList.add('loading-enable');
       loadingRef.current.classList.remove('loading-disable');
       setLast(true);
-    } else if (lastState) {
+    } else if (loadingRef.current && lastState) {
       loadingRef.current.classList.remove('loading-enable');
       loadingRef.current.classList.add('loading-disable');
       setLast(false);
       setTimeout(function () {
-        loadingRef.current?.classList?.remove('loading-disable');
+        if (loadingRef.current)
+          loadingRef.current.classList.remove('loading-disable');
       }, 3000);
     }
   }, [props.enabled]);
@@ -52,7 +43,7 @@ const LoadingComponent = (props) => {
         className={
           'loading-loader ' +
           (props.color ? ' reactx-loading-' + props.color : '') +
-          (props.size !== SIZE.EXTRA ? ' loading-size-' + props.size : '')
+          (props.size !== "extra" ? ' loading-size-' + props.size : '')
         }
       >
         <div className="loading-circle" />
@@ -66,21 +57,9 @@ const LoadingComponent = (props) => {
   );
 };
 
-const Loading = React.forwardRef((props) => <LoadingComponent {...props} />);
-
-Loading.propTypes = {
-  id: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  text: PropTypes.string,
-  className: PropTypes.string,
-  enabled: PropTypes.bool,
-};
-
+const Loading: FC<loadingProps> = React.forwardRef((props) => <LoadingComponent {...props} />);
 Loading.defaultProps = {
-  color: COLOR.PRIMARY,
-  size: SIZE.EXTRA,
-  enabled: false,
+  color: "primary",
+  size: "extra",
 };
-
 export { Loading };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BreadCrumb } from './BreadCrumb';
+import { BreadCrumb, breadCrumbProps, itemsProps } from './BreadCrumb';
 
 export default {
   title: 'Components/BreadCrumb',
@@ -68,12 +68,12 @@ export default {
   },
 };
 
-export const Basic = (args) => <BreadCrumb {...args} />;
+export const Basic = (args: breadCrumbProps) => <BreadCrumb {...args} />;
 Basic.args = {
   items: [
     { id: 1, title: 'item 1', icon: "Bullseye", data: 'value' },
     { id: 2, title: 'item 2', icon: "BullseyeTarget", data: 'value', active: true },
     { id: 3, title: 'item 3', icon: "BullseyeTargetEdit", data: 'value' },
   ],
-  onClick: (item) => alert(item.id),
+  onClick: (item: itemsProps) => alert(item.id),
 };

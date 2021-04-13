@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToggleButton } from './ToggleButton';
+import { ToggleButton, toggleButtonProps } from './ToggleButton';
 
 export default {
   title: 'Components/Toggle Button',
@@ -79,13 +79,12 @@ export default {
   },
 };
 
-export const Basic = (args) => <ToggleButton {...args} />;
+export const Basic = (args: toggleButtonProps) => <ToggleButton {...args} />;
 Basic.args = {
   children: 'ToggleBtn',
   toggleChildren: 'ToggleBtn Checked',
-  // onClick: (val) => alert(val),
 };
-export const Compare = (args) => (
+export const Compare = (args: toggleButtonProps) => (
   <>
     <div className="mb-1">
       <ToggleButton

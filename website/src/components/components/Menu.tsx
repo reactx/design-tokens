@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useEffect } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import {
   ContextMenu,
@@ -8,21 +7,29 @@ import {
   SubMenu,
 } from 'react-contextmenu';
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
+export type menuProps = {
+  id: string,
+  className: string,
+  items: Array<menuItems>,
+  icon: boolean,
+  shortcutKey: boolean,
+  rtl: boolean,
+  color?: string,
+  background?: string,
+  radius?: "none" | "small" | "normal" | "curve",
+  shadow?: "none" | "small" | "medium" | "large",
 };
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
+export type menuItems = {
+  hasDevider: boolean,
+  children: Array<any>,
+  icon: string,
+  text: string,
+  shortcut: string,
+  data: string,
+}
 
-const MenuComponent = (props) => {
+const MenuComponent = (props: menuProps) => {
   const parentProps = { ...props };
   let menuProps = { ...props };
   delete menuProps.background;
@@ -32,7 +39,7 @@ const MenuComponent = (props) => {
   useEffect(() => {
     if (props.background) {
       let menuList = document.querySelectorAll('.react-contextmenu');
-      menuList.forEach((menu) => {
+      menuList.forEach((menu: any) => {
         menu.style.backgroundColor = props.background;
         menu.style.color = props.color;
       });
@@ -40,7 +47,7 @@ const MenuComponent = (props) => {
   }, [props.background]);
 
   return (
-    <div className={props.rtl && 'reactx-rtl'}>
+    <div className={props.rtl ? 'reactx-rtl' : ''}>
       <ContextMenuTrigger id={props.id}>
         <div>Right click to see the menu</div>
       </ContextMenuTrigger>
@@ -114,26 +121,11 @@ const MenuComponent = (props) => {
   );
 };
 
-const Menu = React.forwardRef((props) => <MenuComponent {...props} />);
-
-Menu.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  items: PropTypes.array,
-  icon: PropTypes.bool,
-  shortcutKey: PropTypes.bool,
-  rtl: PropTypes.bool,
-  color: PropTypes.string,
-  background: PropTypes.string,
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-};
-
+const Menu: FC<menuProps> = React.forwardRef((props) => <MenuComponent {...props} />);
 Menu.defaultProps = {
-  radius: RADIUS.NONE,
-  shadow: SHADOW.NONE,
+  radius: "none",
+  shadow: "none",
   icon: true,
   shortcutKey: true,
 };
-
 export { Menu };

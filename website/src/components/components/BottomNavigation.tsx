@@ -1,48 +1,41 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useState } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type bottomNavigationProps = {
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve",
+  shadow?: "none" | "small" | "medium" | "large",
+  className?: string,
+  default: string,
+  onClick?: (id: string) => void,
+  items: Array<itemsProps>,
+  label?: boolean,
+  id?: string,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-};
+export type itemsProps = {
+  title: string,
+  id: string,
+  icon: string,
+}
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const BottomNavigationComponent = (props) => {
-  const [active, setActive] = useState(props.default || 1);
+const BottomNavigationComponent = (props: bottomNavigationProps) => {
+  const [active, setActive] = useState<string>(props.default);
   const parentProps = { ...props };
   cleanProps(parentProps);
   delete parentProps.onClick;
+
   return (
     <div {...parentProps} className={generateClass(props, 'btm-navigation')}>
-      {props.items.map((item, index) => (
+      {props.items.map((item: itemsProps, index: number) => (
         <div
           key={index}
           className={'btm-nav-item' + (active === item.id ? ' active' : '')}
           title={item.title}
           onClick={() => {
             setActive(item.id);
-            props.onClick(item.id);
+            if (props.onClick)
+              props.onClick(item.id);
           }}
         >
           <div className="btm-nav-icon">
@@ -55,26 +48,12 @@ const BottomNavigationComponent = (props) => {
   );
 };
 
-const BottomNavigation = React.forwardRef((props) => (
+const BottomNavigation: FC<bottomNavigationProps> = React.forwardRef((props) => (
   <BottomNavigationComponent {...props} />
 ));
-
-BottomNavigation.propTypes = {
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  className: PropTypes.string,
-  default: PropTypes.string,
-  onClick: PropTypes.func,
-  items: PropTypes.array,
-  label: PropTypes.bool,
-  id: PropTypes.string,
-};
-
 BottomNavigation.defaultProps = {
-  radius: RADIUS.NORMAL,
-  color: COLOR.NORMAL,
-  shadow: SHADOW.NONE,
+  radius: "normal",
+  color: "normal",
+  shadow: "none",
 };
-
 export { BottomNavigation };

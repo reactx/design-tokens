@@ -1,46 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type listProps = {
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  items: Array<listItems>,
+  className?: string,
+  onClick?: (item: listItems) => void,
+  id?: string,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
+export type listItems = {
+  id: string,
+  data: React.ReactNode | string,
+}
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const ListComponent = (props) => {
+const ListComponent = (props: listProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
   delete parentProps.onClick;
 
   return (
     <ul {...parentProps} className={generateClass(props, 'list')}>
-      {props.items.map((item, index) => (
+      {props.items.map((item: listItems, index) => (
         <li
           key={index}
           id={item.id}
           className="list-item"
-          onClick={() => props.onClick(item)}
+          onClick={() => { props.onClick && props.onClick(item) }}
         >
           {item.data}
         </li>
@@ -49,21 +37,10 @@ const ListComponent = (props) => {
   );
 };
 
-const List = React.forwardRef((props) => <ListComponent {...props} />);
-
-List.propTypes = {
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  id: PropTypes.string,
-};
-
+const List: FC<listProps> = React.forwardRef((props) => <ListComponent {...props} />);
 List.defaultProps = {
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.NONE,
-  color: COLOR.NORMAL,
+  radius: "normal",
+  shadow: "none",
+  color: "normal",
 };
-
 export { List };

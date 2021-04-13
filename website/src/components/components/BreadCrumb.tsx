@@ -1,42 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type breadCrumbProps = {
+  id?: string,
+  size?: "tiny" | "small" | "medium" | "large" | "extra",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  className?: string,
+  icon?: string,
+  items: Array<itemsProps>,
+  onClick?: (item: itemsProps) => void,
+  stepMode?: boolean,
+  itemIcon?: boolean,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
+export type itemsProps = {
+  title: string,
+  id: string,
+  icon: string,
+  active: boolean
+}
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const BreadCrumbComponent = (props) => {
+const BreadCrumbComponent = (props: breadCrumbProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
   delete parentProps.onClick;
@@ -51,7 +37,7 @@ const BreadCrumbComponent = (props) => {
             <div
               className={"breadcrumb-item" + (item.active ? " active" : "")}
               key={index}
-              onClick={() => props.onClick(item)}
+              onClick={() => { props.onClick && props.onClick(item) }}
             >
               {props.itemIcon && <span className="bread-icon">
                 <i className={"reactx-icon nf-icon-" + item.icon} />
@@ -65,30 +51,13 @@ const BreadCrumbComponent = (props) => {
   );
 };
 
-const BreadCrumb = React.forwardRef((props) => (
-  <BreadCrumbComponent {...props} />
-));
-
-BreadCrumb.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  className: PropTypes.string,
-  icon: PropTypes.string,
-  items: PropTypes.array,
-  onClick: PropTypes.func,
-  stepMode: PropTypes.bool,
-  itemIcon: PropTypes.bool,
-};
+const BreadCrumb: FC<breadCrumbProps> = React.forwardRef((props) => (<BreadCrumbComponent {...props} />));
 
 BreadCrumb.defaultProps = {
-  color: COLOR.NORMAL,
-  radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
+  color: "normal",
+  radius: "normal",
+  size: "medium",
+  shadow: "none",
   icon: 'ChevronRight',
 };
-
 export { BreadCrumb };

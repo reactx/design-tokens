@@ -81,6 +81,11 @@ export default {
         category: 'Attribute',
       },
     },
+    spellcheck: {
+      table: {
+        category: 'Attribute',
+      },
+    },
     formControlStyle: {
       control: 'inline-radio',
       table: {

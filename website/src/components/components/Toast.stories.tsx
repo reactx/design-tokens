@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toast } from './Toast';
+import { Toast, toastProps } from './Toast';
 
 export default {
   title: 'Components/Toast',
@@ -36,14 +36,14 @@ export default {
         category: 'Attribute',
       },
     },
-    outline: {
+    className: {
       table: {
         category: 'Attribute',
       },
     },
-    className: {
+    outline: {
       table: {
-        category: 'Attribute',
+        category: 'Style',
       },
     },
     color: {
@@ -77,7 +77,7 @@ export default {
   },
 };
 
-export const SnackBar = (args) => <Toast {...args} />;
+export const SnackBar = (args: toastProps) => <Toast {...args} />;
 SnackBar.args = { children: 'SnackBar Message' };
-export const WithHeader = (args) => <Toast {...args} />;
+export const WithHeader = (args: toastProps) => <Toast {...args} />;
 WithHeader.args = { children: 'Toast Message', header: 'Toast Title' };

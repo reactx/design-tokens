@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { cleanProps, generateClass } from '../../utils';
-import { Toast } from './Toast';
+import React, { FC, useEffect, useState } from 'react';
+import { cleanProps } from '../../utils';
+import { Toast, toastProps } from './Toast';
 
-const POSITION = {
-  TOP_RIGHT: 'top-right',
-  TOP_CENTER: 'top-center',
-  TOP_LEFT: 'top-left',
-  BOTTOM_RIGHT: 'bottom-right',
-  BOTTOM_CENTER: 'bottom-center',
-  BOTTOM_LEFT: 'bottom-left',
+export type toastManagerProps = {
+  position?: "top-right" | "top-center" | "top-left" | "bottom-right" | "bottom-center" | "bottom-left",
+  toastShowCount: number,
+  doNotDisturb?: boolean,
+  items: Array<any>,
 };
 
-const ToastManagerComponent = (props) => {
-  const [toastList, SetToastList] = useState([]);
+const ToastManagerComponent = (props: toastManagerProps) => {
+  const [toastList, SetToastList] = useState<toastProps[]>([]);
 
   useEffect(() => {
     if (!props.items || props.items.length === 0) return;
@@ -26,7 +23,6 @@ const ToastManagerComponent = (props) => {
   }, [props.items, props.toastShowCount]);
 
   const parentProps = { ...props };
-  delete parentProps.type;
   cleanProps(parentProps);
 
   return (
@@ -37,20 +33,9 @@ const ToastManagerComponent = (props) => {
   );
 };
 
-const ToastManager = React.forwardRef((props) => (
-  <ToastManagerComponent {...props} />
-));
-
-ToastManager.propTypes = {
-  position: PropTypes.oneOf(Object.values(POSITION)),
-  toastShowCount: PropTypes.number,
-  doNotDisturb: PropTypes.bool,
-  items: PropTypes.array,
-};
-
+const ToastManager: FC<toastManagerProps> = React.forwardRef((props) => (<ToastManagerComponent {...props} />));
 ToastManager.defaultProps = {
-  position: POSITION.TOP_RIGHT,
+  position: "top-right",
   toastShowCount: 3,
 };
-
 export { ToastManager };

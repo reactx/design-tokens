@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from './Avatar';
+import { Avatar, avatarProps } from './Avatar';
 
 export default {
   title: 'Components/Avatar',
@@ -84,5 +84,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Avatar {...args} />;
+export const Basic = (args: avatarProps) => <Avatar {...args} />;
 Basic.args = { username: 'reactx' };

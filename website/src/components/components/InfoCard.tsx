@@ -1,35 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
-import { Card } from './Card';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type infoCardProps = {
+  id?: string,
+  radius?: "none" | "small" | "normal" | "curve" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  number: React.ReactNode | string,
+  description: React.ReactNode | string,
+  outline?: boolean,
+  inline?: boolean,
+  className?: string,
+  onClick?: () => void,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const InfoCardComponent = (props) => {
+const InfoCardComponent = (props: infoCardProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -47,27 +32,10 @@ const InfoCardComponent = (props) => {
   );
 };
 
-const InfoCard = React.forwardRef((props) => <InfoCardComponent {...props} />);
-
-InfoCard.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  number: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  outline: PropTypes.bool,
-  inline: PropTypes.bool,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
-
+const InfoCard: FC<infoCardProps> = React.forwardRef((props) => <InfoCardComponent {...props} />);
 InfoCard.defaultProps = {
-  color: COLOR.NORMAL,
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.NONE,
-  outline: false,
-  className: '',
+  color: "normal",
+  radius: "normal",
+  shadow: "none",
 };
-
 export { InfoCard };

@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
 export type progressProps = {
@@ -20,7 +20,7 @@ const ProgressComponent = (props: progressProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
   const calcPosition = () => {
-    let one = props.max ?  props.max / 100 : 0;
+    let one = props.max ? props.max / 100 : 0;
     let result = props.value ? Math.ceil(props.value / one) : 0;
     return result + '%';
   };
@@ -49,7 +49,6 @@ Progress.defaultProps = {
   color: 'primary',
   size: 'medium',
   shadow: 'none',
-  className: '',
   max: 100,
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TimeLine } from './TimeLine';
+import { TimeLine, timeLineProps } from './TimeLine';
 
 export default {
   title: 'Components/TimeLine',
@@ -24,7 +24,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <TimeLine {...args} />;
+export const Basic = (args: timeLineProps) => <TimeLine {...args} />;
 Basic.args = {
   items: [
     {

@@ -1,19 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import { FluentIcon } from './FluentIcon';
 import { Progress } from '../Form/Progress';
-
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
-};
 
 const ICON = {
   PRIMARY: 'ProgressLoopOuter spinner',
@@ -26,24 +14,23 @@ const ICON = {
   NORMAL: 'Ringer',
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
+export type toastProps = {
+  header?: React.ReactNode | string,
+  radius?: "none" | "small" | "normal" | "curve" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  useDefaultIcon?: boolean,
+  showDuration?: number,
+  className?: string,
+  closeAction?: () => void,
+  progressBar?: boolean,
+  onClick?: () => void,
+  outline?: boolean,
+  id?: string,
 };
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const ToastComponent = (props) => {
+const ToastComponent = (props: toastProps) => {
   const parentProps = { ...props };
-  delete parentProps.type;
   cleanProps(parentProps);
 
   return (
@@ -82,32 +69,11 @@ const ToastComponent = (props) => {
   );
 };
 
-const Toast = React.forwardRef((props) => <ToastComponent {...props} />);
-
-Toast.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-  header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  useDefaultIcon: PropTypes.bool,
-  showDuration: PropTypes.number,
-  className: PropTypes.string,
-  closeAction: PropTypes.func,
-  progressBar: PropTypes.bool,
-  onClick: PropTypes.func,
-  outline: PropTypes.bool,
-  id: PropTypes.string,
-};
-
+const Toast: FC<toastProps> = React.forwardRef((props) => <ToastComponent {...props} />);
 Toast.defaultProps = {
-  useDefaultIcon: false,
-  radius: RADIUS.SMALL,
-  shadow: SHADOW.SMALL,
-  color: COLOR.NORMAL,
+  radius: "small",
+  shadow: "small",
+  color: "normal",
   showDuration: 3000,
-  progressBar: false,
-  outline: false,
 };
-
 export { Toast };

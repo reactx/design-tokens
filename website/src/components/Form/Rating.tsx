@@ -27,12 +27,12 @@ const RatingComponent = (props: ratingProps) => {
 
   useEffect(() => {
     if (props.shape && value) {
-      let shape: string =  props.shape ==='Star' ? 'FavoriteStar' : 'Heart';
+      let shape: string = props.shape === 'Star' ? 'FavoriteStar' : 'Heart';
       let list = [];
       let fill = props.count ? (props.count - value) : 0;
-      for (let i = 0; i < value; i++) 
+      for (let i = 0; i < value; i++)
         list.push(shape + 'Fill');
-      for (let i = 0; i < fill; i++) 
+      for (let i = 0; i < fill; i++)
         list.push(shape);
       setRatingList(list);
     }
@@ -53,15 +53,13 @@ const RatingComponent = (props: ratingProps) => {
   );
 };
 
-const Rating: FC<ratingProps>= React.forwardRef((props) => <RatingComponent {...props} />);
+const Rating: FC<ratingProps> = React.forwardRef((props) => <RatingComponent {...props} />);
 
 Rating.defaultProps = {
   count: 5,
   shape: 'Star',
   color: 'warning',
   size: 'medium',
-  disabled: false,
-  className: '',
 };
 
 export { Rating };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { icons } from '../shared/FluentIcons';
-import { FluentIcon } from './FluentIcon';
+import { FluentIcon, fluentIconProps } from './FluentIcon';
 
 export default {
   title: 'Components/Fluent Icon',
@@ -24,6 +24,16 @@ export default {
     className: {
       table: {
         category: 'Attribute',
+      },
+    },
+    disabled: {
+      table: {
+        category: 'Attribute',
+      },
+    },
+    style: {
+      table: {
+        category: 'Style',
       },
     },
     color: {
@@ -56,13 +66,18 @@ export default {
         category: 'Style',
       },
     },
+    onClick: {
+      table: {
+        category: 'Action',
+      },
+    },
   },
 };
 
-export const Basic = (args) => <FluentIcon {...args} />;
+export const Basic = (args: fluentIconProps) => <FluentIcon {...args} />;
 Basic.args = { icon: '12PointStar' };
 
-export const All = (args) => (
+export const All = (args: fluentIconProps) => (
   <>
     <div>There are {icons.length} icons</div>
     {icons.map((key) => (

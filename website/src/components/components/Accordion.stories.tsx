@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from './Accordion';
+import { Accordion, accordionProps } from './Accordion';
 
 export default {
   title: 'Components/Accordion',
@@ -13,17 +13,17 @@ export default {
     },
     items: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     default: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {
@@ -47,7 +47,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <Accordion {...args} />;
+export const Basic = (args: accordionProps) => <Accordion {...args} />;
 Basic.args = {
   items: [
     { id: 1, head: 'Accordion 1 Title', children: 'Accordion 1 Message' },

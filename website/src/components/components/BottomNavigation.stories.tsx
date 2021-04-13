@@ -1,5 +1,5 @@
 import React from 'react';
-import { BottomNavigation } from './BottomNavigation';
+import { BottomNavigation, bottomNavigationProps } from './BottomNavigation';
 
 export default {
   title: 'Components/Bottom Navigation',
@@ -57,7 +57,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <BottomNavigation {...args} />;
+export const Basic = (args: bottomNavigationProps) => <BottomNavigation {...args} />;
 Basic.args = {
   items: [
     {
@@ -87,5 +87,5 @@ Basic.args = {
     },
   ],
   default: 3,
-  onClick: (val) => console.log(val + ' selected'),
+  onClick: (val: string) => console.log(val + ' selected'),
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from './Modal';
+import { Modal, modalProps } from './Modal';
 
 export default {
   title: 'Components/Modal',
@@ -41,12 +41,12 @@ export default {
         category: 'Attribute',
       },
     },
-    closeAction: {
+    className: {
       table: {
         category: 'Attribute',
       },
     },
-    className: {
+    backdropClose: {
       table: {
         category: 'Attribute',
       },
@@ -75,13 +75,18 @@ export default {
         category: 'Style',
       },
     },
+    closeAction: {
+      table: {
+        category: 'Action',
+      },
+    },
   },
 };
 
-export const Basic = (args) => <Modal {...args} />;
+export const Basic = (args: modalProps) => <Modal {...args} />;
 Basic.args = { children: 'Modal Default Message' };
 
-export const WithHeaderFooter = (args) => <Modal {...args} />;
+export const WithHeaderFooter = (args: modalProps) => <Modal {...args} />;
 WithHeaderFooter.args = {
   children: 'Modal Default Message',
   header: 'header',

@@ -1,40 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import { Loading } from './Loading';
-
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
-};
-
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-};
-
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
 
 const LOADING_SIZE = {
   tiny: 'tiny',
@@ -42,14 +8,33 @@ const LOADING_SIZE = {
   medium: 'small',
   large: 'medium',
   extra: 'large',
+  undefined: "small"
 };
 
-const AvatarComponent = (props) => {
+export type avatarProps = {
+  id?: string,
+  size?: "tiny" | "small" | "medium" | "large" | "extra",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  outline?: boolean,
+  username: string,
+  src?: string,
+  title?: string,
+  disabled?: boolean,
+  letterCount: number,
+  loading?: boolean,
+  className?: string,
+  onClick?: () => void,
+};
+
+const AvatarComponent = (props: avatarProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   return (
-    <div {...parentProps} className={generateClass(props, 'avatar')}>
+    <div {...parentProps} className={generateClass(props, 'avatar')}
+      onClick={() => props.onClick && props.onClick()}>
       {props.src ? (
         <img src={props.src} alt={props.username} />
       ) : (
@@ -71,35 +56,12 @@ const AvatarComponent = (props) => {
   );
 };
 
-const Avatar = React.forwardRef((props) => <AvatarComponent {...props} />);
-
-Avatar.propTypes = {
-  id: PropTypes.string,
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  outline: PropTypes.bool,
-  username: PropTypes.string,
-  src: PropTypes.string,
-  title: PropTypes.string,
-  disabled: PropTypes.bool,
-  letterCount: PropTypes.number,
-  loading: PropTypes.bool,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
-
+const Avatar: FC<avatarProps> = React.forwardRef((props) => <AvatarComponent {...props} />);
 Avatar.defaultProps = {
-  color: COLOR.NORMAL,
-  radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
+  color: "normal",
+  radius: "normal",
+  size: "medium",
+  shadow: "none",
   letterCount: 1,
-  outline: false,
-  disabled: false,
-  loading: false,
-  className: '',
 };
-
 export { Avatar };

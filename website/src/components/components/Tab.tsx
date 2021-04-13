@@ -1,11 +1,31 @@
-import React, { useRef, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, useCallback, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const TabComponent = (props) => {
+export type tabProps = {
+  id?: string,
+  title?: string,
+  disabled?: boolean,
+  className?: string,
+  tabList?: Array<tabItem>,
+  activeTabId?: string,
+  onClick?: (item: tabItem) => void,
+  setActiveTab?: (item: tabItem) => void,
+  deleteTabAction?: (id: string) => void,
+  addTabAction?: () => void,
+};
+
+export type tabItem = {
+  tabId: string,
+  displayName: string,
+  color: string,
+  name: string,
+  default: boolean
+}
+
+const TabComponent = (props: tabProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
-  const tabsRef = useRef(null);
+  const tabsRef = useRef<HTMLDivElement>(null);
 
   const scrollTabs = useCallback((direct) => {
     if (direct === 'left') {
@@ -27,7 +47,7 @@ const TabComponent = (props) => {
         )}
         <div className="tabs" ref={tabsRef}>
           {props.tabList &&
-            props.tabList.map((item, index) => (
+            props.tabList.map((item: tabItem, index: number) => (
               <div
                 id={item.tabId}
                 className={
@@ -41,11 +61,11 @@ const TabComponent = (props) => {
                   className="tab-header-title"
                   data-tooltip={item.name || item.displayName}
                   onAuxClick={(e) => {
-                    if (e.button === 1 && deleteTabAction) {
+                    if (e.button === 1 && props.deleteTabAction) {
                       props.deleteTabAction(item.tabId);
                     }
                   }}
-                  onClick={() => props.selectedItem(item)}
+                  onClick={() => { props.setActiveTab && props.setActiveTab(item) }}
                 >
                   {item.default && (
                     <i className="reactx-icon nf-icon-FavoriteStar" />
@@ -57,7 +77,7 @@ const TabComponent = (props) => {
                     className="tab-header-close-btn"
                     data-tooltip="بستن تب"
                     aria-label="بستن تب"
-                    onClick={() => props.deleteTabAction(item.tabId)}
+                    onClick={() => props.deleteTabAction && props.deleteTabAction(item.tabId)}
                   >
                     <i className="reactx-icon nf-icon-ChromeClose" />
                   </span>
@@ -79,7 +99,7 @@ const TabComponent = (props) => {
               className="reactx-btn"
               data-tooltip="تب جدید"
               aria-label="تب جدید"
-              onClick={() => props.addTabAction(true)}
+              onClick={() => props.addTabAction && props.addTabAction()}
             >
               <i className="reactx-icon nf-icon-CalculatorAddition" />
             </button>
@@ -91,25 +111,5 @@ const TabComponent = (props) => {
   );
 };
 
-const Tab = React.forwardRef((props) => <TabComponent {...props} />);
-
-Tab.propTypes = {
-  id: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  title: PropTypes.string,
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  tabList: PropTypes.array,
-  activeTabId: PropTypes.string,
-  onClick: PropTypes.func,
-  deleteTabAction: PropTypes.func,
-  addTabAction: PropTypes.func,
-};
-
-Tab.defaultProps = {
-  disabled: false,
-  className: '',
-  activeTabId: 1,
-};
-
+const Tab: FC<tabProps> = React.forwardRef((props) => <TabComponent {...props} />);
 export { Tab };

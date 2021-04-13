@@ -1,52 +1,42 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useState } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import { Collapse } from './Collapse';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type accordionProps = {
+  radius?: "none" | "small" | "normal" | "curve",
+  shadow?: "none" | "small" | "medium" | "large",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  className?: string,
+  default: string,
+  items: Array<accordionItems>,
+  id?: string,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
+export type accordionItems = {
+  id: string;
+  head: React.ReactChild;
+  children: React.ReactChild;
 };
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const AccordionComponent = (props) => {
-  const [active, setActive] = useState(props.default || null);
+const AccordionComponent = (props: accordionProps) => {
+  const [active, setActive] = useState<string>(props.default);
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   return (
     <div {...parentProps} className={generateClass(props, 'accordion')}>
-      {props.items.map((item, index) => (
+      {props.items.map((item: accordionItems) => (
         <Collapse
-          key={index}
+          key={item.id}
           id={item.id}
           head={item.head}
           radius="none"
+          shadow="none"
           accordionMode={true}
           open={item.id === active}
           color={props.color}
           onClick={(id) => {
-            active === id ? setActive(null) : setActive(id);
+            active === id ? setActive("") : setActive(id);
           }}
         >
           {item.children}
@@ -56,24 +46,11 @@ const AccordionComponent = (props) => {
   );
 };
 
-const Accordion = React.forwardRef((props) => (
-  <AccordionComponent {...props} />
-));
-
-Accordion.propTypes = {
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  className: PropTypes.string,
-  default: PropTypes.string,
-  items: PropTypes.array,
-  id: PropTypes.string,
-};
+const Accordion: FC<accordionProps> = React.forwardRef((props) => (<AccordionComponent {...props} />));
+export { Accordion };
 
 Accordion.defaultProps = {
-  radius: RADIUS.NORMAL,
-  color: COLOR.NORMAL,
-  shadow: SHADOW.NONE,
+  radius: "normal",
+  color: "normal",
+  shadow: "none",
 };
-
-export { Accordion };

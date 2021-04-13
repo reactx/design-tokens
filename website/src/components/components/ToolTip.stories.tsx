@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToolTip } from './ToolTip';
+import { ToolTip, toolTipProps } from './ToolTip';
 
 export default {
   title: 'Components/ToolTip',
@@ -58,7 +58,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <ToolTip {...args} />;
+export const Basic = (args: toolTipProps) => <ToolTip {...args} />;
 Basic.args = {
   active: true,
   style: { top: '10px', left: '10px' },

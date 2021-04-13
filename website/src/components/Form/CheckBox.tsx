@@ -1,7 +1,7 @@
-import React, { useState, FC} from 'react';
+import React, { useState, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-export type checkBoxProps ={
+export type checkBoxProps = {
   id?: string,
   size?: 'small' | 'medium' | 'large' | 'extra',
   label?: string | React.ReactNode,
@@ -9,7 +9,7 @@ export type checkBoxProps ={
   disabled?: boolean,
   autoFocus?: boolean,
   className?: string,
-  onChange?: (check : boolean) => void,
+  onChange?: (check: boolean) => void,
 };
 
 const CheckBoxComponent = (props: checkBoxProps) => {
@@ -25,8 +25,8 @@ const CheckBoxComponent = (props: checkBoxProps) => {
       className={generateClass(props, 'checkbox') + (check ? ' checked' : '')}
       onClick={() => {
         setCheck(!check);
-        if(props.onChange)
-        props.onChange(!check);
+        if (props.onChange)
+          props.onChange(!check);
       }}
     >
       <div className="checkbox">
@@ -46,8 +46,5 @@ const CheckBox: FC<checkBoxProps> = React.forwardRef((props) => (
 
 CheckBox.defaultProps = {
   size: 'medium',
-  checked: false,
-  disabled: false,
-  autoFocus: false,
 };
 export { CheckBox };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './Button';
+import { Button, buttonProps } from './Button';
 
 export default {
   title: 'Components/Button',
@@ -80,17 +80,17 @@ export default {
   },
 };
 
-export const Basic = (args) => <Button {...args} />;
+export const Basic = (args: buttonProps) => <Button {...args} />;
 Basic.args = { children: 'Button Text' };
-export const ButtonGroup = (args) => (
+export const ButtonGroup = (args: buttonProps) => (
   <div className="reactx-btn-group">
-    <Button color="primary" {...args}>
+    <Button {...args}>
       1
     </Button>
-    <Button color="primary" {...args}>
+    <Button {...args}>
       2
     </Button>
-    <Button color="primary" {...args}>
+    <Button {...args}>
       3
     </Button>
   </div>

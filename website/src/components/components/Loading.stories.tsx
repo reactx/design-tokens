@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loading } from './Loading';
+import { Loading, loadingProps } from './Loading';
 
 export default {
   title: 'Components/Loading',
@@ -41,5 +41,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Loading {...args} />;
+export const Basic = (args: loadingProps) => <Loading {...args} />;
 Basic.args = { enabled: true };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from './Badge';
+import { Badge, badgeProps } from './Badge';
 import { Button } from './Button';
 
 export default {
@@ -59,10 +59,10 @@ export default {
   },
 };
 
-export const Basic = (args) => <Badge {...args} />;
+export const Basic = (args: badgeProps) => <Badge {...args} />;
 Basic.args = { children: 'reactx' };
-export const WithButton = (args) => (
-  <Button>
+export const WithButton = (args: badgeProps) => (
+  <Button onClick={() => alert("clicked")}>
     <span>Notification</span>
     <Badge {...args} />
   </Button>

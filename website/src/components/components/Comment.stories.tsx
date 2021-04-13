@@ -1,5 +1,5 @@
 import React from 'react';
-import { Comment } from './Comment';
+import { Comment, commentProps, commentItems } from './Comment';
 
 export default {
   title: 'Components/Comment',
@@ -58,7 +58,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <Comment {...args} />;
+export const Basic = (args: commentProps) => <Comment {...args} />;
 Basic.args = {
   items: [
     {
@@ -72,11 +72,11 @@ Basic.args = {
       dislikeCount: 1,
     },
   ],
-  like: (val, action) => alert(val.id + ' is ' + action),
-  replay: (val) => alert(val.id),
+  like: (item: commentItems, action: string) => alert(item.id + ' is ' + action),
+  replay: (item: commentItems) => alert(item.id),
 };
 
-export const WithReplay = (args) => <Comment {...args} />;
+export const WithReplay = (args: commentProps) => <Comment {...args} />;
 WithReplay.args = {
   items: [
     {
@@ -102,6 +102,6 @@ WithReplay.args = {
       replayLock: true,
     },
   ],
-  like: (val, action) => alert(val.id + ' is ' + action),
-  replay: (val) => alert(val.id),
+  like: (item: commentItems, action: string) => alert(item.id + ' is ' + action),
+  replay: (item: commentItems) => alert(item.id),
 };

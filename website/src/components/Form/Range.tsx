@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
 const randomNumber = 'range-' + Math.ceil(Math.random() * 1000);
@@ -21,7 +21,7 @@ export type rangeProps = {
 };
 
 
-const RangeComponent = (props:rangeProps) => {
+const RangeComponent = (props: rangeProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -65,10 +65,6 @@ Range.defaultProps = {
   min: 0,
   max: 100,
   step: 1,
-  disabled: false,
-  required: false,
-  autoFocus: false,
-  className: '',
 };
 
 export { Range };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from './Table';
+import { Table, tableProps } from './Table';
 
 export default {
   title: 'Components/Table',
@@ -57,7 +57,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <Table {...args} />;
+export const Basic = (args: tableProps) => <Table {...args} />;
 Basic.args = {
   header: ['class', 'properties'],
   body: [
