@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import { FluentIcon } from './FluentIcon';
 
 export type paginationProps = {
@@ -14,8 +14,6 @@ export type paginationProps = {
 
 const PaginationComponent = (props: paginationProps) => {
   const [active, setActive] = useState<number>(0);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   const changePagePosition = (item: number) => {
     setActive(item);
@@ -55,7 +53,7 @@ const PaginationComponent = (props: paginationProps) => {
         onClick={() => changePagePosition(active - 1)}
         disabled={active === 0}
       />
-      <ul {...parentProps} className={generateClass(props, 'pagination')}>
+      <ul id={props.id} className={generateClass(props, 'pagination')}>
         {output.map((item: number) => (
           <li
             key={item}

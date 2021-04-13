@@ -14,22 +14,22 @@ export default {
     className: {
       control: 'text',
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     items: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     icon: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     shortcutKey: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     rtl: {

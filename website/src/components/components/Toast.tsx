@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import { FluentIcon } from './FluentIcon';
 import { Progress } from '../Form/Progress';
 
@@ -27,14 +27,12 @@ export type toastProps = {
   onClick?: () => void,
   outline?: boolean,
   id?: string,
+  children: React.ReactNode | string
 };
 
 const ToastComponent = (props: toastProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
-    <div {...parentProps} className={generateClass(props, 'toast')}>
+    <div id={props.id} className={generateClass(props, 'toast')}>
       {props.header && (
         <div className="toast-header">
           <div>{props.header}</div>

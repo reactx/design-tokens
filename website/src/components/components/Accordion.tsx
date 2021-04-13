@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import { Collapse } from './Collapse';
 
 export type accordionProps = {
@@ -20,18 +20,14 @@ export type accordionItems = {
 
 const AccordionComponent = (props: accordionProps) => {
   const [active, setActive] = useState<string>(props.default);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   return (
-    <div {...parentProps} className={generateClass(props, 'accordion')}>
+    <div id={props.id} className={generateClass(props, 'accordion')}>
       {props.items.map((item: accordionItems) => (
         <Collapse
           key={item.id}
           id={item.id}
           head={item.head}
-          radius="none"
-          shadow="none"
           accordionMode={true}
           open={item.id === active}
           color={props.color}

@@ -13,33 +13,33 @@ export default {
     },
     children: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     header: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     footer: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     cardTitle: {
       control: 'text',
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     disabled: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

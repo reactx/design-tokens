@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type collapseProps = {
   head: React.ReactNode | string,
@@ -13,13 +13,11 @@ export type collapseProps = {
   title?: string,
   open?: boolean,
   id: string,
+  children: React.ReactNode | string
 };
 
 const CollapseComponent = (props: collapseProps) => {
   const [open, setOpen] = useState<boolean>(props.accordionMode ? false : true);
-  const parentProps = { ...props };
-  delete parentProps.onClick;
-  cleanProps(parentProps);
 
   const clickAction = () => {
     if (!props.accordionMode) {
@@ -30,7 +28,7 @@ const CollapseComponent = (props: collapseProps) => {
   };
 
   return (
-    <div {...parentProps} className={generateClass(props, 'collapse')}>
+    <div id={props.id} title={props.title} className={generateClass(props, 'collapse')}>
       <div className="collapse-title" onClick={() => clickAction()}>
         {props.head}
       </div>

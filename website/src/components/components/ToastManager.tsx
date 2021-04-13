@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from 'react';
-import { cleanProps } from '../../utils';
 import { Toast, toastProps } from './Toast';
 
 export type toastManagerProps = {
@@ -21,9 +20,6 @@ const ToastManagerComponent = (props: toastManagerProps) => {
     );
     SetToastList(temp);
   }, [props.items, props.toastShowCount]);
-
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   return (
     <div className={'reactx-toast-container' + (' toast-' + props.position)}>

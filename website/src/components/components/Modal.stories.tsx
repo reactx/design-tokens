@@ -13,42 +13,42 @@ export default {
     },
     header: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     children: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     footer: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     show: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     backdrop: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     closeBtn: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     backdropClose: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     modalType: {

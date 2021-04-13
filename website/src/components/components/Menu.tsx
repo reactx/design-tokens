@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import {
   ContextMenu,
   MenuItem,
@@ -30,11 +30,9 @@ export type menuItems = {
 }
 
 const MenuComponent = (props: menuProps) => {
-  const parentProps = { ...props };
   let menuProps = { ...props };
   delete menuProps.background;
   delete menuProps.color;
-  cleanProps(parentProps);
 
   useEffect(() => {
     if (props.background) {
@@ -52,7 +50,7 @@ const MenuComponent = (props: menuProps) => {
         <div>Right click to see the menu</div>
       </ContextMenuTrigger>
       <ContextMenu
-        {...parentProps}
+        id={props.id}
         className={generateClass(menuProps, 'menu')}
       >
         {props.items.map((item, index) => (
@@ -69,7 +67,6 @@ const MenuComponent = (props: menuProps) => {
               </MenuItem>
             ) : (
               <SubMenu
-                {...parentProps}
                 className={generateClass(menuProps, 'sub-menu')}
                 title={
                   <>

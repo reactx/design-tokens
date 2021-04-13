@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { cleanProps } from '../../utils';
 
 export type fluentIconProps = {
   id?: string,
@@ -17,14 +16,12 @@ export type fluentIconProps = {
 };
 
 const FluentIconComponent = (props: fluentIconProps) => {
-  const parentProps = { ...props };
-  parentProps.style = { color: props.color };
-  cleanProps(parentProps);
 
   return (
     <span
-      {...parentProps}
+      id={props.id}
       onClick={() => props.onClick && props.onClick()}
+      style={{ color: props.color }}
       className={
         (props.className || '') +
         ' reactx-icon-warper' +
@@ -32,7 +29,8 @@ const FluentIconComponent = (props: fluentIconProps) => {
         (props.shadowOnHover !== "none"
           ? ' shadow-on-hover-' + props.shadowOnHover
           : '') +
-        (props.shadow !== "none" ? ' shadow-' + props.shadow : '')
+        (props.shadow !== "none" ? ' shadow-' + props.shadow : '') +
+        (props.disabled ? ' disabled' : '')
       }
     >
       <i
@@ -40,10 +38,12 @@ const FluentIconComponent = (props: fluentIconProps) => {
           'icon-size-' + props.iconSize + ' reactx-icon nf-icon-' + props.icon
         }
       />
-      {parentProps.title && (
-        <span className="reactx-icon-title">{parentProps.title}</span>
-      )}
-    </span>
+      {
+        props.title && (
+          <span className="reactx-icon-title">{props.title}</span>
+        )
+      }
+    </span >
   );
 };
 

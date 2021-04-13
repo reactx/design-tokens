@@ -49,7 +49,7 @@
   }
 }
 
-.reactx-float-action[float="left"] {
+.reactx-float-action.left {
   align-items: flex-start;
   right: auto;
   left: 10px;
@@ -59,12 +59,12 @@
   }
 }
 
-.reactx-float-action[float="center"] {
+.reactx-float-action.center {
   right: 45%;
   left: auto;
 }
 
-.reactx-float-action[position="top"] {
+.reactx-float-action.top {
   flex-direction: column;
   bottom: auto;
   top: 10px;
@@ -74,7 +74,7 @@
   }
 }
 
-.reactx-float-action[direction="horizontal"] {
+.reactx-float-action.horizontal {
   flex-direction: row-reverse;
 
   &:hover,
@@ -89,7 +89,7 @@
   }
 }
 
-.reactx-float-action[float="left"][direction="horizontal"] {
+.reactx-float-action.left.horizontal {
   flex-direction: row;
 
   &:hover,
@@ -108,7 +108,6 @@
 }
 
 .reactx-dark {
-
   .main-action,
   .sub-action-item {
     background: {

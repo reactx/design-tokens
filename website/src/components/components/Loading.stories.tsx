@@ -13,17 +13,17 @@ export default {
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     enabled: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     text: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

@@ -7,24 +7,24 @@ export default {
   argTypes: {
     items: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     toastShowCount: {
       control: 'number',
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     position: {
       control: 'inline-radio',
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     doNotDisturb: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
   },

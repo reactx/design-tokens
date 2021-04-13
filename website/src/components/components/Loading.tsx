@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import { cleanProps } from '../../utils';
 
 export type loadingProps = {
   id?: string,
@@ -13,8 +12,6 @@ export type loadingProps = {
 const LoadingComponent = (props: loadingProps) => {
   const [lastState, setLast] = useState<boolean>(false);
   const loadingRef = useRef<HTMLDivElement>(null);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   useEffect(() => {
     if (!loadingRef.current) return;
@@ -35,7 +32,7 @@ const LoadingComponent = (props: loadingProps) => {
 
   return (
     <div
-      {...parentProps}
+      id={props.id}
       ref={loadingRef}
       className={(props.className || '') + 'reactx-loading'}
     >

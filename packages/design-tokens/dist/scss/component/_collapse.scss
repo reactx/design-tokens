@@ -57,8 +57,15 @@
   border: 1px solid $black-op-09;
   overflow: hidden;
 
-  .reactx-collapse .collapse-title {
-    border-bottom: 1px solid $black-op-09;
+  .reactx-collapse {
+    border-radius: 0;
+
+    .collapse-title {
+      border: {
+        bottom: 1px solid $black-op-09;
+        radius: 0;
+      }
+    }
   }
 
   .reactx-collapse:nth-last-child(1) {
@@ -88,7 +95,7 @@
   .reactx-collapse[open] {
     .collapse-title {
       &::before {
-        content: ''
+        content: '';
       }
 
       &::after {
@@ -98,9 +105,8 @@
   }
 
   .collapse-title {
-
     &::before {
-      content: ''
+      content: '';
     }
 
     &::after {
@@ -112,6 +118,5 @@
         size: $font-size-sm;
       }
     }
-
   }
 }

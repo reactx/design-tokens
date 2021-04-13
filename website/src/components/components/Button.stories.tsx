@@ -17,11 +17,6 @@ export default {
         category: 'Attribute',
       },
     },
-    children: {
-      table: {
-        category: 'Attribute',
-      },
-    },
     title: {
       control: 'text',
       table: {
@@ -33,14 +28,19 @@ export default {
         category: 'Attribute',
       },
     },
+    children: {
+      table: {
+        category: 'Custom Attribute',
+      },
+    },
     loading: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

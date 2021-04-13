@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import { Loading } from './Loading';
 
 const LOADING_SIZE = {
@@ -11,7 +11,7 @@ const LOADING_SIZE = {
 
 export type buttonProps = {
   id?: string,
-  type?: "button" | "reset" | "submit",
+  type: "button" | "reset" | "submit",
   size?: "small" | "medium" | "large" | "extra",
   color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
   radius?: "none" | "small" | "normal" | "curve" | "pill" | "rounded",
@@ -22,14 +22,17 @@ export type buttonProps = {
   loading?: boolean,
   className?: string,
   onClick: () => void,
+  children: React.ReactNode | string
 };
 
 const ButtonComponent = (props: buttonProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
-    <button {...parentProps} className={generateClass(props, 'btn')}>
+    <button
+      id={props.id}
+      title={props.title}
+      disabled={props.disabled}
+      onClick={() => props.onClick()}
+      className={generateClass(props, 'btn')}>
       {props.children}
       <Loading
         enabled={props.loading}

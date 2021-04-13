@@ -13,22 +13,22 @@ export default {
     },
     title: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     icon: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     disabled: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     style: {

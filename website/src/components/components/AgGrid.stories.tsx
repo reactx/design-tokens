@@ -13,93 +13,93 @@ export default {
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     rowData: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     columns: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     enableRtl: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     animateRows: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     pagination: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     enableRangeSelection: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     suppressMovableColumns: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     treeData: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     suppressCellSelection: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     suppressContextMenu: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     paginationAutoPageSize: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     paginationPageSize: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     cacheBlockSize: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     statusBar: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     rowModelType: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     rowClassRules: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     rowSelection: {
       control: 'inline-radio',
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     onSelectionChanged: {

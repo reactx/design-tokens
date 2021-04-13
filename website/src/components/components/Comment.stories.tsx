@@ -13,18 +13,12 @@ export default {
     },
     items: {
       table: {
-        category: 'Attribute',
-      },
-    },
-    title: {
-      control: 'text',
-      table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

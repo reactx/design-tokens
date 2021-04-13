@@ -1,36 +1,37 @@
 import React, { FC, useState } from 'react';
-import { cleanProps } from '../../utils';
 
 export type floatActionProps = {
-  direction?: "vertical" | "horizontal",
-  position?: "top" | "bottom",
-  float?: "right" | "left" | "center",
+  direction: "vertical" | "horizontal",
+  position: "top" | "bottom",
+  float: "right" | "left" | "center",
   subChildren: Array<floatActionItems>,
   className?: string,
   onClick?: (item: floatActionItems) => void,
   id?: string,
+  children: React.ReactNode | string
 };
 
 export type floatActionItems = {
   props: {
-    className: string
+    id: string,
+    className: string,
   },
   data: string
 }
 
 const FloatActionComponent = (props: floatActionProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-  delete parentProps.onClick;
 
   return (
     <div
-      {...parentProps}
+      id={props.id}
       className={
         'reactx-float-action' +
         (toggle ? ' toggle' : '') +
-        (props.className ? ' ' + props.className : '')
+        (props.className ? ' ' + props.className : '') +
+        ' ' + props.direction +
+        ' ' + props.position +
+        ' ' + props.float
       }
     >
       <div className="main-action" onClick={() => setToggle(!toggle)}>

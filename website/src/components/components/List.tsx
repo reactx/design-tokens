@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type listProps = {
   color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
@@ -17,12 +17,8 @@ export type listItems = {
 }
 
 const ListComponent = (props: listProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-  delete parentProps.onClick;
-
   return (
-    <ul {...parentProps} className={generateClass(props, 'list')}>
+    <ul id={props.id} className={generateClass(props, 'list')}>
       {props.items.map((item: listItems, index) => (
         <li
           key={index}

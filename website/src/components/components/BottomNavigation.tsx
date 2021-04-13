@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type bottomNavigationProps = {
   color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
@@ -21,12 +21,9 @@ export type itemsProps = {
 
 const BottomNavigationComponent = (props: bottomNavigationProps) => {
   const [active, setActive] = useState<string>(props.default);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-  delete parentProps.onClick;
 
   return (
-    <div {...parentProps} className={generateClass(props, 'btm-navigation')}>
+    <div id={props.id} className={generateClass(props, 'btm-navigation')}>
       {props.items.map((item: itemsProps, index: number) => (
         <div
           key={index}

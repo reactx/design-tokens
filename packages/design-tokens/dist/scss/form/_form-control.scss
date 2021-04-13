@@ -52,7 +52,7 @@
   }
 
   &.form-control-tiny {
-    font-size: $font-size-sm*0.85;
+    font-size: $font-size-sm * 0.85;
   }
 
   &.form-control-small {
@@ -70,7 +70,6 @@
   &.form-control-extra {
     font-size: $h2-font-size;
   }
-
 }
 
 .reactx-input-container {
@@ -87,7 +86,7 @@
   }
 
   &:focus-within {
-    border: $standard-border !important {
+    border: $standard-border !important    {
       color: var(--reactx-primary) !important;
     }
   }
@@ -127,7 +126,7 @@
     }
   }
 
-  &.reactx-input-valid {
+  &.reactx-input-container-valid {
     border: 1px solid $green;
 
     .control-append,
@@ -137,7 +136,7 @@
     }
   }
 
-  &.reactx-input-invalid {
+  &.reactx-input-container-invalid {
     border: 1px solid $red;
 
     .control-append,
@@ -155,7 +154,7 @@
       image: $gradient-dark;
     }
 
-    color:$dark-font-color;
+    color: $dark-font-color;
     border-color: $dark-border-color;
   }
 

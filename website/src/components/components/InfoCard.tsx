@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type infoCardProps = {
   id?: string,
@@ -15,12 +15,11 @@ export type infoCardProps = {
 };
 
 const InfoCardComponent = (props: infoCardProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   return (
     <div
-      {...parentProps}
+      id={props.id}
+      onClick={() => { props.onClick && props.onClick() }}
       className={
         generateClass(props, 'info-card') +
         (props.inline ? ' info-card-inline' : '')
