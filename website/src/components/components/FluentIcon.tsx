@@ -21,6 +21,7 @@ const FluentIconComponent = (props: fluentIconProps) => {
     <span
       id={props.id}
       onClick={() => props.onClick && props.onClick()}
+      style={{ color: props.color }}
       className={
         (props.className || '') +
         ' reactx-icon-warper' +
@@ -37,10 +38,12 @@ const FluentIconComponent = (props: fluentIconProps) => {
           'icon-size-' + props.iconSize + ' reactx-icon nf-icon-' + props.icon
         }
       />
-      {props.title && (
-        <span className="reactx-icon-title">{props.title}</span>
-      )}
-    </span>
+      {
+        props.title && (
+          <span className="reactx-icon-title">{props.title}</span>
+        )
+      }
+    </span >
   );
 };
 

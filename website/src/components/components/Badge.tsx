@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type badgeProps = {
   id?: string,
@@ -14,9 +14,6 @@ export type badgeProps = {
 };
 
 const BadgeComponent = (props: badgeProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
     <div id={props.id} title={props.title} className={generateClass(props, 'badge')}
       onClick={() => props.onClick && props.onClick()}>

@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type bottomNavigationProps = {
   color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",

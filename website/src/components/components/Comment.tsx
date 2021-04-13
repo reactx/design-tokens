@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import { Avatar } from './Avatar';
 import { FluentIcon } from './FluentIcon';
 

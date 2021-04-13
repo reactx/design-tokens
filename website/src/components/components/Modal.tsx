@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useRef } from 'react';
-import { cleanProps } from '../../utils';
 import { FluentIcon } from './FluentIcon';
 
 export type modalProps = {
@@ -36,9 +35,6 @@ const ModalComponent = (props: modalProps) => {
     };
   }, [modalRef]);
 
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
     <div
       className={
@@ -47,7 +43,7 @@ const ModalComponent = (props: modalProps) => {
       }
     >
       <div
-        {...parentProps}
+        id={props.id}
         className={
           (props.show ? 'modal-wrapper-active ' : '') +
           'modal-wrapper ' +

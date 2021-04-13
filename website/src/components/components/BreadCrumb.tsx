@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type breadCrumbProps = {
   id?: string,

@@ -1,5 +1,5 @@
 import React, { useRef, useCallback, FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type tabProps = {
   id?: string,

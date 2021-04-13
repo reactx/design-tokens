@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type collapseProps = {
   head: React.ReactNode | string,
