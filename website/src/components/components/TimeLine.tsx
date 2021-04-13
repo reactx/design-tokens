@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
 export type timeLineProps = {
-  id: string,
+  id?: string,
   items: Array<timeLineItem>,
-  className: string,
+  className?: string,
 };
 
 export type timeLineItem = {
@@ -14,11 +14,8 @@ export type timeLineItem = {
 }
 
 const TimeLineComponent = (props: timeLineProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
-    <div {...parentProps} className={generateClass(props, 'timeline')}>
+    <div id={props.id} className={generateClass(props, 'timeline')}>
       {props.items.map((item: timeLineItem, index: number) => (
         <div key={index} className="timeline-item">
           <div className="timeline-date">{item.date}</div>

@@ -14,11 +14,8 @@ export type navbarProps = {
 };
 
 const NavbarComponent = (props: navbarProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
-    <div {...parentProps} className={generateClass(props, 'navbar')}>
+    <div id={props.id} className={generateClass(props, 'navbar')}>
       <div className="navbar-brand-section">{props.brand}</div>
       <div className="navbar-middle-section">{props.middle}</div>
       <div className="navbar-menu-section">{props.menu}</div>

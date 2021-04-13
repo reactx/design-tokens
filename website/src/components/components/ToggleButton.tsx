@@ -19,13 +19,14 @@ export type toggleButtonProps = {
 
 const ToggleButtonComponent = (props: toggleButtonProps) => {
   const [toggle, SetToggle] = useState<boolean>(props.toggle);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
+
 
   return (
     <button
-      {...parentProps}
+      id={props.id}
+      title={props.title}
       data-toggle={toggle}
+      disabled={props.disabled}
       className={generateClass(props, 'btn')}
       onClick={() => {
         SetToggle(!toggle);

@@ -13,27 +13,27 @@ export default {
     },
     brand: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     middle: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     menu: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     disabled: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

@@ -1,68 +1,3 @@
-const delList = [
-  'validationStates',
-  'shadowOnHover',
-  'className',
-  'modalType',
-  'iconSize',
-  'children',
-  'stepMode',
-  'username',
-  'itemRadius',
-  'formControlStyle',
-  'subChildren',
-  'toggleChildren',
-  'defaultText',
-  'closeAction',
-  'like',
-  'isReplayed',
-  'replay',
-  'showDuration',
-  'itemColor',
-  'validMessage',
-  'body',
-  'invalidMessage',
-  'backdrop',
-  'justifyContent',
-  'alignItem',
-  'prepend',
-  'multiLine',
-  'fixIcon',
-  'append',
-  'padding',
-  'brand',
-  'menu',
-  'outline',
-  'theme',
-  'radius',
-  'shadow',
-  'label',
-  'tabList',
-  'line',
-  'animation',
-  'footer',
-  'color',
-  'background',
-  'header',
-  'size',
-  'sizeMd',
-  'sizeLg',
-  'icon',
-  'description',
-  'src',
-  'items',
-  'default'
-];
-
-export const cleanProps = (props) => {
-  Object.keys(props).forEach(function (key) {
-    if (typeof props[key] === 'undefined' || props[key] === null) {
-      delete props[key];
-    }
-  });
-
-  delList.map((item) => delete props[item]);
-};
-
 export type IGenerateClassList = {
   className?: string,
   radius?: string,
@@ -73,6 +8,9 @@ export type IGenerateClassList = {
   color?: string,
   validationStates?: string,
   theme?: string,
+  disabled?: boolean,
+  readOnly?: boolean,
+  required?: boolean,
 }
 
 export function generateClass(prop: IGenerateClassList, baseName: string): string {
@@ -114,6 +52,18 @@ export function generateClass(prop: IGenerateClassList, baseName: string): strin
   //THEME
   if (prop.theme) {
     classList.push(prop.theme);
+  }
+  //DISABLED
+  if (prop.disabled) {
+    classList.push("disabled");
+  }
+  //READONLY
+  if (prop.readOnly) {
+    classList.push("readonly");
+  }
+  //DISABLED
+  if (prop.required) {
+    classList.push("required");
   }
   return classList.join(' ');
 };

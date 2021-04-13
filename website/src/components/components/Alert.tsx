@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type alertProps = {
   id?: string,
@@ -8,17 +8,18 @@ export type alertProps = {
   shadow?: "none" | "small" | "medium" | "large",
   title?: string,
   outline?: boolean,
-  disabled?: boolean,
   className?: string,
   onClick?: () => void,
+  children: React.ReactNode | string
 };
 
 const AlertComponent = (props: alertProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
-    <div {...parentProps} className={generateClass(props, 'alert')}>
+    <div
+      id={props.id}
+      title={props.title}
+      onClick={() => props.onClick && props.onClick()}
+      className={generateClass(props, 'alert')}>
       {props.children}
     </div>
   );

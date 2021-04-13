@@ -13,33 +13,33 @@ export default {
     },
     tabList: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     activeTabId: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     children: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     title: {
       control: 'text',
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     disabled: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     onClick: {

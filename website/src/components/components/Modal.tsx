@@ -16,6 +16,7 @@ export type modalProps = {
   backdropClose?: boolean,
   className?: string,
   closeAction?: (show: boolean) => void,
+  children: React.ReactNode | string
 };
 
 const ModalComponent = (props: modalProps) => {

@@ -10,15 +10,11 @@ export type tableProps = {
   body: Array<any>,
   footer?: React.ReactNode | string,
   className?: string,
-  onClick?: () => void,
 };
 
 const TableComponent = (props: tableProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
-    <div {...parentProps} className={generateClass(props, 'table')}>
+    <div id={props.id} className={generateClass(props, 'table')}>
       <div className="table-header">
         {props.header.map((item, index) => (
           <div key={index} className="table-header-item">

@@ -23,11 +23,8 @@ export type itemsProps = {
 }
 
 const BreadCrumbComponent = (props: breadCrumbProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-  delete parentProps.onClick;
   return (
-    <div {...parentProps} className={generateClass(props, 'breadcrumb') + (props.stepMode ? " step" : "")}>
+    <div id={props.id} className={generateClass(props, 'breadcrumb') + (props.stepMode ? " step" : "")}>
       {props.items.map((item, index) => {
         return (
           <>

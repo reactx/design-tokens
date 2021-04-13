@@ -33,7 +33,7 @@ const AvatarComponent = (props: avatarProps) => {
   cleanProps(parentProps);
 
   return (
-    <div {...parentProps} className={generateClass(props, 'avatar')}
+    <div id={props.id} title={props.title || props.username} className={generateClass(props, 'avatar')}
       onClick={() => props.onClick && props.onClick()}>
       {props.src ? (
         <img src={props.src} alt={props.username} />

@@ -29,15 +29,11 @@ export type commentItems = {
 }
 
 const CommentComponent = (props: commentProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
-    <div className="reactx-comment-container">
+    <div className="reactx-comment-container" id={props.id}>
       {props.items.map((item: commentItems) => (
         <div
           key={item.id}
-          {...parentProps}
           className={
             generateClass(props, 'comment') +
             (item.isReplayed ? ' reactx-ml-1' : '')

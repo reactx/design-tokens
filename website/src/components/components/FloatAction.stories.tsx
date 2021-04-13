@@ -13,17 +13,17 @@ export default {
     },
     children: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     subChildren: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     direction: {

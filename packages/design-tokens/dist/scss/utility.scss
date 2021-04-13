@@ -1,14 +1,9 @@
-@import "utility/padding-margin",
-"utility/border",
-"utility/radius",
-"utility/typography",
-"utility/shadow",
-"utility/justify_align",
-"utility/display",
-"utility/overflow",
-"utility/height_width";
+@import 'utility/padding-margin', 'utility/border', 'utility/radius',
+  'utility/typography', 'utility/shadow', 'utility/justify_align',
+  'utility/display', 'utility/overflow', 'utility/height_width';
 
-[disabled] {
+[disabled],
+.disabled {
   filter: grayscale(1) !important;
   cursor: not-allowed !important;
   opacity: 0.5 !important;
@@ -16,7 +11,7 @@
 
 .clearfix:before,
 .clearfix:after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 

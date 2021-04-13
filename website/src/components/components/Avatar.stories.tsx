@@ -11,40 +11,40 @@ export default {
         category: 'Attribute',
       },
     },
-    username: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    src: {
-      table: {
-        category: 'Attribute',
-      },
-    },
     title: {
       control: 'text',
       table: {
         category: 'Attribute',
       },
     },
+    username: {
+      table: {
+        category: 'Custom Attribute',
+      },
+    },
+    src: {
+      table: {
+        category: 'Custom Attribute',
+      },
+    },
     disabled: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     loading: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     letterCount: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

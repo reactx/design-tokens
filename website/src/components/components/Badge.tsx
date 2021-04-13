@@ -10,6 +10,7 @@ export type badgeProps = {
   title?: string,
   className?: string,
   onClick?: () => void,
+  children: React.ReactNode | string
 };
 
 const BadgeComponent = (props: badgeProps) => {
@@ -17,7 +18,7 @@ const BadgeComponent = (props: badgeProps) => {
   cleanProps(parentProps);
 
   return (
-    <div {...parentProps} className={generateClass(props, 'badge')}
+    <div id={props.id} title={props.title} className={generateClass(props, 'badge')}
       onClick={() => props.onClick && props.onClick()}>
       {props.children}
     </div>

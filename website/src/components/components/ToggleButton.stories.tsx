@@ -11,16 +11,6 @@ export default {
         category: 'Attribute',
       },
     },
-    children: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    toggleChildren: {
-      table: {
-        category: 'Attribute',
-      },
-    },
     title: {
       control: 'text',
       table: {
@@ -32,14 +22,24 @@ export default {
         category: 'Attribute',
       },
     },
+    children: {
+      table: {
+        category: 'Custom Attribute',
+      },
+    },
+    toggleChildren: {
+      table: {
+        category: 'Custom Attribute',
+      },
+    },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     toggle: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

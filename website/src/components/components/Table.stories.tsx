@@ -13,22 +13,22 @@ export default {
     },
     header: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     body: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     footer: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {
@@ -47,11 +47,6 @@ export default {
       control: 'inline-radio',
       table: {
         category: 'Style',
-      },
-    },
-    onClick: {
-      table: {
-        category: 'Action',
       },
     },
   },

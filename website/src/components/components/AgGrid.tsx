@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, FC } from 'react';
-import { cleanProps } from '../../utils';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import * as agGridEnterprise from 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -47,8 +46,6 @@ export type agGridItems = {
 }
 
 const AgGridComponent = (props: agGridProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
   const gridRef = useRef(null);
 
   useEffect(() => {
@@ -66,7 +63,7 @@ const AgGridComponent = (props: agGridProps) => {
   return (
     <AgGridReact
       ref={gridRef}
-      {...parentProps}
+      {...props}
       className={'ag-theme-alpine ' + (props.className ? props.className : '')}
     >
       {props.columns.map((item: agGridItems, index: number) => (

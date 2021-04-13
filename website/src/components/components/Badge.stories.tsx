@@ -12,20 +12,20 @@ export default {
         category: 'Attribute',
       },
     },
-    children: {
-      table: {
-        category: 'Attribute',
-      },
-    },
     title: {
       control: 'text',
       table: {
         category: 'Attribute',
       },
     },
+    children: {
+      table: {
+        category: 'Custom Attribute',
+      },
+    },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

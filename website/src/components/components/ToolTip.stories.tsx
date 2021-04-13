@@ -13,22 +13,22 @@ export default {
     },
     active: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     children: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
-    style: {
+    position: {
       table: {
-        category: 'Style',
+        category: 'Custom Attribute',
       },
     },
     color: {
@@ -61,6 +61,6 @@ export default {
 export const Basic = (args: toolTipProps) => <ToolTip {...args} />;
 Basic.args = {
   active: true,
-  style: { top: '10px', left: '10px' },
+  position: { top: '10px', left: '10px' },
   children: 'Tooltip text',
 };

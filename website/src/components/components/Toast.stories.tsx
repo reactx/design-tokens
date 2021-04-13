@@ -13,32 +13,32 @@ export default {
     },
     header: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     children: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     showDuration: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     useDefaultIcon: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     progressBar: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     outline: {

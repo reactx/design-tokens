@@ -11,40 +11,40 @@ export default {
         category: 'Attribute',
       },
     },
-    head: {
-      table: {
-        category: 'Attribute',
-      },
-    },
-    children: {
-      table: {
-        category: 'Attribute',
-      },
-    },
     title: {
       control: 'text',
       table: {
         category: 'Attribute',
       },
     },
+    head: {
+      table: {
+        category: 'Custom Attribute',
+      },
+    },
+    children: {
+      table: {
+        category: 'Custom Attribute',
+      },
+    },
     disabled: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     open: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     accordionMode: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     color: {

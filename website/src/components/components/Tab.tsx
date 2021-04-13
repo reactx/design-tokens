@@ -12,6 +12,7 @@ export type tabProps = {
   setActiveTab?: (item: tabItem) => void,
   deleteTabAction?: (id: string) => void,
   addTabAction?: () => void,
+  children: React.ReactNode | string
 };
 
 export type tabItem = {
@@ -23,20 +24,18 @@ export type tabItem = {
 }
 
 const TabComponent = (props: tabProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
   const tabsRef = useRef<HTMLDivElement>(null);
 
   const scrollTabs = useCallback((direct) => {
-    if (direct === 'left') {
+    if (direct === 'left' && tabsRef.current) {
       tabsRef.current.scrollLeft = tabsRef.current.scrollLeft - 100;
-    } else if (direct === 'right') {
+    } else if (direct === 'right' && tabsRef.current) {
       tabsRef.current.scrollLeft = tabsRef.current.scrollLeft + 100;
     }
   }, []);
 
   return (
-    <div className={generateClass(props, 'tab')} {...parentProps}>
+    <div className={generateClass(props, 'tab')} id={props.id}>
       <div className="tab-container">
         {tabsRef.current?.scrollWidth !== tabsRef.current?.offsetWidth && (
           <div className="tab-action">

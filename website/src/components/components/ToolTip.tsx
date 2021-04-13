@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type toolTipProps = {
   id?: string,
@@ -9,15 +9,18 @@ export type toolTipProps = {
   size?: "small" | "medium" | "large" | "extra",
   className?: string,
   active?: boolean,
+  children: React.ReactNode | string
+  position: {
+    top: string,
+    left: string
+  }
 };
 
 const ToolTipComponent = (props: toolTipProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
     <div
-      {...parentProps}
+      id={props.id}
+      style={props.position}
       className={
         generateClass(props, 'tooltip') +
         (props.active ? ' reactx-tooltip-active' : ' reactx-tooltip-fade-out')

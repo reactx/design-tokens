@@ -12,14 +12,14 @@ export type cardProps = {
   outline?: boolean,
   disabled?: boolean,
   className?: string,
+  children: React.ReactNode | string
 };
 
 const CardComponent = (props: cardProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-
   return (
-    <div {...parentProps} className={generateClass(props, 'card')}>
+    <div
+      id={props.id}
+      className={generateClass(props, 'card')}>
       {props.header && <div className="card-header">{props.header}</div>}
       <div className="card-body">
         {props.cardTitle && <h5 className="card-title">{props.cardTitle}</h5>}
