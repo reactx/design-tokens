@@ -63,17 +63,17 @@ export default {
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     prepend: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     append: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     multiLine: {

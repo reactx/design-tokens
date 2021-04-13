@@ -11,12 +11,6 @@ export default {
         category: 'Attribute',
       },
     },
-    className: {
-      control: 'text',
-      table: {
-        category: 'Attribute',
-      },
-    },
     calendar: {
       control: 'inline-radio',
       table: {

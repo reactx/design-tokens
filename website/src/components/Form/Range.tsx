@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 const randomNumber = 'range-' + Math.ceil(Math.random() * 1000);
 
@@ -22,8 +22,6 @@ export type rangeProps = {
 
 
 const RangeComponent = (props: rangeProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   return (
     <div
@@ -48,9 +46,15 @@ const RangeComponent = (props: rangeProps) => {
         </>
       )}
       <input
-        {...parentProps}
         type="range"
         className={generateClass(props, 'range')}
+        id={props.id}
+        title={props.title}
+        value={props.value}
+        min={props.min}
+        max={props.max}
+        step={props.step}
+        onChange={() => props.onChange && props.onChange}
       />
     </div>
   );

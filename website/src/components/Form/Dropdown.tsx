@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type dropdownProps = {
   id?: string,
@@ -15,23 +15,17 @@ export type dropdownProps = {
   autoFocus?: boolean,
   className?: string,
   onChange?: (item: dropdownItemProps) => void,
-  defaultValue?: dropdownItemProps,
   items?: Array<dropdownItemProps>,
 }
 
-export type dropdownItemProps =  {
-   name: string,
-   value: string
- }
+export type dropdownItemProps = {
+  name: string,
+  value: string
+}
 
 const DropdownComponent = (props: dropdownProps) => {
   const [isOpen, SetOpen] = useState(false);
-  const [selectItem, setSelectItem] = useState<dropdownItemProps | undefined>(
-    props.defaultValue || (props.items && props.items[0]),
-  );
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
@@ -48,14 +42,10 @@ const DropdownComponent = (props: dropdownProps) => {
   const renderItem = (item: dropdownItemProps) => {
     return (
       <div
-        className={
-          'dropdown-item ' +
-          (item.value === props.defaultValue?.value ? ' dropdown-selected' : '')
-        }
+        className="dropdown-item"
         onClick={(e) => {
           if (props.onChange) props.onChange(item);
           SetOpen(false);
-          setSelectItem(item);
           e.stopPropagation();
         }}
       >
@@ -68,7 +58,8 @@ const DropdownComponent = (props: dropdownProps) => {
   return (
     <div
       ref={dropdownRef}
-      {...parentProps}
+      id={props.id}
+      title={props.title}
       className={generateClass(props, 'dropdown') + (isOpen ? ' _active' : '')}
       onClick={() => {
         !props.disabled && SetOpen(!isOpen);
@@ -93,8 +84,6 @@ const DropdownComponent = (props: dropdownProps) => {
                 }
               />
             </span>
-              <span className="dropdown-value">{selectItem ? selectItem.value : ''}</span>
-              <span className="dropdown-name">{selectItem ? selectItem.name : ''}</span>
           </>
         )}
       </div>

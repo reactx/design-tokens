@@ -12,6 +12,7 @@ export default {
       },
     },
     format: {
+      control: 'inline-radio',
       table: {
         category: 'Attribute',
       },
@@ -42,13 +43,14 @@ export default {
       },
     },
     className: {
+      control: 'text',
       table: {
         category: 'Attribute',
       },
     },
     label: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     radius: {

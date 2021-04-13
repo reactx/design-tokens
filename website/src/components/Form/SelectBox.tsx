@@ -1,41 +1,53 @@
-import React, { useRef, FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import React, { useState, useEffect, useRef, FC } from 'react';
+import { generateClass } from '../../utils';
 
 export type selectBoxProps = {
   id?: string,
-  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
-  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
-  shadow?: 'none' | 'small' | 'medium' | 'large',
-  validationStates?: 'none' | 'valid' | 'invalid',
   title?: string,
+  className?: string,
+  items?: Array<any>,
+  defaultValue?: string,
+  defaultText?: string,
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void,
   disabled?: boolean,
   required?: boolean,
   autoFocus?: boolean,
   multiple?: boolean,
-  className?: string,
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void,
-  defaultValue?: string,
-  items?: Array<any>,
-  defaultText?: string,
+  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
+  shadow?: 'none' | 'small' | 'medium' | 'large',
+  validationStates?: 'none' | 'valid' | 'invalid',
 };
 
 const SelectBoxComponent = (props: selectBoxProps) => {
   const selectboxRef = useRef(null);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  useEffect(() => {
+    if (props.defaultValue && props.items){
+      let index = props.items.findIndex(item => item.value === props.defaultValue);
+      setSelectedIndex(index);
+    }
+  }, [props.defaultValue, props.items])
 
   return (
     <select
       ref={selectboxRef}
-      {...parentProps}
+      id={props.id}
+      title={props.title}
+      disabled={props.disabled}
+      required={props.required}
+      autoFocus={props.autoFocus}
+      multiple={props.multiple}
       className={generateClass(props, 'selectbox')}
+      onChange={() => props.onChange && props.onChange}
     >
       <option value="" className="selectbox-item">
         {props.defaultText}
       </option>
       {props.items &&
         props.items.map((item: any, index: number) => (
-          <option key={index} value={item.value} className="selectbox-item">
+          <option key={index} value={item.value} selected={selectedIndex=== index ? true : false} className="selectbox-item">
             {item.name}
           </option>
         ))}

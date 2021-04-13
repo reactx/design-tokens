@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type radioProps = {
   id?: string,
@@ -15,14 +15,10 @@ export type radioProps = {
 
 const RadioComponent = (props: radioProps) => {
   const [check, setCheck] = useState(props.checked || false);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-  delete parentProps.checked;
-  delete parentProps.onChange;
 
   return (
     <div
-      {...parentProps}
+      id={props.id}
       className={
         generateClass(props, 'radio') + (props.checked ? ' checked' : '')
       }

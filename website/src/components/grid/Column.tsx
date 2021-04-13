@@ -1,5 +1,4 @@
 import React, {FC} from 'react';
-import { cleanProps } from '../../utils';
 
 export type columnProps = {
   id?: string,
@@ -48,12 +47,10 @@ export type columnProps = {
 
 
 const ColumnComponent = (props: columnProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   return (
     <div
-      {...parentProps}
+      id={props.id}
       className={
         'reactx-column ' +
         (props.size ? 'col-' + props.size : '') +

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import { FluentIcon } from '../components/FluentIcon';
 
 export type ratingProps = {
@@ -17,8 +17,7 @@ export type ratingProps = {
 const RatingComponent = (props: ratingProps) => {
   const [value, setValue] = useState(props.value || 1);
   const [ratingList, setRatingList] = useState<string[]>([]);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
+
 
   const clickFun = (index: number) => {
     setValue(index);
@@ -39,7 +38,10 @@ const RatingComponent = (props: ratingProps) => {
   }, [props.shape, value])
 
   return (
-    <div {...parentProps} className={generateClass(props, 'rating')}>
+    <div
+   id={props.id}
+    className={generateClass(props, 'rating')}
+      onClick={() => props.onClick && props.onClick}>
       {ratingList.map((item, index) => (
         <FluentIcon
           icon={item}
