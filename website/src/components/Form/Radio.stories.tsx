@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio } from './Radio';
+import { Radio, radioProps } from './Radio';
 
 export default {
   title: 'Form/Radio',
@@ -50,5 +50,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Radio {...args} />;
+export const Basic = (args: radioProps) => <Radio {...args} />;
 Basic.args = { label: 'Radio Text' };

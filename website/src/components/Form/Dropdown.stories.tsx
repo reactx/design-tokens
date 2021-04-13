@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from './Dropdown';
+import { Dropdown, dropdownProps } from './Dropdown';
 
 export default {
   title: 'Form/Dropdown',
@@ -88,14 +88,14 @@ export default {
   },
 };
 
-export const Basic = (args) => <Dropdown {...args} />;
+export const Basic = (args: dropdownProps) => <Dropdown {...args} />;
 Basic.args = {
   items: [
     { name: 'item 1', value: 'value' },
     { name: 'item 2', value: 'value' },
   ],
 };
-export const WithFixIcon = (args) => <Dropdown {...args} />;
+export const WithFixIcon = (args: dropdownProps) => <Dropdown {...args} />;
 WithFixIcon.args = {
   items: [
     { name: 'item 1', value: 'value' },

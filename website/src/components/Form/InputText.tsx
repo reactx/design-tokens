@@ -1,61 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
 const randomNumber = 'input-' + Math.ceil(Math.random() * 1000);
 
-const CONTROL_STYLE = {
-  NORMAL: 'normal',
-  INLINE: 'inline',
+export type inputTextProps = {
+  id?: string,
+  type?: 'text' | 'email' | 'password' | 'tel' | 'url' | 'search' |
+  'color' | 'hidden' | 'number' | 'date' | 'datetime-local' | 'time' | 'month' | 'week',
+  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill',
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
+  shadow?: 'none' | 'small' | 'medium' | 'large',
+  formControlStyle?: 'normal' | 'inline',
+  validationStates?: 'none' | 'valid' | 'invalid',
+  prepend?: React.ReactNode | string,
+  append?: React.ReactNode | string,
+  label?: string,
+  description?: string,
+  validMessage?: string,
+  invalidMessage?:string,
+  value?:string,
+  title?: string,
+  placeholder?:string,
+  disabled?:boolean,
+  readOnly?: boolean,
+  required?: boolean,
+  autoFocus?: boolean,
+  className?: string,
+  pattern?: string,
+  minLength?: number,
+  maxLength?: number,
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  multiLine?: boolean,
 };
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const VALIDATION = {
-  NONE: 'none',
-  VALID: 'valid',
-  INVALID: 'invalid',
-};
-
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
-
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const TYPE = {
-  TEXT: 'text',
-  EMAIL: 'email',
-  PASSWORD: 'password',
-  TEL: 'tel',
-  URL: 'url',
-  SEARCH: 'search',
-  COLOR: 'color',
-  HIDDEN: 'hidden',
-  NUMBER: 'number',
-  DATE: 'date',
-  DATE_TIME: 'datetime-local',
-  TIME: 'time',
-  MONTH: 'month',
-  WEEK: 'week',
-};
-
-const InputTextComponent = (props) => {
+const InputTextComponent = (props: inputTextProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -63,13 +41,13 @@ const InputTextComponent = (props) => {
     <div
       className={
         'reactx-form-control' +
-        (props.formControlStyle !== CONTROL_STYLE.NORMAL
+        (props.formControlStyle !== 'normal'
           ? ' form-control-' + props.formControlStyle
           : '') +
-        (props.size !== SIZE.MEDIUM ? ' form-control-' + props.size : '')
+        (props.size !== 'medium' ? ' form-control-' + props.size : '')
       }
     >
-      {props.type !== TYPE.HIDDEN && props.label && (
+      {props.type !== 'hidden' && props.label && (
         <>
           {typeof props.label === 'string' ? (
             <label htmlFor={props.id} className="control-label">
@@ -95,62 +73,33 @@ const InputTextComponent = (props) => {
         )}
         {props.append && <div className="control-append">{props.append}</div>}
       </div>
-      {props.type !== TYPE.HIDDEN && props.description && (
+      {props.type !== 'hidden' && props.description && (
         <div className="control-description">{props.description}</div>
       )}
-      {props.type !== TYPE.HIDDEN &&
-        props.validationStates === VALIDATION.VALID && (
-          <div class="valid-feedback">{props.validMessage}</div>
+      {props.type !== 'hidden' &&
+        props.validationStates === 'valid' && (
+        <div className="valid-feedback">{props.validMessage}</div>
         )}
-      {props.type !== TYPE.HIDDEN &&
-        props.validationStates === VALIDATION.INVALID && (
-          <div class="invalid-feedback">{props.invalidMessage}</div>
+      {props.type !== 'hidden' &&
+        props.validationStates === 'invalid' && (
+          <div className="invalid-feedback">{props.invalidMessage}</div>
         )}
     </div>
   );
 };
 
-const InputText = React.forwardRef((props) => (
+const InputText: FC<inputTextProps> = React.forwardRef((props) => (
   <InputTextComponent {...props} />
 ));
 
-InputText.propTypes = {
-  id: PropTypes.string,
-  type: PropTypes.oneOf(Object.values(TYPE)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  formControlStyle: PropTypes.oneOf(Object.values(CONTROL_STYLE)),
-  validationStates: PropTypes.oneOf(Object.values(VALIDATION)),
-  prepend: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  append: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  label: PropTypes.string,
-  description: PropTypes.string,
-  validMessage: PropTypes.string,
-  invalidMessage: PropTypes.string,
-  value: PropTypes.string,
-  title: PropTypes.string,
-  placeholder: PropTypes.string,
-  disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  required: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  className: PropTypes.string,
-  pattern: PropTypes.string,
-  minLength: PropTypes.number,
-  maxLength: PropTypes.number,
-  onChange: PropTypes.func,
-  multiLine: PropTypes.bool,
-};
-
 InputText.defaultProps = {
   id: randomNumber,
-  type: TYPE.TEXT,
-  radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
-  validationStates: VALIDATION.NONE,
-  formControlStyle: CONTROL_STYLE.NORMAL,
+  type: 'text',
+  radius: 'normal',
+  size: 'medium',
+  shadow: 'none',
+  validationStates: 'none',
+  formControlStyle: 'normal',
   disabled: false,
   readOnly: false,
   required: false,

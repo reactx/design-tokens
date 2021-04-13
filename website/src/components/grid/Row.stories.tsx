@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from './Row';
+import { Row, rowProps } from './Row';
 import { Column } from './Column';
 
 export default {
@@ -37,7 +37,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <Row {...args} />;
+export const Basic = (args: rowProps) => <Row {...args} />;
 Basic.args = {
   children: (
     <>

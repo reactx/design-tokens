@@ -1,30 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import { cleanProps } from '../../utils';
 
-const JUSTIFY = {
-  START: 'start',
-  END: 'end',
-  CENTER: 'center',
-  SPACE_BETWEEN: 'space-between',
-  SPACE_AROUND: 'space-around',
-  SPACE_EVENLY: 'space-evenly',
-  LEFT: 'left',
-  RIGHT: 'right',
-  NORMAL: 'normal',
-  STRETCH: 'stretch',
+export type rowProps = {
+  id?: string,
+  children?:  string | React.ReactNode,
+  className?: string,
+  justifyContent?: 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'left' |
+  'left' |
+  'right' |
+  'normal' |
+  'stretch',
+  alignItem?: 'stretch' |
+  'flex-start' |
+  'flex-end' |
+  'center' |
+  'start' |
+  'end'
 };
 
-const ALIGN = {
-  STRETCH: 'stretch',
-  FLEX_START: 'flex-start',
-  FLEX_END: 'flex-end',
-  CENTER: 'center',
-  START: 'start',
-  END: 'end',
-};
-
-const RowComponent = (props) => {
+const RowComponent = (props: rowProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -43,18 +37,12 @@ const RowComponent = (props) => {
   );
 };
 
-const Row = React.forwardRef((props) => <RowComponent {...props} />);
-
-Row.propTypes = {
-  id: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  className: PropTypes.string,
-  justifyContent: PropTypes.oneOf(Object.values(JUSTIFY)),
-  alignItem: PropTypes.oneOf(Object.values(ALIGN)),
-};
+const Row: FC<rowProps> = React.forwardRef((props) => <RowComponent {...props} />);
 
 Row.defaultProps = {
   className: '',
+  alignItem: 'stretch',
+  justifyContent: 'start'
 };
 
 export { Row };

@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, FC } from 'react';
 import { cleanProps } from '../../utils';
 
-const SHADOW = {
-  MEDIUM: 'medium',
-  SMALL: 'small',
-  LARGE: 'large',
-  NONE: 'none',
+export type switchProps = {
+  label?: string | React.ReactNode;
+  shadow?: 'none'|'small' | 'medium'| 'large';
+  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill';
+  size?: 'tiny'| 'small'| 'medium'|'large'|'extra';
+  className?: string;
+  autoFocus?: boolean;
+  disabled?: boolean;
+  onChange?: (e: boolean) => void;
+  checked?: boolean;
+  title?: string;
+  id?: string;
 };
 
-const SIZE = {
-  MEDIUM: 'medium',
-  SMALL: 'small',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const RADIUS = {
-  NORMAL: 'normal',
-  SMALL: 'small',
-  CURVE: 'curve',
-  NONE: 'none',
-};
-
-const SwitchComponent = (props) => {
+const SwitchComponent = (props: switchProps) => {
   const [active, setActive] = useState(props.checked);
   const parentProps = { ...props };
   cleanProps(parentProps);
@@ -35,7 +27,7 @@ const SwitchComponent = (props) => {
         className={
           'reactx-switch ' +
           (props.className || '') +
-          (props.size !== SIZE.MEDIUM ? ' switch-size-' + props.size : '')
+          (props.size !== 'medium' ? ' switch-size-' + props.size : '')
         }
         disabled={props.disabled}
       >
@@ -48,8 +40,8 @@ const SwitchComponent = (props) => {
         <span
           className={
             'reactx-slider ' +
-            (props.radius !== RADIUS.NORMAL ? ' radius-' + props.radius : '') +
-            (props.shadow !== SHADOW.NONE ? ' shadow-' + props.shadow : '')
+            (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
+            (props.shadow !== 'none' ? ' shadow-' + props.shadow : '')
           }
         />
       </label>
@@ -60,26 +52,12 @@ const SwitchComponent = (props) => {
   );
 };
 
-const Switch = React.forwardRef((props) => <SwitchComponent {...props} />);
-
-Switch.propTypes = {
-  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  className: PropTypes.string,
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onChange: PropTypes.func,
-  checked: PropTypes.bool,
-  title: PropTypes.string,
-  id: PropTypes.string,
-};
+const Switch: FC<switchProps> = React.forwardRef((props) => <SwitchComponent {...props}/>);
 
 Switch.defaultProps = {
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.NONE,
-  size: SIZE.MEDIUM,
+  radius: 'normal',
+  shadow: 'none',
+  size: 'medium',
 };
 
 export { Switch };

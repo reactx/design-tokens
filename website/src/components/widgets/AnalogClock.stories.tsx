@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnalogClock } from './AnalogClock';
+import { AnalogClock, analogClockProps } from './AnalogClock';
 
 export default {
   title: 'Widgets/Analog Clock',
@@ -36,4 +36,4 @@ export default {
   },
 };
 
-export const Basic = (args) => <AnalogClock {...args} />;
+export const Basic = (args: analogClockProps) => <AnalogClock {...args} />;

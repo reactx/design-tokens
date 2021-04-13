@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress } from './Progress';
+import { Progress, progressProps } from './Progress';
 
 export default {
   title: 'Form/Progress',
@@ -73,5 +73,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Progress {...args} />;
+export const Basic = (args: progressProps) => <Progress {...args} />;
 Basic.args = { value: 50 };

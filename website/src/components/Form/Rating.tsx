@@ -1,57 +1,42 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import { FluentIcon } from '../components/FluentIcon';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
+export type ratingProps = {
+  id?: string,
+  color?: 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light',
+  shape?: 'Star' | 'Heart',
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra',
+  disabled?: boolean,
+  className?: string,
+  onClick?: (index: number) => void,
+  count?: number,
+  value?: number,
 };
 
-const SHAPE = {
-  STAR: 'Star',
-  HEART: 'Heart',
-};
-
-const SHAPE_ICON = {
-  Star: 'FavoriteStar',
-  Heart: 'Heart',
-};
-
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-  EXTRA_LARGE: 'extra-large',
-};
-
-const RatingComponent = (props) => {
+const RatingComponent = (props: ratingProps) => {
   const [value, setValue] = useState(props.value || 1);
+  const [ratingList, setRatingList] = useState<string[]>([]);
   const parentProps = { ...props };
-  const ratingList = [];
   cleanProps(parentProps);
 
-  let fill = props.count - value;
-
-  for (let i = 0; i < value; i++) {
-    ratingList.push(SHAPE_ICON[props.shape] + 'Fill');
-  }
-
-  for (let i = 0; i < fill; i++) {
-    ratingList.push(SHAPE_ICON[props.shape]);
-  }
-
-  const clickFun = (index) => {
+  const clickFun = (index: number) => {
     setValue(index);
-    props.onClick(index);
+    props.onClick && props.onClick(index);
   };
+
+  useEffect(() => {
+    if (props.shape && value) {
+      let shape: string =  props.shape ==='Star' ? 'FavoriteStar' : 'Heart';
+      let list = [];
+      let fill = props.count ? (props.count - value) : 0;
+      for (let i = 0; i < value; i++) 
+        list.push(shape + 'Fill');
+      for (let i = 0; i < fill; i++) 
+        list.push(shape);
+      setRatingList(list);
+    }
+  }, [props.shape, value])
 
   return (
     <div {...parentProps} className={generateClass(props, 'rating')}>
@@ -68,25 +53,13 @@ const RatingComponent = (props) => {
   );
 };
 
-const Rating = React.forwardRef((props) => <RatingComponent {...props} />);
-
-Rating.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  shape: PropTypes.oneOf(Object.values(SHAPE)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  count: PropTypes.number,
-  value: PropTypes.number,
-};
+const Rating: FC<ratingProps>= React.forwardRef((props) => <RatingComponent {...props} />);
 
 Rating.defaultProps = {
   count: 5,
-  shape: SHAPE.STAR,
-  color: COLOR.WARNING,
-  size: SIZE.MEDIUM,
+  shape: 'Star',
+  color: 'warning',
+  size: 'medium',
   disabled: false,
   className: '',
 };

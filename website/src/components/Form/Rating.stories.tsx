@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rating } from './Rating';
+import { Rating, ratingProps } from './Rating';
 
 export default {
   title: 'Form/Rating',
@@ -57,5 +57,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Rating {...args} />;
+export const Basic = (args: ratingProps) => <Rating {...args} />;
 Basic.args = { value: 3 };
