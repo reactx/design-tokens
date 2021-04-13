@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collapse } from './Collapse';
+import { Collapse, collapseProps } from './Collapse';
 
 export default {
   title: 'Components/Collapse',
@@ -73,7 +73,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <Collapse {...args} />;
+export const Basic = (args: collapseProps) => <Collapse {...args} />;
 Basic.args = {
   head: 'Title',
   children: 'detail data',

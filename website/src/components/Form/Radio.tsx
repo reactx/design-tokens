@@ -4,7 +4,7 @@ import { cleanProps, generateClass } from '../../utils';
 export type radioProps = {
   id?: string,
   size?: 'small' | 'medium' | 'large' | 'extra',
-  label?: string| React.ReactNode, 
+  label?: string | React.ReactNode,
   checked?: boolean,
   disabled?: boolean,
   autoFocus?: boolean,
@@ -46,9 +46,6 @@ const Radio: FC<radioProps> = React.forwardRef((props) => <RadioComponent {...pr
 
 Radio.defaultProps = {
   size: 'medium',
-  checked: false,
-  disabled: false,
-  autoFocus: false,
 };
 
 export { Radio };

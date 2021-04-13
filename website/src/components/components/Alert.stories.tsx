@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from './Alert';
+import { Alert, alertProps } from './Alert';
 
 export default {
   title: 'Components/Alert',
@@ -63,5 +63,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Alert {...args} />;
+export const Basic = (args: alertProps) => <Alert {...args} />;
 Basic.args = { children: 'Alert Default Message' };

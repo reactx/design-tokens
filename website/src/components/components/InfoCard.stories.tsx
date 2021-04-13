@@ -1,5 +1,5 @@
 import React from 'react';
-import { InfoCard } from './InfoCard';
+import { InfoCard, infoCardProps } from './InfoCard';
 
 export default {
   title: 'Components/Info Card',
@@ -62,13 +62,13 @@ export default {
   },
 };
 
-export const Basic = (args) => <InfoCard {...args} />;
+export const Basic = (args: infoCardProps) => <InfoCard {...args} />;
 Basic.args = {
   number: '10',
   description: 'InfoCard Default Message',
   outline: true,
 };
-export const MultiCard = (args) => (
+export const MultiCard = (args: infoCardProps) => (
   <div className="reactx-row">
     <InfoCard
       {...args}

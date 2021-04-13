@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab } from './Tab';
+import { Tab, tabProps } from './Tab';
 
 export default {
   title: 'Components/Tab',
@@ -57,16 +57,22 @@ export default {
         category: 'Action',
       },
     },
+    setActiveTab: {
+      table: {
+        category: 'Action',
+      },
+    },
   },
 };
 
-export const Basic = (args) => <Tab {...args} />;
+export const Basic = (args: tabProps) => <Tab {...args} />;
 Basic.args = {
   children: 'Tab data',
   addTabAction: () => alert('add Tab'),
   deleteTabAction: () => alert('delete Tab'),
   tabList: [
-    { name: 'item 1 test', tabId: 1 },
-    { name: 'item 2 test', tabId: 2 },
+    { name: 'item 1 test', tabId: '1' },
+    { name: 'item 2 test', tabId: '2' },
   ],
+  activeTabId: '1'
 };

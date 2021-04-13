@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToastManager } from './ToastManager';
+import { ToastManager, toastManagerProps } from './ToastManager';
 
 export default {
   title: 'Components/Toast Manager',
@@ -30,7 +30,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <ToastManager {...args} />;
+export const Basic = (args: toastManagerProps) => <ToastManager {...args} />;
 
 Basic.args = {
   items: [

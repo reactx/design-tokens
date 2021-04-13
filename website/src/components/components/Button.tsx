@@ -1,40 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import { Loading } from './Loading';
-
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
-};
-
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  ROUNDED: 'rounded',
-  PILL: 'pill',
-};
-
-const TYPE = {
-  BUTTON: 'button',
-  RESET: 'reset',
-  SUBMIT: 'submit',
-};
-
-const SIZE = {
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
 
 const LOADING_SIZE = {
   small: 'tiny',
@@ -43,14 +9,22 @@ const LOADING_SIZE = {
   extra: 'large',
 };
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
+export type buttonProps = {
+  id?: string,
+  type?: "button" | "reset" | "submit",
+  size?: "small" | "medium" | "large" | "extra",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve" | "pill" | "rounded",
+  shadow?: "none" | "small" | "medium" | "large",
+  title?: string,
+  outline?: boolean,
+  disabled?: boolean,
+  loading?: boolean,
+  className?: string,
+  onClick: () => void,
 };
 
-const ButtonComponent = (props) => {
+const ButtonComponent = (props: buttonProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -66,34 +40,12 @@ const ButtonComponent = (props) => {
   );
 };
 
-const Button = React.forwardRef((props) => <ButtonComponent {...props} />);
-
-Button.propTypes = {
-  id: PropTypes.string,
-  type: PropTypes.oneOf(Object.values(TYPE)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  title: PropTypes.string,
-  outline: PropTypes.bool,
-  disabled: PropTypes.bool,
-  loading: PropTypes.bool,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
-
+const Button: FC<buttonProps> = React.forwardRef((props) => <ButtonComponent {...props} />);
 Button.defaultProps = {
-  type: TYPE.BUTTON,
-  color: COLOR.NORMAL,
-  radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
-  shadow: SHADOW.NONE,
-  outline: false,
-  disabled: false,
-  loading: false,
-  className: '',
+  type: "button",
+  color: "normal",
+  radius: "normal",
+  size: "medium",
+  shadow: "none",
 };
-
 export { Button };

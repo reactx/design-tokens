@@ -1,34 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type alertProps = {
+  id?: string,
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  title?: string,
+  outline?: boolean,
+  disabled?: boolean,
+  className?: string,
+  onClick?: () => void,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const AlertComponent = (props) => {
+const AlertComponent = (props: alertProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -39,28 +24,11 @@ const AlertComponent = (props) => {
   );
 };
 
-const Alert = React.forwardRef((props) => <AlertComponent {...props} />);
-
-Alert.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  title: PropTypes.string,
-  outline: PropTypes.bool,
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
+const Alert: FC<alertProps> = React.forwardRef((props) => <AlertComponent {...props} />);
 
 Alert.defaultProps = {
-  color: COLOR.NORMAL,
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.NONE,
-  outline: false,
-  disabled: false,
-  className: '',
+  color: "normal",
+  radius: "normal",
+  shadow: "none",
 };
-
 export { Alert };

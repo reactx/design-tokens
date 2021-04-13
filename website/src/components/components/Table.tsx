@@ -1,34 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type tableProps = {
+  id?: string,
+  radius?: "none" | "small" | "normal" | "curve" | "rounded" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  header: Array<string>,
+  body: Array<any>,
+  footer?: React.ReactNode | string,
+  className?: string,
+  onClick?: () => void,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const TableComponent = (props) => {
+const TableComponent = (props: tableProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -42,9 +27,9 @@ const TableComponent = (props) => {
         ))}
       </div>
       <div className="table-body">
-        {props.body.map((record, recIndex) => (
+        {props.body.map((record: any, recIndex: number) => (
           <div className="table-row" key={recIndex}>
-            {props.header.map((item, index) => (
+            {props.header.map((item: any, index) => (
               <div key={index} className="table-row-item">
                 {record[item]}
               </div>
@@ -57,25 +42,10 @@ const TableComponent = (props) => {
   );
 };
 
-const Table = React.forwardRef((props) => <TableComponent {...props} />);
-
-Table.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  header: PropTypes.array.isRequired,
-  body: PropTypes.array.isRequired,
-  footer: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
-
+const Table: FC<tableProps> = React.forwardRef((props) => <TableComponent {...props} />);
 Table.defaultProps = {
-  color: COLOR.NORMAL,
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.NONE,
-  className: '',
+  color: "normal",
+  radius: "normal",
+  shadow: "none",
 };
-
 export { Table };

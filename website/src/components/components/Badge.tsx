@@ -1,65 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  ROUNDED: 'rounded',
-  PILL: 'pill',
+export type badgeProps = {
+  id?: string,
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve" | "pill" | "rounded",
+  shadow?: "none" | "small" | "medium" | "large",
+  outline?: boolean,
+  title?: string,
+  className?: string,
+  onClick?: () => void,
 };
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
-};
-
-const BadgeComponent = (props) => {
+const BadgeComponent = (props: badgeProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   return (
-    <div {...parentProps} className={generateClass(props, 'badge')}>
+    <div {...parentProps} className={generateClass(props, 'badge')}
+      onClick={() => props.onClick && props.onClick()}>
       {props.children}
     </div>
   );
 };
 
-const Badge = React.forwardRef((props) => <BadgeComponent {...props} />);
-
-Badge.propTypes = {
-  id: PropTypes.string,
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  outline: PropTypes.bool,
-  title: PropTypes.string,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
-
+const Badge: FC<badgeProps> = React.forwardRef((props) => <BadgeComponent {...props} />);
 Badge.defaultProps = {
-  radius: RADIUS.NORMAL,
-  color: COLOR.NORMAL,
-  shadow: SHADOW.NONE,
-  outline: false,
-  className: '',
+  radius: "normal",
+  color: "normal",
+  shadow: "none",
 };
-
 export { Badge };

@@ -1,33 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type cardProps = {
+  id?: string,
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  header?: React.ReactNode | string,
+  footer?: React.ReactNode | string,
+  cardTitle?: string,
+  outline?: boolean,
+  disabled?: boolean,
+  className?: string,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const CardComponent = (props) => {
+const CardComponent = (props: cardProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -43,26 +30,10 @@ const CardComponent = (props) => {
   );
 };
 
-const Card = React.forwardRef((props) => <CardComponent {...props} />);
-
-Card.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  footer: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  cardTitle: PropTypes.string,
-  outline: PropTypes.bool,
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-};
-
+const Card: FC<cardProps> = React.forwardRef((props) => <CardComponent {...props} />);
 Card.defaultProps = {
-  color: COLOR.NORMAL,
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.NONE,
+  color: "normal",
+  radius: "normal",
+  shadow: "none",
 };
-
 export { Card };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from './Navbar';
+import { Navbar, navbarProps } from './Navbar';
 
 export default {
   title: 'Components/Navbar',
@@ -57,5 +57,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Navbar {...args} />;
+export const Basic = (args: navbarProps) => <Navbar {...args} />;
 Basic.args = { brand: 'reactx', menu: <span>items</span> };

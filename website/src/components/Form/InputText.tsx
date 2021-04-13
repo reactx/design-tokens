@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
 const randomNumber = 'input-' + Math.ceil(Math.random() * 1000);
@@ -17,13 +17,14 @@ export type inputTextProps = {
   label?: string,
   description?: string,
   validMessage?: string,
-  invalidMessage?:string,
-  value?:string,
+  invalidMessage?: string,
+  value?: string,
   title?: string,
-  placeholder?:string,
-  disabled?:boolean,
+  placeholder?: string,
+  disabled?: boolean,
   readOnly?: boolean,
   required?: boolean,
+  spellcheck?: boolean,
   autoFocus?: boolean,
   className?: string,
   pattern?: string,
@@ -78,7 +79,7 @@ const InputTextComponent = (props: inputTextProps) => {
       )}
       {props.type !== 'hidden' &&
         props.validationStates === 'valid' && (
-        <div className="valid-feedback">{props.validMessage}</div>
+          <div className="valid-feedback">{props.validMessage}</div>
         )}
       {props.type !== 'hidden' &&
         props.validationStates === 'invalid' && (
@@ -100,11 +101,6 @@ InputText.defaultProps = {
   shadow: 'none',
   validationStates: 'none',
   formControlStyle: 'normal',
-  disabled: false,
-  readOnly: false,
-  required: false,
-  autoFocus: false,
-  className: '',
 };
 
 export { InputText };

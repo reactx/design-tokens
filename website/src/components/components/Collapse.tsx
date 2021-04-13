@@ -1,36 +1,22 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useState } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type collapseProps = {
+  head: React.ReactNode | string,
+  onClick?: (id: string) => void,
+  radius?: "none" | "small" | "normal" | "curve" | "rounded" | "pill",
+  shadow?: "none" | "small" | "medium" | "large",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  accordionMode?: boolean,
+  className?: string,
+  disabled?: boolean,
+  title?: string,
+  open?: boolean,
+  id: string,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  ROUNDED: 'rounded',
-  PILL: 'pill',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const CollapseComponent = (props) => {
-  const [open, setOpen] = useState(props.accordionMode ? false : true);
+const CollapseComponent = (props: collapseProps) => {
+  const [open, setOpen] = useState<boolean>(props.accordionMode ? false : true);
   const parentProps = { ...props };
   delete parentProps.onClick;
   cleanProps(parentProps);
@@ -39,7 +25,8 @@ const CollapseComponent = (props) => {
     if (!props.accordionMode) {
       setOpen(!open);
     }
-    props.onClick(props.id);
+    if (props.onClick)
+      props.onClick(props.id);
   };
 
   return (
@@ -59,27 +46,10 @@ const CollapseComponent = (props) => {
   );
 };
 
-const Collapse = React.forwardRef((props) => <CollapseComponent {...props} />);
-
-Collapse.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  head: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.string]),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  accordionMode: PropTypes.bool,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  title: PropTypes.string,
-  onClick: PropTypes.func,
-  open: PropTypes.bool,
-  id: PropTypes.string,
-};
-
+const Collapse: FC<collapseProps> = React.forwardRef((props) => <CollapseComponent {...props} />);
 Collapse.defaultProps = {
-  radius: RADIUS.NORMAL,
-  color: COLOR.NORMAL,
-  shadow: SHADOW.NONE,
+  radius: "normal",
+  color: "normal",
+  shadow: "none",
 };
-
 export { Collapse };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AgGrid } from './AgGrid';
+import { AgGrid, agGridProps } from './AgGrid';
 
 export default {
   title: 'Components/AgGrid',
@@ -135,7 +135,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <AgGrid {...args} />;
+export const Basic = (args: agGridProps) => <AgGrid {...args} />;
 Basic.args = {
   rowData: [
     { make: 'Toyota', model: 'Celica', price: 35000 },

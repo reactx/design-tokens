@@ -1,43 +1,24 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useState } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type toggleButtonProps = {
+  id?: string,
+  size?: "small" | "medium" | "large" | "extra",
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve" | "pill" | "rounded",
+  shadow?: "none" | "small" | "medium" | "large",
+  children: React.ReactNode | string,
+  toggleChildren: React.ReactNode | string,
+  title?: string,
+  outline?: boolean,
+  disabled?: boolean,
+  toggle: boolean,
+  className?: string,
+  onClick: (toggle: boolean) => void,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  ROUNDED: 'rounded',
-  PILL: 'pill',
-};
-
-const SIZE = {
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const ToggleButtonComponent = (props) => {
-  const [toggle, SetToggle] = useState(props.toggle);
+const ToggleButtonComponent = (props: toggleButtonProps) => {
+  const [toggle, SetToggle] = useState<boolean>(props.toggle);
   const parentProps = { ...props };
   cleanProps(parentProps);
 
@@ -56,34 +37,11 @@ const ToggleButtonComponent = (props) => {
   );
 };
 
-const ToggleButton = React.forwardRef((props) => (
-  <ToggleButtonComponent {...props} />
-));
-
-ToggleButton.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-  toggleChildren: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  size: PropTypes.oneOf(Object.values(SIZE)),
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  title: PropTypes.string,
-  outline: PropTypes.bool,
-  onClick: PropTypes.func,
-  toggle: PropTypes.bool,
-  id: PropTypes.string,
-};
-
+const ToggleButton: FC<toggleButtonProps> = React.forwardRef((props) => (<ToggleButtonComponent {...props} />));
 ToggleButton.defaultProps = {
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.NONE,
-  color: COLOR.NORMAL,
-  size: SIZE.MEDIUM,
-  disabled: false,
-  outline: false,
-  toggle: false,
+  radius: "normal",
+  shadow: "none",
+  color: "normal",
+  size: "medium",
 };
-
 export { ToggleButton };

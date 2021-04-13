@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from './Card';
+import { Card, cardProps } from './Card';
 
 export default {
   title: 'Components/Card',
@@ -68,7 +68,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <Card {...args} />;
+export const Basic = (args: cardProps) => <Card {...args} />;
 Basic.args = {
   children: 'card Default Message',
   header: 'header',

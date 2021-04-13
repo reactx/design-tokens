@@ -1,14 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 
-const TimeLineComponent = (props) => {
+export type timeLineProps = {
+  id: string,
+  items: Array<timeLineItem>,
+  className: string,
+};
+
+export type timeLineItem = {
+  date: string,
+  title: string,
+  description: string
+}
+
+const TimeLineComponent = (props: timeLineProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   return (
     <div {...parentProps} className={generateClass(props, 'timeline')}>
-      {props.items.map((item, index) => (
+      {props.items.map((item: timeLineItem, index: number) => (
         <div key={index} className="timeline-item">
           <div className="timeline-date">{item.date}</div>
           <div className="timeline-data">
@@ -21,16 +32,5 @@ const TimeLineComponent = (props) => {
   );
 };
 
-const TimeLine = React.forwardRef((props) => <TimeLineComponent {...props} />);
-
-TimeLine.propTypes = {
-  id: PropTypes.string,
-  items: PropTypes.array,
-  className: PropTypes.string,
-};
-
-TimeLine.defaultProps = {
-  className: '',
-};
-
+const TimeLine: FC<timeLineProps> = React.forwardRef((props) => <TimeLineComponent {...props} />);
 export { TimeLine };

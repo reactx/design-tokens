@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useState } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import { FluentIcon } from './FluentIcon';
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-  PILL: 'pill',
-  ROUNDED: 'rounded',
+export type paginationProps = {
+  id?: string,
+  radius?: "none" | "small" | "normal" | "curve" | "rounded" | "pill",
+  items: Array<number>,
+  disabled?: boolean,
+  className?: string,
+  changePagePosition: (item: number) => void,
+  size?: "tiny" | "small" | "medium" | "large" | "extra",
 };
 
-const SIZE = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  EXTRA: 'extra',
-};
-
-const PaginationComponent = (props) => {
-  const [active, setActive] = useState(0);
+const PaginationComponent = (props: paginationProps) => {
+  const [active, setActive] = useState<number>(0);
   const parentProps = { ...props };
   cleanProps(parentProps);
 
-  const changePagePosition = (item) => {
+  const changePagePosition = (item: number) => {
     setActive(item);
     props.changePagePosition(item);
   };
@@ -64,7 +56,7 @@ const PaginationComponent = (props) => {
         disabled={active === 0}
       />
       <ul {...parentProps} className={generateClass(props, 'pagination')}>
-        {output.map((item) => (
+        {output.map((item: number) => (
           <li
             key={item}
             onClick={() => changePagePosition(item - 1)}
@@ -88,24 +80,9 @@ const PaginationComponent = (props) => {
   );
 };
 
-const Pagination = React.forwardRef((props) => (
-  <PaginationComponent {...props} />
-));
-
-Pagination.propTypes = {
-  id: PropTypes.string,
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  items: PropTypes.array,
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  changePagePosition: PropTypes.func,
-  size: PropTypes.oneOf(Object.values(SIZE)),
-};
-
+const Pagination: FC<paginationProps> = React.forwardRef((props) => (<PaginationComponent {...props} />));
 Pagination.defaultProps = {
-  radius: RADIUS.NORMAL,
-  size: SIZE.MEDIUM,
-  disabled: false,
+  radius: "normal",
+  size: "medium",
 };
-
 export { Pagination };

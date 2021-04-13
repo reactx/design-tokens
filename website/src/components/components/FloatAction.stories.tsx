@@ -1,5 +1,5 @@
 import React from 'react';
-import { FloatAction } from './FloatAction';
+import { FloatAction, floatActionProps, floatActionItems } from './FloatAction';
 
 export default {
   title: 'Components/Float Action',
@@ -52,7 +52,7 @@ export default {
   },
 };
 
-export const Basic = (args) => <FloatAction {...args} />;
+export const Basic = (args: floatActionProps) => <FloatAction {...args} />;
 Basic.args = {
   children: <i className="reactx-icon nf-icon-Add" />,
   subChildren: [
@@ -69,5 +69,5 @@ Basic.args = {
       props: { id: 3, className: 'reactx-bg-danger' },
     },
   ],
-  onClick: (item) => alert(item.props.id),
+  onClick: (item: floatActionItems) => alert(item.props.id),
 };

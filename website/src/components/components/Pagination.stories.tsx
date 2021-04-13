@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pagination } from './Pagination';
+import { Pagination, paginationProps } from './Pagination';
 
 export default {
   title: 'Components/Pagination',
@@ -46,5 +46,5 @@ export default {
   },
 };
 
-export const Basic = (args) => <Pagination {...args} />;
+export const Basic = (args: paginationProps) => <Pagination {...args} />;
 Basic.args = { items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] };

@@ -1,41 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { cleanProps, generateClass } from '../../utils';
 import { Avatar } from './Avatar';
 import { FluentIcon } from './FluentIcon';
 
-const COLOR = {
-  PRIMARY: 'primary',
-  SUCCESS: 'success',
-  DANGER: 'danger',
-  WARNING: 'warning',
-  INFO: 'info',
-  DARK: 'dark',
-  LIGHT: 'light',
-  NORMAL: 'normal',
+export type commentProps = {
+  id?: string,
+  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
+  radius?: "none" | "small" | "normal" | "curve",
+  shadow?: "none" | "small" | "medium" | "large",
+  items: Array<commentItems>,
+  like: (item: commentItems, action: string) => void,
+  replay: (item: commentItems) => void,
+  className?: string,
 };
 
-const RADIUS = {
-  NONE: 'none',
-  SMALL: 'small',
-  NORMAL: 'normal',
-  CURVE: 'curve',
-};
+export type commentItems = {
+  id: string,
+  isReplayed: boolean,
+  username: string,
+  likeCount: number,
+  dislikeCount: number,
+  avatar: string,
+  comment: string,
+  date: string,
+  liked: boolean,
+  disliked: boolean,
+  replayLock: boolean,
+}
 
-const SHADOW = {
-  NONE: 'none',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-};
-
-const CommentComponent = (props) => {
+const CommentComponent = (props: commentProps) => {
   const parentProps = { ...props };
   cleanProps(parentProps);
 
   return (
     <div className="reactx-comment-container">
-      {props.items.map((item) => (
+      {props.items.map((item: commentItems) => (
         <div
           key={item.id}
           {...parentProps}
@@ -91,24 +90,10 @@ const CommentComponent = (props) => {
   );
 };
 
-const Comment = React.forwardRef((props) => <CommentComponent {...props} />);
-
-Comment.propTypes = {
-  id: PropTypes.string,
-  color: PropTypes.oneOf(Object.values(COLOR)),
-  radius: PropTypes.oneOf(Object.values(RADIUS)),
-  shadow: PropTypes.oneOf(Object.values(SHADOW)),
-  items: PropTypes.array.isRequired,
-  like: PropTypes.func,
-  replay: PropTypes.func,
-  className: PropTypes.string,
-};
-
+const Comment: FC<commentProps> = React.forwardRef((props) => <CommentComponent {...props} />);
 Comment.defaultProps = {
-  color: COLOR.NORMAL,
-  radius: RADIUS.NORMAL,
-  shadow: SHADOW.SMALL,
-  className: '',
+  color: "normal",
+  radius: "normal",
+  shadow: "small",
 };
-
 export { Comment };
