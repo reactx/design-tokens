@@ -35,8 +35,6 @@ export type inputTextProps = {
 };
 
 const InputTextComponent = (props: inputTextProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   return (
     <div
@@ -66,11 +64,38 @@ const InputTextComponent = (props: inputTextProps) => {
         )}
         {props.multiLine ? (
           <textarea
-            {...parentProps}
             className={generateClass(props, 'input')}
+            id={props.id}
+            title={props.title}
+            value={props.value}
+            placeholder={props.placeholder}
+            disabled={props.disabled}
+            readOnly={props.readOnly}
+            required={props.required}
+            autoFocus={props.autoFocus}
+            spellCheck={props.spellcheck}
+            minLength={props.minLength}
+            maxLength={props.maxLength}
+            onChange={() => props.onChange && props.onChange}
           ></textarea>
         ) : (
-          <input {...parentProps} className={generateClass(props, 'input')} />
+          <input 
+              className={generateClass(props, 'input')}
+              id={props.id}
+              title={props.title}
+              type={props.type}
+              value={props.value}
+              placeholder={props.placeholder}
+              disabled={props.disabled}
+              readOnly={props.readOnly}
+              required={props.required}
+              autoFocus={props.autoFocus}
+              spellCheck={props.spellcheck}
+              minLength={props.minLength}
+              maxLength={props.maxLength}
+              pattern={props.pattern}
+              onChange={() => props.onChange && props.onChange}
+               />
         )}
         {props.append && <div className="control-append">{props.append}</div>}
       </div>

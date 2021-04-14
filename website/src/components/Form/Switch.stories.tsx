@@ -38,7 +38,7 @@ export default {
     },
     className: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     size: {

@@ -13,7 +13,7 @@ export default {
     },
     showLabel: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     value: {

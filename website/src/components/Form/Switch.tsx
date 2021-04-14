@@ -1,41 +1,36 @@
 import React, { useState, FC } from 'react';
-import { cleanProps } from '../../utils';
 
 export type switchProps = {
+  id?: string;
+  title?: string;
   label?: string | React.ReactNode;
-  shadow?: 'none'|'small' | 'medium'| 'large';
+  checked?: boolean;
+  shadow?: 'none' | 'small' | 'medium' | 'large';
   radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill';
-  size?: 'tiny'| 'small'| 'medium'|'large'|'extra';
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'extra';
   className?: string;
   autoFocus?: boolean;
   disabled?: boolean;
-  onChange?: (e: boolean) => void;
-  checked?: boolean;
-  title?: string;
-  id?: string;
+  onChange?: (state: boolean) => void;
 };
 
 const SwitchComponent = (props: switchProps) => {
   const [active, setActive] = useState(props.checked);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-  delete parentProps.checked;
 
   return (
-    <div className="reactx-switch-container">
+    <div className="reactx-switch-container"
+      id={props.id}
+      title={props.title}>
       <label
         className={
           'reactx-switch ' +
           (props.className || '') +
           (props.size !== 'medium' ? ' switch-size-' + props.size : '')
-        }
-        disabled={props.disabled}
-      >
+        }>
         <input
-          {...parentProps}
           checked={active}
           type="checkbox"
-          onChange={() => setActive(!active)}
+          onChange={() => { setActive(!active); props.onChange && props.onChange(!active) }}
         />
         <span
           className={
@@ -46,13 +41,13 @@ const SwitchComponent = (props: switchProps) => {
         />
       </label>
       <label htmlFor={props.id} className="reactx-switch-title">
-        {props.title}
+        {props.label}
       </label>
     </div>
   );
 };
 
-const Switch: FC<switchProps> = React.forwardRef((props) => <SwitchComponent {...props}/>);
+const Switch: FC<switchProps> = React.forwardRef((props) => <SwitchComponent {...props} />);
 
 Switch.defaultProps = {
   radius: 'normal',

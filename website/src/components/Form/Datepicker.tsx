@@ -1,5 +1,5 @@
 import React, { useEffect, useState, FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import DatePicker, { Calendar, DateObject } from "react-multi-date-picker"
 import 'react-multi-date-picker/styles/layouts/prime.css';
 import 'react-multi-date-picker/styles/layouts/mobile.css';
@@ -99,13 +99,11 @@ const CalendarComponent = (props: datepickerProps ) => {
   const [numberOfMonths, setNumberOfMonths] = useState<number>(1);
   const [dayName, setDayName] = useState<string[]>([]);
   const [monthName, setMonthName] = useState<string[]>([]);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   useEffect(() => {
     if (props.numberOfMonths) setNumberOfMonths(parseInt(props.numberOfMonths));
-    if (props.weekDays) setDayName(JSON.parse(props.weekDays));
-    if (props.months) setMonthName(JSON.parse(props.months));
+    if (props.weekDays) setDayName(JSON.parse('[ ' + props.weekDays + ' ]'));
+    if (props.months) setMonthName(JSON.parse('[ ' + props.months + ' ]'));
     if (props.mode) {
       switch (props.mode) {
         case 'multiple':
@@ -167,9 +165,11 @@ const CalendarComponent = (props: datepickerProps ) => {
             ' ' +
             (props.background ? props.background : '') +
             ' ' +
-            (props.layout ? props.layout : '')
+            (props.layout ? props.layout : '') 
           }
-          {...parentProps}
+          id={props.id}
+          name={props.name}
+          title={props.title}
           {...picker}
           {...mode}
           numberOfMonths={numberOfMonths}
@@ -178,7 +178,7 @@ const CalendarComponent = (props: datepickerProps ) => {
           weekDays={dayName}
           months={monthName}
           value={value}
-          onChange={(e) => setValue(e)}
+          onChange={() => props.onChange && props.onChange}
         >
           {props.children}
         </DatePicker>
@@ -193,7 +193,9 @@ const CalendarComponent = (props: datepickerProps ) => {
             ' ' +
             props.layout
           }
-          {...parentProps}
+          id={props.id}
+          name={props.name}
+          title={props.title}
           {...picker}
           {...mode}
           numberOfMonths={numberOfMonths}

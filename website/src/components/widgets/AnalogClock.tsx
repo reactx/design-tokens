@@ -1,5 +1,5 @@
 import React, { useEffect, useState, FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 import * as uuid from 'uuid';
 
 export type analogClockProps = {
@@ -9,15 +9,11 @@ export type analogClockProps = {
   'red-clock',
   title?: string,
   className?: string,
-  onClick?: (e: MouseEvent) => void,
 };
 
 
 const AnalogClockComponent = (props:analogClockProps) => {
   const [id, setId] = useState(uuid.v4());
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-  
 
   const setClockHands = () => {
     let secondElm = document.querySelector('#c' + id + ' .clock-hand-second'); 
@@ -55,7 +51,10 @@ const AnalogClockComponent = (props:analogClockProps) => {
   };
 
   return (
-    <div {...parentProps} className={generateClass(props, 'analog-clock ')}>
+    <div
+    className={generateClass(props, 'analog-clock ')}
+    id={props.id}
+    title={props.title}>
       <div className="clock-face">
         <ul className="clock-marks">{liList()}</ul>
         <div className="clock-hands" id={'c' + id}>

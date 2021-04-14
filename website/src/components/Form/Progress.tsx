@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type progressProps = {
   id?: string,
@@ -17,8 +17,6 @@ export type progressProps = {
 };
 
 const ProgressComponent = (props: progressProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
   const calcPosition = () => {
     let one = props.max ? props.max / 100 : 0;
     let result = props.value ? Math.ceil(props.value / one) : 0;
@@ -26,7 +24,10 @@ const ProgressComponent = (props: progressProps) => {
   };
 
   return (
-    <div {...parentProps} className={generateClass(props, 'progress')}>
+    <div 
+    id={props.id}
+    title={props.title}
+    className={generateClass(props, 'progress')}>
       <div
         className={
           'progress-bar' +

@@ -1,5 +1,4 @@
 import React, {FC} from 'react';
-import { cleanProps } from '../../utils';
 
 export type rowProps = {
   id?: string,
@@ -19,12 +18,10 @@ export type rowProps = {
 };
 
 const RowComponent = (props: rowProps) => {
-  const parentProps = { ...props };
-  cleanProps(parentProps);
 
   return (
     <div
-      {...parentProps}
+      id={props.id}
       className={
         'reactx-row ' +
         (props.className || '') +

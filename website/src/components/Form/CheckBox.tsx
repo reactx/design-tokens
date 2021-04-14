@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 export type checkBoxProps = {
   id?: string,
@@ -14,14 +14,10 @@ export type checkBoxProps = {
 
 const CheckBoxComponent = (props: checkBoxProps) => {
   const [check, setCheck] = useState(props.checked || false);
-  const parentProps = { ...props };
-  cleanProps(parentProps);
-  delete parentProps.checked;
-  delete parentProps.onChange;
 
   return (
     <div
-      id={parentProps.id!}
+      id={props.id}
       className={generateClass(props, 'checkbox') + (check ? ' checked' : '')}
       onClick={() => {
         setCheck(!check);

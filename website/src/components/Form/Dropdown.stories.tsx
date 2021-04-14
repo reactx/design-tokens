@@ -53,7 +53,7 @@ export default {
     },
     fixIcon: {
       table: {
-        category: 'Attribute',
+        category: 'Custom Attribute',
       },
     },
     radius: {
