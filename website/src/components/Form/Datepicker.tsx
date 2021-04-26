@@ -1,229 +1,76 @@
-import React, { useEffect, useState, FC } from 'react';
+import React, { useState, FC } from 'react';
 import { generateClass } from '../../utils';
-import DatePicker, { Calendar, DateObject } from "react-multi-date-picker"
-import 'react-multi-date-picker/styles/layouts/prime.css';
-import 'react-multi-date-picker/styles/layouts/mobile.css';
-import 'react-multi-date-picker/styles/colors/green.css';
-import 'react-multi-date-picker/styles/colors/red.css';
-import 'react-multi-date-picker/styles/colors/yellow.css';
-import 'react-multi-date-picker/styles/colors/purple.css';
-import 'react-multi-date-picker/styles/colors/teal.css';
-import 'react-multi-date-picker/styles/backgrounds/bg-dark.css';
-import 'react-multi-date-picker/styles/backgrounds/bg-gray.css';
-import 'react-multi-date-picker/styles/backgrounds/bg-brown.css';
-import DatePanel from 'react-multi-date-picker/plugins/date_panel';
+import DatePicker, { Calendar } from 'react-datepicker2';
 
-export type datepickerProps ={
+export type datepickerProps = {
   id?: string,
   className?: string,
-  calendar?: 'gregorian' |
-  'persian' |
-  'arabic' |
-  'indian',
-  locale?: 'fa' |
-  'en' |
-  'ar' |
-  'hi',
-  type?: 'input' |
-  'input-icon' |
-  'button' |
-  'icon' |
-  'calendar',
-  mode?: 'single' |
-  'multiple' |
-  'range',
-  numberOfMonths?: "1" | "2" | "3",
-  otherPickers?: 'disable' |
-  'timePicker' |
-  'onlyTimePicker' |
-  'onlyMonthPicker' |
-  'onlyYearPicker',
-  name?: string,
-  title?: string,
+  mode?: 'datepicker' | 'calendar',
   placeholder?: string,
-  weekDays?: string[],
-  months?: string[],
-  format?: string,
+  isGregorian?: boolean,
+  timePicker?: boolean,
+  persianDigits?: boolean,
+  showTodayButton?: boolean,
+  showToggleButton?: boolean,
+  disabled?: boolean,
+  inputFormat?: string,
+  inputJalaaliFormat?: string,
   minDate?: string,
   maxDate?: string,
-  children?: Array<React.ReactNode>,
-  disabled?: boolean,
-  editable?: boolean,
-  datePanel?: boolean,
-  sort?: boolean,
-  showOtherDays?: boolean,
-  disableMonthPicker?: boolean,
-  disableYearPicker?: boolean,
-  layout?: 'default' |
-  'rmdp-prime' |
-  'rmdp-mobile',
-  color?: 'green' |
-  'red' |
-  'yellow' |
-  'purple' |
-  'teal',
-  background?: 'bg-dark' |
-  'bg-gray' |
-  'bg-brown',
-  calendarPosition?: 'bottom-left' |
-  'bottom-center' |
-  'bottom-right' |
-  'top-left' |
-  'top-center' |
-  'right-top' |
-  'right-center' |
-  'right-bottom' |
-  'left-top' |
-  'left-center' |
-  'left-bottom',
-  animation?: boolean,
-  arrow?: boolean,
-  scrollSensitive?: boolean,
-  hideOnScroll?: boolean,
-  fixMainPosition?: boolean,
-  fixRelativePosition?: boolean,
-  offsetX?: number,
-  offsetY?: number,
-  zIndex?: number,
-  onChange?: (data: object) => void,
-  onOpen?: () => void,
-  onClose?: () => void,
-  mapDays?: (data: any) => any,
-  onPositionChange?: (data: object) => void,
+  onChange?: (date: any) => void
 };
 
-const CalendarComponent = (props: datepickerProps ) => {
-  const [value, setValue] = useState<Date | DateObject | DateObject[]>(new Date());
-  const [picker, setPicker] = useState<Object>({});
-  const [mode, setMode] = useState<Object>({});
-  const [numberOfMonths, setNumberOfMonths] = useState<number>(1);
-  const [dayName, setDayName] = useState<string[]>([]);
-  const [monthName, setMonthName] = useState<string[]>([]);
-
-  useEffect(() => {
-    if (props.numberOfMonths) setNumberOfMonths(parseInt(props.numberOfMonths));
-    if (props.weekDays) setDayName(JSON.parse('[ ' + props.weekDays + ' ]'));
-    if (props.months) setMonthName(JSON.parse('[ ' + props.months + ' ]'));
-    if (props.mode) {
-      switch (props.mode) {
-        case 'multiple':
-          setMode({
-            multiple: true,
-          });
-          break;
-        case 'range':
-          setMode({
-            range: true,
-          });
-          break;
-        default:
-          break;
-      }
-    }
-    if (props.otherPickers) {
-      switch (props.otherPickers) {
-        case 'timePicker':
-          setPicker({
-            timePicker: true,
-          });
-          break;
-        case 'onlyTimePicker':
-          setPicker({
-            onlyTimePicker: true,
-          });
-          break;
-        case 'onlyMonthPicker':
-          setPicker({
-            onlyMonthPicker: true,
-          });
-          break;
-        case 'onlyYearPicker':
-          setPicker({
-            onlyYearPicker: true,
-          });
-          break;
-        default:
-          break;
-      }
-    }
-  }, [
-    props.mode,
-    props.otherPickers,
-    props.numberOfMonths,
-    props.weekDays,
-    props.months,
-  ]);
+const CalendarComponent = (props: datepickerProps) => {
+  const [value, setValue] = useState();
 
   return (
     <>
-      {props.type !== 'calendar' ? (
+      {props.mode === 'datepicker' ? (
         <DatePicker
-          className={
-            generateClass(props, 'datepicker') +
-            ' ' +
-            (props.color ? props.color : '') +
-            ' ' +
-            (props.background ? props.background : '') +
-            ' ' +
-            (props.layout ? props.layout : '') 
-          }
-          id={props.id}
-          name={props.name}
-          title={props.title}
-          {...picker}
-          {...mode}
-          numberOfMonths={numberOfMonths}
-          plugins={props.datePanel ? [<DatePanel />] : []}
-          animation={props.animation}
-          weekDays={dayName}
-          months={monthName}
+          className={generateClass(props, 'datepicker') + ' reactx-input'}
           value={value}
-          onChange={() => props.onChange && props.onChange}
-        >
-          {props.children}
-        </DatePicker>
+          isGregorian={props.isGregorian}
+          timePicker={props.timePicker}
+          disabled={props.disabled}
+          persianDigits={props.persianDigits}
+          placeholder={props.placeholder}
+          showTodayButton={props.showTodayButton}
+          showToggleButton={props.showToggleButton}
+          min={props.minDate}
+          max={props.maxDate}
+          inputFormat={props.inputFormat}
+          inputJalaaliFormat={props.inputJalaaliFormat}
+          onChange={(value: any) => setValue(value)}
+        />
       ) : (
         <Calendar
-          className={
-            generateClass(props, 'calendar') +
-            ' ' +
-            props.color +
-            ' ' +
-            props.background +
-            ' ' +
-            props.layout
-          }
-          id={props.id}
-          name={props.name}
-          title={props.title}
-          {...picker}
-          {...mode}
-          numberOfMonths={numberOfMonths}
-          plugins={props.datePanel ? [<DatePanel />] : []}
-          weekDays={dayName}
-          months={monthName}
-        >
-          {props.children}
-        </Calendar>
-      )}
+          className={generateClass(props, 'calendar')}
+          value={value}
+          isGregorian={props.isGregorian}
+          timePicker={props.timePicker}
+          disabled={props.disabled}
+          persianDigits={props.persianDigits}
+          showTodayButton={props.showTodayButton}
+          showToggleButton={props.showToggleButton}
+          min={props.minDate}
+          max={props.maxDate}
+          inputFormat={props.inputFormat}
+          inputJalaaliFormat={props.inputJalaaliFormat}
+        />
+      )
+      }
     </>
   );
 };
 
-const Datepicker: FC<datepickerProps>= React.forwardRef((props) => (
+const Datepicker: FC<datepickerProps> = React.forwardRef((props) => (
   <CalendarComponent {...props} />
 ));
 
 Datepicker.defaultProps = {
-  locale: 'en',
-  calendar: 'gregorian',
-  type: 'input',
-  mode: 'single',
-  numberOfMonths: "1",
-  layout: 'default',
-  otherPickers: 'disable',
-  zIndex: 100,
-  scrollSensitive: true,
+  mode: 'datepicker',
+  isGregorian: false,
+  showTodayButton: false
 };
 
 export { Datepicker };

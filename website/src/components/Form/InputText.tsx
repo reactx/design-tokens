@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { cleanProps, generateClass } from '../../utils';
+import { generateClass } from '../../utils';
 
 const randomNumber = 'input-' + Math.ceil(Math.random() * 1000);
 
