@@ -2,20 +2,28 @@ import React, { FC, useEffect, useRef } from 'react';
 import { FluentIcon } from './FluentIcon';
 
 export type modalProps = {
-  id?: string,
-  color?: "primary" | "success" | "danger" | "warning" | "info" | "dark" | "light" | "normal",
-  radius?: "none" | "small" | "normal" | "curve" | "pill",
-  shadow?: "none" | "small" | "medium" | "large",
-  modalType?: "full" | "left" | "right" | "bottom",
-  header?: React.ReactNode | string,
-  footer?: React.ReactNode | string,
-  closeBtn?: boolean,
-  backdrop?: boolean,
-  show: boolean,
-  backdropClose?: boolean,
-  className?: string,
-  closeAction?: (show: boolean) => void,
-  children: React.ReactNode | string
+  id?: string;
+  color?:
+  | 'primary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'dark'
+  | 'light'
+  | 'normal';
+  radius?: 'none' | 'small' | 'normal' | 'curve' | 'pill';
+  shadow?: 'none' | 'small' | 'medium' | 'large';
+  modalType?: 'full' | 'left' | 'right' | 'bottom';
+  header?: React.ReactNode | string;
+  footer?: React.ReactNode | string;
+  closeBtn?: boolean;
+  backdrop?: boolean;
+  show: boolean;
+  backdropClose?: boolean;
+  className?: string;
+  closeAction?: (show: boolean) => void;
+  children: React.ReactNode | string;
 };
 
 const ModalComponent = (props: modalProps) => {
@@ -24,8 +32,12 @@ const ModalComponent = (props: modalProps) => {
   useEffect(() => {
     if (!props.show) return;
     if (!props.backdropClose) return;
-    const handleClickOutside = (event: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(event.target) && props.closeAction) {
+    const handleClickOutside = (event: Event) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node) &&
+        props.closeAction
+      ) {
         props.closeAction(!props.show);
       }
     };
@@ -50,8 +62,8 @@ const ModalComponent = (props: modalProps) => {
           (props.className || '') +
           ('modal-' + props.modalType) +
           (props.color ? ' reactx-modal-' + props.color : '') +
-          (props.radius !== "normal" ? ' radius-' + props.radius : '') +
-          (props.shadow !== "medium" ? ' shadow-' + props.shadow : '')
+          (props.radius !== 'normal' ? ' radius-' + props.radius : '') +
+          (props.shadow !== 'medium' ? ' shadow-' + props.shadow : '')
         }
         ref={modalRef}
       >
@@ -85,12 +97,14 @@ const ModalComponent = (props: modalProps) => {
   );
 };
 
-const Modal: FC<modalProps> = React.forwardRef((props) => <ModalComponent {...props} />);
+const Modal: FC<modalProps> = React.forwardRef((props) => (
+  <ModalComponent {...props} />
+));
 Modal.defaultProps = {
-  modalType: "full",
-  color: "normal",
-  radius: "normal",
-  shadow: "medium",
+  modalType: 'full',
+  color: 'normal',
+  radius: 'normal',
+  shadow: 'medium',
   show: true,
 };
 export { Modal };
